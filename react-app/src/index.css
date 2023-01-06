@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .nav_li {
+        @apply block text-primary text-base hover:underline underline-offset-8 
+    }
+
+    .primary_btn {
+        @apply bg-primary text-base text-white w-[146px] h-14 rounded p-2 mr-5 text-center
+        hover:bg-white hover:text-primary hover:border hover:border-primary hover:shadow-lg
+    }
+
+    .primary_btn_comp {
+        @apply bg-white text-base text-primary border border-primary w-[146px] h-14 rounded p-2 mr-5 mt-2 lg:mt-0
+        hover:bg-primary hover:text-white hover:shadow-lg
+    }
+
+    .secondary_btn {
+        @apply bg-secondary text-base text-white w-[146px] h-14 rounded p-2 mr-5 text-center
+        hover:bg-white hover:text-secondary hover:border hover:border-secondary hover:shadow-lg
+    }
+
+    .secondary_btn_comp {
+        @apply bg-white text-base text-secondary border border-secondary w-[146px] h-14 rounded p-2 mr-5 mt-2 lg:mt-0
+        hover:bg-secondary hover:text-white hover:shadow-lg
+    }
+
+    .taxonomy-heading {
+        @apply text-sm text-secondary font-semibold tracking-wider cursor-pointer uppercase
+    }
+
+    .taxonomy-name {
+        @apply text-sm text-fontcolor tracking-wider cursor-pointer
+    }
+
+    .alert_style {
+        @apply w-full flex items-center justify-center mb-4 text-primary border-t-2 border-primary pt-1
+    }
+
+    .modal_title {
+        @apply w-full text-lg font-semibold tracking-widest mb-6
+    }
+}

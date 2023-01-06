@@ -1,0 +1,37 @@
+{
+  "ontoUML": {
+    "subsortal": [
+      "kind",
+      "collective"
+    ],
+    "rigidsortal": [
+      "kind",
+      "collective",
+      "subkind"
+    ],
+    "arigidsortal": [
+      "phase",
+      "role"
+    ],
+    "sortaluniversal": [
+      "kind",
+      "collective",
+      "subkind",
+      "phase",
+      "role"
+    ],
+    "nonsortaluniversal": [
+      "category",
+      "rolemixin"
+    ],
+    "substantialuniversal": [
+      "kind",
+      "collective",
+      "subkind",
+      "phase",
+      "role",
+      "category",
+      "rolemixin"
+    ]
+  }
+}
