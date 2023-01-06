@@ -42,8 +42,8 @@ const TaxonomyCage = () => {
                         <SaveTaxomony />
                     </div>
                 </div>
-                <div className="w-full h-1/4 flex justify-center items-center">
-                    <button className='primary_btn w-auto' onClick={handleBtnClick}>
+                <div className="w-full h-1/4 flex justify-center items-center font-bold">
+                    <button className='primary_btn w-auto px-5'     onClick={handleBtnClick}>
                         Subtmit all the taxonomies
                     </button>
                 </div>

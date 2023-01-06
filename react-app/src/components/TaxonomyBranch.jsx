@@ -190,7 +190,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle='taxonomy-name' }) => {
                                 <p>Class name*:</p>
                                 <input 
                                     type="text" 
-                                    className="p-2 border border-gray-300 rounded-md" 
+                                    className="p-2 border border-gray-300 rounded-md outline-secondary" 
                                     placeholder='Crop'
                                     value={newClass.name}
                                     onChange={(e) => setnewClass({...newClass, name: e.target.value})} 
@@ -201,7 +201,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle='taxonomy-name' }) => {
                                 <p>Stereotype*:</p>
                                 <div className="custom-dropdown relative w-28">
                                     <div 
-                                        className="custom-dropdown-selection bg-white rounded-md cursor-pointer p-2 border w-full"
+                                        className="custom-dropdown-selection bg-white rounded-md cursor-pointer p-2 border w-full outline-secondary"
                                         onClick={() => {
                                             setisDropdownVisible(!isDropdownVisible)
                                         }}
@@ -242,7 +242,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle='taxonomy-name' }) => {
                                 <p>Equivalent Class:</p>
                                 <input 
                                     type="text" 
-                                    className="p-2 border border-gray-300 rounded-md" 
+                                    className="p-2 border border-gray-300 rounded-md outline-secondary" 
                                     placeholder='Plant'
                                     value={newClass.equivalentClass}
                                     onChange={(e) => setnewClass({...newClass, equivalentClass: e.target.value})} 

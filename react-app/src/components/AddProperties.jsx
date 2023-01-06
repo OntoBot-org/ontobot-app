@@ -140,7 +140,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
                         <p className="">Property Name*:</p>
                         <input 
                             type="text" 
-                            className="p-2 border border-gray-300 rounded-md" 
+                            className="p-2 border border-gray-300 rounded-md outline-secondary" 
                             placeholder='crop_name'
                             value={newProperty.name}
                             onChange={(e) => setnewProperty({...newProperty, name: e.target.value})}
@@ -151,7 +151,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
                         <p className="">Data type*:</p>
                         <input 
                             type="text" 
-                            className="p-2 border border-gray-300 rounded-md" 
+                            className="p-2 border border-gray-300 rounded-md outline-secondary" 
                             placeholder='string'
                             value={newProperty.datatype}
                             onChange={(e) => setnewProperty({...newProperty, datatype: e.target.value})} 
@@ -162,7 +162,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
                         <p className="">Restrictions:</p>
                         <input 
                             type="text" 
-                            className="p-2 border border-gray-300 rounded-md" 
+                            className="p-2 border border-gray-300 rounded-md outline-secondary" 
                             placeholder='not null'
                             value={newProperty.restrictions}
                             onChange={(e) => setnewProperty({...newProperty, restrictions: e.target.value})} 
