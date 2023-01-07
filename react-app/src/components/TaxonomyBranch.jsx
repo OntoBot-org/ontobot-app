@@ -160,7 +160,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 				)}
 				{!taxonomies.submitted && (
 					<BiPlus
-						className="ml-2 cursor-pointer bg-secondary text-white hover:bg-primary hover:text-white transition rounded-full  text-lg"
+						className="ml-2 cursor-pointer bg-secondary text-white hover:bg-primary hover:text-white transition rounded-full text-lg"
 						onClick={handleAddClass}
 					/>
 				)}
