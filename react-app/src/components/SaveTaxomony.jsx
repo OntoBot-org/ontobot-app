@@ -30,7 +30,7 @@ const SaveTaxomony = () => {
                         (selectedTaxonomy.name === '') ? (
                             <></>
                         ) : (
-                            <p className="font-semibold capitalize text-white w-full h-full rounded-md bg-secondary pl-3 shadow-lg">
+                            <p className="font-semibold capitalize text-white w-full h-full rounded bg-secondary pl-3 py-1 ">
                                 { selectedTaxonomyName }
                             </p>
                         )
