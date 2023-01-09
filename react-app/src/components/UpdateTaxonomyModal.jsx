@@ -93,7 +93,7 @@ const UpdateTaxonomyModal = ({ open, onClose, taxonomy }) => {
                             <p>Class name*:</p>
                             <input 
                                 type="text" 
-                                className="p-2 border border-gray-300 rounded-md" 
+                                className="p-2 border border-gray-300 rounded-md outline-secondary"  
                                 placeholder='Crop'
                                 value={updatingTaxonomy.name}
                                 onChange={(e) => setupdatingTaxonomy({...updatingTaxonomy, name: e.target.value})} 
@@ -104,7 +104,7 @@ const UpdateTaxonomyModal = ({ open, onClose, taxonomy }) => {
                             <p>Stereotype*:</p>
                             <div className="custom-dropdown relative w-28">
                                 <div 
-                                    className="custom-dropdown-selection bg-white rounded-md cursor-pointer p-2 border w-full"
+                                    className="custom-dropdown-selection bg-white rounded-md cursor-pointer p-2 border w-full outline-secondary"
                                     onClick={() => {
                                         setisDropdownVisible(!isDropdownVisible)
                                     }}
@@ -145,7 +145,7 @@ const UpdateTaxonomyModal = ({ open, onClose, taxonomy }) => {
                             <p>Equivalent Class:</p>
                             <input 
                                 type="text" 
-                                className="p-2 border border-gray-300 rounded-md" 
+                                className="p-2 border border-gray-300 rounded-md outline-secondary" 
                                 placeholder='Plant'
                                 value={updatingTaxonomy.equivalentClass}
                                 onChange={(e) => setupdatingTaxonomy({...updatingTaxonomy, equivalentClass: e.target.value})} 

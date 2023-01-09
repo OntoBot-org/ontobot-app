@@ -25,7 +25,7 @@ const Modal = ({ children, open, onClose, fromTop='top-[25%]', fromLeft='left-[1
             <div className='fixed top-0 left-0 bottom-0 right-0 bg-gray-500 opacity-50' onClick={onClose} />
 
             <div className={`border p-4 flex flex-col items-end fixed z-1000 bg-white text-fontcolor rounded-md max-h-[70%] ${fromLeft} ${fromTop}`}>
-                <AiOutlineCloseCircle onClick={onClose} className='mt-1 mb-2 cursor-pointer text-primary hover:text-white hover:bg-primary rounded-full hover:shadow-lg' />
+                <AiOutlineCloseCircle onClick={onClose} className='mt-1 cursor-pointer text-primary hover:text-white hover:bg-primary rounded-full hover:shadow-lg' />
                 { children }
             </div>
         </div>

@@ -40,6 +40,6 @@
     }
 
     .modal_title {
-        @apply w-full text-lg font-semibold tracking-widest mb-6
+        @apply w-full text-lg font-semibold  mb-6 text-center
     }
 }
