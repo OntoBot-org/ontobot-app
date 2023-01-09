@@ -100,15 +100,19 @@ class OP:
     __stack = []
     __meta_stack = []
 
+    def __init__(self):
+        self.__stack.clear()
+        self.__meta_stack.clear()
+
     def __rec_traverse_op(self, arr, level=0):
         # for loop : siblings, same level shift
         for i in arr:
             # recursion call : children do same things for children
 
-            mylist = [i['name'], i['equal'], i['inverse'], i['domain'], i['range'], i['opc']]
-            if ('sub' in i) and len(i['sub']) > 0:
+            mylist = [i['relationshipLabel'], i['equivalentLabel'], i['inverse'], i['domain'], i['ranges'], i['type'], level]
+            if ('subrelationships' in i) and len(i['subrelationships']) > 0:
                 self.__stack.append(mylist)
-                self.__rec_traverse_op(i['sub'], level + 1)
+                self.__rec_traverse_op(i['subrelationships'], level + 1)
             else:
                 # leaf node
                 self.__stack.append(mylist)
@@ -128,8 +132,34 @@ class OP:
             inverse = item[2]
             c_domain = item[3]
             c_range = item[4]
-            opc = item[5]
+            type = item[5]
+            level = item[6]
             key = uid
+
+            opc = {
+                "functional": False,
+                "inverseFunctional": False,
+                "transitive": False,
+                "symmetric": False,
+                "asymmetric": False,
+                "reflexive": False,
+                "irreflexive": False
+            }
+
+            for op in type:
+                if op == "Functional":
+                    opc['functional'] = True
+                elif op == "Inverse Functional":
+                    opc['inverseFunctional'] = True
+                elif op == "Symmetric":
+                    opc['symmetric'] = True
+                elif op == "Reflexive":
+                    opc['reflexive'] = True
+                elif op == "Irreflexive":
+                    opc['irreflexive'] = True
+                else:
+                    opc['transitive'] = True
+
 
             final.append(
                 {
@@ -139,6 +169,7 @@ class OP:
                     "op_equal": equal,
                     "op_domain": c_domain,
                     "op_range": c_range,
+                    "level": level,
                     "constraints": opc
                 }
             )

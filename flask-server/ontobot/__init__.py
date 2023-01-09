@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 
-from ontobot.services import taxonomy_service
+from ontobot.services import taxonomy_service,op_service
 
 app = Flask(__name__)
 
@@ -18,6 +18,10 @@ def add_ontos():
     global data
     data = request.get_json()
     return taxonomy_service.validate_taxonomy_service(request.get_json())
+
+@app.route('/op/checkpoint_1/generate', methods=['POST'])
+def get_op():
+    return op_service.get_op_structure(request.get_json())
 
 
 if __name__ == "__main__":
