@@ -159,7 +159,7 @@ const UpdateTaxonomyModal = ({ open, onClose, taxonomy }) => {
                         Update
                     </button>
 
-                    <button className='secondary_btn_comp h-10' onClick={onclose}>
+                    <button className='secondary_btn_comp h-10' onClick={onClose}>
                         Cancel
                     </button>
                 </div>

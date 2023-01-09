@@ -9,6 +9,7 @@ import { setSubmittedState } from "../features/taxonomies/taxonomySlice";
 const TaxonomyCage = () => {
 	const taxonomies = useSelector((store) => store.taxonomies);
 	const dispatch = useDispatch();
+	const element = document.getElementById('relationshipcage');
 
 	const [isModalOpen, setisModalOpen] = useState(false);
 	const [alertTitle, setalertTitle] = useState("");
@@ -37,7 +38,7 @@ const TaxonomyCage = () => {
 		if (taxonomies.subclasses?.length > 0) {
 			setalertTitle("Are you sure you want to submit all the taxonomies?");
 			setalertMsg(
-				"After submitting you will NOT be able to add, update, or remove taxonomies or taxonomy details."
+				"After submitting you will NOT be able to add, update, or remove taxonomies or taxonomy details. Therefore, please make sure that you have added properties, disjoint, and overlapping classes to necessary taxonomies."
 			);
 			sendTaxonomies(JSON.stringify(taxonomies));
 		} else {
@@ -46,12 +47,14 @@ const TaxonomyCage = () => {
 	};
 
 	const handleSubmit = () => {
+		// console.log('taxonomies: ', taxonomies);
 		dispatch(
 			setSubmittedState({
 				submittedState: true,
 			})
 		);
 		setisModalOpen(false);
+		element.scrollIntoView({ behavior: 'smooth' });
 	};
 
 	return (
@@ -65,11 +68,14 @@ const TaxonomyCage = () => {
 						<SaveTaxomony />
 					</div>
 				</div>
-				<div className="w-full h-1/4 flex justify-center items-center font-bold">
-					<button className="primary_btn w-auto px-5" onClick={handleBtnClick}>
-						Subtmit all the taxonomies
-					</button>
-				</div>
+
+				{ 	!taxonomies.submitted &&
+					<div className="w-full h-1/4 flex justify-center items-center font-bold">
+						<button className="primary_btn w-auto px-5" onClick={handleBtnClick}>
+							Submit all the taxonomies
+						</button>
+					</div>
+				}
 
 				<Modal
 					open={isModalOpen}

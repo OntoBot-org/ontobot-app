@@ -27,7 +27,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 	const [newClass, setnewClass] = useState({
 		id: "",
 		name: "",
-		stereotype: stereotypes[0].name,
+		stereotype: stereotypes[0].value,
 		equivalentClass: "",
 	});
 
@@ -85,11 +85,14 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 	};
 
 	const handleKeyDown = (event) => {
-		if (event.key === "Enter") {
-			handleSaveClass();
-			event.currentTarget.click();
-		}
-	};
+        if (event) {
+            if (event.key === 'Enter') {
+                handleSaveClass()
+            }
+        } else {
+            console.log('No event is passed')
+        }
+    }
 
 	const handleSaveClass = () => {
 		if (newClass.name?.length === 0) {
@@ -132,7 +135,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 				setnewClass({
 					id: "",
 					name: "",
-					stereotype: stereotypes[0].name,
+					stereotype: stereotypes[0].value,
 					equivalentClass: "",
 				});
 			}
@@ -187,7 +190,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 					</div>
 				)}
 
-				<div className="flex flex-col">
+				<div className="flex flex-col" onKeyDown={handleKeyDown}>
 					<div className="flex gap-6 items-end">
 						<div className="flex gap-4 items-center">
 							<div className="flex flex-col gap-2">

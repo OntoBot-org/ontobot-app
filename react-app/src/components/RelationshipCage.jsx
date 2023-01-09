@@ -16,7 +16,7 @@ const RelationshipCage = () => {
                 </div>
                 <div className="w-full h-1/4 flex justify-center items-center">
                     <button className='primary_btn w-auto'>
-                        Subtmit all the Relationships
+                        Submit all the Relationships
                     </button>
                 </div>
             </div>

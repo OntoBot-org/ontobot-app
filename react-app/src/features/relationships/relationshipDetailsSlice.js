@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const  initialState = {
     id: '',
     domain: '',
-    range: '',
+    ranges: [],
     relationshipTypes: []
 }
 
@@ -14,17 +14,8 @@ const relationshipDetailsSlice = createSlice({
         saveDomain:  (state, action) => {
             const { id, attribute } = action.payload
 
-            if (state.id === '') {
-                state.id= id
-                state.domain= attribute
-            }
-            else if (state.id === id) {
-                state.domain= attribute
-            }
-            else {
-                console.log('id: ', id)
-                console.log('state.id: ', state.id)
-            }
+            state.id = id
+            state.domain = attribute
         },
 
         saveRange:  (state, action) => {
@@ -42,8 +33,17 @@ const relationshipDetailsSlice = createSlice({
             }
         },
 
+        saveRanges: (state, action) => {
+            const { data } = action.payload
+            // console.log('payload ranges: ', data)
+            data.filter((a, b) => data.indexOf(a) === b)
+            state.ranges = []
+            data.map((d) => state.ranges.push(d.label))
+        },
+
         saveRelationshipTypes:  (state, action) => {
             const { data } = action.payload
+            state.relationshipTypes = []
             data.map((d) => state.relationshipTypes.push(d.label))
         },
 
@@ -58,6 +58,6 @@ const relationshipDetailsSlice = createSlice({
     }
 })
 
-export const { resetRelationshipDetails, saveDomain, saveRange, saveRelationshipTypes } = relationshipDetailsSlice.actions
+export const { resetRelationshipDetails, saveDomain, saveRange, saveRanges, saveRelationshipTypes } = relationshipDetailsSlice.actions
 
 export default relationshipDetailsSlice.reducer

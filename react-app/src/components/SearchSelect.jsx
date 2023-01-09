@@ -35,4 +35,4 @@ const SearchSelect = ({ optionList, isMultiSelect, reducerFunction, relationship
     )
 }
 
-export default SearchSelect
+export default React.memo(SearchSelect)

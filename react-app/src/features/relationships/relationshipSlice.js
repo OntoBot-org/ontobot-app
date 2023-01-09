@@ -12,8 +12,8 @@ const relationshipSlice = createSlice({
     initialState,
     reducers: {
         saveSubrelationships: (state, action) => {
-            const { id, relationshipLabel, inverse, equivalentLabel, domain, range, type, parentId } = action.payload
-            // console.log('action.payload: ', action.payload)
+            const { id, relationshipLabel, inverse, equivalentLabel, domain, ranges, type, parentId } = action.payload
+            console.log('action.payload: ', action.payload)
 
             const findParent = (relationship) => {
                 if (relationship.id === parentId) {
@@ -23,7 +23,7 @@ const relationshipSlice = createSlice({
                         inverse, 
                         equivalentLabel, 
                         domain, 
-                        range, 
+                        ranges, 
                         type,
                         subrelationships: []
                     })

@@ -16,10 +16,7 @@ const Navbar = () => {
                     <div className="" id="navbar-sticky">
                         <ul className="flex space-x-5">
                             <li>
-                                <Link to='/documents' className="nav_li" aria-current="page">Documents</Link>
-                            </li>
-                            <li>
-                                <Link to='/examples' className="nav_li">Examples</Link>
+                                <Link to='/vocabulary' className="nav_li" aria-current="page">Vocabulary</Link>
                             </li>
                             <li>
                                 <Link to='/about' className="nav_li">About</Link>

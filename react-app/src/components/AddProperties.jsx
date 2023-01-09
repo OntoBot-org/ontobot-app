@@ -56,8 +56,18 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		}
 	};
 
+	const handleKeyDown = (event) => {
+        if (event) {
+            if (event.key === 'Enter') {
+                handleAddProperty()
+            }
+        } else {
+            console.log('No event is passed')
+        }
+    }
+
 	const handleAddProperty = (event) => {
-		event.preventDefault();
+		// event.preventDefault();
 
 		if (newProperty.name === "" || newProperty.datatype === "") {
 			setalertMsg(
@@ -152,7 +162,8 @@ const AddProperties = ({ selectedTaxonomy }) => {
 						<p>{alertMsg}</p>
 					</div>
 				)}
-				<div className="flex justify-between gap-6 items-center text-fontcolor">
+				
+				<div className="flex justify-between gap-6 items-center text-fontcolor" onKeyDown={handleKeyDown}>
 					<div className="flex flex-col gap-2">
 						<p className="">Property Name*:</p>
 						<input
