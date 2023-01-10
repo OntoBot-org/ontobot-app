@@ -22,7 +22,7 @@ class Custom:
         for index in range(len(self.__taxonomy_list)):
             current_item = self.__taxonomy_list[index]
             if current_item['level'] == 0 and current_item['cardinality'] == 0:
-                if len(current_item['stereotype']) > 0:
+                if len(current_item['stereotype']) > 0 and current_item['stereotype'] != 'subkind':
                     self.__custom_list.append(current_item['class_name'])
 
     def get_custom_list(self):

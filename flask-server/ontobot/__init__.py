@@ -21,7 +21,10 @@ def add_ontos():
 
 @app.route('/op/checkpoint_1/generate', methods=['POST'])
 def get_op():
-    return op_service.get_op_structure(request.get_json())
+    global data
+    # return op_service.get_op_structure(request.get_json())
+    op_service.get_op_structure(data)
+
 
 
 if __name__ == "__main__":
