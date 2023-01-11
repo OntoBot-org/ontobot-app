@@ -13,6 +13,7 @@ class Error:
         umle = UMLE(taxomomy_list, concept_list)
         umle.check_zero_level()
         umle.check_phase_level()
+        umle.check_category_level()
 
         err = {
             "concepts" : mismatched_concepts,

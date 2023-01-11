@@ -72,7 +72,22 @@ class UMLE:
                     })
 
     def check_category_level(self):
-        pass
+        for concept in self.__set_difference:
+            err_class = self.__get_class(concept)["cls"]
+            err_index = self.__get_class(concept)["index"]  
+            if err_class['level'] > 0 and err_class['stereotype'] in rule_json['ontoUML']['rigidsortal']:
+                super_cls = self.__find_super_class(err_class, err_index)
+                if super_cls['stereotype'] == 'category':
+                    err_cls = self.Err()
+                    err_cls.concept_name = concept
+                    err_cls.stereotype = err_class['stereotype']
+                    err_cls.suggestion = "This class should be disjoint with a sibling since it is belongs to the "+ err_cls.stereotype+" or you can change this class stereotype as category or role-mixin"
+
+                    self.__err_list.append({
+                        "name": err_cls.concept_name,
+                        "stereotype": err_cls.stereotype,
+                        "suggestion": err_cls.suggestion
+                    })
     
     def get_err_list(self):
         return self.__err_list
