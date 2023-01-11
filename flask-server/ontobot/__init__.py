@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, send_file, jsonify
 
 from ontobot.services import taxonomy_service, op_service
 
@@ -13,6 +13,14 @@ def get_ontos():
     x = taxonomy_service.get_taxonomy_owl(request.get_json())
     taxonomy_service.get_owl_file(x)
     return x
+
+@app.route('/onto/checkpoint_1/download')
+def download_file():
+    # path = "html2pdf.pdf"
+    # path = "info.xlsx"
+    path = "../OWLfile.owl"
+    # path = "sample.txt"
+    return send_file(path, as_attachment=True)
 
 
 @app.route('/onto/checkpoint_1/validate', methods=['POST'])
