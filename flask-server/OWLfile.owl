@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://test.org/onto.owl"
+         xmlns="http://test.org/onto.owl#">
+
+<owl:Ontology rdf:about="http://test.org/onto.owl"/>
+
+<owl:Class rdf:about="#Farmer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Organization">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#School">
+  <rdfs:subClassOf rdf:resource="#Organization"/>
+</owl:Class>
+
+<owl:Class rdf:about="#University">
+  <rdfs:subClassOf rdf:resource="#Organization"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Persons">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Child">
+  <rdfs:subClassOf rdf:resource="#Persons"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Teen">
+  <rdfs:subClassOf rdf:resource="#Persons"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Adult">
+  <rdfs:subClassOf rdf:resource="#Persons"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Student">
+  <rdfs:subClassOf rdf:resource="#Persons"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Man">
+  <rdfs:subClassOf rdf:resource="#Persons"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Women">
+  <rdfs:subClassOf rdf:resource="#Persons"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Husband">
+  <rdfs:subClassOf rdf:resource="#Man"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Wife">
+  <rdfs:subClassOf rdf:resource="#Women"/>
+</owl:Class>
+
+
+</rdf:RDF>
