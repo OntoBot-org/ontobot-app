@@ -44,7 +44,7 @@ def validate_taxonomy_service(parsed_json):
             return Response.send_response("can proceed further")
         else:
             set_difference = all_concepts - valid_concept
-            return Error.send_taxonomy_error(list(set_difference))
+            return Error.send_taxonomy_error(list(set_difference), owl.get_taxonomy_concept_with_meta())
 
     except Exception as err:
         return err.with_traceback()
