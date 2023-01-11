@@ -13,6 +13,7 @@ const TaxonomyCage = () => {
 	const [isModalOpen, setisModalOpen] = useState(false);
 	const [alertTitle, setalertTitle] = useState("");
 	const [alertMsg, setalertMsg] = useState("");
+	const [isValidTaxo, setIsValidTaxo] = useState(false);
 
 	const sendTaxonomies = async (data) => {
 		const config = {
@@ -27,9 +28,70 @@ const TaxonomyCage = () => {
 		try {
 			const response = await axios(config);
 			console.log(response);
+			if (response.status === 200) {
+				setIsValidTaxo(true);
+			} else {
+				setIsValidTaxo(false);
+			}
 		} catch (error) {
 			console.error(error);
+			setIsValidTaxo(false);
 		}
+	};
+
+	const downloadOWL = async (data) => {
+		const config = {
+			method: "post",
+			url: "/onto/checkpoint_1/generate",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			data: data,
+		};
+
+		// try {
+		// 	const response = await axios(config);
+		// 	console.log(response);
+		// 	if (response.status === "200") {
+		// 		console.log("ok");
+		// 		let url = window.URL.createObjectURL(response.data);
+		// 		let a = document.createElement("a");
+		// 		a.href = url;
+		// 		a.download = "employees.json";
+		// 		a.click();
+		// 	}
+		// 	window.location.href = response.data;
+		// } catch (error) {
+		// 	console.error(error);
+		// 	setIsValidTaxo(false);
+		// }
+
+		try {
+			const response = await axios(config);
+			console.log(response);
+			if (response.status === "200") {
+				// create file link in browser's memory
+				const href = URL.createObjectURL(response.data);
+
+				// create "a" HTML element with href to file & click
+				const link = document.createElement("a");
+				link.href = href;
+				link.setAttribute("download", "file.owl"); //or any other extension
+				document.body.appendChild(link);
+				link.click();
+
+				// clean up "a" element & remove ObjectURL
+				document.body.removeChild(link);
+				URL.revokeObjectURL(href);
+			}
+		} catch (error) {
+			console.error(error);
+			setIsValidTaxo(false);
+		}
+	};
+
+	const handleDownloadBtnClick = () => {
+		downloadOWL(JSON.stringify(taxonomies));
 	};
 
 	const handleBtnClick = () => {
@@ -69,6 +131,14 @@ const TaxonomyCage = () => {
 					<button className="primary_btn w-auto px-5" onClick={handleBtnClick}>
 						Subtmit all the taxonomies
 					</button>
+					{isValidTaxo && (
+						<button
+							className="primary_btn w-auto px-5"
+							onClick={handleDownloadBtnClick}
+						>
+							Download OWL
+						</button>
+					)}
 				</div>
 
 				<Modal
