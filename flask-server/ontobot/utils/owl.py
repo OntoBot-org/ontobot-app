@@ -6,9 +6,11 @@ class OWL:
     __owl_onto = {}
     __owl_stack = []
     __concept_list = []
+    __concept_list_meta = []
 
     def __init__(self, input_list):
         self.__concept_list.clear()
+        self.__concept_list_meta.clear()
         self.__owl_stack.clear()
         self.__owl_onto = onto.Taxonomy()
         self.__taxonomy_list = self.__owl_onto.get_stack(input_list['subclasses'])
@@ -32,6 +34,9 @@ class OWL:
                 self.__concept_list.append(item['class_name'])
 
         return set(self.__concept_list)
+    
+    def get_taxonomy_concept_with_meta(self):
+        return self.__taxonomy_list
        
 
     def get_taxonomy_json(self):

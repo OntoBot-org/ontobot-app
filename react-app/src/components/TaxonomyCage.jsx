@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import fileDownload from "js-file-download";
 
 import { Modal, SaveTaxomony, TaxonomyTree } from "../components";
 
@@ -14,6 +15,7 @@ const TaxonomyCage = () => {
 	const [isModalOpen, setisModalOpen] = useState(false);
 	const [alertTitle, setalertTitle] = useState("");
 	const [alertMsg, setalertMsg] = useState("");
+	const [isValidTaxo, setIsValidTaxo] = useState(false);
 
 	const sendTaxonomies = async (data) => {
 		const config = {
@@ -27,10 +29,52 @@ const TaxonomyCage = () => {
 
 		try {
 			const response = await axios(config);
-			console.log(JSON.stringify(response));
+			console.log(response);
+			if (response.status === 200) {
+				setIsValidTaxo(true);
+			} else {
+				setIsValidTaxo(false);
+			}
 		} catch (error) {
 			console.error(error);
+			setIsValidTaxo(false);
 		}
+	};
+
+	const downloadOWL = async (data) => {
+		const config = {
+			method: "post",
+			url: "/onto/checkpoint_1/generate",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			data: data,
+		};
+
+		try {
+			const response = await axios(config);
+			console.log(response);
+			if (response.status === "200") {
+			}
+		} catch (error) {
+			console.error(error);
+			setIsValidTaxo(false);
+		}
+		getFile();
+	};
+
+	const getFile = () => {
+		axios
+			.get("/onto/checkpoint_1/download", {
+				responseType: "blob",
+			})
+			.then((res) => {
+				fileDownload(res.data, "filename.owl");
+			});
+	};
+
+	const handleDownloadBtnClick = () => {
+		downloadOWL(JSON.stringify(taxonomies));
 	};
 
 	const handleBtnClick = () => {
@@ -68,14 +112,19 @@ const TaxonomyCage = () => {
 						<SaveTaxomony />
 					</div>
 				</div>
-
-				{ 	!taxonomies.submitted &&
-					<div className="w-full h-1/4 flex justify-center items-center font-bold">
-						<button className="primary_btn w-auto px-5" onClick={handleBtnClick}>
-							Submit all the taxonomies
+				<div className="w-full h-1/4 flex justify-center items-center font-bold">
+					<button className="primary_btn w-auto px-5" onClick={handleBtnClick}>
+						Subtmit all the taxonomies
+					</button>
+					{isValidTaxo && (
+						<button
+							className="primary_btn w-auto px-5"
+							onClick={handleDownloadBtnClick}
+						>
+							Download OWL
 						</button>
-					</div>
-				}
+					)}
+				</div>
 
 				<Modal
 					open={isModalOpen}

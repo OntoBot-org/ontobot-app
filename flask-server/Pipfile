@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 flask = "*"
 marshmallow = "*"
+owlready2 = "*"
 
 [dev-packages]
 
