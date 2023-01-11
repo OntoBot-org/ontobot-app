@@ -11,8 +11,9 @@ data = {}
 @app.route('/onto/checkpoint_1/generate', methods=['POST'])
 def get_ontos():
     op_st = taxonomy_service.get_taxonomy_owl(request.get_json())
-    taxonomy_service.get_owl_file(x)
-    return op_st
+    taxonomy_service.get_owl_file(op_st)
+    path = "../OWLfile.owl"
+    return send_file(path, as_attachment=True)
 
 
 @app.route('/onto/checkpoint_1/download')

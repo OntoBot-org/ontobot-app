@@ -8,56 +8,28 @@
 
 <owl:Ontology rdf:about="http://test.org/onto.owl"/>
 
-<owl:Class rdf:about="#Farmer">
+<owl:Class rdf:about="#Person">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Organization">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#School">
-  <rdfs:subClassOf rdf:resource="#Organization"/>
-</owl:Class>
-
-<owl:Class rdf:about="#University">
-  <rdfs:subClassOf rdf:resource="#Organization"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Persons">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Child">
-  <rdfs:subClassOf rdf:resource="#Persons"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Teen">
-  <rdfs:subClassOf rdf:resource="#Persons"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Adult">
-  <rdfs:subClassOf rdf:resource="#Persons"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Student">
-  <rdfs:subClassOf rdf:resource="#Persons"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Man">
-  <rdfs:subClassOf rdf:resource="#Persons"/>
+  <rdfs:subClassOf rdf:resource="#Person"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Women">
-  <rdfs:subClassOf rdf:resource="#Persons"/>
+<owl:Class rdf:about="#Woman">
+  <rdfs:subClassOf rdf:resource="#Person"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Husband">
-  <rdfs:subClassOf rdf:resource="#Man"/>
+<owl:Class rdf:about="#Crop">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Wife">
-  <rdfs:subClassOf rdf:resource="#Women"/>
+<owl:Class rdf:about="#Crop1">
+  <rdfs:subClassOf rdf:resource="#Crop"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Xxx">
+  <rdfs:subClassOf rdf:resource="#Crop"/>
 </owl:Class>
 
 
