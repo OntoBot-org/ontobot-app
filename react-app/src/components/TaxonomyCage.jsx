@@ -26,7 +26,7 @@ const TaxonomyCage = () => {
 
 		try {
 			const response = await axios(config);
-			console.log(JSON.stringify(response));
+			console.log(response);
 		} catch (error) {
 			console.error(error);
 		}
