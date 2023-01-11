@@ -4,6 +4,7 @@ const  initialState = {
     id: '',
     domain: '',
     ranges: [],
+    range: [],
     relationshipTypes: []
 }
 

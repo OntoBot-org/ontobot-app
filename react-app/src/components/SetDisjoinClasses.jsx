@@ -7,9 +7,10 @@ import { VscCircleFilled } from 'react-icons/vsc'
 import { saveDisjointClasses } from '../features/taxonomies/taxonomySlice'
 import { DisjointClsList, Modal } from '../components'
 
-const SetDisjoinClasses = ({ selectedTaxonomy }) => {
+const SetDisjoinClasses = ({selectedTaxonomy}) => {
     
     const taxonomies = useSelector(store => store.taxonomies)
+    // const selectedTaxonomy = useSelector(store => store.selectedTaxonomy)
 
     const [isModalVisible, setisModalVisible] = useState(false)
     const [subclassesSet, setsubclassesSet] = useState(selectedTaxonomy.subclasses)
@@ -23,6 +24,7 @@ const SetDisjoinClasses = ({ selectedTaxonomy }) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        setfinalDisjointSet(selectedTaxonomy.disjoint)
         const fetchSubclasses = (taxonomyObj) => {
             if (taxonomyObj.id === selectedTaxonomy.id) {
                 let taxonomySubClasses = []
@@ -52,9 +54,8 @@ const SetDisjoinClasses = ({ selectedTaxonomy }) => {
                 }
             }
         }
-        
         fetchSubclasses(taxonomies)
-    }, [taxonomies, selectedTaxonomy])
+    }, [taxonomies, selectedTaxonomy, isModalVisible])
 
     const handleModalOpening = () => {
         setnewDisjointSet([])
@@ -149,7 +150,10 @@ const SetDisjoinClasses = ({ selectedTaxonomy }) => {
                 </div>
 
                 <ul className='w-full flex flex-col items-start justify-start text-sm'>
-                    {   <DisjointClsList isDisjointSaved={isDisjointSaved} />}
+                    <DisjointClsList 
+                        // selectedTaxonomy={selectedTaxonomy} 
+                        isDisjointSaved={isDisjointSaved}
+                    />
                 </ul>
             </div>
 
@@ -189,7 +193,7 @@ const SetDisjoinClasses = ({ selectedTaxonomy }) => {
                 </div>
 
                 <div className="flex w-full">
-                    <p className="font-semibold">Disjoint class sets</p>
+                    <p className="font-semibold">Disjoint class sets of {selectedTaxonomy.name}</p>
                 </div>
 
                 <ul className='w-full flex flex-col items-start justify-start text-sm'>
@@ -203,6 +207,7 @@ const SetDisjoinClasses = ({ selectedTaxonomy }) => {
                             </li>
                         </div>
                     )}
+                    {/* <DisjointClsList /> */}
                 </ul>
 
                 <div className="flex items-center justify-center mt-4 w-full">

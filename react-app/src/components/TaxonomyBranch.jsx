@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { AiOutlineDown } from 'react-icons/ai';
 import { BiPlus, BiChevronDown, BiEditAlt } from "react-icons/bi";
 import { MdDeleteOutline } from "react-icons/md";
 import { TbAlertTriangle } from "react-icons/tb";
@@ -21,6 +22,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 	const [isUpdateModalVisible, setisUpdateModalVisible] = useState(false);
 	const [isDropdownVisible, setisDropdownVisible] = useState(false);
 	const [isAlertVisible, setisAlertVisible] = useState(false);
+    const [showStereotypesDetails, setshowStereotypesDetails] = useState(false);
 	const [alertMsg, setalertMsg] = useState("");
 	const [selectedStereotype, setselectedStereotype] = useState(stereotypes[0]);
 	const [availableSubclasses, setavailableSubclasses] = useState([]);
@@ -176,7 +178,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 					</div>
 				))}
 
-			<Modal open={isModalOpen} onClose={() => setisModalOpen(false)}>
+			<Modal open={isModalOpen} onClose={() => setisModalOpen(false)} fromTop="top-[15%]">
 				<p className="modal_title">
 					Add subclasses to{" "}
 					<span className="font-bold text-secondary">{taxonomy.name}</span>{" "}
@@ -269,6 +271,29 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 							Save Class
 						</button>
 					</div>
+
+					<div className="mt-8 text-justify w-full">
+                        <div className='flex text-sm font-semibold text-gray-500 mb-2'>
+                            <h1>Stereotypes List Explanation</h1>
+                            <span 
+                                className="mt-1 ml-2 text-xs font-bold cursor-pointer" 
+                                onClick={() => setshowStereotypesDetails(!showStereotypesDetails)}
+                            >
+                                <AiOutlineDown />
+                            </span>
+                        </div>
+                        { showStereotypesDetails && 
+                            <div className="w-full">
+                                {
+                                    stereotypes.map((item, index) => (
+                                        <div>
+                                            <p className="text-xs" key={index}> <span className='font-semibold'>{item.name}</span> - {item.explanation} Ex: {item.examples}</p>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        }
+                    </div>
 				</div>
 			</Modal>
 

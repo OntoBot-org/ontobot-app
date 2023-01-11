@@ -58,7 +58,6 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
     const getAvailableDomains = (taxonomyObj) => {
         if (taxonomyObj.subclasses?.length > 0) {
             taxonomyObj.subclasses.forEach((subCls) => {
-                console.log('typeof(subCls.name): ', typeof(subCls.name))
                 fetchedDomains.push({
                     id: subCls.id,
                     label: subCls.name,
@@ -159,12 +158,10 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                     inverse: newRelationship.inverse, 
                     equivalentLabel: newRelationship.equivalentName, 
                     domain: relationshipDetails.domain, 
-                    // range: relationshipDetails.range, 
                     ranges: finalRanges, 
                     type: finalTypes,
                     parentId: relationship.id
                 }))
-                console.log('relationships: ', relationships)
                 setnewRelationship({
                     id: v4(),
                     relationshipLabel: '',
@@ -182,6 +179,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
             range: '', 
             relationshipTypes: []
         }))
+        setisModalVisible(false)
     }
 
     const onClose = () => {

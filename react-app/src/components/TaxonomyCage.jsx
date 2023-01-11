@@ -9,7 +9,7 @@ import { setSubmittedState } from "../features/taxonomies/taxonomySlice";
 const TaxonomyCage = () => {
 	const taxonomies = useSelector((store) => store.taxonomies);
 	const dispatch = useDispatch();
-	const element = document.getElementById('relationshipcage');
+	// const element = document.getElementById('relationshipcage');
 
 	const [isModalOpen, setisModalOpen] = useState(false);
 	const [alertTitle, setalertTitle] = useState("");
@@ -47,14 +47,14 @@ const TaxonomyCage = () => {
 	};
 
 	const handleSubmit = () => {
-		// console.log('taxonomies: ', taxonomies);
+		console.log('taxonomies: ', taxonomies);
 		dispatch(
 			setSubmittedState({
 				submittedState: true,
 			})
 		);
 		setisModalOpen(false);
-		element.scrollIntoView({ behavior: 'smooth' });
+		// element.scrollIntoView({ behavior: 'smooth' });
 	};
 
 	return (
