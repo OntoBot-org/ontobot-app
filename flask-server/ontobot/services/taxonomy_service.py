@@ -64,10 +64,8 @@ def get_taxonomy_owl(parsed_json):
 
 
 def get_owl_file(parsed_json):
-    pj = json.loads(parsed_json)
-
     try:
-        return OWL_Generator(pj)
+        return OWL_Generator(json.loads(parsed_json))
 
     except Exception as err:
         return Error.send_something_went_wrong_error(err)
