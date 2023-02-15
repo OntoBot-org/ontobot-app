@@ -6,23 +6,66 @@
     "subclasses": [
         {
             "name": "Farmer",
-            "stereotype": "kind"
+            "stereotype": "kind",
+             "propertiesList": [
+                {
+                    "id": "123e4567-e89b-12d3-a456-426614174000",
+                    "name": "farmer_name",
+                    "datatype": "string",
+                    "restrictions": "not null",
+                    "functional": true
+                },
+                {
+                    "id": "619e4567-e89b-12d3-a456-537614174000",
+                    "name": "farmer_age",
+                    "datatype": "int",
+                    "restrictions": "non zero",
+                    "functional": false
+                },
+                {
+                    "id": "629d4567-c89b-12d3-b456-537614174000",
+                    "name": "is_business",
+                    "datatype": "boolean",
+                    "restrictions": "",
+                    "functional": false
+                }
+            ],
         },
         {
             "name": "Crop",
-            "stereotype": "kind"
+            "stereotype": "kind",
+            "propertiesList": [
+                {
+                    "id": "123e4567-e89b-12d3-a456-426614174000",
+                    "name": "crop_name",
+                    "datatype": "string",
+                    "restrictions": "not null",
+                    "functional": true
+                }
+            ]
         },
         {
             "name": "Organization",
             "stereotype": "kind",
+             "propertiesList": [
+                {
+                    "id": "123e4567-e89b-12d3-a456-426614174000",
+                    "name": "organization_name",
+                    "datatype": "string",
+                    "restrictions": "not null",
+                    "functional": true
+                }
+            ],
             "subclasses": [
                 {
                     "name": "School",
-                    "stereotype": "subkind"
+                    "stereotype": "subkind",
+                    "propertiesList":[]
                 },
                 {
                     "name": "University",
-                    "stereotype": "subkind"
+                    "stereotype": "subkind",
+                    "propertiesList":[]
                 }
             ]
             
@@ -31,40 +74,57 @@
             "name": "Persons",
             "stereotype": "kind",
             "disjoint": [["Child", "Teen", "Adult"], ["Man", "Women"]],
+            "propertiesList":[
+                {
+                    "id": "123e4567-e89b-12d3-a456-426614174000",
+                    "name": "person_name",
+                    "datatype": "string",
+                    "restrictions": "not null",
+                    "functional": true
+                }
+            ],
             "subclasses": [
                 {
                     "name": "Child",
-                    "stereotype": "phase"
+                    "stereotype": "phase",
+                    "propertiesList":[],
                 },
                 {
                     "name": "Teen",
-                    "stereotype": "phase"
+                    "stereotype": "phase",
+                    "propertiesList":[],
                 },
                 {
                     "name": "Adult",
-                    "stereotype": "phase"
+                    "stereotype": "phase",
+                    "propertiesList":[],
                 },
                 {
                     "name": "Student",
-                    "stereotype": "role"
+                    "stereotype": "role",
+                    "propertiesList":[],
                 },
                 {
                     "name": "Man",
                     "stereotype": "subkind",
+                    "propertiesList":[],
                     "subclasses": [
                         {
                             "name": "Husband",
-                            "stereotype": "role"
+                            "stereotype": "role",
+                            "propertiesList":[],
                         }
                     ]
                 },
                 {
                     "name": "Women",
                     "stereotype": "subkind",
+                    "propertiesList":[],
                     "subclasses": [
                         {
                             "name": "Wife",
-                            "stereotype": "role"
+                            "stereotype": "role",
+                            "propertiesList":[],
                         }
                     ]
                 }
