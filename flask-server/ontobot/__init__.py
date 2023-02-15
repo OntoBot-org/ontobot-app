@@ -1,5 +1,5 @@
 from flask import Flask, request, send_file, jsonify
-
+import json
 from ontobot.services import taxonomy_service, op_service
 
 app = Flask(__name__)
@@ -29,8 +29,12 @@ def add_ontos():
 
 @app.route('/op/checkpoint_1/generate', methods=['POST'])
 def get_op():
-    op_service.get_op_structure(request.get_json())
+    return op_service.get_op_structure(request.get_json())
 
+
+@app.route('/op/checkpoint_1/op_generate', methods=['POST'])
+def get_nAry():
+    return op_service.get_op_structure(request.get_json())
 
 if __name__ == "__main__":
     app.run()

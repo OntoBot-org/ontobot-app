@@ -16,6 +16,8 @@ class Role:
     __role_list = []
 
     def __init__(self, arr):
+        self.__role_list.clear()
+        self.__op_list.clear()
         self.__taxonomy_list = self.__role_onto.get_stack(arr['subclasses'])
         self.__op_list = self.__role_op.get_stack(arr['op'])
 
