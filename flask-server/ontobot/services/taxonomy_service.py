@@ -5,6 +5,7 @@ from ontobot.utils.rules.custom import Custom
 from ontobot.utils.rules.phase import Phase
 from ontobot.utils.rules.rolemixin import RMixin
 from ontobot.utils.rules.category import Category
+from ontobot.utils.rules import custom
 from ontobot.utils.owl import OWL
 from ontobot.utils.owl_generator import OWL_Generator
 from ontobot.services import factory
@@ -42,7 +43,11 @@ def validate_taxonomy_service(parsed_json):
         valid_concept = set(valid_concept)
 
         if valid_concept == all_concepts:
-            return Response.send_response("can proceed further")
+            # add custom ontology pattern (QQ pattern) 
+            # return Response.send_response("can proceed further")
+            result = owl.get_taxonomy_concept_with_meta()
+            new_parsed_json = custom.get_qq_pattern(parsed_json, result)
+            return Response.send_response(new_parsed_json)
         else:
             set_difference = all_concepts - valid_concept
             return Error.send_taxonomy_error(list(set_difference), owl.get_taxonomy_concept_with_meta())

@@ -1,10 +1,11 @@
 class Dict:
-    def __init__(self, class_name, stereotype, level, cardinality, disjoint=None):
+    def __init__(self, class_name, stereotype, plist, level, cardinality, disjoint=None):
         self.class_name = class_name
         self.stereotype = stereotype
         self.level = level
         self.cardinality = cardinality
         self.disjoint_with = disjoint
+        self.data_property = plist
 
 
 class Taxonomy:
@@ -17,7 +18,7 @@ class Taxonomy:
         for i in arr:
             # recursion call : children do same things for children
 
-            mylist = [i['name'], i['stereotype'], level]
+            mylist = [i['name'], i['stereotype'], i['propertiesList'], level]
             if ('subclasses' in i) and len(i['subclasses']) > 0:
                 mylist.append(len(i['subclasses']))
                 if 'disjoint' in i:
@@ -55,19 +56,21 @@ class Taxonomy:
         internal_stack = self.__rec_traverse_taxonomy(input_stack)
 
         for item in internal_stack:
-            current_level = item[2]
+            current_level = item[3]
             current_class = item[0]
             current_stereotype = item[1]
-            current_cardinality = item[3]
-            current_disjointness = item[4]
+            current_cardinality = item[4]
+            current_disjointness = item[5]
+            current_plist = item[2]
 
-            concept: Dict = Dict(current_class, current_stereotype, current_level, current_cardinality,
+            concept: Dict = Dict(current_class, current_stereotype, current_plist, current_level, current_cardinality,
                                  current_disjointness)
             if concept.class_name not in temp:
                 final.append(
                     {
                         "class_name": concept.class_name,
                         "stereotype": concept.stereotype,
+                        "attributes": concept.data_property,
                         "level": concept.level,
                         "cardinality": concept.cardinality,
                         "disjoint": concept.disjoint_with
