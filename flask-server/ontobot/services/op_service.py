@@ -1,5 +1,5 @@
 from ontobot.utils.onto import OP
-from ontobot.utils import cmethod
+from ontobot.utils.rules import nary
 from ontobot.model.output import Error,Response
 
 
@@ -18,11 +18,11 @@ def get_nary_structure(op_struct):
         if len(struct["op_range"]) > 1:
             op_range = struct["op_range"]
             op_domain:str = struct["op_domain"]
-            intermediate_cls = cmethod.generate_intermediate_cls_name(op_domain, op_range)
-            extend_nary.append(cmethod.generate_domain_struct(op_domain, intermediate_cls, struct["op_name"], len(extend_nary) + 1))
+            intermediate_cls = nary.generate_intermediate_cls_name(op_domain, op_range)
+            extend_nary.append(nary.generate_domain_struct(op_domain, intermediate_cls, struct["op_name"], len(extend_nary) + 1))
             
             for r_name in op_range:
-                extend_nary.append(cmethod.generate_range_struct(intermediate_cls, r_name, struct["op_name"], len(extend_nary) + 1))
+                extend_nary.append(nary.generate_range_struct(intermediate_cls, r_name, struct["op_name"], len(extend_nary) + 1))
         
         else:
             struct["id"] = len(extend_nary) + 1

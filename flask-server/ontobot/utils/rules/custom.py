@@ -28,3 +28,41 @@ class Custom:
     def get_custom_list(self):
         self.__check_custom()
         return self.__custom_list
+
+
+# custom pattern 01 - Qualitative & Quantitative pattern
+def get_qq_pattern(parsed_json, taxonomy_result):
+    parsed_json_copy = parsed_json
+    taxonomy_result_copy = taxonomy_result
+    invalid_concepts = []; invalid_concepts.clear()
+
+    for concept in taxonomy_result_copy:
+        if concept['level'] == 0 and len(concept['attributes']) == 0:
+            invalid_concepts.append(concept['class_name'])
+    
+    if len(invalid_concepts) == 0:
+        return parsed_json
+    else:
+        # parsed_json_taxonomy = parsed_json_copy['subclasses']
+        for invalid_concept in invalid_concepts:
+            for concept in parsed_json_copy['subclasses']:
+                if concept['name'] == invalid_concept:
+                    id = 0
+                    concept['propertiesList'].extend([
+                        {
+                            "id": str(id),
+                            "name": "ID",
+                            "datatype": "int",
+                            "restrictions": "non zero",
+                            "functional": True
+                        },
+                        {
+                            "id": str(id + 1),
+                            "name": invalid_concept+" name",
+                            "datatype": "string",
+                            "restrictions": "not null",
+                            "functional": True
+                        }
+                    ])  
+        
+        return parsed_json_copy
