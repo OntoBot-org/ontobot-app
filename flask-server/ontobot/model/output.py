@@ -29,10 +29,20 @@ class Error:
     @staticmethod
     def send_something_went_wrong_error(msg):
         err = {
-            "code": '500',
+            "code": 500,
             "topic": 'Something went wrong',
             "type": 'error',
             "msg": str(msg)
+        }
+
+        return json.dumps(err)
+
+    @staticmethod
+    def send_op_relational_error(concept_list):
+        err = {
+            "code" : 500,
+            "topic" : "Relational pattern violation",
+            "msg" : concept_list
         }
 
         return json.dumps(err)

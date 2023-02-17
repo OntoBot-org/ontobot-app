@@ -9,6 +9,8 @@ from ontobot.utils.rules import custom
 from ontobot.utils.owl import OWL
 from ontobot.utils.owl_generator import OWL_Generator
 from ontobot.services import factory
+
+from ontobot.db.taxonomy import Taxonomy
 import json
 
 
@@ -46,6 +48,7 @@ def validate_taxonomy_service(parsed_json):
             # add custom ontology pattern (QQ pattern) 
             # return Response.send_response("can proceed further")
             result = owl.get_taxonomy_concept_with_meta()
+            _ = Taxonomy(result)
             new_parsed_json = custom.get_qq_pattern(parsed_json, result)
             return Response.send_response(new_parsed_json)
         else:

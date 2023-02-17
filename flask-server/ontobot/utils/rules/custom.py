@@ -1,6 +1,7 @@
 import json
 
 from ontobot.utils import onto
+from ontobot.utils import cmethod
 
 with open('ontobot/model/Grammar.json') as user_file:
     rule_contents = user_file.read()
@@ -66,3 +67,9 @@ def get_qq_pattern(parsed_json, taxonomy_result):
                     ])  
         
         return parsed_json_copy
+
+# custom pattern 02 - Relational Pattern
+# This pattern check wether there is any isolated class/es without having at least one relationship
+def get_relational_pattern(taxonomy_result, relationship_list):
+    list = cmethod.get_relational_diverse_concept_list(taxonomy_result, relationship_list)
+    return list
