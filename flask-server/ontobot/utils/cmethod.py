@@ -21,4 +21,4 @@ def get_relational_diverse_concept_list(taxonomy_result, relationship_list):
     relational_diverse_list = set(isolated_concepts) - set(relational_converge_concept_list)
 
     return list(relational_diverse_list)
-    
+

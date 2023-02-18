@@ -182,8 +182,12 @@ class OP:
 
     @classmethod
     def has_object_property(cls, sub_class):
+        # object properties are not filled yet
+        if len(cls.__meta_stack) == 0:
+            return True
+
         for op in cls.__meta_stack:
-            if op['op_domain'] == sub_class['class_name'] or op['op_range'] == sub_class['class_name']:
+            if op['op_domain'] == sub_class['class_name'] or sub_class['class_name'] in op['op_range']:
                 return True
 
         return False

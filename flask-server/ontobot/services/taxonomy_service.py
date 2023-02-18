@@ -5,6 +5,7 @@ from ontobot.utils.rules.custom import Custom
 from ontobot.utils.rules.phase import Phase
 from ontobot.utils.rules.rolemixin import RMixin
 from ontobot.utils.rules.category import Category
+from ontobot.utils.rules.role import Role
 from ontobot.utils.rules import custom
 from ontobot.utils.owl import OWL
 from ontobot.utils.owl_generator import OWL_Generator
@@ -33,6 +34,9 @@ def validate_taxonomy_service(parsed_json):
             'rolemixin', parsed_json)
         category_pattern: Category = factory.ODPFactory.get_ontouml_odp(
             'category', parsed_json)
+        role_pattern: Role = factory.ODPFactory.get_ontouml_odp(
+            'role', parsed_json
+        )
 
         # identify valid concepts
         valid_concept.extend(subkind_pattern.get_subkind_list())
@@ -40,6 +44,7 @@ def validate_taxonomy_service(parsed_json):
         valid_concept.extend(custom_pattern.get_custom_list())
         valid_concept.extend(rolemixin_pattern.get_rolemixin_list())
         valid_concept.extend(category_pattern.get_category_list())
+        valid_concept.extend(role_pattern.get_role_list())
 
         # convirt valid_consept list into set
         valid_concept = set(valid_concept)

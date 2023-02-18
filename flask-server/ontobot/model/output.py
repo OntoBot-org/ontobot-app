@@ -42,7 +42,19 @@ class Error:
         err = {
             "code" : 500,
             "topic" : "Relational pattern violation",
-            "msg" : concept_list
+            "msg" : "Following concepts should have connected with object property",
+            "meta" : concept_list
+        }
+
+        return json.dumps(err)
+    
+    @staticmethod
+    def send_role_error(concept_list):
+        err = {
+            "code" : 500,
+            "topic" : "Role pattern violation",
+            "msg" : "Following concepts should have connected with object property",
+            "meta" : concept_list
         }
 
         return json.dumps(err)
