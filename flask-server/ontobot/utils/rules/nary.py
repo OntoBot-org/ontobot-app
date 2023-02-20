@@ -18,7 +18,7 @@ def generate_domain_struct(domain, intermediate_cls, property, uid, level = 0):
     struct = {
             "id": uid,
             "op_name": _generate_ds_property(property),
-            "op_inverse": "",
+            "op_inverse": "is "+property+" of",
             "op_equal": "",
             "op_domain": domain,
             "op_range": intermediate_cls,
@@ -60,20 +60,25 @@ def generate_range_struct(intermediate_cls, range, property, uid, level = 0):
     return struct
 
 
-# nAry pattern - Level 01
+# nAry pattern - Level 01 & 02
 def get_nary_structure(op_struct):
     op_struct_copy = op_struct
     extend_nary = []; extend_nary.clear()
     for struct in op_struct_copy:
         if len(struct["op_range"]) > 1:
-            op_range = struct["op_range"]
+            property_name:str = struct["op_name"]
+            op_range = struct["op_range"]   # list
             op_domain:str = struct["op_domain"]
-            intermediate_cls = generate_intermediate_cls_name(op_domain, op_range)
-            extend_nary.append(generate_domain_struct(op_domain, intermediate_cls, struct["op_name"], len(extend_nary) + 1, struct['level']))
-            
-            for r_name in op_range:
-                extend_nary.append(generate_range_struct(intermediate_cls, r_name, struct["op_name"], len(extend_nary) + 1, struct['level']))
-        
+            level = struct['level']
+            if property_name.lower() != 'has' and property_name.lower() != 'have':
+                intermediate_cls = generate_intermediate_cls_name(op_domain, op_range)
+                extend_nary.append(generate_domain_struct(op_domain, intermediate_cls, property_name, len(extend_nary) + 1, level))
+                
+                for r_name in op_range:
+                    extend_nary.append(generate_range_struct(intermediate_cls, r_name, property_name, len(extend_nary) + 1, level))
+            else:
+                for r_name in op_range:
+                    extend_nary.append(generate_domain_struct(op_domain, r_name, r_name, len(extend_nary) + 1, level))
         else:
             struct["id"] = len(extend_nary) + 1
             struct["op_range"] = struct["op_range"][0]
