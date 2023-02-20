@@ -511,5 +511,7 @@
     "type": "success"
 }
 ```
+## Architecture Diagram
+![Architecture drawio](https://user-images.githubusercontent.com/56679833/220068957-c1cba9c5-bf97-48f0-b51c-8056621a8bd0.png)
 
 
