@@ -1,0 +1,67 @@
+// Create the ontology manager and OWL factory
+OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+OWLDataFactory factory = manager.getOWLDataFactory();
+
+// Create the classes for the ontology
+OWLClass person = factory.getOWLClass(IRI.create("http://example.com/ontology#Person"));
+OWLClass student = factory.getOWLClass(IRI.create("http://example.com/ontology#Student"));
+OWLClass teacher = factory.getOWLClass(IRI.create("http://example.com/ontology#Teacher"));
+OWLClass course = factory.getOWLClass(IRI.create("http://example.com/ontology#Course"));
+OWLClass university = factory.getOWLClass(IRI.create("http://example.com/ontology#University"));
+
+// Define the subclass relationships
+OWLSubClassOfAxiom studentSubClass = factory.getOWLSubClassOfAxiom(student, person);
+manager.addAxiom(ontology, studentSubClass);
+
+OWLSubClassOfAxiom teacherSubClass = factory.getOWLSubClassOfAxiom(teacher, person);
+manager.addAxiom(ontology, teacherSubClass);
+
+// Add disjoint properties to the subclass axioms
+OWLDisjointClassesAxiom disjointClassesAxiom = factory.getOWLDisjointClassesAxiom(student, teacher);
+manager.addAxiom(ontology, disjointClassesAxiom);
+
+// Define the object properties
+OWLObjectProperty hasStudent = factory.getOWLObjectProperty(IRI.create("http://example.com/ontology#hasStudent"));
+OWLObjectProperty hasTeacher = factory.getOWLObjectProperty(IRI.create("http://example.com/ontology#hasTeacher"));
+OWLObjectProperty teachesCourse = factory.getOWLObjectProperty(IRI.create("http://example.com/ontology#teachesCourse"));
+
+// Define the domain and range for the object properties
+OWLObjectPropertyDomain hasStudentDomain = factory.getOWLObjectPropertyDomain(hasStudent, university);
+OWLObjectPropertyRange hasStudentRange = factory.getOWLObjectPropertyRange(hasStudent, student);
+manager.addAxiom(ontology, hasStudentDomain);
+manager.addAxiom(ontology, hasStudentRange);
+
+OWLObjectPropertyDomain hasTeacherDomain = factory.getOWLObjectPropertyDomain(hasTeacher, university);
+OWLObjectPropertyRange hasTeacherRange = factory.getOWLObjectPropertyRange(hasTeacher, teacher);
+manager.addAxiom(ontology, hasTeacherDomain);
+manager.addAxiom(ontology, hasTeacherRange);
+
+OWLObjectPropertyDomain teachesCourseDomain = factory.getOWLObjectPropertyDomain(teachesCourse, teacher);
+OWLObjectPropertyRange teachesCourseRange = factory.getOWLObjectPropertyRange(teachesCourse, course);
+manager.addAxiom(ontology, teachesCourseDomain);
+manager.addAxiom(ontology, teachesCourseRange);
+
+// Define the data properties
+OWLDataProperty hasName = factory.getOWLDataProperty(IRI.create("http://example.com/ontology#hasName"));
+OWLDataProperty hasAge = factory.getOWLDataProperty(IRI.create("http://example.com/ontology#hasAge"));
+OWLDataProperty hasCourseCode = factory.getOWLDataProperty(IRI.create("http://example.com/ontology#hasCourseCode"));
+
+// Define the domain and range for the data properties
+OWLDataPropertyDomain hasNameDomain = factory.getOWLDataPropertyDomain(hasName, person);
+OWLDataPropertyRange hasNameRange = factory.getOWLDataPropertyRange(hasName, factory.getOWLDatatype(XSD.STRING));
+manager.addAxiom(ontology, hasNameDomain);
+manager.addAxiom(ontology, hasNameRange);
+
+OWLDataPropertyDomain hasAgeDomain = factory.getOWLDataPropertyDomain(hasAge, person);
+OWLDataPropertyRange hasAgeRange = factory.getOWLDataPropertyRange(hasAge, factory.getOWLDatatype(XSD.INTEGER));
+manager.addAxiom(ontology, hasAgeDomain);
+manager.addAxiom(ontology, hasAgeRange);
+
+OWLDataPropertyDomain hasCourseCodeDomain = factory.getOWLDataPropertyDomain(hasCourseCode, course);
+OWLDataPropertyRange hasCourseCodeRange = factory.getOWLDataPropertyRange(hasCourseCode, factory.getOWLDatatype(XSD.STRING));
+manager.addAxiom(ontology, hasCourseCodeDomain);
+manager.addAxiom(ontology, hasCourseCodeRange);
+
+// Save the ontology to a file
+File output = new File("example.owl");
+manager.saveOntology(ontology, IRI.create(output.toURI()));

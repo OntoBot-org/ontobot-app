@@ -43,7 +43,8 @@ class Error:
             "code" : 500,
             "topic" : "Relational pattern violation",
             "msg" : "Following concepts should have connected with object property",
-            "meta" : concept_list
+            "meta" : concept_list,
+            "type" : "error"
         }
 
         return json.dumps(err)
@@ -54,7 +55,8 @@ class Error:
             "code" : 500,
             "topic" : "Role pattern violation",
             "msg" : "Following concepts should have connected with object property",
-            "meta" : concept_list
+            "meta" : concept_list,
+            "type" : "error"
         }
 
         return json.dumps(err)
