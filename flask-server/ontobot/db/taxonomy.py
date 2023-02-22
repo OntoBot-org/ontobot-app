@@ -10,5 +10,5 @@ class Taxonomy:
         Taxonomy.taxonomy_result.clear()
         Taxonomy.taxonomy_result = result
     
-    def get_taxonomy_result():
+    def get_taxonomy_result(self):
         return Taxonomy.taxonomy_result

@@ -27,9 +27,9 @@ def add_ontos():
     return taxonomy_service.validate_taxonomy_service(request.get_json())
 
 
-@app.route('/op/checkpoint_1/generate', methods=['POST'])
+@app.route('/op/checkpoint_1/taxowl_generate', methods=['POST'])
 def get_op():
-    return op_service.get_op_structure(request.get_json())
+    return taxonomy_service.get_taxonomy_owl(request.get_json())
 
 
 @app.route('/op/checkpoint_1/op_generate', methods=['POST'])

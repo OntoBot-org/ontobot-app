@@ -69,8 +69,11 @@ def get_taxonomy_owl(parsed_json):
         if len(parsed_json) == 0:
             raise Exception('data array is empty')
 
-        owl = OWL(parsed_json)
-        return Response.send_response(owl.get_taxonomy_json())
+        owl_old = OWL(parsed_json)
+        result = owl_old.get_taxonomy_concept_with_meta()
+        new_parsed_json = custom.get_qq_pattern(parsed_json, result)
+        owl_new = OWL(new_parsed_json)
+        return Response.send_response(owl_new.get_taxonomy_json())
 
     except Exception as err:
         return Error.send_something_went_wrong_error(err)
