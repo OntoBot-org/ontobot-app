@@ -20,19 +20,28 @@ class Taxonomy:
 
             mylist = [i['name'], i['stereotype'], i['propertiesList'], level]
             if ('subclasses' in i) and len(i['subclasses']) > 0:
-                mylist.append(len(i['subclasses']))
+                mylist.append(len(i['subclasses'])) # cardinality
                 if 'disjoint' in i:
-                    mylist.append(i['disjoint'])
+                    mylist.append(i['disjoint']) # disjoint
                     self.__stack.append(mylist)
                 else:
-                    mylist.append([])
+                    mylist.append([]) # disjoint
                     self.__stack.append(mylist)
+                
+                if 'overlap' in i:
+                    mylist.append(i['overlap']) # overlap
+                    self.__stack.append(mylist)
+                else:
+                    mylist.append([]) # overlap
+                    self.__stack.append(mylist)
+
                 self.__rec_traverse_taxonomy(i['subclasses'], level + 1)
 
             else:
                 # leaf node
-                mylist.append(0)
-                mylist.append([])
+                mylist.append(0)  # cardinality
+                mylist.append([]) # disjoint
+                mylist.append([]) # overlap
                 self.__stack.append(mylist)
 
         return self.__stack

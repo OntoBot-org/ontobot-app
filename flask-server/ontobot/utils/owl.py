@@ -51,15 +51,15 @@ class OWL:
             if (current_item['level'] == 0 and next_item['level'] == 0) or next_item['level'] == 0:
                 if current_item['level'] == 0:
                     if self.__is_already_super_class(current_item):
-                        self.__owl_stack.append({'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes']})
+                        self.__owl_stack.append({'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes'], 'disjoint': next_item['disjoint']})
                     else:
                         temp_list = [
-                            {'class_name': current_item['class_name'], 'level': current_item['level'], 'attributes': current_item['attributes']},
-                            {'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes']}
+                            {'class_name': current_item['class_name'], 'level': current_item['level'], 'attributes': current_item['attributes'], 'disjoint': current_item['disjoint']},
+                            {'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes'], 'disjoint': next_item['disjoint']}
                         ]
                         self.__owl_stack.extend(temp_list)
                 else:
-                    self.__owl_stack.append({'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes']})
+                    self.__owl_stack.append({'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes'], 'disjoint': next_item['disjoint']})
 
                 continue
 
@@ -75,7 +75,8 @@ class OWL:
                             current_subclass_list.append({
                                 'class_name': sub_class['class_name'],
                                 'level': sub_class['level'], 
-                                'attributes': sub_class['attributes']
+                                'attributes': sub_class['attributes'],
+                                'disjoint': sub_class['disjoint']
                             })
                             self.__owl_stack[idx]['sub_classes'] = current_subclass_list
                             break
@@ -83,7 +84,7 @@ class OWL:
                     for idx, concept in enumerate(self.__owl_stack):
                         if concept['class_name'] == super_class['class_name']:
                             self.__owl_stack[idx]['sub_classes'] = [
-                                {'class_name': sub_class['class_name'], 'level': sub_class['level'], 'attributes': sub_class['attributes']}
+                                {'class_name': sub_class['class_name'], 'level': sub_class['level'], 'attributes': sub_class['attributes'], 'disjoint': sub_class['disjoint']}
                             ]
                             break
 
@@ -92,8 +93,9 @@ class OWL:
                     'class_name': super_class['class_name'],
                     'level': super_class['level'], 
                     'attributes': super_class['attributes'],
+                    'disjoint': super_class['disjoint'],
                     'sub_classes': [
-                        {'class_name': sub_class['class_name'], 'level': sub_class['level'], 'attributes': sub_class['attributes']}
+                        {'class_name': sub_class['class_name'], 'level': sub_class['level'], 'attributes': sub_class['attributes'], 'disjoint': sub_class['disjoint']}
                     ]
                 })
 

@@ -7,7 +7,9 @@
         {
             "name": "Farmer",
             "stereotype": "kind",
-             "propertiesList": [
+            "disjoint": [],
+            "overlap": [],
+            "propertiesList": [
                 {
                     "id": "123e4567-e89b-12d3-a456-426614174000",
                     "name": "farmer_name",
@@ -34,6 +36,8 @@
         {
             "name": "Crop",
             "stereotype": "kind",
+            "disjoint": [],
+            "overlap": [],
             "propertiesList": [
                 {
                     "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -47,6 +51,8 @@
         {
             "name": "Organization",
             "stereotype": "kind",
+            "disjoint": [["School", "University"]],
+            "overlap" : [],
              "propertiesList": [
                 {
                     "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -60,11 +66,15 @@
                 {
                     "name": "School",
                     "stereotype": "subkind",
+                    "disjoint": [],
+                    "overlap": [],
                     "propertiesList":[]
                 },
                 {
                     "name": "University",
                     "stereotype": "subkind",
+                    "disjoint": [],
+                    "overlap": [],
                     "propertiesList":[]
                 }
             ]
@@ -74,6 +84,7 @@
             "name": "Persons",
             "stereotype": "kind",
             "disjoint": [["Child", "Teen", "Adult"], ["Man", "Women"]],
+            "overlap":[],
             "propertiesList":[
                 {
                     "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -87,31 +98,43 @@
                 {
                     "name": "Child",
                     "stereotype": "phase",
+                    "disjoint": [],
+                    "overlap": [],
                     "propertiesList":[],
                 },
                 {
                     "name": "Teen",
                     "stereotype": "phase",
+                    "disjoint": [],
+                    "overlap": [],
                     "propertiesList":[],
                 },
                 {
                     "name": "Adult",
                     "stereotype": "phase",
+                    "disjoint": [],
+                    "overlap": [],
                     "propertiesList":[],
                 },
                 {
                     "name": "Student",
                     "stereotype": "role",
+                    "disjoint": [],
+                    "overlap": [],
                     "propertiesList":[],
                 },
                 {
                     "name": "Man",
                     "stereotype": "subkind",
+                    "disjoint": [],
+                    "overlap": [],
                     "propertiesList":[],
                     "subclasses": [
                         {
                             "name": "Husband",
                             "stereotype": "role",
+                            "disjoint": [],
+                            "overlap": [],
                             "propertiesList":[],
                         }
                     ]
@@ -119,11 +142,15 @@
                 {
                     "name": "Women",
                     "stereotype": "subkind",
+                    "disjoint": [],
+                    "overlap": [],
                     "propertiesList":[],
                     "subclasses": [
                         {
                             "name": "Wife",
                             "stereotype": "role",
+                            "disjoint": [],
+                            "overlap": [],
                             "propertiesList":[],
                         }
                     ]
