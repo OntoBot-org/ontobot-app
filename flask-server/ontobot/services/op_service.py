@@ -24,7 +24,8 @@ def get_op_structure(parsed_json):
             return Error.send_role_error(invalid_role_concepts)
 
         # get n-ary pattern
-        return Response.send_response(nary.get_nary_structure(op_struct))
+        # return Response.send_response(nary.get_nary_structure(op_struct))
+        return Response.send_response(op_struct)
     except Exception as err:
         return Error.send_something_went_wrong_error(err)
 

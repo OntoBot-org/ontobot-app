@@ -16,9 +16,11 @@ class Error:
         umle.check_category_level()
 
         err = {
-            "concepts" : mismatched_concepts,
             "topic": topic,
-            "msg": message,
+            "msg": {
+                "concepts" : mismatched_concepts,
+                "content" : message
+            },
             "meta": list(umle.get_err_list()),
             "type": 'error',
             "code": 500
