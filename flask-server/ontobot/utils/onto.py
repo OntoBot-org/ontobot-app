@@ -1,10 +1,11 @@
 class Dict:
-    def __init__(self, class_name, stereotype, plist, level, cardinality, disjoint=None):
+    def __init__(self, class_name, stereotype, plist, level, cardinality, disjoint=None, overlap=None):
         self.class_name = class_name
         self.stereotype = stereotype
         self.level = level
         self.cardinality = cardinality
         self.disjoint_with = disjoint
+        self.overlap_with = overlap
         self.data_property = plist
 
 
@@ -70,10 +71,11 @@ class Taxonomy:
             current_stereotype = item[1]
             current_cardinality = item[4]
             current_disjointness = item[5]
+            current_overlapness = item[6]
             current_plist = item[2]
 
             concept: Dict = Dict(current_class, current_stereotype, current_plist, current_level, current_cardinality,
-                                 current_disjointness)
+                                 current_disjointness, current_overlapness)
             if concept.class_name not in temp:
                 final.append(
                     {
@@ -82,7 +84,8 @@ class Taxonomy:
                         "attributes": concept.data_property,
                         "level": concept.level,
                         "cardinality": concept.cardinality,
-                        "disjoint": concept.disjoint_with
+                        "disjoint": concept.disjoint_with,
+                        "overlap": concept.overlap_with
                     }
                 )
                 temp.append(concept.class_name)
