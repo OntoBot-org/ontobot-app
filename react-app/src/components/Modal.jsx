@@ -12,7 +12,7 @@ const Modal = ({ children, open, onClose, fromTop='top-[25%]', fromLeft='left-[1
             <div 
                 className={
                     `border p-4 flex flex-col items-end fixed z-1000 bg-white text-fontcolor 
-                    rounded-md max-h-[80%] max-w-[80%] right-[15%] ${fromLeft} ${fromTop}`
+                    rounded-md max-h-[80%]  ${fromLeft} ${fromTop}`
                 }
             >
                 <AiOutlineCloseCircle 

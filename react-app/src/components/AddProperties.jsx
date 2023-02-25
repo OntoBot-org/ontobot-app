@@ -4,9 +4,8 @@ import { TbAlertTriangle } from "react-icons/tb";
 import { v4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 
-import Modal from "./Modal";
+import { Modal, PropertiesList } from '../components'
 import { saveProperties } from "../features/taxonomies/taxonomySlice";
-import PropertiesList from "./PropertiesList";
 
 const AddProperties = ({ selectedTaxonomy }) => {
 	const taxonomies = useSelector((store) => store.taxonomies);
@@ -147,6 +146,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				onClose={() => setisModalVisible(false)}
 				// fromTop='top-[35%]'
 				fromLeft="left-[10%]"
+				fromTop="top-[15%]"
 			>
 				<p className="modal_title">
 					Add properties of{" "}
@@ -165,7 +165,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				
 				<div className="flex justify-between gap-6 items-center text-fontcolor" onKeyDown={handleKeyDown}>
 					<div className="flex flex-col gap-2">
-						<p className="">Property Name*:</p>
+						<p className="">Property Name*</p>
 						<input
 							type="text"
 							className="p-2 border border-gray-300 rounded-md outline-secondary"
@@ -178,7 +178,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2">
-						<p className="">Data type*:</p>
+						<p className="">Data type*</p>
 						<input
 							type="text"
 							className="p-2 border border-gray-300 rounded-md outline-secondary"
@@ -191,7 +191,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2">
-						<p className="">Restrictions:</p>
+						<p className="">Restrictions</p>
 						<input
 							type="text"
 							className="p-2 border border-gray-300 rounded-md outline-secondary"
@@ -204,7 +204,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2">
-						<p className="">Functional:</p>
+						<p className="">Functional</p>
 						<label className="inline-flex relative items-center mr-5 cursor-pointer">
 							<input
 								type="checkbox"

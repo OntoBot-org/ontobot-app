@@ -129,7 +129,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
         }
         else {
             let nameDuplication = availableSubrelationships.filter(subRelation => subRelation.relationshipLabel === newRelationship.relationshipLabel)
-
+// check duplications is not working
             if (nameDuplication.length > 0) {
                 setisAlertVisible(true)
                 setalertMsg('Relationship label cannot be duplicated.')
@@ -230,7 +230,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                 </div>
             ))}
 
-            <Modal open={isModalVisible} onClose={onClose} fromTop="top-[15%]" fromLeft='left-[35%]'>
+            <Modal open={isModalVisible} onClose={onClose} fromTop="top-[15%]" fromLeft='left-[25%]'>
                 <p className="modal_title">
                     Add sub-relationships to <span className="font-bold text-secondary">{relationship.relationshipLabel}</span>.
                 </p>

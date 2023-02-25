@@ -190,7 +190,7 @@ const UpdateRelationshipModal = ({ domainsList, open, onClose, relationship }) =
                     </div>
 
                     <div className="flex flex-col">
-                        <p className="mb-1">Type*: </p>
+                        <p className="mb-1">Type* </p>
                         <SearchSelect 
                             optionList={relationshipTypes} 
                             isMultiSelect={true} 

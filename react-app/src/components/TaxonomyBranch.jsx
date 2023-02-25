@@ -36,6 +36,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		console.log('useEffect in TaxonomyBranch')
 		setavailableSubclasses([]);
 		const findAvailableSubclsses = (taxonomyObj) => {
 			if (taxonomyObj.id === taxonomy.id) {
@@ -176,7 +177,8 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 					<div className="pl-4" key={subCls.id}>
 						<TaxonomyBranch taxonomy={subCls} />
 					</div>
-				))}
+				))
+			}
 
 			<Modal open={isModalOpen} onClose={() => setisModalOpen(false)} fromTop="top-[15%]">
 				<p className="modal_title">
@@ -196,7 +198,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 					<div className="flex gap-6 items-end">
 						<div className="flex gap-4 items-center">
 							<div className="flex flex-col gap-2">
-								<p>Class name*:</p>
+								<p>Class name*</p>
 								<input
 									type="text"
 									className="p-2 border border-gray-300 rounded-md outline-secondary"
@@ -209,7 +211,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 							</div>
 
 							<div className="flex flex-col gap-2">
-								<p>Stereotype*:</p>
+								<p>Stereotype*</p>
 								<div className="custom-dropdown relative w-28">
 									<div
 										className="custom-dropdown-selection bg-white rounded-md cursor-pointer p-2 border w-full outline-secondary"
@@ -247,7 +249,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 							</div>
 
 							<div className="flex flex-col gap-2">
-								<p>Equivalent Class:</p>
+								<p>Equivalent Class</p>
 								<input
 									type="text"
 									className="p-2 border border-gray-300 rounded-md outline-secondary"

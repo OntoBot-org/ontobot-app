@@ -114,7 +114,7 @@ const TaxonomyCage = () => {
 				</div>
 				<div className="w-full h-1/4 flex justify-center items-center font-bold">
 					<button className="primary_btn w-auto px-5" onClick={handleBtnClick}>
-						Subtmit all the taxonomies
+						Submit all the taxonomies
 					</button>
 					{isValidTaxo && (
 						<button
@@ -129,7 +129,7 @@ const TaxonomyCage = () => {
 				<Modal
 					open={isModalOpen}
 					onClose={() => setisModalOpen(false)}
-					fromLeft="left-[20%]"
+					fromLeft="left-[10%]"
 				>
 					<p className="modal_title text-center">{alertTitle}</p>
 
