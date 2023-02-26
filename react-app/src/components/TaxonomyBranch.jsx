@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineDown } from 'react-icons/ai';
 import { BiPlus, BiChevronDown, BiEditAlt } from "react-icons/bi";
-import { MdDeleteOutline } from "react-icons/md";
+import { MdDeleteOutline, MdLiveHelp } from "react-icons/md";
 import { TbAlertTriangle } from "react-icons/tb";
 import { v4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
+import Driver from "driver.js";
+import "driver.js/dist/driver.min.css";
 
 import Modal from "./Modal";
 import { saveSubclass } from "../features/taxonomies/taxonomySlice";
@@ -12,6 +14,7 @@ import { setSelectedTaxonomy } from "../features/taxonomies/selectedTaxonomySlic
 import { stereotypes } from "../data/stereotypes";
 import UpdateTaxonomyModal from "./UpdateTaxonomyModal";
 import DeleteTaxonomyModal from "./DeleteTaxonomyModal";
+import { tooltipDescriptions } from '../data/tooltipDescriptions'
 
 const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 	const taxonomies = useSelector((store) => store.taxonomies);
@@ -36,7 +39,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		console.log('useEffect in TaxonomyBranch')
+		// console.log('useEffect in TaxonomyBranch')
 		setavailableSubclasses([]);
 		const findAvailableSubclsses = (taxonomyObj) => {
 			if (taxonomyObj.id === taxonomy.id) {
@@ -96,6 +99,61 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
             console.log('No event is passed')
         }
     }
+
+	const takeAtour = () => {
+		const driver = new Driver({
+			animate: true,
+			opacity: 0.50,
+			allowClose: false,
+			doneBtnText: "Finish",
+			stageBackground: 'rgba(255, 255, 255, 0)',
+		});
+	  
+		driver.defineSteps([
+			{
+				element: "#stereotypes_list",
+				popover: {
+					title: "Step 1: Check available stereotypes",
+					description: tooltipDescriptions.stereotypes_list,
+					position: "top",
+				},
+			},
+			{
+				element: "#taxonomy_classname",
+				popover: {
+					title: "Step 2: Give Class Name",
+					description: tooltipDescriptions.taxonomy_classname,
+					position: "top",
+				},
+			},
+			{
+				element: "#taxonomy_stereotype",
+				popover: {
+					title: "Step 3: Select the Stereotype",
+					description: tooltipDescriptions.taxonomy_stereotype,
+					position: "top",
+				},
+			},
+			{
+				element: "#taxonomy_equivalentclass",
+				popover: {
+					title: "Step 4: Give an Equivalent Class",
+					description: tooltipDescriptions.taxonomy_equivalentclass,
+					position: "top",
+				},
+			},
+			{
+				element: "#save_taxonomybranch",
+				popover: {
+					title: "Step 5: Save the taxonomy",
+					description: tooltipDescriptions.save_taxonomybranch,
+					position: "top",
+				},
+			},
+		])
+
+		driver.start();
+	}
 
 	const handleSaveClass = () => {
 		if (newClass.name?.length === 0) {
@@ -181,11 +239,14 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 			}
 
 			<Modal open={isModalOpen} onClose={() => setisModalOpen(false)} fromTop="top-[15%]">
-				<p className="modal_title">
-					Add subclasses to{" "}
-					<span className="font-bold text-secondary">{taxonomy.name}</span>{" "}
-					class.
-				</p>
+			<div className="flex items-center justify-center gap-4">
+					<p className="modal_title">
+						Add subclasses to{" "}
+						<span className="font-bold text-secondary">{taxonomy.name}</span>{" "}
+						class.
+					</p>
+					<MdLiveHelp className="text-lg font-semibold mb-6 text-center cursor-pointer text-secondary hover:text-primary" onClick={takeAtour} />
+				</div>
 
 				{isAlertVisible && (
 					<div className="alert_style">
@@ -197,7 +258,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 				<div className="flex flex-col" onKeyDown={handleKeyDown}>
 					<div className="flex gap-6 items-end">
 						<div className="flex gap-4 items-center">
-							<div className="flex flex-col gap-2">
+							<div className="flex flex-col gap-2" id="taxonomy_classname">
 								<p>Class name*</p>
 								<input
 									type="text"
@@ -210,7 +271,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 								/>
 							</div>
 
-							<div className="flex flex-col gap-2">
+							<div className="flex flex-col gap-2" id="taxonomy_stereotype">
 								<p>Stereotype*</p>
 								<div className="custom-dropdown relative w-28">
 									<div
@@ -248,7 +309,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 								</div>
 							</div>
 
-							<div className="flex flex-col gap-2">
+							<div className="flex flex-col gap-2" id="taxonomy_equivalentclass">
 								<p>Equivalent Class</p>
 								<input
 									type="text"
@@ -269,12 +330,13 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 							className="secondary_btn_comp h-10 mr-0"
 							onClick={handleSaveClass}
 							onKeyDown={handleKeyDown}
+							id="save_taxonomybranch"
 						>
 							Save Class
 						</button>
 					</div>
 
-					<div className="mt-8 text-justify w-full">
+					<div className="mt-8 text-justify w-full" id="stereotypes_list">
                         <div className='flex text-sm font-semibold text-gray-500 mb-2'>
                             <h1>Stereotypes List Explanation</h1>
                             <span 
