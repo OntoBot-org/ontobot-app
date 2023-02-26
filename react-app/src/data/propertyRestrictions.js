@@ -14,5 +14,9 @@ export const propertyRestrictions = [
     {
         label: "Range",
         value: "Range"
-    }
+    },
+    {
+        label: "None",
+        value: "None"
+    },
 ]
