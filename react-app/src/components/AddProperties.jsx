@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { TbAlertTriangle } from "react-icons/tb";
 import { v4 } from "uuid";
+import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
+// import Multiselect from 'multiselect-react-dropdown';
 
-import Modal from "./Modal";
+import { Modal, PropertiesList } from '../components'
 import { saveProperties } from "../features/taxonomies/taxonomySlice";
-import PropertiesList from "./PropertiesList";
+import { datatypes } from '../data/datatypes'
+import { propertyRestrictions } from '../data/propertyRestrictions'
 
 const AddProperties = ({ selectedTaxonomy }) => {
 	const taxonomies = useSelector((store) => store.taxonomies);
@@ -14,14 +17,16 @@ const AddProperties = ({ selectedTaxonomy }) => {
 	const [isModalVisible, setisModalVisible] = useState(false);
 	const [propertiesList, setpropertiesList] = useState([]);
 	const [enabled, setEnabled] = useState(true);
+	const [selectedDatatype, setselectedDatatype] = useState(datatypes[0]);
+	const [selectedRestriction, setselectedRestriction] = useState(propertyRestrictions[0]);
 	const [isAlertVisible, setisAlertVisible] = useState(false);
 	const [alertMsg, setalertMsg] = useState("");
 	const [isPropertiesSaved, setisPropertiesSaved] = useState(false);
 	const [newProperty, setnewProperty] = useState({
 		id: "",
 		name: "",
-		datatype: "",
-		restrictions: "",
+		datatype: datatypes[0].label,
+		restrictions: propertyRestrictions[0].label,
 		functional: "yes",
 	});
 
@@ -56,19 +61,52 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		}
 	};
 
-	const handleAddProperty = (event) => {
-		event.preventDefault();
+	const handleKeyDown = (event) => {
+        if (event) {
+            if (event.key === 'Enter') {
+                handleAddProperty()
+            }
+        } else {
+            console.log('No event is passed')
+        }
+    }
 
-		if (newProperty.name === "" || newProperty.datatype === "") {
+	const handleDatatypeSelect = (data) => {
+		setselectedDatatype(data)
+		setnewProperty({ ...newProperty, datatype: data.label })
+		// console.log('newProperty datatype: ', newProperty)
+	}
+
+	const handleRestrictionSelect = (data) => {
+		setselectedRestriction(data)
+		setnewProperty({ ...newProperty, restrictions: data.label })
+		// console.log('newProperty restriction: ', newProperty)
+	}
+
+	const handleAddProperty = (event) => {
+		// event.preventDefault();
+
+		if (newProperty.name === "") {
 			setalertMsg(
-				"Please note that Porperty name and Data type are required fields."
+				"Please note that Porperty name is required."
 			);
 			setisAlertVisible(true);
 
 			setTimeout(() => {
 				setisAlertVisible(false);
 			}, 3000);
-		} else {
+		} 
+		else if (!newProperty.datatype) {
+			setalertMsg(
+				"Please note that Data type is required."
+			);
+			setisAlertVisible(true);
+
+			setTimeout(() => {
+				setisAlertVisible(false);
+			}, 3000);
+		} 
+		else {
 			const newPropertyObj = {
 				id: v4(),
 				name: newProperty.name,
@@ -83,8 +121,8 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			setnewProperty({
 				id: "",
 				name: "",
-				datatype: "",
-				restrictions: "",
+				datatype: datatypes[0].label,
+				restrictions: propertyRestrictions[0].label,
 				functional: "yes",
 			});
 
@@ -137,6 +175,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				onClose={() => setisModalVisible(false)}
 				// fromTop='top-[35%]'
 				fromLeft="left-[10%]"
+				fromTop="top-[15%]"
 			>
 				<p className="modal_title">
 					Add properties of{" "}
@@ -152,9 +191,10 @@ const AddProperties = ({ selectedTaxonomy }) => {
 						<p>{alertMsg}</p>
 					</div>
 				)}
-				<div className="flex justify-between gap-6 items-center text-fontcolor">
+				
+				<div className="flex justify-between gap-6 items-center text-fontcolor" onKeyDown={handleKeyDown}>
 					<div className="flex flex-col gap-2">
-						<p className="">Property Name*:</p>
+						<p className="">Property Name*</p>
 						<input
 							type="text"
 							className="p-2 border border-gray-300 rounded-md outline-secondary"
@@ -167,33 +207,27 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2">
-						<p className="">Data type*:</p>
-						<input
-							type="text"
-							className="p-2 border border-gray-300 rounded-md outline-secondary"
-							placeholder="string"
-							value={newProperty.datatype}
-							onChange={(e) =>
-								setnewProperty({ ...newProperty, datatype: e.target.value })
-							}
+						<p className="">Data type*</p>
+						<Select
+							options={datatypes}
+							placeholder="Select"
+							value={selectedDatatype}
+							onChange={handleDatatypeSelect}
 						/>
 					</div>
 
 					<div className="flex flex-col gap-2">
-						<p className="">Restrictions:</p>
-						<input
-							type="text"
-							className="p-2 border border-gray-300 rounded-md outline-secondary"
-							placeholder="not null"
-							value={newProperty.restrictions}
-							onChange={(e) =>
-								setnewProperty({ ...newProperty, restrictions: e.target.value })
-							}
+						<p className="">Restrictions</p>
+						<Select
+							options={propertyRestrictions}
+							placeholder="Select"
+							value={selectedRestriction}
+							onChange={handleRestrictionSelect}
 						/>
 					</div>
 
 					<div className="flex flex-col gap-2">
-						<p className="">Functional:</p>
+						<p className="">Functional</p>
 						<label className="inline-flex relative items-center mr-5 cursor-pointer">
 							<input
 								type="checkbox"

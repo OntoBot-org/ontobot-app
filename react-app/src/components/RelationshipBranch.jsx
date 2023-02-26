@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { v4 } from 'uuid'
-import { BiPlus, BiEditAlt } from 'react-icons/bi'
+import { BiPlus } from 'react-icons/bi'
+// import { BiPlus, BiEditAlt } from 'react-icons/bi'
 import { MdDeleteOutline } from 'react-icons/md'
 import { TbAlertTriangle } from 'react-icons/tb'
 
 import { DeleteRelationshipModal, Modal, SearchSelect, UpdateRelationshipModal } from '../components'
-import { resetRelationshipDetails, saveDomain, saveRange, saveRelationshipTypes } from '../features/relationships/relationshipDetailsSlice'
+import { resetRelationshipDetails, saveDomain, saveRanges, saveRelationshipTypes } from '../features/relationships/relationshipDetailsSlice'
 import { saveSubrelationships } from '../features/relationships/relationshipSlice'
 
 import { relationshipTypes } from '../data/relationshipTypes'
@@ -60,7 +61,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                 fetchedDomains.push({
                     id: subCls.id,
                     label: subCls.name,
-                    value: subCls.name.toLowerCase
+                    value: subCls.name
                 })
                 setdomainsList(fetchedDomains)
                 getAvailableDomains(subCls)
@@ -80,11 +81,21 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
         setbranchVisiblity(true)
     }
 
-    const handleUpdateRelationship = () => {
-        fetchedDomains = []
-        getAvailableDomains(taxonomies)
-        handleCancel()
-        setisUpdateModalVisible(true)
+    // const handleUpdateRelationship = () => {
+    //     fetchedDomains = []
+    //     getAvailableDomains(taxonomies)
+    //     handleCancel()
+    //     setisUpdateModalVisible(true)
+    // }
+
+	const handleKeyDown = (event) => {
+		if (event) {
+            if (event.key === 'Enter') {
+                handleSaveRelationship()
+            }
+        } else {
+            console.log('No event is passed')
+        }
     }
 
     const handleSaveRelationship = () => {
@@ -102,7 +113,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                 setisAlertVisible(false)
             }, 3000);
         }
-        else if (relationshipDetails.domain === '') {
+        else if (relationshipDetails.ranges.length === 0) {
             setisAlertVisible(true)
             setalertMsg('Please select a range.')
             setTimeout(() => {
@@ -117,37 +128,46 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
             }, 3000);
         }
         else {
-            if (newRelationship.id === relationshipDetails.id) {
-                let nameDuplication = availableSubrelationships.filter(subRelation => subRelation.relationshipLabel === newRelationship.relationshipLabel)
+            let nameDuplication = availableSubrelationships.filter(subRelation => subRelation.relationshipLabel === newRelationship.relationshipLabel)
+// check duplications is not working
+            if (nameDuplication.length > 0) {
+                setisAlertVisible(true)
+                setalertMsg('Relationship label cannot be duplicated.')
+                setTimeout(() => {
+                    setisAlertVisible(false)
+                }, 3000);
+            }
+            else {
+                let finalRanges = []
+                let finalTypes = []
+                
+                relationshipDetails.ranges.forEach((range) => {
+                    if (!finalRanges.includes(range)) {
+                        finalRanges.push(range)
+                    }
+                })
+                relationshipDetails.relationshipTypes.forEach((type) => {
+                    if (!finalTypes.includes(type)) {
+                        finalTypes.push(type)
+                    }
+                })
 
-                if (nameDuplication.length > 0) {
-                    setisAlertVisible(true)
-                    setalertMsg('Relationship label cannot be duplicated.')
-                    setTimeout(() => {
-                        setisAlertVisible(false)
-                    }, 3000);
-                }
-                else {
-                    dispatch(saveSubrelationships({
-                        id: newRelationship.id, 
-                        relationshipLabel: newRelationship.relationshipLabel, 
-                        inverse: newRelationship.inverse, 
-                        equivalentLabel: newRelationship.equivalentName, 
-                        domain: relationshipDetails.domain, 
-                        range: relationshipDetails.range, 
-                        type: relationshipDetails.relationshipTypes,
-                        parentId: relationship.id
-                    }))
-                    setnewRelationship({
-                        id: v4(),
-                        relationshipLabel: '',
-                        inverse: '',
-                        equivalentName: '',
-                    })
-                    handleCancel()
-                }
-            } else {
-                console.log('newRelationship.id: ', newRelationship.id, ' and relationshipDetails.id: ', relationshipDetails.id, ' are different.')
+                dispatch(saveSubrelationships({
+                    id: newRelationship.id, 
+                    relationshipLabel: newRelationship.relationshipLabel, 
+                    inverse: newRelationship.inverse, 
+                    equivalentLabel: newRelationship.equivalentName, 
+                    domain: relationshipDetails.domain, 
+                    ranges: finalRanges, 
+                    type: finalTypes,
+                    parentId: relationship.id
+                }))
+                setnewRelationship({
+                    id: v4(),
+                    relationshipLabel: '',
+                    inverse: '',
+                    equivalentName: '',
+                })
             }
         }
     }
@@ -159,6 +179,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
             range: '', 
             relationshipTypes: []
         }))
+        setisModalVisible(false)
     }
 
     const onClose = () => {
@@ -184,10 +205,10 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                 </p>
                 {
                     relationship.relationshipLabel !== 'relationships' && <>
-                        <BiEditAlt 
+                        {/* <BiEditAlt 
                             className='ml-2 cursor-pointer' 
                             onClick={handleUpdateRelationship}
-                        />
+                        /> */}
                         <MdDeleteOutline 
                             className='ml-2 cursor-pointer text-primary' 
                             onClick={() => {
@@ -209,7 +230,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                 </div>
             ))}
 
-            <Modal open={isModalVisible} onClose={onClose}>
+            <Modal open={isModalVisible} onClose={onClose} fromTop="top-[15%]" fromLeft='left-[25%]'>
                 <p className="modal_title">
                     Add sub-relationships to <span className="font-bold text-secondary">{relationship.relationshipLabel}</span>.
                 </p>
@@ -221,32 +242,22 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                     </div>
                 )}
 
-                <div className="flex gap-4">
-                    <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4" onKeyDown={handleKeyDown}>
+                    <div className="grid grid-cols-3 gap-4">
                         <div className="flex flex-col">
-                            <p className="mb-1">Relationship label*: </p>
+                            <p className="mb-1">Relationship label* </p>
                             <input 
                                 type="text" 
                                 className="border p-2 rounded-sm"
                                 value={newRelationship.relationshipLabel}
                                 placeholder='growsIn' 
                                 onChange={(e) => setnewRelationship({...newRelationship, relationshipLabel: e.target.value})}
+                                onKeyDown={handleKeyDown}
                             />
                         </div>
 
                         <div className="flex flex-col">
-                            <p className="mb-1">Domain*: </p>
-                            <SearchSelect 
-                                optionList={domainsList} 
-                                reducerFunction={saveDomain}
-                                relationshipId={newRelationship.id}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col  gap-4">
-                        <div className="flex flex-col">
-                            <p className="mb-1">Inverse: </p>
+                            <p className="mb-1">Inverse </p>
                             <input 
                                 type="text" 
                                 className="border p-2 rounded-sm"
@@ -257,18 +268,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                         </div>
 
                         <div className="flex flex-col">
-                            <p className="mb-1">Range*: </p>
-                            <SearchSelect 
-                                optionList={domainsList} 
-                                reducerFunction={saveRange}
-                                relationshipId={newRelationship.id}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col  gap-4">
-                        <div className="flex flex-col">
-                            <p className="mb-1">Equivalent name: </p>
+                            <p className="mb-1">Equivalent name </p>
                             <input 
                                 type="text" 
                                 className="border p-2 rounded-sm"
@@ -277,9 +277,36 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                                 onChange={(e) => setnewRelationship({...newRelationship, equivalentName: e.target.value})}
                             />
                         </div>
+                    </div>
 
+                    <div className="grid grid-cols-3 gap-4">
+                        <div className="flex flex-col col-span-1">
+                            <p className="mb-1">Domain* </p>
+                            <SearchSelect 
+                                optionList={domainsList} 
+                                reducerFunction={saveDomain}
+                                relationshipId={newRelationship.id}
+                            />
+                        </div>
+
+                        <div className="flex flex-col col-span-2">
+                            <p className="mb-1">Range(s)* </p>
+                            <SearchSelect 
+                                optionList={domainsList} 
+                                reducerFunction={saveRanges}
+                                isMultiSelect={true} 
+                            />
+                            {/* <SearchSelect 
+                                optionList={domainsList} 
+                                reducerFunction={saveRange}
+                                relationshipId={newRelationship.id}
+                            /> */}
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
                         <div className="flex flex-col">
-                            <p className="mb-1">Type*: </p>
+                            <p className="mb-1">Relationship Type(s)* </p>
                             <SearchSelect 
                                 optionList={relationshipTypes} 
                                 isMultiSelect={true} 

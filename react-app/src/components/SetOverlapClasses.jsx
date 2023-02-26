@@ -7,8 +7,9 @@ import { TbAlertTriangle } from 'react-icons/tb'
 import { saveOverlapClasses } from '../features/taxonomies/taxonomySlice'
 import { OverlappingClsList, Modal } from '../components'
 
-const SetOverlapClasses = ({ selectedTaxonomy }) => {
+const SetOverlapClasses = ({selectedTaxonomy}) => {
     
+    // const selectedTaxonomy = useSelector(store => store.selectedTaxonomy)
     const taxonomies = useSelector(store => store.taxonomies)
 
     const [isModalVisible, setisModalVisible] = useState(false)
@@ -16,7 +17,7 @@ const SetOverlapClasses = ({ selectedTaxonomy }) => {
     const [disjointClasses, setdisjointClasses] = useState(selectedTaxonomy.disjoint)
     const [finalOverlapSet, setfinalOverlapSet] = useState(selectedTaxonomy.overlapList)
     const [newOverlapSet, setnewOverlapSet] = useState([])
-    const [isOverlapSaved, setisOverlapSaved] = useState(false)
+    // const [isOverlapSaved, setisOverlapSaved] = useState(false)
     const [isAlertVisible, setisAlertVisible] = useState(false)
     const [alertMsg, setalertMsg] = useState('')
 
@@ -52,6 +53,7 @@ const SetOverlapClasses = ({ selectedTaxonomy }) => {
                 }
             }
         }
+        setfinalOverlapSet(selectedTaxonomy.overlap)
         fetchSubclasses(taxonomies)
     }, [taxonomies, selectedTaxonomy])
     
@@ -136,7 +138,7 @@ const SetOverlapClasses = ({ selectedTaxonomy }) => {
                 overlapList: finalOverlapSet
             }))
             setisModalVisible(false)
-            setisOverlapSaved(true)
+            // setisOverlapSaved(true)
         }
     }
 
@@ -149,7 +151,9 @@ const SetOverlapClasses = ({ selectedTaxonomy }) => {
                 </div>
                 
                 <ul className='w-full flex flex-col items-start justify-start text-sm'>
-                    <OverlappingClsList isOverlapSaved={isOverlapSaved} />
+                    <OverlappingClsList 
+                        // selectedTaxonomy={selectedTaxonomy}
+                    />
                 </ul>
 
                 <Modal open={isModalVisible} onClose={() => setisModalVisible(false)}>
@@ -192,7 +196,8 @@ const SetOverlapClasses = ({ selectedTaxonomy }) => {
                     </div>
 
                     <ul className='w-full flex flex-col items-start justify-start text-sm'>
-                        {   finalOverlapSet.length > 0 && finalOverlapSet?.map((fds, index) => 
+                        {/* { finalOverlapSet.length === 0 && <OverlappingClsList /> } */}
+                        { finalOverlapSet.length > 0 && finalOverlapSet?.map((fds, index) => 
                             <div className='flex' key={index}>
                                 <VscCircleFilled className='mt-1 mx-2 text-secondary' />
                                 <li className='flex gap-2'>

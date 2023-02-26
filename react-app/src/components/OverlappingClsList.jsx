@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react'
 import { useSelector } from 'react-redux'
 import { VscCircleFilled } from 'react-icons/vsc'
 
-const OverlappingClsList = ({ isOverlapSaved }) => {
+const OverlappingClsList = () => {
 
     const selectedTaxonomy = useSelector(store => store.selectedTaxonomy)
     const taxonomies = useSelector(store => store.taxonomies)
@@ -23,13 +23,12 @@ const OverlappingClsList = ({ isOverlapSaved }) => {
         }
         
         getOverlapClassSets(taxonomies)
-    }, [selectedTaxonomy, isOverlapSaved, taxonomies])
+    }, [selectedTaxonomy, taxonomies])
     
-
     return (
         <div>
             {
-                overlapClsSets?.map((overlapSet, index) => 
+                overlapClsSets?.map((overlapSet, index) => (
                     <div className='flex' key={index}>
                         <VscCircleFilled className='mt-1 mx-2 text-secondary' />
                         <li className='flex gap-2'>
@@ -38,7 +37,7 @@ const OverlappingClsList = ({ isOverlapSaved }) => {
                             )}
                         </li>
                     </div>
-                )
+                ))
             }
         </div>
     )

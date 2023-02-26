@@ -23,7 +23,7 @@ const SaveTaxomony = () => {
             <p className="taxonomy-heading mb-4">Save Taxonomy details</p>
 
             <div className="grid grid-cols-3 gap-x-3 gap-y-6 text-fontcolor mb-6">
-                <div className="font-semibold tracking-wide">Selected Class:</div>
+                <div className="font-semibold tracking-wide">Selected Class</div>
                 
                 <div className="col-span-2">
                     {
