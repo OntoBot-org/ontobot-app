@@ -21,4 +21,16 @@ export const tooltipDescriptions = {
     add_property: "add_property",
     view_property: "view_property",
     submit_properties: "submit_properties",
+    
+    relationship_tree: "relationship_tree",
+    relationship_details: "relationship_details",
+    submit_relationships: "submit_relationships",
+
+    relationship_label: "relationship_label",
+    inverse_relationship: "inverse_relationship",
+    relationship_equivalentname: "relationship_equivalentname",
+    relationship_domain: "relationship_domain",
+    relationship_ranges: "relationship_ranges",
+    relationship_types: "relationship_types",
+    save_relationshipdetails: "save_relationshipdetails"
 }
