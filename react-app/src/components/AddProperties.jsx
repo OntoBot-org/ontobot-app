@@ -4,12 +4,15 @@ import { TbAlertTriangle } from "react-icons/tb";
 import { v4 } from "uuid";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-// import Multiselect from 'multiselect-react-dropdown';
+import { MdLiveHelp } from "react-icons/md";
+import Driver from "driver.js";
+import "driver.js/dist/driver.min.css";
 
 import { Modal, PropertiesList } from '../components'
 import { saveProperties } from "../features/taxonomies/taxonomySlice";
 import { datatypes } from '../data/datatypes'
 import { propertyRestrictions } from '../data/propertyRestrictions'
+import { tooltipDescriptions } from '../data/tooltipDescriptions'
 
 const AddProperties = ({ selectedTaxonomy }) => {
 	const taxonomies = useSelector((store) => store.taxonomies);
@@ -81,6 +84,77 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		setselectedRestriction(data)
 		setnewProperty({ ...newProperty, restrictions: data.label })
 		// console.log('newProperty restriction: ', newProperty)
+	}
+
+	const takeAtour = () => {
+		const driver = new Driver({
+			animate: true,
+			opacity: 0.50,
+			allowClose: false,
+			doneBtnText: "Finish",
+			stageBackground: 'rgba(255, 255, 255, 0)',
+		});
+	  
+		driver.defineSteps([
+			{
+				element: "#property_name",
+				popover: {
+					title: "Step 1: Give property name",
+					description: tooltipDescriptions.property_name,
+					position: "top",
+				},
+			},
+			{
+				element: "#property_datatype",
+				popover: {
+					title: "Step 2: Give Datatype of the property",
+					description: tooltipDescriptions.property_datatype,
+					position: "top",
+				},
+			},
+			{
+				element: "#property_restrictions",
+				popover: {
+					title: "Step 3: Give any restrictions",
+					description: tooltipDescriptions.property_restrictions,
+					position: "top",
+				},
+			},
+			{
+				element: "#property_functional",
+				popover: {
+					title: "Step 4: Mark functional",
+					description: tooltipDescriptions.property_functional,
+					position: "top",
+				},
+			},
+			{
+				element: "#add_property",
+				popover: {
+					title: "Step 5: Add new property",
+					description: tooltipDescriptions.add_property,
+					position: "top",
+				},
+			},
+			{
+				element: "#view_property",
+				popover: {
+					title: "Step 6: View Property Table",
+					description: tooltipDescriptions.view_property,
+					position: "top",
+				},
+			},
+			{
+				element: "#submit_properties",
+				popover: {
+					title: "Step 7: Submit all properties",
+					description: tooltipDescriptions.submit_properties,
+					position: "top",
+				},
+			},
+		])
+
+		driver.start();
 	}
 
 	const handleAddProperty = (event) => {
@@ -177,6 +251,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				fromLeft="left-[10%]"
 				fromTop="top-[15%]"
 			>
+			<div className="flex items-center justify-center gap-4">
 				<p className="modal_title">
 					Add properties of{" "}
 					<span className="font-bold text-secondary">
@@ -184,6 +259,9 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</span>{" "}
 					class.
 				</p>
+					
+				<MdLiveHelp className="text-lg font-semibold mb-6 text-center cursor-pointer text-secondary hover:text-primary" onClick={takeAtour} />
+			</div>
 
 				{isAlertVisible && (
 					<div className="alert_style">
@@ -193,7 +271,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				)}
 				
 				<div className="flex justify-between gap-6 items-center text-fontcolor" onKeyDown={handleKeyDown}>
-					<div className="flex flex-col gap-2">
+					<div className="flex flex-col gap-2" id='property_name'>
 						<p className="">Property Name*</p>
 						<input
 							type="text"
@@ -206,7 +284,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 						/>
 					</div>
 
-					<div className="flex flex-col gap-2">
+					<div className="flex flex-col gap-2" id='property_datatype'>
 						<p className="">Data type*</p>
 						<Select
 							options={datatypes}
@@ -216,7 +294,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 						/>
 					</div>
 
-					<div className="flex flex-col gap-2">
+					<div className="flex flex-col gap-2" id='property_restrictions'>
 						<p className="">Restrictions</p>
 						<Select
 							options={propertyRestrictions}
@@ -226,7 +304,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 						/>
 					</div>
 
-					<div className="flex flex-col gap-2">
+					<div className="flex flex-col gap-2" id='property_functional'>
 						<p className="">Functional</p>
 						<label className="inline-flex relative items-center mr-5 cursor-pointer">
 							<input
@@ -248,14 +326,15 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<button
-						className="secondary_btn_comp h-10 mr-0"
+						className="secondary_btn_comp h-10 mr-0 "
 						onClick={handleAddProperty}
+						id='add_property'
 					>
 						Add Property
 					</button>
 				</div>
 
-				<div className="w-full border-b-2 mt-6 border-lightgray"></div>
+				<div className="w-full border-b-2 mt-6 border-lightgray" id='view_property'></div>
 				{/* <div className=" overflow-y-auto w-full h-32"> */}
 				<table className="mt-1 w-full text-fontcolor table-auto">
 					<thead className="flex w-full text-left">
@@ -285,6 +364,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					<button
 						className="primary_btn_comp h-10 mt-5"
 						onClick={handleSaveProperties}
+						id='submit_properties'
 					>
 						Save all
 					</button>

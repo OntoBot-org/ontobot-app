@@ -28,7 +28,7 @@
     }
 
     .taxonomy-heading {
-        @apply text-sm text-secondary font-semibold tracking-wider cursor-pointer uppercase
+        @apply text-sm text-secondary font-semibold tracking-wider uppercase
     }
 
     .taxonomy-name {
@@ -40,6 +40,6 @@
     }
 
     .modal_title {
-        @apply w-full text-lg font-semibold  mb-6 text-center
+        @apply w-full text-lg font-semibold mb-6 text-center
     }
 }
