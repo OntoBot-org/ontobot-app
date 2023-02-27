@@ -27,6 +27,10 @@
         hover:bg-secondary hover:text-white hover:shadow-lg
     }
 
+    .disabled_btn {
+        @apply bg-lightgray text-base text-white w-[146px] h-14 rounded p-2 mr-5 text-center
+    }
+
     .taxonomy-heading {
         @apply text-sm text-secondary font-semibold tracking-wider uppercase
     }
