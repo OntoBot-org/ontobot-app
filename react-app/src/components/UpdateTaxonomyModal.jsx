@@ -90,7 +90,7 @@ const UpdateTaxonomyModal = ({ open, onClose, taxonomy }) => {
                 <div className="flex gap-6 items-end">
                     <div className="flex gap-4 items-center">
                         <div className="flex flex-col gap-2">
-                            <p>Class name*:</p>
+                            <p>Class name*</p>
                             <input 
                                 type="text" 
                                 className="p-2 border border-gray-300 rounded-md outline-secondary"  
@@ -101,7 +101,7 @@ const UpdateTaxonomyModal = ({ open, onClose, taxonomy }) => {
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <p>Stereotype*:</p>
+                            <p>Stereotype*</p>
                             <div className="custom-dropdown relative w-28">
                                 <div 
                                     className="custom-dropdown-selection bg-white rounded-md cursor-pointer p-2 border w-full outline-secondary"
@@ -142,7 +142,7 @@ const UpdateTaxonomyModal = ({ open, onClose, taxonomy }) => {
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <p>Equivalent Class:</p>
+                            <p>Equivalent Class</p>
                             <input 
                                 type="text" 
                                 className="p-2 border border-gray-300 rounded-md outline-secondary" 
@@ -159,7 +159,7 @@ const UpdateTaxonomyModal = ({ open, onClose, taxonomy }) => {
                         Update
                     </button>
 
-                    <button className='secondary_btn_comp h-10' onClick={onclose}>
+                    <button className='secondary_btn_comp h-10' onClick={onClose}>
                         Cancel
                     </button>
                 </div>

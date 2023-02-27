@@ -5,19 +5,19 @@ import { FaRegQuestionCircle } from 'react-icons/fa'
 export const introCardDetails = [
     {
       title: 'What is an ontology?',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe aut facilis voluptas non unde nihil, nemo ab quas fugit esse accusantium id repudiandae nam minima incidunt ad recusandae alias totam.',
+      description: 'Ontology is a framework for knowledge representation that describes things, their properties, and the relationships among them in a well-bounded domain.',
       icon: <SiGraphql />,
       directionTop: true
     },
     {
       title: 'What are ODPs?',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe aut facilis voluptas non unde nihil, nemo ab quas fugit esse accusantium id repudiandae nam minima incidunt ad recusandae alias totam.',
+      description: 'Modeling solutions to solve recurrent ontology design problems which ensure ontology quality standards.',
       icon: <FaRegQuestionCircle />,
       directionTop: false
     },
     {
       title: 'What is OntoBot?',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe aut facilis voluptas non unde nihil, nemo ab quas fugit esse accusantium id repudiandae nam minima incidunt ad recusandae alias totam.',
+      description: 'An approach for creating an ontology for a provided user scenario in the agricultural domain, by determining the most appropriate ontology design pattern.',
       icon: <SiProbot />,
       directionTop: true
     },
