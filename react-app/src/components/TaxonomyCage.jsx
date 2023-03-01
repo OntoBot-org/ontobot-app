@@ -15,9 +15,9 @@ const TaxonomyCage = () => {
 	const dispatch = useDispatch();
 	// const element = document.getElementById('relationshipcage');
 
-	const [isModalOpen, setisModalOpen] = useState(false);
 	const [alertTitle, setalertTitle] = useState("");
 	const [alertMsg, setalertMsg] = useState("");
+	const [isModalOpen, setisModalOpen] = useState(false);
 	const [isValidTaxo, setIsValidTaxo] = useState(false);
 
 	const takeAtour = () => {
@@ -115,17 +115,33 @@ const TaxonomyCage = () => {
 	};
 
 	const handleDownloadBtnClick = () => {
+		console.log("pressed")
 		downloadOWL(JSON.stringify(taxonomies));
 	};
 
 	const handleBtnClick = () => {
 		setisModalOpen(true);
 		if (taxonomies.subclasses?.length > 0) {
-			setalertTitle("Are you sure you want to submit all the taxonomies?");
-			setalertMsg(
-				"After submitting you will NOT be able to add, update, or remove taxonomies or taxonomy details. Therefore, please make sure that you have added properties, disjoint, and overlapping classes to necessary taxonomies."
-			);
-			sendTaxonomies(JSON.stringify(taxonomies));
+			const noProperties = []
+			taxonomies.subclasses?.forEach((taxonomy) => {
+				if (taxonomy.propertiesList?.length === 0) {
+					noProperties.push(taxonomy)
+				}
+			})
+			if (noProperties.length>0) {
+				setalertTitle("There are taxonomies with no properties added.");
+				// setalertMsg(
+				// 	"Please make sure all the child taxonomies that extend from root taxonomy has at least one property."
+				// );
+				sendTaxonomies(JSON.stringify(taxonomies));
+			}
+			else {
+				setalertTitle("Are you sure you want to submit all the taxonomies?");
+				setalertMsg(
+					"After submitting you will NOT be able to add, update, or remove taxonomies or taxonomy details. Therefore, please make sure that you have added properties, disjoint, and overlapping classes to necessary taxonomies."
+				);
+				sendTaxonomies(JSON.stringify(taxonomies));
+			}
 		} else {
 			setalertTitle("Please add taxonomies before submitting.");
 		}
@@ -169,6 +185,13 @@ const TaxonomyCage = () => {
 							Download OWL
 						</button>
 					)}
+					{/* <button
+						className={`${isValidTaxo} ? primary_btn : disabled_btn w-auto px-5`}
+						onClick={handleDownloadBtnClick}
+						disabled="{{ !isValidTaxo }}"
+					>
+						Download OWL
+					</button> */}
 				</div>
 
 				<Modal
