@@ -22,3 +22,15 @@ def get_relational_diverse_concept_list(taxonomy_result, relationship_list):
 
     return list(relational_diverse_list)
 
+
+# convert data into taxonomyContents collection document
+def convertToTaxonomyContent(result):
+    copyResult = result
+    for obj in copyResult:
+        if ('disjoint' in obj) and len(obj['disjoint']) > 0:
+            obj['disjoint'] = [dict((str(i), el) for i, el in enumerate(subarr)) for subarr in obj['disjoint']]
+        if ('overlap' in obj) and len(obj['overlap']) > 0:
+            obj['overlap'] = [dict((str(i), el) for i, el in enumerate(subarr)) for subarr in obj['overlap']]
+
+    return copyResult 
+
