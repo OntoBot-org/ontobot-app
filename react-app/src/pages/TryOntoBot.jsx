@@ -12,13 +12,13 @@ const TryOntoBot = () => {
             <section id='taxonomycage' className="snap-start">
                 <TaxonomyCage />
             </section>
-
+{/* 
             {
-                taxonomies.submitted &&
+                taxonomies.submitted && */}
                     <section id='relationshipcage' className="snap-start">
                         <RelationshipCage />
                     </section>
-            }
+            {/* } */}
         </div>
     )
 }

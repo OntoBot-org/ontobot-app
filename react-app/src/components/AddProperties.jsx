@@ -306,7 +306,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 
 					<div className="flex flex-col gap-2" id='property_functional'>
 						<p className="">Functional</p>
-						<label className="inline-flex relative items-center mr-5 cursor-pointer">
+						<label className="label_style">
 							<input
 								type="checkbox"
 								className="sr-only peer"

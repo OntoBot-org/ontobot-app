@@ -46,4 +46,12 @@
     .modal_title {
         @apply w-full text-lg font-semibold mb-6 text-center
     }
+
+    .biplus_modal {
+        @apply cursor-pointer ml-2 mt-1 bg-secondary text-white hover:bg-primary hover:text-white transition rounded-full text-base
+    }
+
+    .label_style {
+        @apply inline-flex relative items-center mr-5 cursor-pointer
+    }
 }
