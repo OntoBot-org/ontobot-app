@@ -89,9 +89,11 @@ def get_taxonomy_owl(parsed_json):
             "taxonomy": cmethod.convertToTaxonomyContent(result=owl_new.get_taxonomy_json())
             })
         
+        owl_java = OWL(new_parsed_json)
+
         return Response.send_response({
             "concepts": list(all_concepts),
-            "taxonomy": owl_new.get_taxonomy_json()
+            "taxonomy": owl_java.get_taxonomy_json()
         })
 
     except Exception as err:

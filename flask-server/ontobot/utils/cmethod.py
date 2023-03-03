@@ -23,7 +23,7 @@ def get_relational_diverse_concept_list(taxonomy_result, relationship_list):
     return list(relational_diverse_list)
 
 
-# convert data into taxonomyContents collection document
+# convert customized data into taxonomyContents collection document
 def convertToTaxonomyContent(result):
     copyResult = result
     for obj in copyResult:
@@ -31,6 +31,26 @@ def convertToTaxonomyContent(result):
             obj['disjoint'] = [dict((str(i), el) for i, el in enumerate(subarr)) for subarr in obj['disjoint']]
         if ('overlap' in obj) and len(obj['overlap']) > 0:
             obj['overlap'] = [dict((str(i), el) for i, el in enumerate(subarr)) for subarr in obj['overlap']]
+        
+        if ('sub_classes' in obj and len(obj['sub_classes'])> 0):
+            for sub_obj in obj['sub_classes']:
+                if len(sub_obj['disjoint']) > 0:
+                    sub_obj['disjoint'] = [dict((str(i), el) for i, el in enumerate(subarr)) for subarr in sub_obj['disjoint']]
+                
+                if len(sub_obj['overlap']) > 0:
+                    sub_obj['overlap'] = [dict((str(i), el) for i, el in enumerate(subarr)) for subarr in sub_obj['overlap']]
 
     return copyResult 
 
+
+# convert taxonomyContents collection document data into customized data 
+def convertFromTaxonomyContent(taxonomyContent):
+    copyTaxonomyContent = taxonomyContent # owlComplete object -> sessionID, taxonomy, concepts, op
+
+    for obj in copyTaxonomyContent['taxonomy']:
+        # extract values from each object and add them to a new list
+        obj['disjoint'] = [[value for value in obj.values()] for obj in obj['disjoint']]
+         # extract values from each object and add them to a new list
+        obj['overlap'] = [[value for value in obj.values()] for obj in obj['overlap']]
+    
+    return copyTaxonomyContent

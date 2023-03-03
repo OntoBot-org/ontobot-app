@@ -4,6 +4,7 @@ from ontobot.model.output import Error,Response
 from ontobot.utils.rules import custom
 from ontobot.utils.rules import role
 from ontobot.services import firestore_connect
+from ontobot.utils import cmethod
 
 # from ontobot.db.taxonomy import Taxonomy
 
@@ -28,8 +29,18 @@ def get_op_structure(parsed_json):
             return Error.send_role_error(invalid_role_concepts)
 
         # get n-ary pattern
-        # return Response.send_response(nary.get_nary_structure(op_struct))
-        return Response.send_response(db_taxonomy_result['msg'])
+        db_owlTaxonomy_result = firestore_connect.get_OwlTaxo_document(session_id=sessionID)
+        final_op_result = nary.get_nary_structure(op_struct, db_owlTaxonomy_result['concepts'])
+        owl_complete = {
+            "sessionID" : sessionID,
+            "taxonomy" : db_owlTaxonomy_result['taxonomy'],
+            "concepts" : db_owlTaxonomy_result['concepts'],
+            "op" : final_op_result
+        }
+
+        firestore_connect.create_new_owlComplete_document(session_id=sessionID, obj=owl_complete)
+        return Response.send_response(cmethod.convertFromTaxonomyContent(owl_complete))
+    
     except Exception as err:
         return Error.send_something_went_wrong_error(err)
 

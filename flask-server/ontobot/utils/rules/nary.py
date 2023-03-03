@@ -61,7 +61,7 @@ def generate_range_struct(intermediate_cls, range, property, uid, level = 0):
 
 
 # nAry pattern - Level 01 & 02
-def get_nary_structure(op_struct):
+def get_nary_structure(op_struct, concepts:list):
     op_struct_copy = op_struct
     extend_nary = []; extend_nary.clear()
     for struct in op_struct_copy:
@@ -72,6 +72,7 @@ def get_nary_structure(op_struct):
             level = struct['level']
             if property_name.lower() != 'has' and property_name.lower() != 'have':
                 intermediate_cls = generate_intermediate_cls_name(op_domain, op_range)
+                concepts.append(intermediate_cls)
                 extend_nary.append(generate_domain_struct(op_domain, intermediate_cls, property_name, len(extend_nary) + 1, level))
                 
                 for r_name in op_range:
