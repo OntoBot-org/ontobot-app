@@ -33,7 +33,7 @@ class UMLE:
 
     def __find_super_class(self, next_item, current_index):
         super_level = next_item['level'] - 1
-        for index in range(current_index, -1, -1):
+        for index in range(current_index-1, -1, -1):
             concept = self.__taxonomy_list[index]
             if concept['level'] == super_level:
                 return concept

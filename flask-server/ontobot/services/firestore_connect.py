@@ -45,7 +45,7 @@ def create_new_owlTaxo_document(session_id=None, obj=None):
             doc.reference.delete()
     
     owl_doc_ref.set(obj)
-    
+
 
 # Define a function to create a new owl-complete document in a collection
 def create_new_owlComplete_document(session_id=None, obj=None):
@@ -60,7 +60,7 @@ def create_new_owlComplete_document(session_id=None, obj=None):
     owl_complete_doc_ref.set(obj)
 
 
-# Define a function to get a document from a collection
+# Define a function to get a document from TaxonomyContents collection
 def get_document(session_id):
     query = taxonomy_ref.where("sessionID", "==", session_id)
     results = query.get()
@@ -75,3 +75,16 @@ def get_document(session_id):
         return None
 
 
+# Define a function to get a document from OWLTaxonomyContents collection
+def get_OwlTaxo_document(session_id):
+    query = owl_taxonomy_ref.where("sessionID", "==", session_id)
+    results = query.get()
+
+    # Get the first document that matches the query
+    if len(results) > 0:
+        # Convert the document data to a Python dictionary
+        user_data = results[0].to_dict()
+        # Return the user data
+        return user_data
+    else:
+        return None
