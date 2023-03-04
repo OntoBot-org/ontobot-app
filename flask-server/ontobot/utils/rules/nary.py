@@ -36,7 +36,30 @@ def generate_domain_struct(domain, intermediate_cls, property, uid, level = 0):
     
     return struct
 
-# multiple range structs (nAry)
+# multiple range structs (nAry) for usecase 02
+def generate_has_struct(intermediate_cls, range, uid, level = 0):
+    struct = {
+            "id": uid,
+            "op_name": _generate_ds_property(range), # has Student 
+            "op_inverse": "is "+range+" of", # is Student of
+            "op_equal": "",
+            "op_domain": intermediate_cls, # Teacher
+            "op_range": range, # Student
+            "level": level,
+            "constraints": {
+                "functional": True,
+                "inverseFunctional": False,
+                "transitive": False,
+                "symmetric": False,
+                "asymmetric": False,
+                "reflexive": False,
+                "irreflexive": False
+            }
+        }
+    
+    return struct
+
+# multiple range structs (nAry) for usecase 01
 def generate_range_struct(intermediate_cls, range, property, uid, level = 0):
     struct = {
             "id": uid,
@@ -70,16 +93,30 @@ def get_nary_structure(op_struct, concepts:list):
             op_range = struct["op_range"]   # list
             op_domain:str = struct["op_domain"]
             level = struct['level']
-            if property_name.lower() != 'has' and property_name.lower() != 'have':
+
+            # n-ary usecase 01
+            if property_name.lower() != 'has' and property_name.lower() != 'have' and property_name != "":
                 intermediate_cls = generate_intermediate_cls_name(op_domain, op_range)
                 concepts.append(intermediate_cls)
                 extend_nary.append(generate_domain_struct(op_domain, intermediate_cls, property_name, len(extend_nary) + 1, level))
                 
                 for r_name in op_range:
                     extend_nary.append(generate_range_struct(intermediate_cls, r_name, property_name, len(extend_nary) + 1, level))
+            
+            # n-ary usecase 02
+            elif property_name == "":
+                intermediate_cls = op_domain
+                concepts.append(intermediate_cls)
+                for r_name in op_range:
+                    extend_nary.append(generate_has_struct(intermediate_cls, r_name, len(extend_nary) + 1, level))
+
+            # n-ary shortcut        
             else:
                 for r_name in op_range:
                     extend_nary.append(generate_domain_struct(op_domain, r_name, r_name, len(extend_nary) + 1, level))
+            
+        
+
         else:
             struct["id"] = len(extend_nary) + 1
             struct["op_range"] = struct["op_range"][0]
