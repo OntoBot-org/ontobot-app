@@ -93,6 +93,7 @@ def get_nary_structure(op_struct, concepts:list):
             op_range = struct["op_range"]   # list
             op_domain:str = struct["op_domain"]
             level = struct['level']
+            quantifier = struct['quantifier']
 
             # n-ary usecase 01
             if property_name.lower() != 'has' and property_name.lower() != 'have' and property_name != "":
@@ -108,12 +109,16 @@ def get_nary_structure(op_struct, concepts:list):
                 intermediate_cls = op_domain
                 concepts.append(intermediate_cls)
                 for r_name in op_range:
-                    extend_nary.append(generate_has_struct(intermediate_cls, r_name, len(extend_nary) + 1, level))
+                    nary_struct = generate_has_struct(intermediate_cls, r_name, len(extend_nary) + 1, level)
+                    nary_struct["quantifier"] = quantifier[r_name]
+                    extend_nary.append(nary_struct)
 
             # n-ary shortcut        
             else:
                 for r_name in op_range:
-                    extend_nary.append(generate_domain_struct(op_domain, r_name, r_name, len(extend_nary) + 1, level))
+                    nary_struct = generate_domain_struct(op_domain, r_name, r_name, len(extend_nary) + 1, level)
+                    nary_struct["quantifier"] = quantifier[r_name]
+                    extend_nary.append(nary_struct)
             
         
 

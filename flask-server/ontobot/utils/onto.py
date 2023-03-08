@@ -124,7 +124,7 @@ class OP:
         for i in arr:
             # recursion call : children do same things for children
 
-            mylist = [i['relationshipLabel'], i['equivalentLabel'], i['inverse'], i['domain'], i['ranges'], i['type'], level]
+            mylist = [i['relationshipLabel'], i['equivalentLabel'], i['inverse'], i['domain'], i['ranges'], i['type'], i['quantifier'], level]
             if ('subrelationships' in i) and len(i['subrelationships']) > 0:
                 self.__stack.append(mylist)
                 self.__rec_traverse_op(i['subrelationships'], level + 1)
@@ -148,7 +148,8 @@ class OP:
             c_domain = item[3]
             c_range = item[4]
             type = item[5]
-            level = item[6]
+            quantifier = item[6]
+            level = item[7]
             key = uid
 
             opc = {
@@ -175,6 +176,7 @@ class OP:
                 else:
                     opc['transitive'] = True
 
+            if len(c_range) == 1 : quantifier = quantifier[c_range[0]]
 
             final.append(
                 {
@@ -185,6 +187,7 @@ class OP:
                     "op_domain": c_domain,
                     "op_range": c_range,
                     "level": level,
+                    "quantifier": quantifier,
                     "constraints": opc
                 }
             )

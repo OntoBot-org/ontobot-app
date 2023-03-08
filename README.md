@@ -161,6 +161,7 @@
     ]
 }
 ```
+
 ## OP Data Structure
 
 ```json
@@ -176,8 +177,10 @@
             "ranges": ["soil"],
             "relationshipLabel": "grows",
             "quantifier":{
-                "some": true,
-                "only": false
+                "soil": {
+                    "some": true,
+                    "only": false
+                }
             },
             "subrelationships": [
                 {
@@ -188,11 +191,14 @@
                     "ranges": ["soil"],
                     "relationshipLabel": "grows",
                     "quantifier":{
-                        "some": true,
-                        "only": false
+                        "soil": {
+                            "some": true,
+                            "only": false
+                        }
                     },
                     "subrelationships": [],
-                    "type": ["Functional"]
+                    "type": ["Functional"],
+                    "naryType" : {}
                 },
                 {
                     "domain": "fertilizer",
@@ -202,14 +208,25 @@
                     "ranges": ["soil", "climate"],
                     "relationshipLabel": "plantsIn",
                     "quantifier":{
-                        "some": true,
-                        "only": false
+                        "soil" : {
+                            "some": true,
+                            "only": false
+                        },
+                        "climate":{
+                            "some": true,
+                            "only": false
+                        }
                     },
                     "subrelationships": [],
-                    "type": ["Inverse Functional", "Symmetric"]
+                    "type": ["Inverse Functional", "Symmetric"],
+                    "naryType" : {
+                        "soil" : [],
+                        "climate" : []
+                    }
                 }
             ],
-            "type": ["Functional"]
+            "type": ["Functional"],
+            "naryType":{}
         },
         {
             "domain": "climate",
@@ -219,11 +236,14 @@
             "ranges": ["weather"],
             "relationshipLabel": "subClassOf",
             "quantifier":{
-                "some": false,
-                "only": false
+                "weather":{
+                    "some": false,
+                    "only": false
+                }
             },
             "subrelationships": [],
-            "type": ["Functional"]
+            "type": ["Functional"],
+            "naryType": {}
         },
         {
             "domain": "fertilizer",
@@ -233,15 +253,19 @@
             "ranges": ["soil"],
             "relationshipLabel": "partOf",
             "quantifier":{
-                "some": false,
-                "only": false
+                "soil":{
+                    "some": false,
+                    "only": false
+                }
             },
             "subrelationships": [],
-            "type": ["Transitive"]
+            "type": ["Transitive"],
+            "naryType": {}
         }
     ]
 }
 ```
+
 
 ## DB Data Structures (Taxonomy Level)
 
