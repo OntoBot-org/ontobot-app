@@ -162,21 +162,25 @@ class OP:
                 "irreflexive": False
             }
 
-            for op in type:
-                if op == "Functional":
-                    opc['functional'] = True
-                elif op == "Inverse Functional":
-                    opc['inverseFunctional'] = True
-                elif op == "Symmetric":
-                    opc['symmetric'] = True
-                elif op == "Reflexive":
-                    opc['reflexive'] = True
-                elif op == "Irreflexive":
-                    opc['irreflexive'] = True
-                else:
-                    opc['transitive'] = True
 
-            if len(c_range) == 1 : quantifier = quantifier[c_range[0]]
+            if len(c_range) == 1 : 
+                quantifier = quantifier[c_range[0]]
+                
+                for op in type[c_range[0]]:
+                    if op == "Functional":
+                        opc['functional'] = True
+                    elif op == "Inverse Functional":
+                        opc['inverseFunctional'] = True
+                    elif op == "Symmetric":
+                        opc['symmetric'] = True
+                    elif op == "Reflexive":
+                        opc['reflexive'] = True
+                    elif op == "Irreflexive":
+                        opc['irreflexive'] = True
+                    else:
+                        opc['transitive'] = True
+            else :
+                opc = type
 
             final.append(
                 {

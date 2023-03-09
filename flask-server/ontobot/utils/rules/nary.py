@@ -37,7 +37,32 @@ def generate_domain_struct(domain, intermediate_cls, property, uid, level = 0):
     return struct
 
 # multiple range structs (nAry) for usecase 02
-def generate_has_struct(intermediate_cls, range, uid, level = 0):
+def generate_has_struct(intermediate_cls, range, type, uid, level = 0):
+    opc = {
+        "functional": False,
+        "inverseFunctional": False,
+        "transitive": False,
+        "symmetric": False,
+        "asymmetric": False,
+        "reflexive": False,
+        "irreflexive": False
+    }
+    
+    for op in type[range]:
+       
+        if op == "Functional":
+            opc['functional'] = True
+        elif op == "Inverse Functional":
+            opc['inverseFunctional'] = True
+        elif op == "Symmetric":
+            opc['symmetric'] = True
+        elif op == "Reflexive":
+            opc['reflexive'] = True
+        elif op == "Irreflexive":
+            opc['irreflexive'] = True
+        else:
+            opc['transitive'] = True
+
     struct = {
             "id": uid,
             "op_name": _generate_ds_property(range), # has Student 
@@ -46,21 +71,23 @@ def generate_has_struct(intermediate_cls, range, uid, level = 0):
             "op_domain": intermediate_cls, # Teacher
             "op_range": range, # Student
             "level": level,
-            "constraints": {
-                "functional": True,
-                "inverseFunctional": False,
-                "transitive": False,
-                "symmetric": False,
-                "asymmetric": False,
-                "reflexive": False,
-                "irreflexive": False
-            }
+            "constraints": opc
         }
     
     return struct
 
 # multiple range structs (nAry) for usecase 01
 def generate_range_struct(intermediate_cls, range, property, uid, level = 0):
+    opc = {
+        "functional": False,
+        "inverseFunctional": False,
+        "transitive": False,
+        "symmetric": False,
+        "asymmetric": False,
+        "reflexive": False,
+        "irreflexive": False
+    }
+    
     struct = {
             "id": uid,
             "op_name": _generate_rs_property(property, range),
@@ -94,6 +121,7 @@ def get_nary_structure(op_struct, concepts:list):
             op_domain:str = struct["op_domain"]
             level = struct['level']
             quantifier = struct['quantifier']
+            opType = struct['constraints']
 
             # n-ary usecase 01
             if property_name.lower() != 'has' and property_name.lower() != 'have' and property_name != "":
@@ -109,15 +137,16 @@ def get_nary_structure(op_struct, concepts:list):
                 intermediate_cls = op_domain
                 concepts.append(intermediate_cls)
                 for r_name in op_range:
-                    nary_struct = generate_has_struct(intermediate_cls, r_name, len(extend_nary) + 1, level)
+                    nary_struct = generate_has_struct(intermediate_cls, r_name, opType, len(extend_nary) + 1, level)
                     nary_struct["quantifier"] = quantifier[r_name]
                     extend_nary.append(nary_struct)
 
             # n-ary shortcut        
             else:
                 for r_name in op_range:
-                    nary_struct = generate_domain_struct(op_domain, r_name, r_name, len(extend_nary) + 1, level)
+                    nary_struct = generate_has_struct(op_domain, r_name, opType, len(extend_nary) + 1, level)
                     nary_struct["quantifier"] = quantifier[r_name]
+
                     extend_nary.append(nary_struct)
             
         
