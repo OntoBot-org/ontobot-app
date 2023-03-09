@@ -3,14 +3,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { v4 } from 'uuid'
 import { BiPlus } from 'react-icons/bi'
 // import { BiPlus, BiEditAlt } from 'react-icons/bi'
-import { MdDeleteOutline } from 'react-icons/md'
 import { TbAlertTriangle } from 'react-icons/tb'
+import { MdDeleteOutline, MdLiveHelp } from 'react-icons/md' 
+import Driver from "driver.js"; 
+import "driver.js/dist/driver.min.css"; 
 
 import { DeleteRelationshipModal, Modal, SearchSelect, UpdateRelationshipModal } from '../components'
 import { resetRelationshipDetails, saveDomain, saveRanges, saveRelationshipTypes } from '../features/relationships/relationshipDetailsSlice'
 import { saveSubrelationships } from '../features/relationships/relationshipSlice'
-
 import { relationshipTypes } from '../data/relationshipTypes'
+import { tooltipDescriptions } from '../data/tooltipDescriptions'
 
 const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
 
@@ -97,6 +99,77 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
             console.log('No event is passed')
         }
     }
+
+    const takeAtour = () => {
+		const driver = new Driver({
+			animate: true,
+			opacity: 0.50,
+			allowClose: false,
+			doneBtnText: "Finish",
+			stageBackground: 'rgba(255, 255, 255, 0)',
+		});
+	  
+		driver.defineSteps([
+			{
+				element: "#relationship_label",
+				popover: {
+					title: "Step 1: Give relationship label",
+					description: tooltipDescriptions.relationship_label,
+					position: "top",
+				},
+			},
+			{
+				element: "#inverse_relationship",
+				popover: {
+					title: "Step 2: Give the inverse",
+					description: tooltipDescriptions.inverse_relationship,
+					position: "top",
+				},
+			},
+			{
+				element: "#relationship_equivalentname",
+				popover: {
+					title: "Step 3: Give an equivalent name",
+					description: tooltipDescriptions.relationship_equivalentname,
+					position: "top",
+				},
+			},
+			{
+				element: "#relationship_domain",
+				popover: {
+					title: "Step 4: Select domain of the relationship",
+					description: tooltipDescriptions.relationship_domain,
+					position: "top",
+				},
+			},
+			{
+				element: "#relationship_ranges",
+				popover: {
+					title: "Step 5: Select ranges of the relationship",
+					description: tooltipDescriptions.relationship_ranges,
+					position: "top",
+				},
+			},
+			{
+				element: "#relationship_types",
+				popover: {
+					title: "Step 6: Select types of the relationship",
+					description: tooltipDescriptions.relationship_types,
+					position: "top",
+				},
+			},
+			{
+				element: "#save_relationshipdetails",
+				popover: {
+					title: "Step 7: Submit relationship details",
+					description: tooltipDescriptions.save_relationshipdetails,
+					position: "top",
+				},
+			},
+		])
+
+		driver.start();
+	}
 
     const handleSaveRelationship = () => {
         if (newRelationship.relationshipLabel === '') {
@@ -219,7 +292,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                     </>
                 }
                 <BiPlus 
-                    className='ml-2 cursor-pointer' 
+                    className="cursor-pointer ml-2 bg-secondary text-white hover:bg-primary hover:text-white transition rounded-full text-lg"
                     onClick={handleAddRelationship}
                 />
             </div>
@@ -231,9 +304,15 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
             ))}
 
             <Modal open={isModalVisible} onClose={onClose} fromTop="top-[15%]" fromLeft='left-[25%]'>
-                <p className="modal_title">
-                    Add sub-relationships to <span className="font-bold text-secondary">{relationship.relationshipLabel}</span>.
-                </p>
+            <div className="flex items-center justify-center gap-4">
+                    <p className="modal_title">
+                        Add sub-relationships to <span className="font-bold text-secondary">{relationship.relationshipLabel}</span>.
+                    </p>
+                    <MdLiveHelp 
+                        className="text-lg font-semibold mb-6 text-center cursor-pointer text-secondary hover:text-primary" 
+                        onClick={takeAtour}
+                    />
+                </div>
 
                 { isAlertVisible && (
                     <div className="alert_style">
@@ -244,7 +323,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
 
                 <div className="flex flex-col gap-4" onKeyDown={handleKeyDown}>
                     <div className="grid grid-cols-3 gap-4">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col" id='relationship_label'>
                             <p className="mb-1">Relationship label* </p>
                             <input 
                                 type="text" 
@@ -256,7 +335,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                             />
                         </div>
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col" id='inverse_relationship'>
                             <p className="mb-1">Inverse </p>
                             <input 
                                 type="text" 
@@ -267,7 +346,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                             />
                         </div>
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col" id='relationship_equivalentname'>
                             <p className="mb-1">Equivalent name </p>
                             <input 
                                 type="text" 
@@ -280,7 +359,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                     </div>
 
                     <div className="grid grid-cols-3 gap-4">
-                        <div className="flex flex-col col-span-1">
+                        <div className="flex flex-col col-span-1" id='relationship_domain'>
                             <p className="mb-1">Domain* </p>
                             <SearchSelect 
                                 optionList={domainsList} 
@@ -289,7 +368,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                             />
                         </div>
 
-                        <div className="flex flex-col col-span-2">
+                        <div className="flex flex-col col-span-2" id='relationship_ranges'>
                             <p className="mb-1">Range(s)* </p>
                             <SearchSelect 
                                 optionList={domainsList} 
@@ -305,7 +384,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col" id='relationship_types'>
                             <p className="mb-1">Relationship Type(s)* </p>
                             <SearchSelect 
                                 optionList={relationshipTypes} 
@@ -320,6 +399,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                     <button 
                         className="secondary_btn_comp"
                         onClick={handleSaveRelationship}
+                        id='save_relationshipdetails'
                     >
                         Save relationship
                     </button>
