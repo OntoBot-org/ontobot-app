@@ -161,87 +161,178 @@
     ]
 }
 ```
+
 ## OP Data Structure
 
 ```json
 {
     "id": "02e19c39-4055-48e7-ac83-c3d9411c4ed4", 
     "relationshipLabel": "relationships", 
+    "sessionID": "4961e33b-29d3-47ad-89a2-34d04dfff39babc",
     "subrelationships": [
         {
-            "domain": "crop",
-            "equivalentLabel": "",
+            "domain": "Student",
+            "equivalentLabel": "studiesIn",
             "id": "537fbf3c-61a4-415c-a20f-187fd67b5245",
             "inverse": "",
-            "ranges": ["soil"],
-            "relationshipLabel": "grows",
-            "quantifier":{
-                "some": true,
-                "only": false
-            },
-            "subrelationships": [
-                {
-                    "domain": "crop",
-                    "equivalentLabel": "",
-                    "id": "537fbf3c-61a4-415c-a20f-187fd67b5255",
-                    "inverse": "",
-                    "ranges": ["soil"],
-                    "relationshipLabel": "grows",
-                    "quantifier":{
-                        "some": true,
-                        "only": false
-                    },
-                    "subrelationships": [],
-                    "type": ["Functional"]
-                },
-                {
-                    "domain": "fertilizer",
-                    "equivalentLabel": "",
-                    "id": "537fbf3c-61a4-415c-a20f-187fd67b5265",
-                    "inverse": "",
-                    "ranges": ["soil", "climate"],
-                    "relationshipLabel": "plantsIn",
-                    "quantifier":{
-                        "some": true,
-                        "only": false
-                    },
-                    "subrelationships": [],
-                    "type": ["Inverse Functional", "Symmetric"]
+            "ranges": ["School"],
+            "relationshipLabel": "studiesIn",
+            "subrelationships": [],
+            "quantifier": {
+                "School": {
+                    "some": false,
+                    "only": false
                 }
-            ],
-            "type": ["Functional"]
+            },
+            "type": {
+                "School" : ["Functional"]
+            }
         },
         {
-            "domain": "climate",
+            "domain": "Lecture",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5255",
+            "inverse": "",
+            "ranges": ["University"],
+            "relationshipLabel": "goes",
+            "subrelationships": [],
+            "quantifier": {
+                "University": {
+                    "some": false,
+                    "only": false
+                }
+            },
+            "type": {
+                "University" : ["Functional"]
+            }
+        },
+        {
+            "domain": "University",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5265",
+            "inverse": "",
+            "ranges": ["Degree","Lecture","Student"],
+            "relationshipLabel": "has",
+            "subrelationships": [],
+            "quantifier": {
+                "Degree": {
+                    "some": false,
+                    "only": false
+                },
+                "Lecture": {
+                    "some": false,
+                    "only": false
+                },
+                "Student": {
+                    "some": false,
+                    "only": false
+                }
+            },
+            "type": {
+                "Degree" : ["Transitive"],
+                "Lecture" : [],
+                "Student" : []
+            }
+        },
+        {
+            "domain": "Toxic Male Student",
             "equivalentLabel": "",
             "id": "537fbf3c-61a4-415c-a20f-187fd67b5275",
             "inverse": "",
-            "ranges": ["weather"],
-            "relationshipLabel": "subClassOf",
-            "quantifier":{
-                "some": false,
-                "only": false
-            },
+            "ranges": ["Toxic Female Student"],
+            "relationshipLabel": "loves",
             "subrelationships": [],
-            "type": ["Functional"]
+            "quantifier": {
+                "Toxic Female Student": {
+                    "some": false,
+                    "only": false
+                }
+            },
+            "type":{
+                "Toxic Female Student" : ["Functional"]
+            } 
         },
         {
-            "domain": "fertilizer",
+            "domain": "Toxic Student",
             "equivalentLabel": "",
             "id": "537fbf3c-61a4-415c-a20f-187fd67b5285",
             "inverse": "",
-            "ranges": ["soil"],
-            "relationshipLabel": "partOf",
-            "quantifier":{
-                "some": false,
-                "only": false
-            },
+            "ranges": ["Innocent Student"],
+            "relationshipLabel": "hates",
             "subrelationships": [],
-            "type": ["Transitive"]
+            "quantifier": {
+                "Innocent Student": {
+                    "some": false,
+                    "only": false
+                }
+            },
+            "type": {
+                "Innocent Student" : ["Transitive"]
+            }
+        },
+        {
+            "domain": "University",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5285",
+            "inverse": "",
+            "ranges": ["School"],
+            "relationshipLabel": "consistsOf",
+            "subrelationships": [],
+            "quantifier": {
+                "School": {
+                    "some": false,
+                    "only": false
+                }
+            },
+            "type": {
+                "School" : ["Transitive"]
+            }
+        },
+        {
+            "domain": "Student",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5285",
+            "inverse": "",
+            "ranges": ["Degree"],
+            "relationshipLabel": "reads",
+            "subrelationships": [],
+            "quantifier": {
+                "Degree": {
+                    "some": false,
+                    "only": false
+                }
+            },
+            "type": {
+                "Degree" : ["Transitive"]
+            }
+        },
+        {
+            "domain": "Graduate",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5285",
+            "inverse": "",
+            "ranges": ["Degree","University"],
+            "relationshipLabel": "",
+            "subrelationships": [],
+            "quantifier": {
+                "Degree": {
+                    "some": false,
+                    "only": false
+                },
+                "University": {
+                    "some": false,
+                    "only": false
+                }
+            },
+            "type": {
+                "Degree" : [],
+                "University" : []
+            }
         }
     ]
 }
 ```
+
 
 ## DB Data Structures (Taxonomy Level)
 
