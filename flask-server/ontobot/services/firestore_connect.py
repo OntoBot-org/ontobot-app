@@ -1,7 +1,6 @@
 import firebase_admin
 import os
 from firebase_admin import credentials,firestore
-import json
 
 # Join the directory name and file name to create the full path
 full_path = os.path.abspath('../flask-server/ontobot/keys/firestore-key.json')

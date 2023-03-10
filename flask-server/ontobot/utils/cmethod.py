@@ -24,8 +24,8 @@ def get_relational_diverse_concept_list(taxonomy_result, relationship_list):
 
 
 # convert customized data into taxonomyContents collection document
-def convertToTaxonomyContent(result):
-    copyResult = result
+def convertToTaxonomyContent(result:list):
+    copyResult = result.copy()
     for obj in copyResult:
         if ('disjoint' in obj) and len(obj['disjoint']) > 0:
             obj['disjoint'] = [dict((str(i), el) for i, el in enumerate(subarr)) for subarr in obj['disjoint']]
