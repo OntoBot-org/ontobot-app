@@ -7,12 +7,10 @@ from ontobot.utils.rules.category import Category
 from ontobot.utils.rules.role import Role
 from ontobot.utils.rules import custom
 from ontobot.utils.owl import OWL
-from ontobot.utils.owl_generator import OWL_Generator
 from ontobot.services import factory, firestore_connect
 from ontobot.utils import cmethod
 
 from ontobot.db.taxonomy import Taxonomy
-import json
 
 
 def validate_taxonomy_service(parsed_json):
@@ -78,18 +76,18 @@ def get_taxonomy_owl(parsed_json):
         session_id = parsed_json['sessionID']
         owl_old = OWL(parsed_json)
         all_concepts = owl_old.get_taxonomy_concepts()
-        result = owl_old.get_taxonomy_concept_with_meta() # All the concepts inside an array according to the BFS
-        new_parsed_json = custom.get_qq_pattern(parsed_json, result)    # Generate QQ Pattern
-        
-        owl_new = OWL(new_parsed_json) # This is for firestores
+        # result = owl_old.get_taxonomy_concept_with_meta() # All the concepts inside an array according to the BFS
+        # new_parsed_json = custom.get_qq_pattern(parsed_json, result)    # Generate QQ Pattern
+        taxo_json = owl_old.get_taxonomy_json()
+        # owl_new = OWL(parsed_json) # This is for firestores
         
         firestore_connect.create_new_owlTaxo_document(session_id=session_id, obj={
             "sessionID": session_id,
             "concepts": list(all_concepts),
-            "taxonomy": cmethod.convertToTaxonomyContent(result=owl_new.get_taxonomy_json())
-            })
+            "taxonomy": cmethod.convertToTaxonomyContent(result= taxo_json)
+        })
         
-        owl_java = OWL(new_parsed_json)
+        owl_java = OWL(parsed_json)
 
         return Response.send_response({
             "concepts": list(all_concepts),
@@ -100,9 +98,10 @@ def get_taxonomy_owl(parsed_json):
         return Error.send_something_went_wrong_error(err)
 
 
-def get_owl_file(parsed_json):
+
+def get_owlexel_file(parsed_json):
     try:
-        return OWL_Generator(json.loads(parsed_json))
+       pass
 
     except Exception as err:
         return Error.send_something_went_wrong_error(err)

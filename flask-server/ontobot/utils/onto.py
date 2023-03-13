@@ -88,11 +88,13 @@ class Taxonomy:
                         "overlap": concept.overlap_with
                     }
                 )
-                temp.append(concept.class_name)
+                # temp.append(concept.class_name)
 
-        self.__meta_stack = final
+        self.__meta_stack = self.__remove_consecatives(meta_stack=final)
         internal_stack.clear()
         return self.__meta_stack
+        
+        
 
     def find_super_class(self, next_item, current_index):
         super_level = next_item['level'] - 1
@@ -108,6 +110,15 @@ class Taxonomy:
                 return True
 
         return False
+    
+    def __remove_consecatives(self, meta_stack:list):
+        filtered_meta_stack = []; filtered_meta_stack.clear()
+        meta_stack_copy = meta_stack.copy()
+        for i, obj in enumerate(meta_stack_copy):
+            if i == 0 or (obj['class_name'] != meta_stack_copy[i-1]['class_name'] or obj['level'] != meta_stack_copy[i-1]['level']):
+                filtered_meta_stack.append(obj)
+        
+        return filtered_meta_stack
 
 
 class OP:

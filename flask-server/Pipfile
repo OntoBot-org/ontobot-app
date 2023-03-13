@@ -8,6 +8,7 @@ flask = "*"
 marshmallow = "*"
 owlready2 = "*"
 firebase-admin = "*"
+xlsxwriter = "*"
 
 [dev-packages]
 
