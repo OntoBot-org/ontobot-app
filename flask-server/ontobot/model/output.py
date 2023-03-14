@@ -14,6 +14,7 @@ class Error:
         umle.check_zero_level()
         umle.check_phase_level()
         umle.check_category_level()
+        umle.check_subkind_level()
 
         err = {
             "topic": topic,

@@ -98,10 +98,3 @@ def get_taxonomy_owl(parsed_json):
         return Error.send_something_went_wrong_error(err)
 
 
-
-def get_owlexel_file(parsed_json):
-    try:
-       pass
-
-    except Exception as err:
-        return Error.send_something_went_wrong_error(err)
