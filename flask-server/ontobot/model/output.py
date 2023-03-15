@@ -63,6 +63,26 @@ class Error:
         }
 
         return json.dumps(err)
+    
+    @staticmethod
+    def file_error(msg):
+        err = {
+            "code" : 400,
+            "topic" : "File Error",
+            "msg" : msg,
+            "type": "error"
+        }
+
+        return json.dumps(err)
+    
+    
+    @staticmethod
+    def next(err, type=None):
+        return {
+            "code": 500,
+            "msg": err,
+            "type": type
+        }
 
 
 class Response:
@@ -75,3 +95,10 @@ class Response:
         }
 
         return json.dumps(response)
+    
+    @staticmethod
+    def next(msg):
+        return {
+            "code" : 201,
+            "msg" : msg
+        }

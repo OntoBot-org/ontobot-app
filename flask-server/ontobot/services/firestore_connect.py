@@ -87,3 +87,18 @@ def get_OwlTaxo_document(session_id):
         return user_data
     else:
         return None
+
+
+# Define a function to get a document from OWLCompleteContents collection
+def get_owlComplete_document(session_id):
+    query = owl_complete_content_ref.where("sessionID", "==", session_id)
+    results = query.get()
+
+    # Get the first document that matches the query
+    if len(results) > 0:
+        # Convert the document data to a Python dictionary
+        user_data = results[0].to_dict()
+        # Return the user data
+        return user_data
+    else:
+        return None

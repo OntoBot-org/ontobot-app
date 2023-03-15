@@ -1,6 +1,8 @@
 import xlsxwriter
+import pandas as pd
 from ontobot.services import firestore_connect
 from ontobot.model.output import Error, Response
+from ontobot.utils import cmethod
 
 def get_excel_file(parsed_json):
     sessionID = parsed_json['sessionID']
@@ -63,6 +65,50 @@ def get_excel_file(parsed_json):
 
     except:
         return Error.send_something_went_wrong_error("object mapping issue happened")
+    
+
+def convert_excel_file(sessionID):
+    # Get previous dataset from the database with respect to the session ID
+    complete_content = firestore_connect.get_owlComplete_document(session_id=sessionID)
+    complete_content_fix = {
+        "sessionID": complete_content['sessionID'],
+        "taxonomy" : complete_content['taxonomy'],
+        "concepts" : complete_content['concepts'],
+        "op" : complete_content['op']
+    }
+    converted_result = cmethod.convertFromTaxonomyContent(complete_content_fix)
+
+    # Read the Excel file
+    df = pd.read_excel(f'ontobot/files/excel/filled-excel/{sessionID}.xlsx', sheet_name=None)
+
+    # Initialize the object array
+    obj_arr = {}
+
+    try:
+        # Loop through each sheet in the Excel file
+        for sheet_name in df.keys():
+            # Initialize a list to store the data for the current sheet
+            data = []
+            # Loop through each row in the sheet
+            for index, row in df[sheet_name].iterrows():
+                # Initialize a dictionary to store the current row data
+                row_data = {}
+                # Loop through each column in the row
+                for column_name in df[sheet_name].columns:
+                    # Add the column data to the row dictionary
+                    row_data[column_name.split("(")[0].strip()] = row[column_name]
+    
+                # Add the row dictionary to the sheet data list
+                data.append(row_data)
+            # Add the sheet data list to the object array with the sheet name as key
+            obj_arr[sheet_name] = data
+
+        converted_result['populate'] = obj_arr
+        
+        return Response.next(converted_result)
+    
+    except:
+        return Error.next("Something went wrong in excel file reading")
 
 
 def __is_available(obj, definedConcept):
@@ -80,7 +126,7 @@ def __find_concept(obj, definedConcept):
 def __generate_excel_file(data, sessionID):
     try:
        # Create a new Excel workbook
-        file_name = f"{sessionID}.xlsx"
+        file_name = f"ontobot/files/excel/{sessionID}.xlsx"
         workbook = xlsxwriter.Workbook(filename=file_name)
 
         # Define formats for different data types
@@ -96,7 +142,9 @@ def __generate_excel_file(data, sessionID):
             worksheet = workbook.add_worksheet(obj['key'])
 
         # Write the column headers to the worksheet and adjust the column widths
-            col = 0
+            col = 1
+            worksheet.set_column(0, 0, 15)
+            worksheet.write(0, 0, "# Object Name", bold)
             for attr in obj['attributes']:
                 col_name = f"{attr} ({obj['attributes'][attr]['type']})"
                 col_width = len(col_name) + 2
