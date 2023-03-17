@@ -162,7 +162,189 @@
 }
 ```
 
-## OP Data Structure
+## OP Data Structure (NEW)
+```json
+{
+    "id": "02e19c39-4055-48e7-ac83-c3d9411c4ed4", 
+    "relationshipLabel": "relationships", 
+    "sessionID": "4961e33b-29d3-47ad-89a2-34d04dfff39babc",
+    "subrelationships": [
+        {
+            "domain": "Student",
+            "equivalentLabel": "studiesIn",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5245",
+            "inverse": "",
+            "ranges": [
+                {
+                    "name": "School",
+                    "some": true,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": ["Functional"]
+                }
+            ],
+            "relationshipLabel": "studiesIn"
+        },
+        {
+            "domain": "Lecture",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5255",
+            "inverse": "",
+            "ranges": [
+                {
+                    "name": "University",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": ["Functional"]
+                }
+            ],
+            "relationshipLabel": "goes"
+        },
+        {
+            "domain": "University",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5265",
+            "inverse": "",
+            "ranges": [
+                {
+                    "name": "Degree",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": ["Functional"]
+                },
+                {
+                    "name": "Lecture",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": []
+                },
+                {
+                    "name": "Student",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": []
+                }
+            ],
+            "relationshipLabel": "has"
+        },
+        {
+            "domain": "Toxic Male Student",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5275",
+            "inverse": "",
+            "ranges": [
+                {
+                    "name": "Toxic Female Student",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": ["Functional"]
+                }
+            ],
+            "relationshipLabel": "loves"
+        },
+        {
+            "domain": "Toxic Student",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5285",
+            "inverse": "",
+            "ranges": [
+                {
+                    "name": "Innocent Student",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": ["Transitive"]
+                }
+            ],
+            "relationshipLabel": "hates"
+        },
+        {
+            "domain": "University",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5285",
+            "inverse": "",
+            "ranges": [
+                {
+                    "name": "School",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": ["Transitive"]
+                }
+            ],
+            "relationshipLabel": "consistsOf"
+        },
+        {
+            "domain": "Student",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5285",
+            "inverse": "",
+            "ranges": [
+                {
+                    "name": "Degree",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": ["Transitive"]
+                }
+            ],
+            "relationshipLabel": "reads"
+        },
+        {
+            "domain": "Graduate",
+            "equivalentLabel": "",
+            "id": "537fbf3c-61a4-415c-a20f-187fd67b5285",
+            "inverse": "",
+            "ranges": [
+                {
+                    "name": "Degree",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": []
+                },
+                {
+                    "name": "University",
+                    "some": false,
+                    "only": false,
+                    "min": 0,
+                    "max": "inf",
+                    "exactly": -1,
+                    "relationshipTypes": []
+                }
+            ],
+            "relationshipLabel": ""
+        }
+    ]
+}
+```
+
+## OP Data Structure (OLD)
 
 ```json
 {

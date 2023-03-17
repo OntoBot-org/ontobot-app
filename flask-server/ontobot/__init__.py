@@ -128,6 +128,7 @@ def add_populate_local():
     else:
         return Response.send_response(result['msg'])
 
+
 # populate
 @app.route('/op/checkpoint_2/taxowl/populate', methods=['POST'])
 def add_populate():
@@ -154,7 +155,17 @@ def add_populate():
     if result['code'] == 500:
         return Error.send_something_went_wrong_error(result['msg'])
     else:
-        return Response.send_response(result['msg'])
+        response = requests.post(url, data= Response.send_response(result['msg']), headers=headers)
+        return Response.send_response(response.json())
+
+
+# testing for new data structure
+@app.route('/op/checkpoint/op_generate/populate/test', methods=['POST'])
+def test_ds():
+    data = request.get_json()
+    return op_service.test_data_structure(parsed_json=data)
+
+
     
 
 if __name__ == "__main__":

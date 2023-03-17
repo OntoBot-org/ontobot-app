@@ -32,7 +32,7 @@ def get_op_structure(parsed_json):
 
             # get n-ary pattern
             db_owlTaxonomy_result = firestore_connect.get_OwlTaxo_document(session_id=sessionID)
-            final_op_result = nary.get_nary_structure(op_struct, db_owlTaxonomy_result['concepts'])
+            final_op_result = nary.get_nary_structure(op_struct, db_owlTaxonomy_result['concepts'], sessionID)
             owl_complete = {
                 "sessionID" : sessionID,
                 "taxonomy" : db_owlTaxonomy_result['taxonomy'],
@@ -50,4 +50,9 @@ def get_op_structure(parsed_json):
         return Error.next(err=err, type="sww")
 
 
-    
+
+def test_data_structure(parsed_json):
+    op = OP()
+    relationship_list = parsed_json['subrelationships']
+    op_struct = op.get_stack(relationship_list)
+    return Response.send_response(op_struct)

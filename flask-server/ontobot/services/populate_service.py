@@ -103,6 +103,10 @@ def convert_excel_file(sessionID):
             # Add the sheet data list to the object array with the sheet name as key
             obj_arr[sheet_name] = data
 
+        firestore_connect.create_new_taxo_populate_document(session_id=sessionID, obj={
+            "sessionID": sessionID,
+            "populate": obj_arr
+        })
         converted_result['populate'] = obj_arr
         
         return Response.next(converted_result)
