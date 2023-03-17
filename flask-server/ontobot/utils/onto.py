@@ -21,19 +21,19 @@ class Taxonomy:
 
             mylist = [i['name'], i['stereotype'], i['propertiesList'], level]
             if ('subclasses' in i) and len(i['subclasses']) > 0:
-                mylist.append(len(i['subclasses'])) # cardinality
+                mylist.append(len(i['subclasses']))  # cardinality
                 if 'disjoint' in i:
-                    mylist.append(i['disjoint']) # disjoint
+                    mylist.append(i['disjoint'])  # disjoint
                     self.__stack.append(mylist)
                 else:
-                    mylist.append([]) # disjoint
+                    mylist.append([])  # disjoint
                     self.__stack.append(mylist)
-                
+
                 if 'overlap' in i:
-                    mylist.append(i['overlap']) # overlap
+                    mylist.append(i['overlap'])  # overlap
                     self.__stack.append(mylist)
                 else:
-                    mylist.append([]) # overlap
+                    mylist.append([])  # overlap
                     self.__stack.append(mylist)
 
                 self.__rec_traverse_taxonomy(i['subclasses'], level + 1)
@@ -41,13 +41,12 @@ class Taxonomy:
             else:
                 # leaf node
                 mylist.append(0)  # cardinality
-                mylist.append([]) # disjoint
-                mylist.append([]) # overlap
+                mylist.append([])  # disjoint
+                mylist.append([])  # overlap
                 self.__stack.append(mylist)
 
         return self.__stack
 
-    
     def get_selected_concepts(self, concepts: list, stereotype):
         concept_result = []
         for cname in concepts:
@@ -58,8 +57,7 @@ class Taxonomy:
 
         return concept_result
 
-    
-    def get_stack(self,input_stack: list):
+    def get_stack(self, input_stack: list):
         temp = []  # used to store class names temporarily
         final = []  # used to store concept's objects
 
@@ -93,8 +91,6 @@ class Taxonomy:
         self.__meta_stack = self.__remove_consecatives(meta_stack=final)
         internal_stack.clear()
         return self.__meta_stack
-        
-        
 
     def find_super_class(self, next_item, current_index):
         super_level = next_item['level'] - 1
@@ -110,14 +106,15 @@ class Taxonomy:
                 return True
 
         return False
-    
-    def __remove_consecatives(self, meta_stack:list):
-        filtered_meta_stack = []; filtered_meta_stack.clear()
+
+    def __remove_consecatives(self, meta_stack: list):
+        filtered_meta_stack = []
+        filtered_meta_stack.clear()
         meta_stack_copy = meta_stack.copy()
         for i, obj in enumerate(meta_stack_copy):
             if i == 0 or (obj['class_name'] != meta_stack_copy[i-1]['class_name'] or obj['level'] != meta_stack_copy[i-1]['level']):
                 filtered_meta_stack.append(obj)
-        
+
         return filtered_meta_stack
 
 
@@ -135,7 +132,8 @@ class OP:
         for i in arr:
             # recursion call : children do same things for children
 
-            mylist = [i['relationshipLabel'], i['equivalentLabel'], i['inverse'], i['domain'], i['ranges'], i['type'], i['quantifier'], level]
+            mylist = [i['relationshipLabel'], i['equivalentLabel'], i['inverse'],
+                      i['domain'], i['ranges'],  level]
             if ('subrelationships' in i) and len(i['subrelationships']) > 0:
                 self.__stack.append(mylist)
                 self.__rec_traverse_op(i['subrelationships'], level + 1)
@@ -144,6 +142,82 @@ class OP:
                 self.__stack.append(mylist)
 
         return self.__stack
+
+    @classmethod
+    def __convert_type(cls, range: list):
+        opc = {
+            "functional": False,
+            "inverseFunctional": False,
+            "transitive": False,
+            "symmetric": False,
+            "asymmetric": False,
+            "reflexive": False,
+            "irreflexive": False
+        }
+        constraints = {}
+        type_arr = []
+        if len(range) == 1:  # simple OP
+            type_arr = range[0]['relationshipTypes'].copy()
+            
+            for op in type_arr:
+                if op == "Functional":
+                    opc['functional'] = True
+                elif op == "Inverse Functional":
+                    opc['inverseFunctional'] = True
+                elif op == "Symmetric":
+                    opc['symmetric'] = True
+                elif op == "Reflexive":
+                    opc['reflexive'] = True
+                elif op == "Irreflexive":
+                    opc['irreflexive'] = True
+                else:
+                    opc['transitive'] = True
+
+            constraints = opc
+
+        else:
+            for range_obj in range:
+                range_name = range_obj['name']
+                type_arr = range_obj['relationshipTypes'].copy()
+
+                constraints[range_name] = type_arr
+
+        return constraints
+
+    @classmethod
+    def __convert_quantifier(cls, range: list):
+        quantifier = {}
+        if len(range) == 1:
+            range_obj = range[0]
+            quantifier['some'] = range_obj['some']
+            quantifier['only'] = range_obj['only'] 
+            quantifier['min'] = range_obj['min'] 
+            quantifier['max'] = range_obj['max']  
+
+        else:
+            for range_obj in range:
+                range_name = range_obj['name']
+                some = range_obj['some']
+                only = range_obj['only']
+                min = range_obj['min']
+                max = range_obj['max']
+
+                quantifier[range_name] = {
+                    "some": some,
+                    "only": only,
+                    "min": min,
+                    "max": max
+                }
+
+        return quantifier
+    
+    @classmethod
+    def __convert_ranges(cls, range: list):
+        ranges = []
+        for range_obj in range:
+            ranges.append(range_obj['name'])
+
+        return ranges 
 
     @classmethod
     def get_stack(cls, input_stack: list):
@@ -158,40 +232,12 @@ class OP:
             inverse = item[2]
             c_domain = item[3]
             c_range = item[4]
-            type = item[5]
-            quantifier = item[6]
-            level = item[7]
+            level = item[5]
             key = uid
 
-            opc = {
-                "functional": False,
-                "inverseFunctional": False,
-                "transitive": False,
-                "symmetric": False,
-                "asymmetric": False,
-                "reflexive": False,
-                "irreflexive": False
-            }
-
-
-            if len(c_range) == 1 : 
-                quantifier = quantifier[c_range[0]]
-                
-                for op in type[c_range[0]]:
-                    if op == "Functional":
-                        opc['functional'] = True
-                    elif op == "Inverse Functional":
-                        opc['inverseFunctional'] = True
-                    elif op == "Symmetric":
-                        opc['symmetric'] = True
-                    elif op == "Reflexive":
-                        opc['reflexive'] = True
-                    elif op == "Irreflexive":
-                        opc['irreflexive'] = True
-                    else:
-                        opc['transitive'] = True
-            else :
-                opc = type
+            convert_ranges = cls.__convert_ranges(c_range)
+            convert_quantifiers = cls.__convert_quantifier(c_range)
+            convert_constraints = cls.__convert_type(c_range)
 
             final.append(
                 {
@@ -200,10 +246,10 @@ class OP:
                     "op_inverse": inverse,
                     "op_equal": equal,
                     "op_domain": c_domain,
-                    "op_range": c_range,
+                    "op_range": convert_ranges,
                     "level": level,
-                    "quantifier": quantifier,
-                    "constraints": opc
+                    "quantifier": convert_quantifiers,
+                    "constraints": convert_constraints
                 }
             )
 
@@ -242,5 +288,3 @@ class OP:
                 op_result.append(prop)
 
         return op_result
-
-

@@ -25,14 +25,14 @@ def get_op_structure(parsed_json):
             invalid_role_concepts = role.get_role_pattern(db_taxonomy_result['msg'], op_struct) # check role pattern
             
             if len(invalid_custom_concepts) > 0:
-                return Error.send_op_relational_error(invalid_custom_concepts)
+                return Error.next(err=invalid_custom_concepts, type="op_relational")
             
             if len(invalid_role_concepts) > 0:
-                return Error.send_role_error(invalid_role_concepts)
+                return Error.next(err=invalid_role_concepts, type="role")
 
             # get n-ary pattern
             db_owlTaxonomy_result = firestore_connect.get_OwlTaxo_document(session_id=sessionID)
-            final_op_result = nary.get_nary_structure(op_struct, db_owlTaxonomy_result['concepts'])
+            final_op_result = nary.get_nary_structure(op_struct, db_owlTaxonomy_result['concepts'], sessionID)
             owl_complete = {
                 "sessionID" : sessionID,
                 "taxonomy" : db_owlTaxonomy_result['taxonomy'],
@@ -41,13 +41,18 @@ def get_op_structure(parsed_json):
             }
 
             firestore_connect.create_new_owlComplete_document(session_id=sessionID, obj=owl_complete)
-            return Response.send_response(cmethod.convertFromTaxonomyContent(owl_complete))
+            return Response.next(cmethod.convertFromTaxonomyContent(owl_complete))
         
         else:
-            return Error.send_something_went_wrong_error("No session data is found")
+            return Error.next(err="No session data is found", type="sww")
     
     except Exception as err:
-        return Error.send_something_went_wrong_error(err)
+        return Error.next(err=err, type="sww")
 
 
-    
+
+def test_data_structure(parsed_json):
+    op = OP()
+    relationship_list = parsed_json['subrelationships']
+    op_struct = op.get_stack(relationship_list)
+    return Response.send_response(op_struct)

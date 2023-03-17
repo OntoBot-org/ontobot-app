@@ -89,12 +89,20 @@ def get_taxonomy_owl(parsed_json):
         
         owl_java = OWL(parsed_json)
 
-        return Response.send_response({
+        # return Response.send_response({
+        #     "sessionID": session_id,
+        #     "concepts": list(all_concepts),
+        #     "taxonomy": owl_java.get_taxonomy_json()
+        # })
+
+        return Response.next({
+            "sessionID": session_id,
             "concepts": list(all_concepts),
             "taxonomy": owl_java.get_taxonomy_json()
         })
 
     except Exception as err:
-        return Error.send_something_went_wrong_error(err)
+        # return Error.send_something_went_wrong_error(err)
+        return Error.next(err=err)
 
 
