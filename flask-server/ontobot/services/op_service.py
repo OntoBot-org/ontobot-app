@@ -3,6 +3,7 @@ from ontobot.utils.rules import nary
 from ontobot.model.output import Error,Response
 from ontobot.utils.rules import custom
 from ontobot.utils.rules import role
+from ontobot.utils.rules import collective
 from ontobot.services import firestore_connect
 from ontobot.utils import cmethod
 
@@ -23,12 +24,20 @@ def get_op_structure(parsed_json):
         if db_taxonomy_result is not None:
             invalid_custom_concepts = custom.get_relational_pattern(db_taxonomy_result['msg'], relationship_list) # check relational pattern
             invalid_role_concepts = role.get_role_pattern(db_taxonomy_result['msg'], op_struct) # check role pattern
-            
+            invalid_collective_concepts_stage_01 = collective.get_collective_pattern_stage_01(db_taxonomy_result['msg'], op_struct) # check collective pattern
+            invalid_collective_concepts_stage_02 = collective.get_collective_pattern_stage_02(op_struct) # check collective pattern
+
             if len(invalid_custom_concepts) > 0:
                 return Error.next(err=invalid_custom_concepts, type="op_relational")
             
             if len(invalid_role_concepts) > 0:
                 return Error.next(err=invalid_role_concepts, type="role")
+            
+            if len(invalid_collective_concepts_stage_01) > 0:
+                return Error.next(err=invalid_collective_concepts_stage_01, type="collective-01")
+            
+            if len(invalid_collective_concepts_stage_02) > 0:
+                return Error.next(err=invalid_collective_concepts_stage_02, type="collective-02")
 
             # get n-ary pattern
             db_owlTaxonomy_result = firestore_connect.get_OwlTaxo_document(session_id=sessionID)
