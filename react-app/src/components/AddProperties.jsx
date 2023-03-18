@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { BiPlus } from "react-icons/bi";
 import { TbAlertTriangle } from "react-icons/tb";
 import { v4 } from "uuid";
@@ -30,7 +31,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		name: "",
 		datatype: datatypes[0].label,
 		restrictions: propertyRestrictions[0].label,
-		functional: "yes",
+		functional: "no",
 	});
 
 	const dispatch = useDispatch();
@@ -58,7 +59,13 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			selectedTaxonomy.name === "" ||
 			selectedTaxonomy.name === "taxonomies"
 		) {
-			console.log("Please select a taxonomy from the taxonomy tree");
+			setalertMsg(
+				"Please select a taxonomy from the taxonomy tree."
+			);
+			setisAlertVisible(true);
+			setTimeout(() => {
+				setisAlertVisible(false);
+			}, 3000);
 		} else {
 			setisModalVisible(!isModalVisible);
 		}
@@ -70,7 +77,13 @@ const AddProperties = ({ selectedTaxonomy }) => {
                 handleAddProperty()
             }
         } else {
-            console.log('No event is passed')
+			setalertMsg(
+				"No event is passed"
+			);
+			setisAlertVisible(true);
+			setTimeout(() => {
+				setisAlertVisible(false);
+			}, 3000);
         }
     }
 
@@ -170,6 +183,16 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				setisAlertVisible(false);
 			}, 3000);
 		} 
+		else if (newProperty.name.includes('(') || newProperty.name.includes(')')) {
+			setalertMsg(
+				"Please note that you cannot enter parenthesis in the property name."
+			);
+			setisAlertVisible(true);
+
+			setTimeout(() => {
+				setisAlertVisible(false);
+			}, 3000);
+		}
 		else if (!newProperty.datatype) {
 			setalertMsg(
 				"Please note that Data type is required."
@@ -197,7 +220,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				name: "",
 				datatype: datatypes[0].label,
 				restrictions: propertyRestrictions[0].label,
-				functional: "yes",
+				functional: "no",
 			});
 
 			setEnabled(true);
@@ -251,17 +274,23 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				fromLeft="left-[10%]"
 				fromTop="top-[15%]"
 			>
-			<div className="flex items-center justify-center gap-4">
-				<p className="modal_title">
-					Add properties of{" "}
-					<span className="font-bold text-secondary">
-						{selectedTaxonomy.name}
-					</span>{" "}
-					class.
-				</p>
-					
-				<MdLiveHelp className="text-lg font-semibold mb-6 text-center cursor-pointer text-secondary hover:text-primary" onClick={takeAtour} />
-			</div>
+				<div className="flex items-center justify-between w-full mb-2">
+					<div className="flex items-center justify-center gap-4">
+						<p className="modal_title">
+							Add properties of{" "}
+							<span className="font-bold text-secondary">
+								{selectedTaxonomy.name}
+							</span>{" "}
+							class.
+						</p>
+							
+						<MdLiveHelp className="tour_icon" onClick={takeAtour} />
+					</div>
+					<AiOutlineCloseCircle 
+						onClick={() => setisModalVisible(false)} 
+						className='modal_close_icon' 
+					/>
+                </div>
 
 				{isAlertVisible && (
 					<div className="alert_style">
@@ -310,7 +339,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 							<input
 								type="checkbox"
 								className="sr-only peer"
-								checked={enabled}
+								checked={!enabled}
 								onClick={() =>
 									newProperty.functional === "yes"
 										? setnewProperty({ ...newProperty, functional: "no" })
@@ -319,7 +348,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 								onChange={() => setEnabled(!enabled)}
 							/>
 							<div className="w-11 h-6 bg-lightgray rounded-full peer  peer-focus:ring-secondary  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-lightgray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary" />
-							<span className="ml-2 text-sm font-medium text-gray-900">
+							<span className="ml-2 text-sm font-medium text-fontcolor">
 								Yes
 							</span>
 						</label>

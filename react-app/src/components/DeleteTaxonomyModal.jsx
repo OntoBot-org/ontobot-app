@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { TbAlertTriangle } from 'react-icons/tb'
 
 import { removeTaxonomy } from '../features/taxonomies/taxonomySlice'
@@ -18,9 +19,13 @@ const DeleteTaxonomyModal = ({ open, onClose, taxonomy }) => {
 
     return (
         <Modal open={open} onClose={onClose} fromLeft='left-[25%]'>
-            <p className="modal_title">
-                Are you sure that you want to <span className="font-bold text-primary">remove</span> the class?
-            </p>
+            <div className="flex items-center justify-between w-full mb-2">
+                <p className="modal_title text-primary">Are you sure that you want to remove  the class?</p>
+                <AiOutlineCloseCircle 
+                    onClick={onClose} 
+                    className='modal_close_icon' 
+                />
+            </div>
 
             { taxonomy?.subclasses?.length > 0 && (
                 <div className="alert_style">

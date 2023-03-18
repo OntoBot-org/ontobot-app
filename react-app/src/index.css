@@ -8,27 +8,27 @@
     }
 
     .primary_btn {
-        @apply bg-primary text-base text-white w-[146px] h-14 rounded p-2 mr-5 text-center
-        hover:bg-white hover:text-primary hover:border hover:border-primary hover:shadow-lg
+        @apply bg-primary text-base text-white w-[146px] h-14 rounded px-2 py-1 mr-5 text-center
+        hover:bg-white hover:text-primary hover:border-2 hover:border-primary hover:shadow-lg hover:font-semibold
     }
 
     .primary_btn_comp {
-        @apply bg-white text-base text-primary border border-primary w-[146px] h-14 rounded p-2 mr-5 mt-2 lg:mt-0
+        @apply bg-white text-base text-primary border-2 font-semibold border-primary w-[146px] h-14 rounded p-2 mr-5 mt-2 lg:mt-0
         hover:bg-primary hover:text-white hover:shadow-lg
     }
 
     .secondary_btn {
         @apply bg-secondary text-base text-white w-[146px] h-14 rounded p-2 mr-5 text-center
-        hover:bg-white hover:text-secondary hover:border hover:border-secondary hover:shadow-lg
+        hover:bg-white hover:text-secondary hover:border-2 hover:border-secondary hover:shadow-lg hover:font-semibold
     }
 
     .secondary_btn_comp {
-        @apply bg-white text-base text-secondary border border-secondary w-[146px] h-14 rounded p-2 mr-5 mt-2 lg:mt-0
+        @apply bg-white text-base text-secondary border-2 border-secondary w-[146px] h-14 rounded p-2 mr-5 mt-2 lg:mt-0
         hover:bg-secondary hover:text-white hover:shadow-lg
     }
 
     .disabled_btn {
-        @apply bg-lightgray text-base text-white w-[146px] h-14 rounded p-2 mr-5 text-center
+        @apply text-base text-white bg-gray-300 border-2 border-gray-300 hover:bg-gray-400 hover:border-gray-400 w-[146px] h-14 rounded p-2 mr-5 text-center cursor-not-allowed
     }
 
     .taxonomy-heading {
@@ -44,7 +44,7 @@
     }
 
     .modal_title {
-        @apply w-full text-lg font-semibold mb-6 text-center
+        @apply w-full text-lg font-semibold text-center text-secondary
     }
 
     .biplus_modal {
@@ -53,5 +53,13 @@
 
     .label_style {
         @apply inline-flex relative items-center mr-5 cursor-pointer
+    }
+
+    .modal_close_icon {
+        @apply cursor-pointer text-lg text-primary hover:text-white hover:bg-primary rounded-full hover:shadow-lg
+    }
+
+    .tour_icon {
+        @apply text-lg font-semibold text-center cursor-pointer text-secondary hover:text-primary
     }
 }

@@ -1,11 +1,11 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 
 import { RelationshipCage, TaxonomyCage } from '../components'
 
 const TryOntoBot = () => {
 
-    const taxonomies = useSelector(store => store.taxonomies)
+    // const taxonomies = useSelector(store => store.taxonomies)
 
     return (
         <div className='snap-y scroll-smooth'>

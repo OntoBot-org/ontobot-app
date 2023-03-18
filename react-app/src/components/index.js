@@ -1,5 +1,6 @@
 export { default as AdvancedOP } from './AdvancedOP'
 export { default as AddProperties } from './AddProperties'
+export { default as AddObjectProperties } from './AddObjectProperties'
 export { default as DeleteTaxonomyModal } from './DeleteTaxonomyModal'
 export { default as DeleteRelationshipModal } from './DeleteRelationshipModal'
 export { default as DisjointClsList } from './DisjointClsList'

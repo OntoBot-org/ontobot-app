@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import domainRangeReducer from "./features/relationships/domainRangeSlice";
+import objectPropertyReducer from "./features/objectProperties/objectPropertySlice";
 import relationshipReducer from "./features/relationships/relationshipSlice";
 import relationshipDetailsReducer from "./features/relationships/relationshipDetailsSlice";
 import selectedTaxonomyReducer from "./features/taxonomies/selectedTaxonomySlice";
@@ -13,5 +14,6 @@ export const store = configureStore({
         relationshipDetails: relationshipDetailsReducer,
         selectedTaxonomy: selectedTaxonomyReducer,
         taxonomies: taxonomyReducer,
+        objectProperties: objectPropertyReducer,
     }
 })
