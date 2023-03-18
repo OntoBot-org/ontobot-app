@@ -4308,3 +4308,1526 @@ SyntaxError: invalid syntax
  * Debugger is active!
  * Debugger PIN: 792-081-341
 127.0.0.1 - - [17/Mar/2023 19:49:22] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [18/Mar/2023 09:38:49] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [18/Mar/2023 09:42:18] "POST /onto/checkpoint_1/validate HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 21, in validate_taxonomy_service
+    sessionID = parsed_json['sessionID']
+KeyError: 'sessionID'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2551, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2531, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 26, in add_ontos
+    return taxonomy_service.validate_taxonomy_service(request.get_json())
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 68, in validate_taxonomy_service
+    return err.with_traceback()
+TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+127.0.0.1 - - [18/Mar/2023 09:48:32] "POST /onto/checkpoint_1/validate HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 21, in validate_taxonomy_service
+    sessionID = parsed_json['sessionID']
+KeyError: 'sessionID'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2551, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2531, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 26, in add_ontos
+    return taxonomy_service.validate_taxonomy_service(request.get_json())
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 68, in validate_taxonomy_service
+    return err.with_traceback()
+TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+127.0.0.1 - - [18/Mar/2023 09:49:44] "POST /onto/checkpoint_1/validate HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 21, in validate_taxonomy_service
+    sessionID = parsed_json['sessionID']
+KeyError: 'sessionID'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2551, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2531, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 26, in add_ontos
+    return taxonomy_service.validate_taxonomy_service(request.get_json())
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 68, in validate_taxonomy_service
+    return err.with_traceback()
+TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+127.0.0.1 - - [18/Mar/2023 16:13:13] "POST /onto/checkpoint_1/validate HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 21, in validate_taxonomy_service
+    sessionID = parsed_json['sessionID']
+KeyError: 'sessionID'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2551, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2531, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 26, in add_ontos
+    return taxonomy_service.validate_taxonomy_service(request.get_json())
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 68, in validate_taxonomy_service
+    return err.with_traceback()
+TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if err_class
+                ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if err_class['level']
+                         ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if err_class['level'] == 
+                             ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if err_class['level'] == 0 and 
+                                   ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if err_class['level'] == 0 and err_class
+                                            ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if err_class['level'] == 0 and err_class['']
+                                                ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if err_class['level'] == 0 and err_class['stereo']
+                                                      ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if err_class['level'] == 0 and err_class['stereotype']
+                                                          ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    if err_class['level'] == 0 and err_class['stereotype'] == 'subkind'
+                                                                       ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 111
+    def get_err_list(self):
+IndentationError: expected an indented block after 'if' statement on line 107
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\role.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 19:52:38] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 27
+    invalid_collective_concepts_stage_01 = collective.
+                                                      ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 69
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 72
+    return json.dumps(err)
+    ^^^^^^
+IndentationError: expected an indented block after 'if' statement on line 69
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\model\\output.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 36
+    if len()
+            ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 39
+    db_owlTaxonomy_result = firestore_connect.get_OwlTaxo_document(session_id=sessionID)
+    ^^^^^^^^^^^^^^^^^^^^^
+IndentationError: expected an indented block after 'if' statement on line 36
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 39
+    db_owlTaxonomy_result = firestore_connect.get_OwlTaxo_document(session_id=sessionID)
+    ^^^^^^^^^^^^^^^^^^^^^
+IndentationError: expected an indented block after 'if' statement on line 36
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 40
+    db_owlTaxonomy_result = firestore_connect.get_OwlTaxo_document(session_id=sessionID)
+    ^^^^^^^^^^^^^^^^^^^^^
+IndentationError: expected an indented block after 'if' statement on line 36
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 37
+    return Error.next(err=)
+                          ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 37
+    return Error.next(err=invalid_collective_concepts_stage_01, type=)
+                                                                     ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:05:49] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 64
+    elif 
+         ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 65
+    else:
+    ^^^^
+IndentationError: expected an indented block after 'elif' statement on line 64
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 66
+    else:
+    ^^^^
+IndentationError: expected an indented block after 'elif' statement on line 64
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 66
+    else:
+    ^^^^
+IndentationError: expected an indented block after 'elif' statement on line 64
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 66
+    else:
+    ^^^^
+IndentationError: expected an indented block after 'elif' statement on line 64
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 65
+    return Error.send_collective_error(result['msg''])
+                                                   ^
+SyntaxError: unterminated string literal (detected at line 65)
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 65
+    return Error.send_collective_error(result['msg])
+                                              ^
+SyntaxError: unterminated string literal (detected at line 65)
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 66
+    elif result['type'] == "collective-01":
+                                           ^
+IndentationError: unindent does not match any outer indentation level
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:10:39] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [18/Mar/2023 20:11:07] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 6, in <module>
+    from ontobot.utils.rules import collective
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\collective.py", line 24
+    if len(op['op_range']) == 1):
+                               ^
+SyntaxError: unmatched ')'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:12:01] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [18/Mar/2023 20:13:17] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [18/Mar/2023 20:13:22] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:15:32] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 6, in <module>
+    from ontobot.utils.rules import collective
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\collective.py", line 26
+    if op['quantifier'][]['min'] < 2:
+                        ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:18:52] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:19:37] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:21:20] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:23:02] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:23:35] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:25:49] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:26:35] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:27:11] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\collective.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Mar/2023 20:28:59] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [18/Mar/2023 20:29:34] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [18/Mar/2023 20:30:02] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -

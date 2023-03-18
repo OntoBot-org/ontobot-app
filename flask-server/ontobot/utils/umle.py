@@ -103,6 +103,18 @@ class UMLE:
                     "stereotype": err_cls.stereotype,
                     "suggestion": err_cls.suggestion
                 })
+            
+            if err_class['level'] == 0 and err_class['stereotype'] == 'subkind':
+                err_cls = self.Err()
+                err_cls.concept_name = concept
+                err_cls.stereotype = err_class['stereotype']
+                err_cls.suggestion = "A Super class can't have subkind stereotype according to the ontoUML. As a sugesstion, You can change this into kind."
+
+                self.__err_list.append({
+                    "name": err_cls.concept_name,
+                    "stereotype": err_cls.stereotype,
+                    "suggestion": err_cls.suggestion
+                })
 
     
     def get_err_list(self):

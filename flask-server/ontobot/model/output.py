@@ -65,6 +65,27 @@ class Error:
         return json.dumps(err)
     
     @staticmethod
+    def send_collective_error(concept_list, stage):
+        if stage == 1:
+            err = {
+            "code" : 500,
+            "topic" : "Collective pattern violation",
+            "msg" : "Following concepts should be with collective stereotypes",
+            "meta" : concept_list,
+            "type" : "error"
+        }
+        else:
+            err = {
+            "code" : 500,
+            "topic" : "Collective pattern violation",
+            "msg" : "The min values of the Object Properties associated with following ranges/concepts should be at least 2",
+            "meta" : concept_list,
+            "type" : "error"
+        }
+
+        return json.dumps(err)
+    
+    @staticmethod
     def file_error(msg):
         err = {
             "code" : 400,

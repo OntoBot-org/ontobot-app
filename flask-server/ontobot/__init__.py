@@ -61,6 +61,10 @@ def get_nAry_download_local():
             return Error.send_op_relational_error(result['msg'])
         elif result['type'] == "role":
             return Error.send_role_error(result['msg'])
+        elif result['type'] == "collective-01":
+            return Error.send_collective_error(result['msg'], 1)
+        elif result['type'] == "collective-02":
+            return Error.send_collective_error(result['msg'], 2)
         else:
             return Error.send_something_went_wrong_error(result['msg'])
     else:
