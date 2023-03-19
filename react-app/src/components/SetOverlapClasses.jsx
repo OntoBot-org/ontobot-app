@@ -7,6 +7,7 @@ import { VscCircleFilled } from 'react-icons/vsc'
 
 import { saveOverlapClasses } from '../features/taxonomies/taxonomySlice'
 import { OverlappingClsList, Modal } from '../components'
+import { MdDeleteOutline } from 'react-icons/md'
 
 const SetOverlapClasses = ({selectedTaxonomy}) => {
     
@@ -73,6 +74,11 @@ const SetOverlapClasses = ({selectedTaxonomy}) => {
             const newOverlapclsSet = [...newOverlapSet, clickedCls]
             setnewOverlapSet(newOverlapclsSet)
         }
+    }
+
+    const handleRemoveDisjointSet = (indexToRemove) => {
+        const updateOverlapSet = finalOverlapSet.filter((item, index) => index !== indexToRemove);
+        setfinalOverlapSet(updateOverlapSet);
     }
 
     const handleAddOverlapSet = () => {
@@ -211,6 +217,10 @@ const SetOverlapClasses = ({selectedTaxonomy}) => {
                                     { fds?.map((item, i) => 
                                         <p key={i}>{item}, </p>
                                     )}
+                                    <MdDeleteOutline 
+                                    className="ml-2 cursor-pointer text-primary mt-1"
+                                    onClick={()=>handleRemoveDisjointSet(index)}
+                                    />
                                 </li>
                             </div>
                         )}

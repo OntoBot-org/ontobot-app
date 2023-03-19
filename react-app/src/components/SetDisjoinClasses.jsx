@@ -4,6 +4,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { BiPlus } from 'react-icons/bi'
 import { TbAlertTriangle } from 'react-icons/tb'
 import { VscCircleFilled } from 'react-icons/vsc'
+import { MdDeleteOutline} from "react-icons/md";
 
 import { saveDisjointClasses } from '../features/taxonomies/taxonomySlice'
 import { DisjointClsList, Modal } from '../components'
@@ -72,6 +73,11 @@ const SetDisjoinClasses = ({selectedTaxonomy}) => {
             const newDijointClsSet = [...newDisjointSet, clickedCls]
             setnewDisjointSet(newDijointClsSet)
         }
+    }
+
+    const handleRemoveDisjointSet = (indexToRemove) => {
+        const updateDisjointSet = finalDisjointSet.filter((item, index) => index !== indexToRemove);
+        setfinalDisjointSet(updateDisjointSet);
     }
 
     const handleAddDisjointSet = () => {
@@ -211,6 +217,10 @@ const SetDisjoinClasses = ({selectedTaxonomy}) => {
                                 { fds?.map((item, i) => 
                                     <p key={i}>{item}, </p>
                                 )}
+                                <MdDeleteOutline 
+                                className="ml-2 cursor-pointer text-primary mt-1"
+                                onClick={()=>handleRemoveDisjointSet(index)}
+                                />
                             </li>
                         </div>
                     )}
