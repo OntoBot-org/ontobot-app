@@ -350,7 +350,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                                 type="text" 
                                 className="border p-2 rounded-sm"
                                 value={newRelationship.inverse}
-                                placeholder='notGrowsIn' 
+                                placeholder='isGrownBy' 
                                 onChange={(e) => setnewRelationship({...newRelationship, inverse: e.target.value})}
                             />
                         </div>

@@ -17,8 +17,8 @@ const shortcutLabels = [
         value: "has",
     },
     {
-        label: "memberOf",
-        value: "memberOf",
+        label: "collectionOf",
+        value: "collectionOf",
     },
     {
         label: "partOf",
@@ -118,10 +118,12 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
     const handleSetRangeObjToInit = () => {
         setselectedRange({})
         setselectedRelationshipTypes([])
+        setisSomeEnabled(false)
+        setisOnlyEnabled(false)
         setrangeObject({
             name: '',
-            some: isSomeEnabled,
-            only: isOnlyEnabled,
+            some: false,
+            only: false,
             min: 0,
             max: 'inf',
             exactly: -1,
@@ -131,7 +133,8 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
     }
 
     const handleSetOPtoInit = () => {
-        handleSetRangeObjToInit()
+        setselectedLabel('')
+        setselectedDomain('')
         setnewOP({
             id: v4(),
             relationshipLabel: '',
@@ -141,8 +144,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
             ranges: [],
             isSimpleOP: true,
         })
-        setselectedLabel('')
-        setselectedDomain('')
+        handleSetRangeObjToInit()
     }
 
     const handleAddObjectProperty = () => {
@@ -195,17 +197,6 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
         }
     }
 
-    // const newObj = {
-    //     [inputObject.name]: {
-    //       ...inputObject
-    //     }
-    //   };
-      
-    //   setnewOP(prevState => ({
-    //     ...prevState,
-    //     ranges: [...prevState.ranges, newObj]
-    //   }));
-
     const handleModalOpen = () => {
         setisOpModalVsible(true)
         setisSOPsubmitted(false)
@@ -214,6 +205,12 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
     const handleModalClose = () => {
         setisOpModalVsible(false)
         handleSetOPtoInit()
+    }
+
+    const handleMultiRangeModalCancel = () => {
+        setisAddRangesModalVisible(false)
+        handleSetRangeObjToInit()
+        setrangesList([])
     }
 
     const handleSaveObjectProperties = () => {
@@ -252,15 +249,31 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);
-        } else if (rangeObject.max<rangeObject.min) {
+        } else if (parseFloat(rangeObject.max) < parseFloat(rangeObject.min)) {
             setisAlertVisible(true)
             setalertMsg('Min value should be smaller than the Max value.')
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);
+        } else if (newOP.relationshipLabel==='collectionOf' && rangeObject.min<2){
+            setisAlertVisible(true)
+            setalertMsg('Please note that ranges relate with the collectionOf property should have 2 or more for their min value.')
+            setTimeout(() => {
+                setisAlertVisible(false)
+            }, 4000);
         }
         else {
-            setrangesList([...rangesList, rangeObject])
+            const isNameExists = rangesList.some((range) => range.name === rangeObject.name);
+            if (isNameExists) {
+                setisAlertVisible(true)
+                setalertMsg('No duplications are allowed.')
+                setTimeout(() => {
+                    setisAlertVisible(false)
+                }, 3000);
+            } else {
+                setrangesList([...rangesList, rangeObject])
+                handleSetRangeObjToInit()
+            }
         }
     }
 
@@ -302,7 +315,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                     onClick={handleModalOpen}
                     disabled={!taxonomies.submitted}
                 >
-                    <BiPlus className={`biplus_modal ${!taxonomies.submitted ? 'opacity-50 cursor-not-allowed' : ''}`} />
+                    <BiPlus className={`biplus_modal ${!taxonomies.submitted ? 'cursor-not-allowed' : ''}`} />
                 </button>
             </div>
 
@@ -420,7 +433,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                                         type="text" 
                                                         className="border p-2 rounded-sm"
                                                         value={newOP.inverse}
-                                                        placeholder='notGrowsIn' 
+                                                        placeholder='isGrownBy' 
                                                         onChange={(e) => setnewOP({...newOP, inverse: e.target.value})}
                                                     />
                                                 </div>
@@ -609,13 +622,14 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
             </Modal>
 
             <Modal open={isAddRangesModalVisible} onClose={() => setisAddRangesModalVisible(false)} fromTop="top-[12%]" fromLeft='left-[15%]' >
-                <div className="flex items-center justify-between w-full mb-2">
+                <div className="flex items-center justify-between w-full">
                     <p className="modal_title">Add Multiple Ranges</p>
                     <AiOutlineCloseCircle 
                         onClick={() => setisAddRangesModalVisible(false)} 
                         className='modal_close_icon' 
                     />
                 </div>
+                <p className="w-full flex items-center justify-center font-semibold text-fontcolor mb-2">{newOP.domain} {newOP.relationshipLabel}</p>
 
                 { isAlertVisible && (
                     <div className="alert_style">
@@ -794,7 +808,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 					</button>
 					<button
 						className="primary_btn_comp h-10"
-						onClick={() => setisAddRangesModalVisible(false)}
+						onClick={handleMultiRangeModalCancel}
 						id='submit_properties'
 					>
 						Cancel

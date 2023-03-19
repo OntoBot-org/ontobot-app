@@ -41,10 +41,12 @@ const OPList = ({ objectPropertyList, setobjectPropertyList }) => {
                 <span className='flex gap-2'>
                   {op.domain} {op.relationshipLabel}
                   {
-                    op.ranges?.length > 0 && 
+                    op.ranges?.length > 1 ?  
                       op.ranges?.map((range, i) => (
-                        <span key={i}>{range.name} , </span>
+                        <span key={i}>{range.name} </span>
                       ))
+                      :
+                      <span>{op.ranges.name} </span>
                   }
                 </span>
                 {/* <BiEditAlt className='mt-1 mr-1 text-secondary text-sm cursor-pointer' /> */}
