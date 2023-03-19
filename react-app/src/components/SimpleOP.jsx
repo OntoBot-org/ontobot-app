@@ -178,6 +178,12 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);
+        } else if (newOP.domain===newOP.inverse) {
+            setisAlertVisible(true)
+            setalertMsg('Please note that domain and inverse cannot be the same.')
+            setTimeout(() => {
+                setisAlertVisible(false)
+            }, 3000);
         } else if (newOP.domain===rangeObject.name && !rangeObject.relationshipTypes.includes("Reflexive")) {
             setisAlertVisible(true)
             setalertMsg('If domain and the range are same, relationship type should be Reflexive.')
@@ -214,9 +220,9 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
     }
 
     const handleSaveObjectProperties = () => {
-        if (rangesList.length===0) {
+        if (rangesList.length<2) {
             setisAlertVisible(true)
-            setalertMsg('Please add at least one range.')
+            setalertMsg('You are in multi-range entry Tab. Therefore, please add at least two ranges.')
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);

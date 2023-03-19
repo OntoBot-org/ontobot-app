@@ -39,7 +39,7 @@ const OPList = ({ objectPropertyList, setobjectPropertyList }) => {
 
               <li className="text-fontcolor mr-1 flex flex-row items-start justify-start gap-2 w-full">
                 <span className='flex gap-2'>
-                  {op.domain} {op.relationshipLabel}
+                  {op.domain} {op.relationshipLabel.length > 0 ? op.relationshipLabel : 'has ranges '}
                   {
                     op.ranges?.length > 1 ?  
                       op.ranges?.map((range, i) => (

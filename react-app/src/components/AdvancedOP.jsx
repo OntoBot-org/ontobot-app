@@ -114,6 +114,23 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
         handleSetOPtoInit()
     }
 
+    const handleAddConstraintsCancel = () => {
+        const rangesWithDefaults = [] 
+        newOP.ranges.forEach((range) => {
+            rangesWithDefaults.push({
+                name: range.name,
+                some: false,
+                only: false,
+                min: 0,
+                max: 'inf',
+                exactly: -1,
+                relationshipTypes: [],
+            })
+        })
+        setnewOP({...newOP, ranges: rangesWithDefaults})
+        setisConstraintModalVsible(false)
+    }
+
     const handleAddObjectProperty = () => {
         if (openTab === 1 && newOP.relationshipLabel === '') {
             setisAlertVisible(true)
@@ -153,6 +170,18 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
         else if (openTab === 2 && selectedAdditionalAttributes.length < 2) {
             setisAlertVisible(true)
             setalertMsg('Please select at least two additional attributes.')
+            setTimeout(() => {
+                setisAlertVisible(false)
+            }, 3000);
+        } else if(selectedAdditionalAttributes.some((attr) => attr.name === newOP.domain)) {
+            setisAlertVisible(true)
+            setalertMsg('Please note that you cannot add Domain as an additional attribute.')
+            setTimeout(() => {
+                setisAlertVisible(false)
+            }, 3000);
+        } else if(selectedAdditionalAttributes.some((attr) => attr.name === newOP.ranges[0].name)) {
+            setisAlertVisible(true)
+            setalertMsg('Please note that you cannot add Range as an additional attribute.')
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);
@@ -203,6 +232,11 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
         }
     }
 
+    const handleOnClose = () => {
+        handleSetOPtoInit()
+        setisOpModalVsible(false)
+    }
+
     return (
         <div className='w-full h-full'>
             <div className="flex">
@@ -246,7 +280,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                 </button>
             </div>
 
-            <Modal open={isOpModalVsible} onClose={() => setisOpModalVsible(false)} fromTop="top-[15%]" fromLeft='left-[15%]'>
+            <Modal open={isOpModalVsible} onClose={handleOnClose} fromTop="top-[15%]" fromLeft='left-[15%]'>
                 <div className="flex items-center justify-between w-full mb-2">
                     <p className="modal_title">Advanced Object Property</p>
                     <AiOutlineCloseCircle 
@@ -417,7 +451,12 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                 </div>
             </Modal>
 
-            <Modal open={isConstraintModalVsible} onClose={() => setisConstraintModalVsible(false)} fromTop="top-[18%]" fromLeft='left-[18%]'>
+            <Modal 
+                open={isConstraintModalVsible} 
+                onClose={handleAddConstraintsCancel} 
+                fromTop="top-[18%]" 
+                fromLeft='left-[18%]'
+            >
                 <div className="flex items-center justify-between w-full mb-2">
                     <p className="modal_title">Add Constraints</p>
                     <AiOutlineCloseCircle 
@@ -425,6 +464,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                         className='modal_close_icon' 
                     />
                 </div>
+                <p className="w-full flex items-center justify-center font-semibold text-fontcolor mb-2">{newOP.domain} {newOP.relationshipLabel}</p>
 
                 {
                     newOP?.ranges?.length>0 && newOP?.ranges?.map((range, index) => (
@@ -552,7 +592,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
 
                     <button 
                         className="primary_btn_comp h-8 p-0"
-                        onClick={() => setisConstraintModalVsible(false)}
+                        onClick={handleAddConstraintsCancel}
                     >
                         Cancel
                     </button>
