@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { BiChevronDown } from 'react-icons/bi'
 import { TbAlertTriangle } from 'react-icons/tb'
 
@@ -75,9 +76,15 @@ const UpdateTaxonomyModal = ({ open, onClose, taxonomy }) => {
 
     return (
         <Modal open={open} onClose={onClose} fromLeft='left-[25%]'>
-            <p className="modal_title">
-                Update the class <span className="font-bold text-primary">{taxonomy.name}</span>.
-            </p>
+            <div className="flex items-center justify-between w-full mb-2">
+                <p className="modal_title">
+                    Update the class <span className="font-bold text-primary">{taxonomy.name}</span>.
+                </p>
+                <AiOutlineCloseCircle 
+                    onClick={onClose} 
+                    className='modal_close_icon' 
+                />
+            </div>
 
             { isAlertVisible && (
                 <div className="alert_style">

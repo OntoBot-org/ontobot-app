@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { TbAlertTriangle } from 'react-icons/tb'
 
 import Modal from './Modal'
@@ -18,9 +19,13 @@ const DeleteRelationshipModal = ({ open, onClose, relationship }) => {
 
     return (
         <Modal open={open} onClose={onClose}>
-            <p className="modal_title">
-                Are you sure that you want to <span className="font-bold text-primary">remove</span> the relationship?
-            </p>
+            <div className="flex items-center justify-between w-full mb-2">
+                <p className="modal_title text-primary">Are you sure that you want to remove the relationship?</p>
+                <AiOutlineCloseCircle 
+                    onClick={onClose} 
+                    className='modal_close_icon' 
+                />
+            </div>
 
             { relationship?.subrelationships?.length > 0 && (
                 <div className="alert_style">

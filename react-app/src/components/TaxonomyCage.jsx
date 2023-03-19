@@ -70,7 +70,7 @@ const TaxonomyCage = () => {
 
 		try {
 			const response = await axios(config);
-			console.log(response);
+			// console.log(response);
 			if (response.status === 200) {
 				setIsValidTaxo(true);
 			} else {
@@ -130,9 +130,9 @@ const TaxonomyCage = () => {
 			})
 			if (noProperties.length>0) {
 				setalertTitle("There are taxonomies with no properties added.");
-				// setalertMsg(
-				// 	"Please make sure all the child taxonomies that extend from root taxonomy has at least one property."
-				// );
+				setalertMsg(
+					"Please make sure all the child taxonomies that extend from root taxonomy has at least one property."
+				);
 				sendTaxonomies(JSON.stringify(taxonomies));
 			}
 			else {
@@ -141,6 +141,7 @@ const TaxonomyCage = () => {
 					"After submitting you will NOT be able to add, update, or remove taxonomies or taxonomy details. Therefore, please make sure that you have added properties, disjoint, and overlapping classes to necessary taxonomies."
 				);
 				sendTaxonomies(JSON.stringify(taxonomies));
+				console.log("taxonomies: ", taxonomies)
 			}
 		} else {
 			setalertTitle("Please add taxonomies before submitting.");
@@ -148,7 +149,7 @@ const TaxonomyCage = () => {
 	};
 
 	const handleSubmit = () => {
-		console.log('taxonomies: ', taxonomies);
+		// console.log('taxonomies: ', taxonomies);
 		dispatch(
 			setSubmittedState({
 				submittedState: true,
@@ -159,7 +160,7 @@ const TaxonomyCage = () => {
 	};
 
 	return (
-		<div className="w-full h-screen pt-20">
+		<div className="w-full h-screen mt-24">
 			<div className="flex w-full items-center justify-center gap-4 text-secondary text-2xl mb-4">
 				<h1 className="tracking-widest">Add Taxonomies</h1>
 				<MdLiveHelp className="cursor-pointer hover:text-primary" onClick={takeAtour} />

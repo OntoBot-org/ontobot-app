@@ -4,6 +4,7 @@ import { v4 } from "uuid";
 const  initialState = {
     id: v4(),
     name: "taxonomies",
+    label: "taxonomies",
     subclasses: [],
     propertiesList: [],
     disjoint: [],
@@ -23,6 +24,7 @@ const taxonomySlice = createSlice({
                     taxonomy.subclasses.push({
                         id: id,
                         name: name,
+                        label: name,
                         stereotype: stereotype,
                         equivalentClass: equivalentClass,
                         subclasses: [],
@@ -68,6 +70,7 @@ const taxonomySlice = createSlice({
             const findTaxonomy = (taxonomy) => {
                 if (taxonomy.id === id) {
                     taxonomy.name = name
+                    taxonomy.label = name
                     taxonomy.stereotype = stereotype
                     taxonomy.equivalentClass = equivalentClass
                 } else {

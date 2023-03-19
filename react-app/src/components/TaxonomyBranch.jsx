@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AiOutlineDown } from 'react-icons/ai';
+import { AiOutlineDown, AiOutlineCloseCircle } from 'react-icons/ai';
 import { BiPlus, BiChevronDown, BiEditAlt } from "react-icons/bi";
 import { MdDeleteOutline, MdLiveHelp } from "react-icons/md";
 import { TbAlertTriangle } from "react-icons/tb";
@@ -96,7 +96,13 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
                 handleSaveClass()
             }
         } else {
-            console.log('No event is passed')
+            setalertMsg(
+				"No event is passed"
+			);
+			setisAlertVisible(true);
+			setTimeout(() => {
+				setisAlertVisible(false);
+			}, 3000);
         }
     }
 
@@ -239,13 +245,19 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 			}
 
 			<Modal open={isModalOpen} onClose={() => setisModalOpen(false)} fromTop="top-[15%]">
-			<div className="flex items-center justify-center gap-4">
-					<p className="modal_title">
-						Add subclasses to{" "}
-						<span className="font-bold text-secondary">{taxonomy.name}</span>{" "}
-						class.
-					</p>
-					<MdLiveHelp className="text-lg font-semibold mb-6 text-center cursor-pointer text-secondary hover:text-primary" onClick={takeAtour} />
+				<div className="flex items-center justify-between w-full mb-2">
+					<div className="flex items-center justify-center gap-4">
+						<p className="modal_title">
+							Add subclasses to{" "}
+							<span className="font-bold text-secondary">{taxonomy.name}</span>{" "}
+							class.
+						</p>
+						<MdLiveHelp className="tour_icon" onClick={takeAtour} />
+					</div>
+					<AiOutlineCloseCircle 
+						onClick={() => setisModalOpen(false)} 
+						className='modal_close_icon' 
+					/>
 				</div>
 
 				{isAlertVisible && (
