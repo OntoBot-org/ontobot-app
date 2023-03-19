@@ -290,8 +290,11 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 
 									<div className="items-holder rounded-md bg-white absolute top-[100%] mt-2 border w-full">
 										{isDropdownVisible &&
-											stereotypes.map((item) => (
-												<div
+											stereotypes.map((item) => {
+												if(taxonomy.name==="taxonomies" && item.name==="subkind"){ 
+													return null;
+												}else{
+												return <div
 													className="dropdown-item p-2 cursor-pointer hover:bg-slate-200"
 													key={item.id}
 													onClick={() => {
@@ -304,7 +307,8 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 														<p>{item.name}</p>
 													)}
 												</div>
-											))}
+											}
+										})}
 									</div>
 								</div>
 							</div>
