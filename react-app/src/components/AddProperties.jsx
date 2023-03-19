@@ -11,12 +11,14 @@ import "driver.js/dist/driver.min.css";
 
 import { Modal, PropertiesList } from '../components'
 import { saveProperties } from "../features/taxonomies/taxonomySlice";
+import { saveDataProperties } from "../features/taxonomies/dataPropertySlice";
 import { datatypes } from '../data/datatypes'
 import { propertyRestrictions } from '../data/propertyRestrictions'
 import { tooltipDescriptions } from '../data/tooltipDescriptions'
 
 const AddProperties = ({ selectedTaxonomy }) => {
 	const taxonomies = useSelector((store) => store.taxonomies);
+	const totalDatapProperties = useSelector((store) => store.totalDatapProperties);
 
 	const [isModalVisible, setisModalVisible] = useState(false);
 	const [propertiesList, setpropertiesList] = useState([]);
@@ -33,6 +35,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		restrictions: propertyRestrictions[0].label,
 		functional: "no",
 	});
+	const [dataPropertyList, setdataPropertyList] = useState([])
 
 	const dispatch = useDispatch();
 
@@ -204,10 +207,37 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			}, 3000);
 		} 
 		else {
+			let availableDataProperty = ''
+			let propertyDatatType = ''
+			totalDatapProperties.forEach((dataprop) => {
+				if(dataprop.dpName===newProperty.name) {
+					availableDataProperty = dataprop
+				}
+			})
+			if(availableDataProperty!=='') {
+				propertyDatatType = availableDataProperty.dpDatatype
+				setalertMsg(
+					`Please note that this property is already an attribute of ${availableDataProperty.belongingClass} and its datatype should be ${availableDataProperty.dpDatatype}.`
+				);
+				setisAlertVisible(true);
+	
+				setTimeout(() => {
+					setisAlertVisible(false);
+				}, 4000);
+			} else {
+				propertyDatatType = newProperty.datatype
+				setdataPropertyList([...dataPropertyList, {
+					dpName: newProperty.name,
+					dpDatatype: newProperty.datatype,
+					belongingClass: selectedTaxonomy.name
+				}])
+				// console.log('totalDatapProperties: ', totalDatapProperties)
+			}
+			
 			const newPropertyObj = {
 				id: v4(),
 				name: newProperty.name,
-				datatype: newProperty.datatype,
+				datatype: propertyDatatType,
 				restrictions: newProperty.restrictions,
 				functional: newProperty.functional,
 			};
@@ -224,6 +254,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			});
 
 			setEnabled(true);
+			setselectedDatatype(datatypes[0])
 		}
 	};
 
@@ -235,7 +266,8 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			setTimeout(() => {
 				setisAlertVisible(false);
 			}, 3000);
-		} else {
+		} 
+		else {
 			dispatch(
 				saveProperties({
 					taxonomyId: selectedTaxonomy.id,
@@ -245,6 +277,10 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			setisModalVisible(false);
 			setisPropertiesSaved(true);
 			setpropertiesList([]);
+
+			dispatch(saveDataProperties({
+				newDataPropertyArray: dataPropertyList
+			}))
 			// console.log('taxonomies: ', taxonomies)
 		}
 	};
