@@ -218,3 +218,496 @@ INFO:werkzeug: * Restarting with stat
  * Debugger PIN: 792-081-341
 127.0.0.1 - - [21/Mar/2023 16:31:34] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
 127.0.0.1 - - [21/Mar/2023 16:32:06] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [21/Mar/2023 16:37:43] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 111
+    err_cls = self.Err()
+    ^^^^^^^
+IndentationError: expected an indented block after 'if' statement on line 110
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 111
+    err_cls = self.Err()
+    ^^^^^^^
+IndentationError: expected an indented block after 'if' statement on line 110
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [21/Mar/2023 17:36:47] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [21/Mar/2023 17:57:29] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [21/Mar/2023 17:57:46] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [21/Mar/2023 17:59:22] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [21/Mar/2023 18:01:07] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [21/Mar/2023 18:01:26] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [21/Mar/2023 18:05:38] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 153
+    err_cls.suggestion = "Please make other sibling concept/s which is/are disjoint with this concept as subkind\n
+                         ^
+SyntaxError: unterminated string literal (detected at line 153)
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [21/Mar/2023 18:13:57] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [21/Mar/2023 18:15:07] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [21/Mar/2023 18:15:43] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [21/Mar/2023 18:16:34] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
