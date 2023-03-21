@@ -15,6 +15,7 @@ class Error:
         umle.check_phase_level()
         umle.check_category_level()
         umle.check_subkind_level()
+        umle.check_rolemixin_level()
 
         err = {
             "topic": topic,
@@ -28,6 +29,21 @@ class Error:
         }
 
         return json.dumps(err)
+    
+    @staticmethod
+    def send_taxonomy_warn(warn_list):
+        warn = {
+            "topic" : "Some concepts are biased to violate the ontoUML grammar",
+            "msg" : {
+                "concepts" : "Concepts are described in the message",
+                "content" : "Try to solve the warning issues for getting a quality ontology"
+            },
+            "meta" : warn_list,
+            "type": 'warning',
+            "code": 500
+        }
+
+        return json.dumps(warn)
 
     @staticmethod
     def send_something_went_wrong_error(msg):

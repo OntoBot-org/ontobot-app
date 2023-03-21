@@ -58,7 +58,7 @@ class RMixin:
                     d_classes_list = current_item['disjoint']
                     for d_classes in d_classes_list:
                         result = self.__mixin_onto.get_selected_concepts(d_classes, 'role')
-                        if len(result) >= 2:
+                        if len(result) >= 2 and len(d_classes) == len(result):
                             if super_class['class_name'] not in self.__mixin_list:
                                 self.__mixin_list.append(super_class['class_name'])
 
