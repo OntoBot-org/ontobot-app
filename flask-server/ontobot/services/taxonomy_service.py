@@ -17,6 +17,7 @@ def validate_taxonomy_service(parsed_json):
     try:
         valid_concept = []
         all_concepts = []
+        warn_list = []; warn_list.clear()
         owl = OWL(parsed_json)
         sessionID = parsed_json['sessionID']
 
@@ -45,6 +46,10 @@ def validate_taxonomy_service(parsed_json):
         valid_concept.extend(category_pattern.get_category_list())
         valid_concept.extend(role_pattern.get_role_list())
 
+        # identify warning messages
+        warn_list.extend(phase_pattern.get_phase_warn_list())
+        warn_list.extend(category_pattern.get_category_warn_list())
+
         # convirt valid_consept list into set
         valid_concept = set(valid_concept)
 
@@ -59,7 +64,12 @@ def validate_taxonomy_service(parsed_json):
                 "msg": cmethod.convertToTaxonomyContent(result=result)
             })
             new_parsed_json = custom.get_qq_pattern(parsed_json, result)
-            return Response.send_response(new_parsed_json)
+
+            if len(warn_list) == 0:
+                return Response.send_response(new_parsed_json)
+            else:
+                return Error.send_taxonomy_warn(warn_list=warn_list)
+
         else:
             set_difference = all_concepts - valid_concept
             return Error.send_taxonomy_error(list(set_difference), owl.get_taxonomy_concept_with_meta())
