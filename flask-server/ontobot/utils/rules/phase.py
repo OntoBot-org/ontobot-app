@@ -60,6 +60,10 @@ class Phase:
                             "topic" : "Phase Pattern Warning",
                             "msg" : f"{list(invalid_phase_set)} must be phase and disjoint each other completely"
                         })
+            
+            else: 
+                # check if user has added phase concept though he hasn't define disjoint property
+                pass
                 
 
     def get_phase_list(self):
