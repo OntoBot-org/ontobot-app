@@ -137,8 +137,8 @@ class UMLE:
                 err_cls.concept_name = concept
                 err_cls.stereotype = err_class['stereotype']
                 err_cls.suggestion = "Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.\
-                As suggestions, \n 1) Change all the Sub-consepts into subkind \n 2) If you don't want to disjoint the Sub-concepts you can define them as role \n\
-                    3) If there are disjoint Sub-consepts, please check wether all of them are subkind or phase. If not do changes"
+                As suggestions, \n 1) Change all the Sub-consepts into subkind since Super-concept is in kind format \n 2) If you don't want to disjoint the Sub-concepts you can define them as role format\n\
+                    3) If there are disjoint Sub-consepts, please check wether all of them are subkind or phase. If not do changes since disjoint set should be in either subkind format or phase format"
 
                 self.__err_list.append({
                     "name": err_cls.concept_name,
