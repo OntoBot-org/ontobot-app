@@ -33,7 +33,7 @@ class UMLE:
 
     def __find_super_class(self, next_item, current_index):
         super_level = next_item['level'] - 1
-        for index in range(current_index, -1, -1):
+        for index in range(current_index-1, -1, -1):
             concept = self.__taxonomy_list[index]
             if concept['level'] == super_level:
                 return concept
@@ -63,7 +63,19 @@ class UMLE:
                     err_cls = self.Err()
                     err_cls.concept_name = concept
                     err_cls.stereotype = err_class['stereotype']
-                    err_cls.suggestion = "This class should be disjoint with a sibling since it is a phase"
+                    err_cls.suggestion = "This class/concept should be disjoint with other phase siblings since it is a phase concept. If you haven't\
+                    defined multiple siblings with this concept, please define another phase sibling and make them disjoint"
+
+                    self.__err_list.append({
+                        "name": err_cls.concept_name,
+                        "stereotype": err_cls.stereotype,
+                        "suggestion": err_cls.suggestion
+                    })
+                else:
+                    err_cls = self.Err()
+                    err_cls.concept_name = concept
+                    err_cls.stereotype = err_class['stereotype']
+                    err_cls.suggestion = "Please define the stereotype of super-concept of this concept to Sortal Expression (ie: kind/collective)"
 
                     self.__err_list.append({
                         "name": err_cls.concept_name,
@@ -88,6 +100,108 @@ class UMLE:
                         "stereotype": err_cls.stereotype,
                         "suggestion": err_cls.suggestion
                     })
+    
+    def check_subkind_level(self):
+        for concept in self.__set_difference:
+            err_class = self.__get_class(concept)["cls"]
+            err_index = self.__get_class(concept)["index"]
+
+            if err_class['level'] > 0 and err_class['stereotype'] == 'kind':
+                super_cls = self.__find_super_class(err_class, err_index)
+                if super_cls['stereotype'] != 'category':
+                    err_cls = self.Err()
+                    err_cls.concept_name = concept
+                    err_cls.stereotype = err_class['stereotype']
+                    err_cls.suggestion = "A Sub-concept can't have kind stereotype if the Super-concept is not defined as category according to the ontoUML. As a sugesstion, You can change this into subkind."
+
+                    self.__err_list.append({
+                        "name": err_cls.concept_name,
+                        "stereotype": err_cls.stereotype,
+                        "suggestion": err_cls.suggestion
+                    })
+            
+            if err_class['level'] == 0 and err_class['stereotype'] == 'subkind':
+                err_cls = self.Err()
+                err_cls.concept_name = concept
+                err_cls.stereotype = err_class['stereotype']
+                err_cls.suggestion = "A Super-Concept can't have subkind stereotype according to the ontoUML. As a sugesstion, You can change this into kind."
+
+                self.__err_list.append({
+                    "name": err_cls.concept_name,
+                    "stereotype": err_cls.stereotype,
+                    "suggestion": err_cls.suggestion
+                })
+            
+            if err_class['level'] == 0 and err_class['stereotype'] == 'kind':
+                err_cls = self.Err()
+                err_cls.concept_name = concept
+                err_cls.stereotype = err_class['stereotype']
+                err_cls.suggestion = "Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.\
+                As suggestions, \n 1) Change all the Sub-consepts into subkind since Super-concept is in kind format \n 2) If you don't want to disjoint the Sub-concepts you can define them as role format\n\
+                    3) If there are disjoint Sub-consepts, please check wether all of them are subkind or phase. If not do changes since disjoint set should be in either subkind format or phase format"
+
+                self.__err_list.append({
+                    "name": err_cls.concept_name,
+                    "stereotype": err_cls.stereotype,
+                    "suggestion": err_cls.suggestion
+                })
+
+            if err_class['level'] > 0 and err_class['stereotype'] == 'subkind':
+                err_cls = self.Err()
+                err_cls.concept_name = concept
+                err_cls.stereotype = err_class['stereotype']
+                err_cls.suggestion = "Please make other sibling concept/s which is/are disjoint with this concept into subkind\
+                Additionally, change the stereotype of the Super-concept into subkind if it is not a level-0 concept"
+
+                self.__err_list.append({
+                    "name": err_cls.concept_name,
+                    "stereotype": err_cls.stereotype,
+                    "suggestion": err_cls.suggestion
+                })
+    
+    def check_rolemixin_level(self):
+        for concept in self.__set_difference:
+            err_class = self.__get_class(concept)["cls"]
+            err_index = self.__get_class(concept)["index"]  
+            if err_class['level'] > 0 and err_class['stereotype'] == 'role':
+                super_cls = self.__find_super_class(err_class, err_index)
+                if super_cls['stereotype'] == 'rolemixin':
+                    err_cls = self.Err()
+                    err_cls.concept_name = concept
+                    err_cls.stereotype = err_class['stereotype']
+                    err_cls.suggestion = "Since super-concept of the concept is rolemixin, there should be multiple role sub-concepts with disjoint-complete\
+                         and if there is no multiple sub-concepts, this single sub-concepts should be rolemixin"
+
+                    self.__err_list.append({
+                        "name": err_cls.concept_name,
+                        "stereotype": err_cls.stereotype,
+                        "suggestion": err_cls.suggestion
+                    })
+                else :
+                    # This checking is valid for role-pattern as well
+                    err_cls = self.Err()
+                    err_cls.concept_name = concept
+                    err_cls.stereotype = err_class['stereotype']
+                    err_cls.suggestion = "Since super-concept of the concept is not rolemixin, the stereotype of the super-concept should be\
+                        in sortal expression (kind,collective,phase,role)"
+
+                    self.__err_list.append({
+                        "name": err_cls.concept_name,
+                        "stereotype": err_cls.stereotype,
+                        "suggestion": err_cls.suggestion
+                    })
+
+            if err_class['level'] == 0 and err_class['stereotype'] == 'rolemixin':
+                err_cls = self.Err()
+                err_cls.concept_name = concept
+                err_cls.stereotype = err_class['stereotype']
+                err_cls.suggestion = "Since this concept is rolemixin, it can't be isolated concept and sub-concepts should be role or rolemixin"
+
+                self.__err_list.append({
+                    "name": err_cls.concept_name,
+                    "stereotype": err_cls.stereotype,
+                    "suggestion": err_cls.suggestion
+                })
     
     def get_err_list(self):
         return self.__err_list

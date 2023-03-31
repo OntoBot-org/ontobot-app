@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { BiPlus } from 'react-icons/bi'
-import { VscCircleFilled } from 'react-icons/vsc'
 import { TbAlertTriangle } from 'react-icons/tb'
+import { VscCircleFilled } from 'react-icons/vsc'
 
 import { saveOverlapClasses } from '../features/taxonomies/taxonomySlice'
 import { OverlappingClsList, Modal } from '../components'
@@ -163,9 +164,15 @@ const SetOverlapClasses = ({selectedTaxonomy}) => {
                 </ul>
 
                 <Modal open={isModalVisible} onClose={() => setisModalVisible(false)}>
-                    <p className="modal_title">
-                        Save the overlap subclasses of <span className="font-bold text-secondary">{selectedTaxonomy.name}</span>.
-                    </p>
+                    <div className="flex items-center justify-between w-full mb-2">
+                        <p className="modal_title">
+                            Save the overlap subclasses of <span className="font-bold text-secondary">{selectedTaxonomy.name}</span>.
+                        </p>
+                        <AiOutlineCloseCircle 
+                            onClick={() => setisModalVisible(false)} 
+                            className='modal_close_icon' 
+                        />
+                    </div>
 
                     { isAlertVisible && (
                         <div className="alert_style">

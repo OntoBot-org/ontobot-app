@@ -72,7 +72,7 @@ const SaveTaxomony = () => {
         <div>
             <div className="flex items-center justify-center gap-4 mb-4">
                 <p className="taxonomy-heading">Save Taxonomy details</p>
-                <MdLiveHelp className="text-lg font-semibold text-center cursor-pointer text-secondary hover:text-primary" onClick={takeAtour} />
+                <MdLiveHelp className="tour_icon" onClick={takeAtour} />
             </div>
 
             <div className="grid grid-cols-3 gap-x-3 gap-y-6 text-fontcolor mb-6" id='selected_class'>

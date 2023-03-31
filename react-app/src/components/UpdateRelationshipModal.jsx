@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { TbAlertTriangle } from 'react-icons/tb'
 
 import { SearchSelect, Modal } from '../components'
@@ -113,9 +114,15 @@ const UpdateRelationshipModal = ({ domainsList, open, onClose, relationship }) =
 
     return (
         <Modal open={open} onClose={onClose}>
-            <p className="modal_title">
-                Update the sub-relationship <span className="font-bold text-secondary">{relationship.relationshipLabel}</span>.
-            </p>
+            <div className="flex items-center justify-between w-full mb-2">
+                <p className="modal_title">
+                    Update the sub-relationship <span className="font-bold text-secondary">{relationship.relationshipLabel}</span>.
+                </p>
+                <AiOutlineCloseCircle 
+                    onClick={onClose} 
+                    className='modal_close_icon' 
+                />
+            </div>
 
             { isAlertVisible && (
                 <div className="alert_style">

@@ -53,7 +53,7 @@ def get_qq_pattern(parsed_json, taxonomy_result):
                         {
                             "id": str(id),
                             "name": "ID",
-                            "datatype": "int",
+                            "datatype": "integer",
                             "restrictions": "non zero",
                             "functional": True
                         },

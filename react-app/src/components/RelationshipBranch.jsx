@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { v4 } from 'uuid'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { BiPlus } from 'react-icons/bi'
 // import { BiPlus, BiEditAlt } from 'react-icons/bi'
 import { TbAlertTriangle } from 'react-icons/tb'
@@ -96,7 +97,11 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                 handleSaveRelationship()
             }
         } else {
-            console.log('No event is passed')
+            setisAlertVisible(true)
+            setalertMsg('No event is passed.')
+            setTimeout(() => {
+                setisAlertVisible(false)
+            }, 3000);
         }
     }
 
@@ -305,11 +310,15 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
 
             <Modal open={isModalVisible} onClose={onClose} fromTop="top-[15%]" fromLeft='left-[25%]'>
             <div className="flex items-center justify-center gap-4">
-                    <p className="modal_title">
-                        Add sub-relationships to <span className="font-bold text-secondary">{relationship.relationshipLabel}</span>.
-                    </p>
+                    <div className="flex items-center justify-between w-full mb-2">
+                        <p className="modal_title">Add sub-relationships to <span className="font-bold text-secondary">{relationship.relationshipLabel}</span>. </p>
+                        <AiOutlineCloseCircle 
+                            onClick={onClose} 
+                            className='modal_close_icon' 
+                        />
+                    </div>
                     <MdLiveHelp 
-                        className="text-lg font-semibold mb-6 text-center cursor-pointer text-secondary hover:text-primary" 
+                        className="tour_icon" 
                         onClick={takeAtour}
                     />
                 </div>

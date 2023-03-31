@@ -1,5 +1,4 @@
 import json
-
 from ontobot.utils import onto
 
 with open('ontobot/model/Grammar.json') as user_file:
@@ -7,11 +6,11 @@ with open('ontobot/model/Grammar.json') as user_file:
 
 rule_json = json.loads(rule_contents)
 
-
 class Phase:
     __taxonomy_list = []
     __phase_list = []
     __phase_onto = {}
+    __phase_warning_list = []
 
     def __init__(self, arr):
         self.__phase_list.clear()
@@ -51,8 +50,25 @@ class Phase:
                         for concept in result:
                             if concept['class_name'] not in self.__phase_list:
                                 self.__phase_list.append(concept['class_name'])
+                    
+                    # add warning message since one pattern violation of a class/concept could be override by another pattern satisfaction
+                    if is_parent_valid and len(result) > 0 and len(result) != len(d_classes):
+                        set1 = set(d_classes)
+                        set2 = set(map(lambda x: x["class_name"], result))
+                        invalid_phase_set = set1 - set2
+                        self.__phase_warning_list.append({
+                            "topic" : "Phase Pattern Warning",
+                            "msg" : f"{list(invalid_phase_set)} must be phase and disjoint each other completely"
+                        })
+            
+            else: 
+                # check if user has added phase concept though he hasn't define disjoint property
+                pass
                 
 
     def get_phase_list(self):
         self.__check_phase()
         return self.__phase_list
+    
+    def get_phase_warn_list(self):
+        return self.__phase_warning_list

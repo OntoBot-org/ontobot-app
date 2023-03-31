@@ -11,11 +11,13 @@ class Category:
     __taxonomy_list = []
     __category_list = []
     __category_onto = {}
+    __category_warning_list = []
 
     def __init__(self, arr):
         self.__category_onto = onto.Taxonomy()
         self.__taxonomy_list = self.__category_onto.get_stack(arr['subclasses'])
         self.__category_list.clear()
+        self.__category_warning_list.clear()
 
     def __check_category(self):
         super_class = {}
@@ -58,6 +60,16 @@ class Category:
                         for concept in result:
                             if concept['class_name'] not in self.__category_list:
                                 self.__category_list.append(concept['class_name'])
+                    
+                    # add warning message since one pattern violation of a class/concept could be override by another pattern satisfaction
+                    if is_parent_valid and len(result) > 0 and len(result) != len(d_classes):
+                        set1 = set(d_classes)
+                        set2 = set(map(lambda x: x["class_name"], result))
+                        invalid_category_set = set1 - set2
+                        self.__category_warning_list.append({
+                            "topic" : "Category Pattern Warning",
+                            "msg" : f"{invalid_category_set} must be in rigid-sortal and disjoint each other completely"
+                        })
 
             # variant 02
             else:
@@ -68,7 +80,18 @@ class Category:
                         self.__category_list.append(super_class['class_name'])
                     if sub_class['class_name'] not in self.__category_list:
                         self.__category_list.append(sub_class['class_name'])
+                
+                # add warning message since one pattern violation of a class/concept could be override by another pattern satisfaction
+                if is_parent_valid and sub_class['stereotype'] not in rule_json['ontoUML']['nonsortaluniversal'] and not is_disjoint_complete:
+                    self.__category_warning_list.append({
+                        "topic" : "Category Pattern Warning",
+                        "msg" : f"Since the super concept has been defined as category, {sub_class['class_name']} should be category or rolemixin or\
+                            If {sub_class['class_name']} has siblings and they are in rigid-sortal, disjoint the concept with them"
+                    })
 
     def get_category_list(self):
         self.__check_category()
         return self.__category_list
+    
+    def get_category_warn_list(self):
+        return self.__category_warning_list
