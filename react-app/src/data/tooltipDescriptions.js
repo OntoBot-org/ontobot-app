@@ -22,9 +22,9 @@ export const tooltipDescriptions = {
     view_property: "view_property",
     submit_properties: "submit_properties",
     
-    relationship_tree: "relationship_tree",
-    relationship_details: "relationship_details",
-    submit_relationships: "submit_relationships",
+    simpleOP_cage: "simpleOP_cage",
+    advancedOP_cage: "advancedOP_cage",
+    submit_all_op: "submit_all_op",
 
     relationship_label: "relationship_label",
     inverse_relationship: "inverse_relationship",
@@ -32,5 +32,49 @@ export const tooltipDescriptions = {
     relationship_domain: "relationship_domain",
     relationship_ranges: "relationship_ranges",
     relationship_types: "relationship_types",
-    save_relationshipdetails: "save_relationshipdetails"
+    save_relationshipdetails: "save_relationshipdetails",
+
+    add_simpleOP_icon: "add_simpleOP_icon",
+    simpleOP_list: "simpleOP_list",
+    submitAll_SOP: "submitAll_SOP",
+    check_SOP_consistency: "check_SOP_consistency",
+
+    add_advancedOP_icon: "add_advancedOP_icon",
+    advancedOP_list: "advancedOP_list",
+    submitAll_AOP: "submitAll_AOP",
+    check_AOP_consistency: "check_AOP_consistency",
+
+    single_range_entry: "single_range_entry",
+    multi_range_entry: "multi_range_entry",
+
+    sop_label: "sop_label",
+    sop_inverse: "sop_inverse",
+    sop_equivalentname: "sop_equivalentname",
+    sop_domain: "sop_domain",
+    sop_range: "sop_range",
+    sop_quantifiers: "sop_quantifiers",
+    sop_relationship_types: "sop_relationship_types",
+    sop_constraints: "sop_constraints",
+    add_sop: "add_sop",
+    cancel_sop: "cancel_sop",
+    
+    add_multiRanges: "add_multiRanges",
+    sop_addRange: "sop_addRange",
+    sop_addedMultiRange: "sop_addedMultiRange",
+    save_sop_multiRanges: "save_sop_multiRanges",
+
+    aop_label: "aop_label",
+    aop_domain: "aop_domain",
+    aop_range: "aop_range",
+    aop_additionalAttrubutes: "aop_additionalAttrubutes",
+    add_aop: "add_aop",
+    aop_addConstraints: "aop_addConstraints",
+
+    range_name: "range_name",
+    some_constraint: "some_constraint",
+    only_constraint: "only_constraint",
+    min_constraint: "min_constraint",
+    max_constraint: "max_constraint",
+    exactly_constraint: "exactly_constraint",
+    save_constraint: "save_constraint"
 }

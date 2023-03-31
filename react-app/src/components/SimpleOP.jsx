@@ -4,12 +4,13 @@ import Select from "react-select";
 import { v4 } from "uuid";
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { BiPlus } from 'react-icons/bi'
-import { MdDeleteOutline } from "react-icons/md";
+import { MdDeleteOutline, MdLiveHelp } from "react-icons/md";
 import { TbAlertTriangle } from 'react-icons/tb'
 
 import { Modal, OPList } from '../components'
 import { relationshipTypes } from '../data/relationshipTypes'
 import { saveObjectProperties } from '../features/objectProperties/objectPropertySlice'
+import { takeSOPmainTour, takeSOPmodalTour, takeSOPsingleRangeTour, takeSOPmultiRangeTour, takeSOPmultiRangeModalTour } from '../tour/simpleOPtour'
 
 const shortcutLabels = [
     {
@@ -17,8 +18,8 @@ const shortcutLabels = [
         value: "has",
     },
     {
-        label: "memberOf",
-        value: "memberOf",
+        label: "collectionOf",
+        value: "collectionOf",
     },
     {
         label: "partOf",
@@ -118,10 +119,12 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
     const handleSetRangeObjToInit = () => {
         setselectedRange({})
         setselectedRelationshipTypes([])
+        setisSomeEnabled(false)
+        setisOnlyEnabled(false)
         setrangeObject({
             name: '',
-            some: isSomeEnabled,
-            only: isOnlyEnabled,
+            some: false,
+            only: false,
             min: 0,
             max: 'inf',
             exactly: -1,
@@ -131,7 +134,8 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
     }
 
     const handleSetOPtoInit = () => {
-        handleSetRangeObjToInit()
+        setselectedLabel('')
+        setselectedDomain('')
         setnewOP({
             id: v4(),
             relationshipLabel: '',
@@ -141,8 +145,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
             ranges: [],
             isSimpleOP: true,
         })
-        setselectedLabel('')
-        setselectedDomain('')
+        handleSetRangeObjToInit()
     }
 
     const handleAddObjectProperty = () => {
@@ -176,6 +179,12 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);
+        } else if (newOP.domain===newOP.inverse) {
+            setisAlertVisible(true)
+            setalertMsg('Please note that domain and inverse cannot be the same.')
+            setTimeout(() => {
+                setisAlertVisible(false)
+            }, 3000);
         } else if (newOP.domain===rangeObject.name && !rangeObject.relationshipTypes.includes("Reflexive")) {
             setisAlertVisible(true)
             setalertMsg('If domain and the range are same, relationship type should be Reflexive.')
@@ -195,17 +204,6 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
         }
     }
 
-    // const newObj = {
-    //     [inputObject.name]: {
-    //       ...inputObject
-    //     }
-    //   };
-      
-    //   setnewOP(prevState => ({
-    //     ...prevState,
-    //     ranges: [...prevState.ranges, newObj]
-    //   }));
-
     const handleModalOpen = () => {
         setisOpModalVsible(true)
         setisSOPsubmitted(false)
@@ -216,10 +214,16 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
         handleSetOPtoInit()
     }
 
+    const handleMultiRangeModalCancel = () => {
+        setisAddRangesModalVisible(false)
+        handleSetRangeObjToInit()
+        setrangesList([])
+    }
+
     const handleSaveObjectProperties = () => {
-        if (rangesList.length===0) {
+        if (rangesList.length<2) {
             setisAlertVisible(true)
-            setalertMsg('Please add at least one range.')
+            setalertMsg('You are in multi-range entry Tab. Therefore, please add at least two ranges.')
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);
@@ -252,15 +256,31 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);
-        } else if (rangeObject.max<rangeObject.min) {
+        } else if (parseFloat(rangeObject.max) < parseFloat(rangeObject.min)) {
             setisAlertVisible(true)
             setalertMsg('Min value should be smaller than the Max value.')
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);
+        } else if (newOP.relationshipLabel==='collectionOf' && rangeObject.min<2){
+            setisAlertVisible(true)
+            setalertMsg('Please note that ranges relate with the collectionOf property should have 2 or more for their min value.')
+            setTimeout(() => {
+                setisAlertVisible(false)
+            }, 4000);
         }
         else {
-            setrangesList([...rangesList, rangeObject])
+            const isNameExists = rangesList.some((range) => range.name === rangeObject.name);
+            if (isNameExists) {
+                setisAlertVisible(true)
+                setalertMsg('No duplications are allowed.')
+                setTimeout(() => {
+                    setisAlertVisible(false)
+                }, 3000);
+            } else {
+                setrangesList([...rangesList, rangeObject])
+                handleSetRangeObjToInit()
+            }
         }
     }
 
@@ -296,31 +316,40 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 
     return (
         <div className='w-full h-full'>
-            <div className="flex">
-                <p className="taxonomy-heading mt-1">Add Simple Object Properties</p>
-                <button className='border-0'
-                    onClick={handleModalOpen}
-                    disabled={!taxonomies.submitted}
-                >
-                    <BiPlus className={`biplus_modal ${!taxonomies.submitted ? 'opacity-50 cursor-not-allowed' : ''}`} />
-                </button>
+            <div className="flex items-center justify-between mb-2">
+                <div className="flex">
+                    <p className="taxonomy-heading mt-1">Add Simple Object Properties</p>
+                    <button className='border-0'
+                        onClick={handleModalOpen}
+                        disabled={!taxonomies.submitted}
+                    >
+                        <BiPlus className={`biplus_modal ${!taxonomies.submitted ? 'cursor-not-allowed' : ''}`} id='add_simpleOP_icon' />
+                    </button>
+                </div>
+                <MdLiveHelp 
+                    className="text-secondary text-xl cursor-pointer hover:text-primary" 
+                    onClick={takeSOPmainTour} 
+                />
             </div>
 
             {
                 isMainAlertVisible && 
                 <div className="flex w-fit mx-4 py-1 px-2 bg-primary text-white font-semibold rounded-md mt-4">
                     <TbAlertTriangle className='mr-2 mt-1' />
-                    <p className="">{mainAlertMsg}</p>
+                    <p>{mainAlertMsg}</p>
                 </div>
             }
 
-            <OPList objectPropertyList={objectPropertyList} setobjectPropertyList={setobjectPropertyList} />
+            <div id='simpleOP_list' className='w-full h-3/4 overflow-y-scroll'>
+                <OPList objectPropertyList={objectPropertyList} setobjectPropertyList={setobjectPropertyList} />
+            </div>
 
             <div className="flex w-full items-center justify-center">
                 <button 
                     className={`primary_btn_comp w-auto px-5 h-fit mt-4 ${!taxonomies.submitted || isAOPsubmitted ? 'disabled_btn' : ''}`} 
                     onClick={handleSubmitAllSOP} 
                     disabled={!taxonomies.submitted || isAOPsubmitted}
+                    id='submitAll_SOP'
                 >
                     Submit All
                 </button>
@@ -328,6 +357,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                     className={`secondary_btn_comp w-auto px-5 h-fit mt-4 ${!taxonomies.submitted || isAOPsubmitted ? 'disabled_btn' : ''}`} 
                     disabled={!taxonomies.submitted || isAOPsubmitted}
                     onClick={() => console.log("check consistency")} 
+                    id='check_SOP_consistency'
                 >
                     Check Consistency
                 </button>
@@ -336,7 +366,13 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
             <Modal open={isOpModalVsible} onClose={() => setisOpModalVsible(false)} fromTop="top-[12%]" fromLeft='left-[15%]' >
 
                 <div className="flex items-center justify-between w-full mb-2">
-                    <p className="modal_title">Simple Object Property</p>
+                    <div className="flex">
+                        <p className="modal_title">Simple Object Property</p>
+                        <MdLiveHelp 
+                            className="text-secondary text-xl cursor-pointer hover:text-primary mt-1 ml-2" 
+                            onClick={takeSOPmodalTour} 
+                        />
+                    </div>
                     <AiOutlineCloseCircle 
                         onClick={() => setisOpModalVsible(false)} 
                         className='modal_close_icon' 
@@ -356,43 +392,59 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                             className="flex mb-0 list-none flex-wrap py-2 flex-row"
                             role="tablist"
                         >
-                            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center" id='single_range_entry'>
                                 <a
                                     className={
-                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded flex justify-between items-center leading-normal " +
                                     (openTab === 1
                                         ? "text-white bg-secondary"
                                         : "text-secondary bg-white")
                                     }
-                                    onClick={e => {
-                                        e.preventDefault();
-                                        setopenTab(1);
-                                    }}
                                     data-toggle="tab"
                                     href="#link1"
                                     role="tablist"
                                 >
-                                    Single Range Entry
+                                    <p 
+                                        className='w-fit' 
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            setopenTab(1);
+                                        }}
+                                    >
+                                        Single Range Entry
+                                    </p>
+                                    <MdLiveHelp 
+                                        className="text-xl cursor-pointer ml-2 hover:text-primary" 
+                                        onClick={takeSOPsingleRangeTour} 
+                                    />
                                 </a>
                             </li>
 
-                            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center" id='multi_range_entry'>
                                 <a
                                     className={
-                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded flex justify-between leading-normal " +
                                     (openTab === 2
                                         ? "text-white bg-secondary"
                                         : "text-secondary bg-white")
                                     }
-                                    onClick={e => {
-                                        e.preventDefault();
-                                        setopenTab(2);
-                                    }}
                                     data-toggle="tab"
                                     href="#link2"
                                     role="tablist"
                                 >
-                                    Multi-range Entry
+                                    <p 
+                                        className='w-fit' 
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            setopenTab(2);
+                                        }}
+                                    >
+                                        Multi-range Entry
+                                    </p>
+                                    <MdLiveHelp 
+                                        className="text-xl cursor-pointer ml-2 hover:text-primary" 
+                                        onClick={takeSOPmultiRangeTour} 
+                                    />
                                 </a>
                             </li>
                         </ul>
@@ -403,8 +455,8 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                     <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                                         <div className="flex flex-col gap-4">
                                             <div className="grid grid-cols-3 gap-4">
-                                                <div className="flex flex-col" id='op_label'>
-                                                    <p className="mb-1">Label* </p>
+                                                <div className="flex flex-col">
+                                                    <p className="mb-1" id='sop_label'>Label* </p>
                                                     <input 
                                                         type="text" 
                                                         className="border p-2 rounded-sm"
@@ -414,18 +466,18 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                                     />
                                                 </div>
 
-                                                <div className="flex flex-col" id='inverse_op'>
+                                                <div className="flex flex-col" id='sop_inverse'>
                                                     <p className="mb-1">Inverse* </p>
                                                     <input 
                                                         type="text" 
                                                         className="border p-2 rounded-sm"
                                                         value={newOP.inverse}
-                                                        placeholder='notGrowsIn' 
+                                                        placeholder='isGrownBy' 
                                                         onChange={(e) => setnewOP({...newOP, inverse: e.target.value})}
                                                     />
                                                 </div>
 
-                                                <div className="flex flex-col" id='op_equivalentname'>
+                                                <div className="flex flex-col" id='sop_equivalentname'>
                                                     <p className="mb-1">Equivalent name </p>
                                                     <input 
                                                         type="text" 
@@ -438,7 +490,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                             </div>
 
                                             <div className="grid grid-cols-3 gap-4">
-                                                <div className="flex flex-col" id='relationship_domain'>
+                                                <div className="flex flex-col" id='sop_domain'>
                                                     <p className="mb-1">Domain* </p>
                                                     <Select
                                                         options={availableTaxonomies}
@@ -448,7 +500,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                                     />
                                                 </div>
 
-                                                <div className="flex flex-col" id='relationship_ranges'>
+                                                <div className="flex flex-col" id='sop_range'>
                                                     <p className="mb-1">Range* </p>
                                                     <Select
                                                         options={availableTaxonomies}
@@ -458,7 +510,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                                     />
                                                 </div>
 
-                                                <div className="flex flex-col justify-center" id='relationship_ranges'>
+                                                <div className="flex flex-col justify-center" id='sop_quantifiers'>
                                                     <p className="mb-1">Add quantifiers </p>
 
                                                     <div className="flex">
@@ -494,7 +546,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                             </div>
 
                                             <div className="flex flex-col gap-4">
-                                                <div className="flex flex-col" id='relationship_types'>
+                                                <div className="flex flex-col" id='sop_relationship_types'>
                                                     <p className="mb-1">Relationship Type(s) </p>
                                                     <Select
                                                         options={relationshipTypes}
@@ -506,8 +558,8 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                                 </div>
                                             </div>
 
-                                            <div className="flex flex-col gap-4 w-3/4">
-                                                <div className="flex w-full items-center justify-between" id='op_quantifiers'>
+                                            <div className="flex flex-col gap-4 w-3/4" id='sop_constraints'>
+                                                <div className="flex w-full items-center justify-between">
                                                     <p className="mb-1">Add constraints </p>
                                                     
                                                     <div className="flex items-center justify-center gap-2">
@@ -555,7 +607,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                             <button 
                                                 className="secondary_btn_comp w-fit h-8 py-0 px-2"
                                                 onClick={handleAddObjectProperty}
-                                                id='save_relationshipdetails'
+                                                id='add_sop'
                                             >
                                                 Add Object Property
                                             </button>
@@ -563,6 +615,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                             <button 
                                                 className="primary_btn_comp h-8 p-0"
                                                 onClick={handleModalClose}
+                                                id='cancel_sop'
                                             >
                                                 Cancel
                                             </button>
@@ -572,7 +625,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                     {/* tab 2------------------------------------- */}
                                     <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                                         <div className="grid grid-cols-3 gap-4 justify-center items-end">
-                                            <div className="flex flex-col" id='op_label'>
+                                            <div className="flex flex-col" id='sop__label'>
                                                 <p className="mb-1">Label* </p>
                                                 <Select
                                                     options={shortcutLabels}
@@ -582,7 +635,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                                 />
                                             </div>
 
-                                            <div className="flex flex-col" id='inverse_op'>
+                                            <div className="flex flex-col" id='sop__domain'>
                                                 <p className="mb-1">Domain* </p>
                                                 <Select
                                                     options={availableTaxonomies}
@@ -595,7 +648,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                                             <button 
                                                 className="secondary_btn_comp w-fit h-8 py-0 px-2"
                                                 onClick={handleAddMultipleRanges}
-                                                id='save_relationshipdetails'
+                                                id='add_multiRanges'
                                             >
                                                 Add Multiple Ranges
                                             </button>
@@ -609,8 +662,14 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
             </Modal>
 
             <Modal open={isAddRangesModalVisible} onClose={() => setisAddRangesModalVisible(false)} fromTop="top-[12%]" fromLeft='left-[15%]' >
-                <div className="flex items-center justify-between w-full mb-2">
-                    <p className="modal_title">Add Multiple Ranges</p>
+                <div className="flex items-center justify-between w-full mb-4">
+                    <div className="flex gap-2 justify-center">
+                        <p className="modal_title">Add Multiple Ranges to <span className="text-primary">{newOP.domain} {newOP.relationshipLabel}</span></p>
+                        <MdLiveHelp 
+                            className="text-secondary mt-1 text-xl cursor-pointer hover:text-primary" 
+                            onClick={takeSOPmultiRangeModalTour} 
+                        />
+                    </div>
                     <AiOutlineCloseCircle 
                         onClick={() => setisAddRangesModalVisible(false)} 
                         className='modal_close_icon' 
@@ -627,7 +686,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                 <div className="flex flex-col gap-4 text-fontcolor">
                     <div className="grid grid-cols-3 gap-2">
                         <div className="col-span-1">
-                            <div className="flex flex-col" id='relationship_ranges'>
+                            <div className="flex flex-col" id='sop__range'>
                                 <p className="mb-1">Range* </p>
                                 <Select
                                     options={availableTaxonomies}
@@ -638,7 +697,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                             </div>
                         </div>
                         <div className="col-span-2">
-                            <div className="flex flex-col" id='relationship_types'>
+                            <div className="flex flex-col" id='sop_relationshiptypes'>
                                 <p className="mb-1">Relationship Type(s) </p>
                                 <Select
                                     options={relationshipTypes}
@@ -653,7 +712,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 
                     <div className="grid grid-cols-6 gap-4">
                         <div className="col-span-2">
-                            <div className="flex flex-col gap-2 justify-center" id='relationship_ranges'>
+                            <div className="flex flex-col gap-2 justify-center" id='sop__quantifiers'>
                                 <p className="mb-1">Add quantifiers </p>
 
                                 <div className="flex">
@@ -688,7 +747,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-2 w-full col-span-3" id='op_quantifiers'>
+                        <div className="flex flex-col gap-2 w-full col-span-3" id='sop__constraints'>
                             <p className="mb-1">Add constraints </p>
                             
                             <div className="flex gap-2">
@@ -736,7 +795,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                             <button 
                                 className="secondary_btn_comp w-20 h-8 py-0 px-2"
                                 onClick={handleAddSingleRange}
-                                id='save_relationshipdetails'
+                                id='sop_addRange'
                             >
                                 Add
                             </button>
@@ -744,7 +803,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                     </div>
                 </div>
 
-                <table className="mt-8 w-full text-fontcolor table-auto">
+                <table className="mt-8 w-full text-fontcolor table-auto" id='sop_addedMultiRange'>
                     <thead className="flex w-full text-left">
 						<tr className="tracking-normal flex w-full">
 							<th className="w-1/5">Range</th>
@@ -766,7 +825,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                             >
                                 <td className="pl-2 py-2 w-1/5">{singlerange.name}</td>
                                 {/* <td className="pl-2 py-2 w-2/5 flex gap-2">{singlerange.relationshipTypes?.map((rt, index) => (
-                                    <p className="" key={index}>{rt}</p>
+                                    <p key={index}>{rt}</p>
                                 ))}</td> */}
                                 <td className="pl-2 py-2 w-1/5">{singlerange.some ? 'true' : 'false'}</td>
                                 <td className="pl-2 py-2 w-1/5">{singlerange.only ? 'true' : 'false'}</td>
@@ -788,14 +847,14 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 					<button
 						className="secondary_btn_comp h-10"
 						onClick={handleSaveObjectProperties}
-						id='submit_properties'
+						id='save_sop_multiRanges'
 					>
 						Save all
 					</button>
 					<button
 						className="primary_btn_comp h-10"
-						onClick={() => setisAddRangesModalVisible(false)}
-						id='submit_properties'
+						onClick={handleMultiRangeModalCancel}
+						id='cancel__sop'
 					>
 						Cancel
 					</button>

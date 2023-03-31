@@ -6,17 +6,18 @@ import { v4 } from "uuid";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { MdLiveHelp } from "react-icons/md";
-import Driver from "driver.js";
 import "driver.js/dist/driver.min.css";
 
 import { Modal, PropertiesList } from '../components'
 import { saveProperties } from "../features/taxonomies/taxonomySlice";
+import { saveDataProperties } from "../features/taxonomies/dataPropertySlice";
 import { datatypes } from '../data/datatypes'
 import { propertyRestrictions } from '../data/propertyRestrictions'
-import { tooltipDescriptions } from '../data/tooltipDescriptions'
+import { takeAddPropertiesTour } from "../tour/taxonomyTour";
 
 const AddProperties = ({ selectedTaxonomy }) => {
 	const taxonomies = useSelector((store) => store.taxonomies);
+	const totalDatapProperties = useSelector((store) => store.totalDatapProperties);
 
 	const [isModalVisible, setisModalVisible] = useState(false);
 	const [propertiesList, setpropertiesList] = useState([]);
@@ -33,6 +34,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		restrictions: propertyRestrictions[0].label,
 		functional: "no",
 	});
+	const [dataPropertyList, setdataPropertyList] = useState([])
 
 	const dispatch = useDispatch();
 
@@ -99,76 +101,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		// console.log('newProperty restriction: ', newProperty)
 	}
 
-	const takeAtour = () => {
-		const driver = new Driver({
-			animate: true,
-			opacity: 0.50,
-			allowClose: false,
-			doneBtnText: "Finish",
-			stageBackground: 'rgba(255, 255, 255, 0)',
-		});
-	  
-		driver.defineSteps([
-			{
-				element: "#property_name",
-				popover: {
-					title: "Step 1: Give property name",
-					description: tooltipDescriptions.property_name,
-					position: "top",
-				},
-			},
-			{
-				element: "#property_datatype",
-				popover: {
-					title: "Step 2: Give Datatype of the property",
-					description: tooltipDescriptions.property_datatype,
-					position: "top",
-				},
-			},
-			{
-				element: "#property_restrictions",
-				popover: {
-					title: "Step 3: Give any restrictions",
-					description: tooltipDescriptions.property_restrictions,
-					position: "top",
-				},
-			},
-			{
-				element: "#property_functional",
-				popover: {
-					title: "Step 4: Mark functional",
-					description: tooltipDescriptions.property_functional,
-					position: "top",
-				},
-			},
-			{
-				element: "#add_property",
-				popover: {
-					title: "Step 5: Add new property",
-					description: tooltipDescriptions.add_property,
-					position: "top",
-				},
-			},
-			{
-				element: "#view_property",
-				popover: {
-					title: "Step 6: View Property Table",
-					description: tooltipDescriptions.view_property,
-					position: "top",
-				},
-			},
-			{
-				element: "#submit_properties",
-				popover: {
-					title: "Step 7: Submit all properties",
-					description: tooltipDescriptions.submit_properties,
-					position: "top",
-				},
-			},
-		])
-
-		driver.start();
-	}
+	
 
 	const handleAddProperty = (event) => {
 		// event.preventDefault();
@@ -204,10 +137,37 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			}, 3000);
 		} 
 		else {
+			let availableDataProperty = ''
+			let propertyDatatType = ''
+			totalDatapProperties.forEach((dataprop) => {
+				if(dataprop.dpName===newProperty.name) {
+					availableDataProperty = dataprop
+				}
+			})
+			if(availableDataProperty!=='') {
+				propertyDatatType = availableDataProperty.dpDatatype
+				setalertMsg(
+					`Please note that this property is already an attribute of ${availableDataProperty.belongingClass} and its datatype should be ${availableDataProperty.dpDatatype}.`
+				);
+				setisAlertVisible(true);
+	
+				setTimeout(() => {
+					setisAlertVisible(false);
+				}, 4000);
+			} else {
+				propertyDatatType = newProperty.datatype
+				setdataPropertyList([...dataPropertyList, {
+					dpName: newProperty.name,
+					dpDatatype: newProperty.datatype,
+					belongingClass: selectedTaxonomy.name
+				}])
+				// console.log('totalDatapProperties: ', totalDatapProperties)
+			}
+			
 			const newPropertyObj = {
 				id: v4(),
 				name: newProperty.name,
-				datatype: newProperty.datatype,
+				datatype: propertyDatatType,
 				restrictions: newProperty.restrictions,
 				functional: newProperty.functional,
 			};
@@ -224,6 +184,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			});
 
 			setEnabled(true);
+			setselectedDatatype(datatypes[0])
 		}
 	};
 
@@ -235,7 +196,8 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			setTimeout(() => {
 				setisAlertVisible(false);
 			}, 3000);
-		} else {
+		} 
+		else {
 			dispatch(
 				saveProperties({
 					taxonomyId: selectedTaxonomy.id,
@@ -245,6 +207,10 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			setisModalVisible(false);
 			setisPropertiesSaved(true);
 			setpropertiesList([]);
+
+			dispatch(saveDataProperties({
+				newDataPropertyArray: dataPropertyList
+			}))
 			// console.log('taxonomies: ', taxonomies)
 		}
 	};
@@ -284,7 +250,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 							class.
 						</p>
 							
-						<MdLiveHelp className="tour_icon" onClick={takeAtour} />
+						<MdLiveHelp className="tour_icon" onClick={takeAddPropertiesTour} />
 					</div>
 					<AiOutlineCloseCircle 
 						onClick={() => setisModalVisible(false)} 
@@ -301,7 +267,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				
 				<div className="flex justify-between gap-6 items-center text-fontcolor" onKeyDown={handleKeyDown}>
 					<div className="flex flex-col gap-2" id='property_name'>
-						<p className="">Property Name*</p>
+						<p>Property Name*</p>
 						<input
 							type="text"
 							className="p-2 border border-gray-300 rounded-md outline-secondary"
@@ -314,7 +280,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2" id='property_datatype'>
-						<p className="">Data type*</p>
+						<p>Data type*</p>
 						<Select
 							options={datatypes}
 							placeholder="Select"
@@ -324,7 +290,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2" id='property_restrictions'>
-						<p className="">Restrictions</p>
+						<p>Restrictions</p>
 						<Select
 							options={propertyRestrictions}
 							placeholder="Select"
@@ -334,7 +300,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2" id='property_functional'>
-						<p className="">Functional</p>
+						<p>Functional</p>
 						<label className="label_style">
 							<input
 								type="checkbox"

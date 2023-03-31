@@ -6,7 +6,6 @@ import { BiPlus } from 'react-icons/bi'
 // import { BiPlus, BiEditAlt } from 'react-icons/bi'
 import { TbAlertTriangle } from 'react-icons/tb'
 import { MdDeleteOutline, MdLiveHelp } from 'react-icons/md' 
-import Driver from "driver.js"; 
 import "driver.js/dist/driver.min.css"; 
 
 import { DeleteRelationshipModal, Modal, SearchSelect, UpdateRelationshipModal } from '../components'
@@ -14,6 +13,7 @@ import { resetRelationshipDetails, saveDomain, saveRanges, saveRelationshipTypes
 import { saveSubrelationships } from '../features/relationships/relationshipSlice'
 import { relationshipTypes } from '../data/relationshipTypes'
 import { tooltipDescriptions } from '../data/tooltipDescriptions'
+import { createTransparentDriver } from '../tour/createDriver'
 
 const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
 
@@ -106,13 +106,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
     }
 
     const takeAtour = () => {
-		const driver = new Driver({
-			animate: true,
-			opacity: 0.50,
-			allowClose: false,
-			doneBtnText: "Finish",
-			stageBackground: 'rgba(255, 255, 255, 0)',
-		});
+		const driver = createTransparentDriver();
 	  
 		driver.defineSteps([
 			{
@@ -350,7 +344,7 @@ const RelationshipBranch = ({ relationship, titleStyle='taxonomy-name' }) => {
                                 type="text" 
                                 className="border p-2 rounded-sm"
                                 value={newRelationship.inverse}
-                                placeholder='notGrowsIn' 
+                                placeholder='isGrownBy' 
                                 onChange={(e) => setnewRelationship({...newRelationship, inverse: e.target.value})}
                             />
                         </div>
