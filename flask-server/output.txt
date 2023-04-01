@@ -3412,3 +3412,818 @@ INFO:werkzeug: * Restarting with stat
  * Debugger PIN: 792-081-341
  * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
 INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 68
+    If you don't want to define another phase sibling, you can change the stereotype into role"
+                                                                                               ^
+SyntaxError: f-string: empty expression not allowed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [01/Apr/2023 07:48:40] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 105
+    if err_class['level'] > 0 and err_class['stereotype'] == 'category'
+                                                                       ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    def check_subkind_level(self):
+IndentationError: expected an indented block after 'if' statement on line 105
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 108
+    def check_subkind_level(self):
+IndentationError: expected an indented block after 'if' statement on line 105
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 107
+    err_cls.concept_name = concept
+IndentationError: unexpected indent
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 109
+    err_cls.suggestion = "This class/concept may not be category"+  or you can change this class stereotype as category or role-mixin"
+                                                                                                                                     ^
+SyntaxError: unterminated string literal (detected at line 109)
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [01/Apr/2023 07:58:24] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 08:03:09] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 08:03:42] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 2, in <module>
+    from ontobot.utils.rules import nary
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\nary.py", line 126
+    quantop[ifier = struct['quantifier']
+           ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 66
+    err_cls.suggestion = [f"This {concept} class/concept should have at least one phase sibling and be disjoint with other phase/s since {concept} is a phase concept."
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 66
+    err_cls.suggestion = [f"This {concept} class/concept should have at least one phase sibling and be disjoint with other phase/s since {concept} is a phase concept."
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 66
+    err_cls.suggestion = [f"This {concept} class/concept should have at least one phase sibling and be disjoint with other phase/s since {concept} is a phase concept."
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 66
+    err_cls.suggestion = [f"This {concept} class/concept should have at least one phase sibling and be disjoint with other phase/s since {concept} is a phase concept.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 66
+    err_cls.suggestion = [f"This {concept} class/concept should have at least one phase sibling and be disjoint with other phase/s since {concept} is a phase concept.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 67
+    "If you have defined more phase siblings with this concept, please make them all disjoint together","
+                                                                                                        ^
+SyntaxError: unterminated string literal (detected at line 67)
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 66
+    err_cls.suggestion = [f"This {concept} class/concept should have at least one phase sibling and be disjoint with other phase/s since {concept} is a phase concept.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = 
+                         ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML. They are",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML. They are,",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML. They are,",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls.suggestion = ["Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML. They are,",
+                         ^
+SyntaxError: '[' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 155
+    3) If there are disjoint Sub-consepts, please check wether all of them are subkind or phase. If not do changes since disjoint set should be in either subkind format or phase format"]
+     ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '[' on line 152
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
