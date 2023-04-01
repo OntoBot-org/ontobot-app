@@ -799,3 +799,2616 @@ INFO:werkzeug: * Restarting with stat
 INFO:werkzeug: * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 792-081-341
+127.0.0.1 - - [31/Mar/2023 17:28:58] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 9, in <module>
+    class Phase:
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 10, in Phase
+    __checked_
+NameError: name '_Phase__checked_' is not defined
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 9, in <module>
+    class Phase:
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 10, in Phase
+    __checked_d
+NameError: name '_Phase__checked_d' is not defined
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 18
+    self.
+         ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    def __
+          ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    def __is_already_checked
+                            ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    def __is_already_checked(self, )
+                                    ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    def __is_already_checked(self, arr)
+                                       ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    def __is_already_checked(self, )
+                                    ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    def __is_already_checked(self, d)
+                                     ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    def __is_already_checked(self, dclass_list)
+                                               ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 74
+    def get_phase_list(self):
+    ^^^
+IndentationError: expected an indented block after function definition on line 71
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 74
+    def get_phase_list(self):
+    ^^^
+IndentationError: expected an indented block after function definition on line 71
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 73
+    if all(elem in l for elem in arr):
+    ^^
+IndentationError: expected an indented block after 'for' statement on line 72
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 74
+    return True
+    ^^^^^^
+IndentationError: expected an indented block after 'if' statement on line 73
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    for l in self.:
+                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 57
+    if is_parent_valid and len(result) > 0 and len(result) != len(d_classes) and not :
+                                                                                     ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 57
+    if is_parent_valid and len(result) > 0 and len(result) != len(d_classes) and not self.:
+                                                                                          ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 57
+    if is_parent_valid and len(result) > 0 and len(result) != len(d_classes) and not self.__is_already_checked(dclass_list=):
+                                                                                                                           ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if ne
+         ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype']
+                              ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase'
+                                         ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and :
+                                              ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 70
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 71
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not :
+                                                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 72
+    if next_item['stereotype'] == 'phase' and not self.:
+                                                       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 73
+    self.
+         ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 75
+    (list(in))
+          ^^
+SyntaxError: f-string: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 73
+    self.__phase_warning_list.append({
+                                    ^
+SyntaxError: '(' was never closed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 76
+    })
+    ^
+SyntaxError: f-string: empty expression not allowed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [31/Mar/2023 20:57:42] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [31/Mar/2023 21:00:34] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [31/Mar/2023 21:02:03] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 154
+    Additionally, change the stereotype of the Super-concept into subkind if it is not a level-0 concept"
+                                                                                                         ^
+SyntaxError: f-string: empty expression not allowed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 154
+    Additionally, change the stereotype of the Super-concept into subkind if it is not a level-0 concept"
+                                                                                                         ^
+SyntaxError: f-string: empty expression not allowed
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 153
+    err_cls.suggestion = f"Please make other sibling concept/s which is/are disjoint with {concept} concept into subkind.\
+                         ^
+SyntaxError: unterminated string literal (detected at line 154)
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [31/Mar/2023 21:16:05] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [31/Mar/2023 21:20:23] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 05:03:18] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 05:06:52] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+Exception in thread Thread-1 (serve_forever):
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 152
+    err_cls = self.Err()
+IndentationError: unexpected indent
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if self.
+            ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if self.__find_super_class
+                              ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if self.__find_super_class*
+                               ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if self.__find_super_class()
+                                ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if self.__find_super_class(er)
+                                  ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if self.__find_super_class(err_class,)
+                                          ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if self.__find_super_class(err_class, er)
+                                             ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if self.__find_super_class(err_class, err_index)
+                                                    ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 156
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 157
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 157
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 158
+    if 
+       ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 158
+    if su
+         ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 158
+    if super_cls[]
+                 ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 158
+    if super_cls['']
+                    ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 158
+    if super_cls['stereotype']
+                              ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 158
+    if super_cls['stereotype'] == ''
+                                    ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 158
+    if super_cls['stereotype'] == 'phase'
+                                         ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 160
+    err_cls.suggestion = f"Please make other sibling concept/s which is/are disjoint with {concept} concept into subkind.\
+    ^^^^^^^
+IndentationError: expected an indented block after 'if' statement on line 158
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 161
+    err_cls.suggestion = f"Please make other sibling concept/s which is/are disjoint with {concept} concept into subkind.\
+    ^^^^^^^
+IndentationError: expected an indented block after 'else' statement on line 160
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 159
+    err_cls_suggestion =
+                        ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 159
+    err_cls_suggestion = 
+                         ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 159
+    err_cls.suggestion = 
+                         ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 159
+    err_cls.suggestionsuggestion = 
+                                   ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 2, in <module>
+    from ontobot.model.output import Error, Response
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 2, in <module>
+    from ontobot.utils.umle import UMLE
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\umle.py", line 159
+    err_cls.suggestion = 
+                         ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [01/Apr/2023 05:18:20] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 05:19:05] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [01/Apr/2023 06:15:07] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 06:18:36] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [01/Apr/2023 06:27:47] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:00:03] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:04:35] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:05:11] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:05:40] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:08:17] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:08:44] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:10:05] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:10:44] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:11:15] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:11:33] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:11:56] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\taxonomy_service.py", line 4, in <module>
+    from ontobot.utils.rules.phase import Phase
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\phase.py", line 21
+    self.
+         ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\phase.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [01/Apr/2023 07:13:49] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:14:01] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:14:12] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Apr/2023 07:15:39] "POST /onto/checkpoint_1/validate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\umle.py', reloading
+INFO:werkzeug: * Restarting with stat
