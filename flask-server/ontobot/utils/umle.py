@@ -63,8 +63,9 @@ class UMLE:
                     err_cls = self.Err()
                     err_cls.concept_name = concept
                     err_cls.stereotype = err_class['stereotype']
-                    err_cls.suggestion = "This class/concept should be disjoint with other phase siblings since it is a phase concept. If you haven't\
-                    defined multiple siblings with this concept, please define another phase sibling and make them disjoint"
+                    err_cls.suggestion = f"This {concept} class/concept should have at least one phase sibling and be disjoint with other phase/s since {concept} is a phase concept.\
+                        If you have defined more phase siblings with this concept, please make them all disjoint together\
+                        If you don't want to define another phase sibling, you can change the stereotype into role"
 
                     self.__err_list.append({
                         "name": err_cls.concept_name,
@@ -137,7 +138,7 @@ class UMLE:
                 err_cls.concept_name = concept
                 err_cls.stereotype = err_class['stereotype']
                 err_cls.suggestion = "Since this concept is a Super-concept and it has Sub-concepts, there are many suggestions according to the ontoUML.\
-                As suggestions, \n 1) Change all the Sub-consepts into subkind since Super-concept is in kind format \n 2) If you don't want to disjoint the Sub-concepts you can define them as role format\n\
+                As suggestions, \n 1) Please check whether you have correctly define the disjoint property(ie: If sub-concepts are in phase, please make all of them disjoint) 2) Change all the Sub-consepts into subkind since Super-concept is in kind format \n 2) If you don't want to disjoint the Sub-concepts you can define them as role format\n\
                     3) If there are disjoint Sub-consepts, please check wether all of them are subkind or phase. If not do changes since disjoint set should be in either subkind format or phase format"
 
                 self.__err_list.append({
@@ -147,11 +148,20 @@ class UMLE:
                 })
 
             if err_class['level'] > 0 and err_class['stereotype'] == 'subkind':
+                err_class = self.__get_class(concept)["cls"]
+                err_index = self.__get_class(concept)["index"]
+                
+                super_cls = self.__find_super_class(err_class, err_index)
                 err_cls = self.Err()
                 err_cls.concept_name = concept
                 err_cls.stereotype = err_class['stereotype']
-                err_cls.suggestion = "Please make other sibling concept/s which is/are disjoint with this concept into subkind\
-                Additionally, change the stereotype of the Super-concept into subkind if it is not a level-0 concept"
+                
+                if super_cls['stereotype'] == 'phase':
+                    err_cls.suggestion = f"Since the super concept is phase, you can change the {concept} into role"
+                else:    
+                    err_cls.suggestion = f"Please make other sibling concept/s which is/are disjoint with {concept} concept into subkind.\
+                    If there are disjoint sibling concepts with same stereotype, you can change the {concept} concept's stereotype into stereotype of \
+                    disjoint completed sibling concepts and make disjoint with them. Additionally, change the stereotype of the Super-concept into subkind if it is not a level-0 concept"
 
                 self.__err_list.append({
                     "name": err_cls.concept_name,
