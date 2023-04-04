@@ -6,7 +6,7 @@ import { MdLiveHelp } from "react-icons/md";
 import Driver from "driver.js";
 import "driver.js/dist/driver.min.css";
 
-import { Modal, SaveTaxomony, TaxonomyTree } from "../components";
+import { ExcelDownloadUpload, Modal, SaveTaxomony, TaxonomyTree } from "../components";
 import { setSubmittedState } from "../features/taxonomies/taxonomySlice";
 import { tooltipDescriptions } from '../data/tooltipDescriptions'
 
@@ -183,16 +183,14 @@ const TaxonomyCage = () => {
 							className="primary_btn w-auto px-5"
 							onClick={handleDownloadBtnClick}
 						>
-							Download OWL
+							Download OWL File
 						</button>
 					)}
-					{/* <button
-						className={`${isValidTaxo} ? primary_btn : disabled_btn w-auto px-5`}
-						onClick={handleDownloadBtnClick}
-						disabled="{{ !isValidTaxo }}"
-					>
-						Download OWL
-					</button> */}
+
+					{
+						isValidTaxo && 
+						<ExcelDownloadUpload excelsheetId={taxonomies.id} />
+					}
 				</div>
 
 				<Modal
