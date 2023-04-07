@@ -500,6 +500,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                         className='modal_close_icon' 
                     />
                 </div>
+                <p className="w-full flex items-center justify-center font-semibold text-fontcolor mb-2">{newOP.domain} {newOP.relationshipLabel}</p>
 
                 {
                     newOP?.ranges?.length>0 && newOP?.ranges?.map((range, index) => (

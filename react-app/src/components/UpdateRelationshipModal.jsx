@@ -165,7 +165,7 @@ const UpdateRelationshipModal = ({ domainsList, open, onClose, relationship }) =
                             type="text" 
                             className="border p-2 rounded-sm"
                             value={updatedRelationship.inverse}
-                            placeholder='notGrowsIn' 
+                            placeholder='isGrownBy' 
                             onChange={(e) => setupdatedRelationship({...updatedRelationship, inverse: e.target.value})}
                         />
                     </div>

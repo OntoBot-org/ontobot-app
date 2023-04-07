@@ -1,7 +1,7 @@
 import React from 'react'
 // import { AiOutlineCloseCircle } from 'react-icons/ai'
 
-const Modal = ({ children, open, onClose, fromTop='top-[25%]', fromLeft='left-[15%]' }) => {
+const Modal = ({ children, open, onClose, fromTop='top-[15%]', fromLeft='left-[10%]' }) => {
     
     if(!open) return null
     
@@ -12,7 +12,8 @@ const Modal = ({ children, open, onClose, fromTop='top-[25%]', fromLeft='left-[1
             <div 
                 className={
                     `border p-4 flex flex-col items-end fixed z-1000 bg-white text-fontcolor 
-                    rounded-md max-h-[90%] min-w-[50%] max-w-[90%]  ${fromLeft} ${fromTop}`
+                    rounded-md w-[80%]  ${fromLeft} ${fromTop}`
+                    // rounded-md max-h-[90%] min-w-[50%] max-w-[80%]  ${fromLeft} ${fromTop}`
                 }
             >
                 <div className="w-full h-full flex flex-col items-start justify-start bg-white">

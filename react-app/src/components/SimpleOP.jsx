@@ -675,6 +675,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
                         className='modal_close_icon' 
                     />
                 </div>
+                <p className="w-full flex items-center justify-center font-semibold text-fontcolor mb-2">{newOP.domain} {newOP.relationshipLabel}</p>
 
                 { isAlertVisible && (
                     <div className="alert_style">

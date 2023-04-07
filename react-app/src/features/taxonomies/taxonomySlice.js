@@ -3,6 +3,7 @@ import { v4 } from "uuid";
 
 const  initialState = {
     id: v4(),
+    sessionId: v4(),
     name: "taxonomies",
     label: "taxonomies",
     subclasses: [],
