@@ -6,6 +6,7 @@ import { v4 } from "uuid";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { MdLiveHelp } from "react-icons/md";
+import { MdDeleteOutline } from "react-icons/md";
 import "driver.js/dist/driver.min.css";
 
 import { Modal, PropertiesList } from '../components'
@@ -215,6 +216,12 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		}
 	};
 
+	const handleDelete = (index) => {
+		const updatedList = [...propertiesList];
+		updatedList.splice(index, 1);
+		setpropertiesList(updatedList);
+	  }
+
 	return (
 		<div>
 			<div className="grid grid-cols-3 gap-x-3 gap-y-6 text-fontcolor mb-6">
@@ -349,7 +356,10 @@ const AddProperties = ({ selectedTaxonomy }) => {
 								<td className="pl-2 py-2 w-2/5">{property.name}</td>
 								<td className="pl-2 py-2 w-1/5">{property.datatype}</td>
 								<td className="pl-2 py-2 w-1/5">{property.restrictions}</td>
-								<td className="pl-2 py-2 w-1/5">{property.functional}</td>
+								<td className="pl-2 py-2 w-1/5 flex justify-between">{property.functional}
+								<MdDeleteOutline className=' text-primary text-sm cursor-pointer' onClick={() => handleDelete(index)}/>
+								</td>
+								
 							</tr>
 						))}
 					</tbody>
