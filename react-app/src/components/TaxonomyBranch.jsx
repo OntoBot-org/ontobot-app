@@ -5,7 +5,6 @@ import { MdDeleteOutline, MdLiveHelp } from "react-icons/md";
 import { TbAlertTriangle } from "react-icons/tb";
 import { v4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
-import Driver from "driver.js";
 import "driver.js/dist/driver.min.css";
 
 import Modal from "./Modal";
@@ -14,7 +13,7 @@ import { setSelectedTaxonomy } from "../features/taxonomies/selectedTaxonomySlic
 import { stereotypes } from "../data/stereotypes";
 import UpdateTaxonomyModal from "./UpdateTaxonomyModal";
 import DeleteTaxonomyModal from "./DeleteTaxonomyModal";
-import { tooltipDescriptions } from '../data/tooltipDescriptions'
+import { takeAddSubclsTaxonomyTour } from "../tour/taxonomyTour";
 
 const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 	const taxonomies = useSelector((store) => store.taxonomies);
@@ -105,61 +104,6 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 			}, 3000);
         }
     }
-
-	const takeAtour = () => {
-		const driver = new Driver({
-			animate: true,
-			opacity: 0.50,
-			allowClose: false,
-			doneBtnText: "Finish",
-			stageBackground: 'rgba(255, 255, 255, 0)',
-		});
-	  
-		driver.defineSteps([
-			{
-				element: "#stereotypes_list",
-				popover: {
-					title: "Step 1: Check available stereotypes",
-					description: tooltipDescriptions.stereotypes_list,
-					position: "top",
-				},
-			},
-			{
-				element: "#taxonomy_classname",
-				popover: {
-					title: "Step 2: Give Class Name",
-					description: tooltipDescriptions.taxonomy_classname,
-					position: "top",
-				},
-			},
-			{
-				element: "#taxonomy_stereotype",
-				popover: {
-					title: "Step 3: Select the Stereotype",
-					description: tooltipDescriptions.taxonomy_stereotype,
-					position: "top",
-				},
-			},
-			{
-				element: "#taxonomy_equivalentclass",
-				popover: {
-					title: "Step 4: Give an Equivalent Class",
-					description: tooltipDescriptions.taxonomy_equivalentclass,
-					position: "top",
-				},
-			},
-			{
-				element: "#save_taxonomybranch",
-				popover: {
-					title: "Step 5: Save the taxonomy",
-					description: tooltipDescriptions.save_taxonomybranch,
-					position: "top",
-				},
-			},
-		])
-
-		driver.start();
-	}
 
 	const handleSaveClass = () => {
 		if (newClass.name?.length === 0) {
@@ -252,7 +196,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 							<span className="font-bold text-secondary">{taxonomy.name}</span>{" "}
 							class.
 						</p>
-						<MdLiveHelp className="tour_icon" onClick={takeAtour} />
+						<MdLiveHelp className="tour_icon" onClick={takeAddSubclsTaxonomyTour} />
 					</div>
 					<AiOutlineCloseCircle 
 						onClick={() => setisModalOpen(false)} 
@@ -302,11 +246,8 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 
 									<div className="items-holder rounded-md bg-white absolute top-[100%] mt-2 border w-full">
 										{isDropdownVisible &&
-											stereotypes.map((item) => {
-												if(taxonomy.name==="taxonomies" && item.name==="subkind"){ 
-													return null;
-												}else{
-												return <div
+											stereotypes.map((item) => (
+												<div
 													className="dropdown-item p-2 cursor-pointer hover:bg-slate-200"
 													key={item.id}
 													onClick={() => {
@@ -319,8 +260,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 														<p>{item.name}</p>
 													)}
 												</div>
-											}
-										})}
+											))}
 									</div>
 								</div>
 							</div>

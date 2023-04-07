@@ -26,14 +26,14 @@ const AddObjectProperties = () => {
     return (
         <div className="h-full">
             <div className="flex h-3/4">
-                <div className="w-1/2 border p-3" id='relationship_tree'>
+                <div className="w-1/2 border p-3" id='simpleOP_cage'>
                     <SimpleOP 
                         isSOPsubmitted={isSOPsubmitted}
                         setisSOPsubmitted={setisSOPsubmitted}
                         isAOPsubmitted={isAOPsubmitted}
                     />
                 </div>
-                <div className="w-1/2 border p-3" id='relationship_details'>
+                <div className="w-1/2 border p-3" id='advancedOP_cage'>
                     <AdvancedOP 
                         isSOPsubmitted={isSOPsubmitted}
                         isAOPsubmitted={isAOPsubmitted}
@@ -45,7 +45,7 @@ const AddObjectProperties = () => {
                 <button 
                     className='primary_btn w-auto' 
                     onClick={handleSubmitOPList}
-                    id='submit_relationships'
+                    id='submit_all_op'
                 >
                     Submit all the Relationships
                 </button>
