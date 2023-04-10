@@ -243,7 +243,6 @@ const AddProperties = ({ selectedTaxonomy }) => {
 			<Modal
 				open={isModalVisible}
 				onClose={() => setisModalVisible(false)}
-				// fromTop='top-[35%]'
 				fromLeft="left-[10%]"
 				fromTop="top-[15%]"
 			>

@@ -115,7 +115,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 			}, 3000);
 		} else {
 			let nameDuplication = availableSubclasses.filter(
-				(subCls) => subCls.name === newClass.name
+				(subCls) => subCls.name.toLowerCase() === newClass.name.toLowerCase()
 			);
 
 			if (nameDuplication.length > 0) {
@@ -125,7 +125,7 @@ const TaxonomyBranch = ({ taxonomy, taxonomyStyle = "taxonomy-name" }) => {
 				setTimeout(() => {
 					setisAlertVisible(false);
 				}, 3000);
-			} else if (taxonomy.name === newClass.name) {
+			} else if (taxonomy.name.toLowerCase() === newClass.name.toLowerCase()) {
 				setisAlertVisible(true);
 				setalertMsg("A subclass cannot have its parent's name.");
 

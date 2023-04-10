@@ -57,7 +57,7 @@ const ExcelDownloadUpload = ({ excelsheetId }) => {
 					/>
                 </div>
 
-                <div className="">
+                <div>
                     <p className="font-normal">
                         Now that you have created your ontology, next step is <span className="font-semibold text-primary">Ontology Population</span>.
                         We have provided you with a <span className="font-semibold text-primary">downloadable excel sheet</span> which
@@ -66,7 +66,7 @@ const ExcelDownloadUpload = ({ excelsheetId }) => {
                     </p>
 
                     <div className="mt-4 ml-4">
-                        <p className="" >
+                        <p>
                             Your Id is: <span className="font-semibold text-primary">{excelsheetId}</span>
                         </p>
                         <p className="mt-2 font-normal underline underline-offset-2 cursor-pointer hover:font-semibold w-fit text-secondary" onClick={handleExcelsheetDownload}>
@@ -74,7 +74,7 @@ const ExcelDownloadUpload = ({ excelsheetId }) => {
                         </p>
                     </div>
 
-                    <div className="">
+                    <div>
                         <p className="mt-8 mb-2 modal_title flex items-start">Has filled the excel sheet already?</p>
 
                         <div {...getRootProps()} className="bg-gray-100 p-4 rounded-md border-dashed border-2 border-gray-400 text-center cursor-pointer">
