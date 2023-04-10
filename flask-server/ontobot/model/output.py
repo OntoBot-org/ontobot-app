@@ -14,6 +14,8 @@ class Error:
         umle.check_zero_level()
         umle.check_phase_level()
         umle.check_category_level()
+        umle.check_subkind_level()
+        umle.check_rolemixin_level()
 
         err = {
             "topic": topic,
@@ -27,6 +29,21 @@ class Error:
         }
 
         return json.dumps(err)
+    
+    @staticmethod
+    def send_taxonomy_warn(warn_list):
+        warn = {
+            "topic" : "Some concepts are biased to violate the ontoUML grammar",
+            "msg" : {
+                "concepts" : "Concepts are described in the message",
+                "content" : "Try to solve the warning issues for getting a quality ontology"
+            },
+            "meta" : warn_list,
+            "type": 'warning',
+            "code": 500
+        }
+
+        return json.dumps(warn)
 
     @staticmethod
     def send_something_went_wrong_error(msg):
@@ -62,6 +79,47 @@ class Error:
         }
 
         return json.dumps(err)
+    
+    @staticmethod
+    def send_collective_error(concept_list, stage):
+        if stage == 1:
+            err = {
+            "code" : 500,
+            "topic" : "Collective pattern violation",
+            "msg" : "Following concepts should be with collective stereotypes",
+            "meta" : concept_list,
+            "type" : "error"
+        }
+        else:
+            err = {
+            "code" : 500,
+            "topic" : "Collective pattern violation",
+            "msg" : "The min values of the Object Properties associated with following ranges/concepts should be at least 2",
+            "meta" : concept_list,
+            "type" : "error"
+        }
+
+        return json.dumps(err)
+    
+    @staticmethod
+    def file_error(msg):
+        err = {
+            "code" : 400,
+            "topic" : "File Error",
+            "msg" : msg,
+            "type": "error"
+        }
+
+        return json.dumps(err)
+    
+    
+    @staticmethod
+    def next(err, type=None):
+        return {
+            "code": 500,
+            "msg": err,
+            "type": type
+        }
 
 
 class Response:
@@ -74,3 +132,10 @@ class Response:
         }
 
         return json.dumps(response)
+    
+    @staticmethod
+    def next(msg):
+        return {
+            "code" : 201,
+            "msg" : msg
+        }

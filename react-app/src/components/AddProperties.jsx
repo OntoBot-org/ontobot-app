@@ -6,7 +6,7 @@ import { v4 } from "uuid";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { MdLiveHelp } from "react-icons/md";
-import Driver from "driver.js";
+import { MdDeleteOutline } from "react-icons/md";
 import "driver.js/dist/driver.min.css";
 
 import { Modal, PropertiesList } from '../components'
@@ -14,7 +14,7 @@ import { saveProperties } from "../features/taxonomies/taxonomySlice";
 import { saveDataProperties } from "../features/taxonomies/dataPropertySlice";
 import { datatypes } from '../data/datatypes'
 import { propertyRestrictions } from '../data/propertyRestrictions'
-import { tooltipDescriptions } from '../data/tooltipDescriptions'
+import { takeAddPropertiesTour } from "../tour/taxonomyTour";
 
 const AddProperties = ({ selectedTaxonomy }) => {
 	const taxonomies = useSelector((store) => store.taxonomies);
@@ -102,76 +102,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		// console.log('newProperty restriction: ', newProperty)
 	}
 
-	const takeAtour = () => {
-		const driver = new Driver({
-			animate: true,
-			opacity: 0.50,
-			allowClose: false,
-			doneBtnText: "Finish",
-			stageBackground: 'rgba(255, 255, 255, 0)',
-		});
-	  
-		driver.defineSteps([
-			{
-				element: "#property_name",
-				popover: {
-					title: "Step 1: Give property name",
-					description: tooltipDescriptions.property_name,
-					position: "top",
-				},
-			},
-			{
-				element: "#property_datatype",
-				popover: {
-					title: "Step 2: Give Datatype of the property",
-					description: tooltipDescriptions.property_datatype,
-					position: "top",
-				},
-			},
-			{
-				element: "#property_restrictions",
-				popover: {
-					title: "Step 3: Give any restrictions",
-					description: tooltipDescriptions.property_restrictions,
-					position: "top",
-				},
-			},
-			{
-				element: "#property_functional",
-				popover: {
-					title: "Step 4: Mark functional",
-					description: tooltipDescriptions.property_functional,
-					position: "top",
-				},
-			},
-			{
-				element: "#add_property",
-				popover: {
-					title: "Step 5: Add new property",
-					description: tooltipDescriptions.add_property,
-					position: "top",
-				},
-			},
-			{
-				element: "#view_property",
-				popover: {
-					title: "Step 6: View Property Table",
-					description: tooltipDescriptions.view_property,
-					position: "top",
-				},
-			},
-			{
-				element: "#submit_properties",
-				popover: {
-					title: "Step 7: Submit all properties",
-					description: tooltipDescriptions.submit_properties,
-					position: "top",
-				},
-			},
-		])
-
-		driver.start();
-	}
+	
 
 	const handleAddProperty = (event) => {
 		// event.preventDefault();
@@ -285,6 +216,12 @@ const AddProperties = ({ selectedTaxonomy }) => {
 		}
 	};
 
+	const handleDelete = (index) => {
+		const updatedList = [...propertiesList];
+		updatedList.splice(index, 1);
+		setpropertiesList(updatedList);
+	  }
+
 	return (
 		<div>
 			<div className="grid grid-cols-3 gap-x-3 gap-y-6 text-fontcolor mb-6">
@@ -320,7 +257,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 							class.
 						</p>
 							
-						<MdLiveHelp className="tour_icon" onClick={takeAtour} />
+						<MdLiveHelp className="tour_icon" onClick={takeAddPropertiesTour} />
 					</div>
 					<AiOutlineCloseCircle 
 						onClick={() => setisModalVisible(false)} 
@@ -337,7 +274,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 				
 				<div className="flex justify-between gap-6 items-center text-fontcolor" onKeyDown={handleKeyDown}>
 					<div className="flex flex-col gap-2" id='property_name'>
-						<p className="">Property Name*</p>
+						<p>Property Name*</p>
 						<input
 							type="text"
 							className="p-2 border border-gray-300 rounded-md outline-secondary"
@@ -350,7 +287,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2" id='property_datatype'>
-						<p className="">Data type*</p>
+						<p>Data type*</p>
 						<Select
 							options={datatypes}
 							placeholder="Select"
@@ -360,7 +297,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2" id='property_restrictions'>
-						<p className="">Restrictions</p>
+						<p>Restrictions</p>
 						<Select
 							options={propertyRestrictions}
 							placeholder="Select"
@@ -370,7 +307,7 @@ const AddProperties = ({ selectedTaxonomy }) => {
 					</div>
 
 					<div className="flex flex-col gap-2" id='property_functional'>
-						<p className="">Functional</p>
+						<p>Functional</p>
 						<label className="label_style">
 							<input
 								type="checkbox"
@@ -419,7 +356,10 @@ const AddProperties = ({ selectedTaxonomy }) => {
 								<td className="pl-2 py-2 w-2/5">{property.name}</td>
 								<td className="pl-2 py-2 w-1/5">{property.datatype}</td>
 								<td className="pl-2 py-2 w-1/5">{property.restrictions}</td>
-								<td className="pl-2 py-2 w-1/5">{property.functional}</td>
+								<td className="pl-2 py-2 w-1/5 flex justify-between">{property.functional}
+								<MdDeleteOutline className=' text-primary text-sm cursor-pointer' onClick={() => handleDelete(index)}/>
+								</td>
+								
 							</tr>
 						))}
 					</tbody>

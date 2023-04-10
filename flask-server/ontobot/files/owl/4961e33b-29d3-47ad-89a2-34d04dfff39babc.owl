@@ -1,0 +1,260 @@
+Prefix(:=<http://example.com/ontology#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://example.com/ontology>
+
+Declaration(Class(:CS_Degree))
+Declaration(Class(:Degree))
+Declaration(Class(:Graduate))
+Declaration(Class(:IS_Degree))
+Declaration(Class(:Innocent_Student))
+Declaration(Class(:Juinor_Lecture))
+Declaration(Class(:Lecture))
+Declaration(Class(:Organization))
+Declaration(Class(:Primary_School))
+Declaration(Class(:SE_Degree))
+Declaration(Class(:School))
+Declaration(Class(:Senior_Lecture))
+Declaration(Class(:Student))
+Declaration(Class(:Toxic_Female_Student))
+Declaration(Class(:Toxic_Male_Student))
+Declaration(Class(:Toxic_Student))
+Declaration(Class(:University))
+Declaration(ObjectProperty(:consistsOf))
+Declaration(ObjectProperty(:goes))
+Declaration(ObjectProperty(:has_Degree))
+Declaration(ObjectProperty(:has_Lecture))
+Declaration(ObjectProperty(:has_Student))
+Declaration(ObjectProperty(:has_University))
+Declaration(ObjectProperty(:hates))
+Declaration(ObjectProperty(:is_Degree_of))
+Declaration(ObjectProperty(:is_Lecture_of))
+Declaration(ObjectProperty(:is_Student_of))
+Declaration(ObjectProperty(:is_University_of))
+Declaration(ObjectProperty(:loves))
+Declaration(ObjectProperty(:reads))
+Declaration(ObjectProperty(:studiesIn))
+Declaration(DataProperty(:Degree_Name))
+Declaration(DataProperty(:Innocent_Level))
+Declaration(DataProperty(:Lecture_Name))
+Declaration(DataProperty(:Student_Name))
+Declaration(DataProperty(:Toxic_Level))
+Declaration(DataProperty(:category))
+Declaration(DataProperty(:name))
+Declaration(DataProperty(:year))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :consistsOf (:consistsOf)
+
+InverseObjectProperties(:consistsOf ObjectInverseOf(:consistsOf))
+TransitiveObjectProperty(:consistsOf)
+ObjectPropertyDomain(:consistsOf :University)
+ObjectPropertyRange(:consistsOf :School)
+
+# Object Property: :goes (:goes)
+
+InverseObjectProperties(:goes ObjectInverseOf(:goes))
+FunctionalObjectProperty(:goes)
+ObjectPropertyDomain(:goes :Lecture)
+ObjectPropertyRange(:goes :University)
+
+# Object Property: :has_Degree (:has_Degree)
+
+InverseObjectProperties(:has_Degree :is_Degree_of)
+TransitiveObjectProperty(:has_Degree)
+ObjectPropertyDomain(:has_Degree :Graduate)
+ObjectPropertyDomain(:has_Degree :University)
+ObjectPropertyRange(:has_Degree :Degree)
+
+# Object Property: :has_Lecture (:has_Lecture)
+
+InverseObjectProperties(:has_Lecture :is_Lecture_of)
+ObjectPropertyDomain(:has_Lecture :University)
+ObjectPropertyRange(:has_Lecture :Lecture)
+
+# Object Property: :has_Student (:has_Student)
+
+InverseObjectProperties(:has_Student :is_Student_of)
+ObjectPropertyDomain(:has_Student :University)
+ObjectPropertyRange(:has_Student :Student)
+
+# Object Property: :has_University (:has_University)
+
+InverseObjectProperties(:has_University :is_University_of)
+ObjectPropertyDomain(:has_University :Graduate)
+ObjectPropertyRange(:has_University :University)
+
+# Object Property: :hates (:hates)
+
+InverseObjectProperties(:hates ObjectInverseOf(:hates))
+TransitiveObjectProperty(:hates)
+ObjectPropertyDomain(:hates :Toxic_Student)
+ObjectPropertyRange(:hates :Innocent_Student)
+
+# Object Property: :loves (:loves)
+
+InverseObjectProperties(:loves ObjectInverseOf(:loves))
+FunctionalObjectProperty(:loves)
+ObjectPropertyDomain(:loves :Toxic_Male_Student)
+ObjectPropertyRange(:loves :Toxic_Female_Student)
+
+# Object Property: :reads (:reads)
+
+InverseObjectProperties(:reads ObjectInverseOf(:reads))
+TransitiveObjectProperty(:reads)
+ObjectPropertyDomain(:reads :Student)
+ObjectPropertyRange(:reads :Degree)
+
+# Object Property: :studiesIn (studiesIn)
+
+AnnotationAssertion(rdfs:comment :studiesIn "studiesIn"^^xsd:string)
+AnnotationAssertion(rdfs:label :studiesIn "studiesIn"@en)
+InverseObjectProperties(:studiesIn ObjectInverseOf(:studiesIn))
+FunctionalObjectProperty(:studiesIn)
+ObjectPropertyDomain(:studiesIn :Student)
+ObjectPropertyRange(:studiesIn :School)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :Degree_Name (:Degree_Name)
+
+DataPropertyDomain(:Degree_Name :Degree)
+DataPropertyRange(:Degree_Name xsd:string)
+
+# Data Property: :Innocent_Level (:Innocent_Level)
+
+FunctionalDataProperty(:Innocent_Level)
+DataPropertyDomain(:Innocent_Level :Innocent_Student)
+DataPropertyRange(:Innocent_Level xsd:int)
+
+# Data Property: :Lecture_Name (:Lecture_Name)
+
+DataPropertyDomain(:Lecture_Name :Lecture)
+DataPropertyRange(:Lecture_Name xsd:string)
+
+# Data Property: :Student_Name (:Student_Name)
+
+DataPropertyDomain(:Student_Name :Student)
+DataPropertyRange(:Student_Name xsd:string)
+
+# Data Property: :Toxic_Level (:Toxic_Level)
+
+FunctionalDataProperty(:Toxic_Level)
+DataPropertyDomain(:Toxic_Level :Toxic_Student)
+DataPropertyRange(:Toxic_Level xsd:int)
+
+# Data Property: :category (:category)
+
+FunctionalDataProperty(:category)
+DataPropertyDomain(:category :School)
+DataPropertyRange(:category xsd:string)
+
+# Data Property: :name (:name)
+
+FunctionalDataProperty(:name)
+DataPropertyDomain(:name :Organization)
+DataPropertyRange(:name xsd:string)
+
+# Data Property: :year (:year)
+
+DataPropertyDomain(:year :Organization)
+DataPropertyRange(:year xsd:int)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :CS_Degree (:CS_Degree)
+
+AnnotationAssertion(rdfs:comment :CS_Degree "The Level : 1"^^xsd:string)
+SubClassOf(:CS_Degree :Degree)
+
+# Class: :Degree (:Degree)
+
+AnnotationAssertion(rdfs:comment :Degree "The Level : 0"^^xsd:string)
+
+# Class: :IS_Degree (:IS_Degree)
+
+AnnotationAssertion(rdfs:comment :IS_Degree "The Level : 1"^^xsd:string)
+SubClassOf(:IS_Degree :Degree)
+
+# Class: :Innocent_Student (:Innocent_Student)
+
+AnnotationAssertion(rdfs:comment :Innocent_Student "The Level : 1"^^xsd:string)
+SubClassOf(:Innocent_Student :Student)
+
+# Class: :Juinor_Lecture (:Juinor_Lecture)
+
+AnnotationAssertion(rdfs:comment :Juinor_Lecture "The Level : 1"^^xsd:string)
+SubClassOf(:Juinor_Lecture :Lecture)
+
+# Class: :Lecture (:Lecture)
+
+AnnotationAssertion(rdfs:comment :Lecture "The Level : 0"^^xsd:string)
+
+# Class: :Organization (:Organization)
+
+AnnotationAssertion(rdfs:comment :Organization "The Level : 0"^^xsd:string)
+
+# Class: :Primary_School (:Primary_School)
+
+AnnotationAssertion(rdfs:comment :Primary_School "The Level : 2"^^xsd:string)
+SubClassOf(:Primary_School :School)
+
+# Class: :SE_Degree (:SE_Degree)
+
+AnnotationAssertion(rdfs:comment :SE_Degree "The Level : 1"^^xsd:string)
+SubClassOf(:SE_Degree :Degree)
+
+# Class: :School (:School)
+
+AnnotationAssertion(rdfs:comment :School "The Level : 1"^^xsd:string)
+SubClassOf(:School :Organization)
+DisjointClasses(:School :University)
+
+# Class: :Senior_Lecture (:Senior_Lecture)
+
+AnnotationAssertion(rdfs:comment :Senior_Lecture "The Level : 1"^^xsd:string)
+SubClassOf(:Senior_Lecture :Lecture)
+
+# Class: :Student (:Student)
+
+AnnotationAssertion(rdfs:comment :Student "The Level : 0"^^xsd:string)
+
+# Class: :Toxic_Female_Student (:Toxic_Female_Student)
+
+AnnotationAssertion(rdfs:comment :Toxic_Female_Student "The Level : 2"^^xsd:string)
+SubClassOf(:Toxic_Female_Student :Toxic_Student)
+DisjointClasses(:Toxic_Female_Student :Toxic_Male_Student)
+
+# Class: :Toxic_Male_Student (:Toxic_Male_Student)
+
+AnnotationAssertion(rdfs:comment :Toxic_Male_Student "The Level : 2"^^xsd:string)
+SubClassOf(:Toxic_Male_Student :Toxic_Student)
+
+# Class: :Toxic_Student (:Toxic_Student)
+
+AnnotationAssertion(rdfs:comment :Toxic_Student "The Level : 1"^^xsd:string)
+SubClassOf(:Toxic_Student :Student)
+
+# Class: :University (:University)
+
+AnnotationAssertion(rdfs:comment :University "The Level : 1"^^xsd:string)
+SubClassOf(:University :Organization)
+
+
+DisjointClasses(:CS_Degree :IS_Degree :SE_Degree)
+)
