@@ -7,6 +7,10 @@ name = "pypi"
 flask = "*"
 marshmallow = "*"
 owlready2 = "*"
+firebase-admin = "*"
+xlsxwriter = "*"
+pandas = "*"
+openpyxl = "*"
 
 [dev-packages]
 

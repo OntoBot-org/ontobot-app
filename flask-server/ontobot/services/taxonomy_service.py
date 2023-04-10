@@ -1,4 +1,3 @@
-
 from ontobot.model.output import Error, Response
 from ontobot.utils.rules.subkind import Subkind
 from ontobot.utils.rules.custom import Custom
@@ -8,18 +7,19 @@ from ontobot.utils.rules.category import Category
 from ontobot.utils.rules.role import Role
 from ontobot.utils.rules import custom
 from ontobot.utils.owl import OWL
-from ontobot.utils.owl_generator import OWL_Generator
-from ontobot.services import factory
+from ontobot.services import factory, firestore_connect
+from ontobot.utils import cmethod
 
 from ontobot.db.taxonomy import Taxonomy
-import json
 
 
 def validate_taxonomy_service(parsed_json):
     try:
         valid_concept = []
         all_concepts = []
+        warn_list = []; warn_list.clear()
         owl = OWL(parsed_json)
+        sessionID = parsed_json['sessionID']
 
         # get all concepts into a set
         all_concepts = owl.get_taxonomy_concepts()
@@ -46,6 +46,10 @@ def validate_taxonomy_service(parsed_json):
         valid_concept.extend(category_pattern.get_category_list())
         valid_concept.extend(role_pattern.get_role_list())
 
+        # identify warning messages
+        warn_list.extend(phase_pattern.get_phase_warn_list())
+        warn_list.extend(category_pattern.get_category_warn_list())
+
         # convirt valid_consept list into set
         valid_concept = set(valid_concept)
 
@@ -53,9 +57,19 @@ def validate_taxonomy_service(parsed_json):
             # add custom ontology pattern (QQ pattern) 
             # return Response.send_response("can proceed further")
             result = owl.get_taxonomy_concept_with_meta()
+            
             _ = Taxonomy(result)
+            firestore_connect.create_new_document(sessionID, {
+                "sessionID": sessionID,
+                "msg": cmethod.convertToTaxonomyContent(result=result)
+            })
             new_parsed_json = custom.get_qq_pattern(parsed_json, result)
-            return Response.send_response(new_parsed_json)
+
+            if len(warn_list) == 0:
+                return Response.send_response(new_parsed_json)
+            else:
+                return Error.send_taxonomy_warn(warn_list=warn_list)
+
         else:
             set_difference = all_concepts - valid_concept
             return Error.send_taxonomy_error(list(set_difference), owl.get_taxonomy_concept_with_meta())
@@ -69,23 +83,36 @@ def get_taxonomy_owl(parsed_json):
         if len(parsed_json) == 0:
             raise Exception('data array is empty')
 
+        session_id = parsed_json['sessionID']
         owl_old = OWL(parsed_json)
         all_concepts = owl_old.get_taxonomy_concepts()
-        result = owl_old.get_taxonomy_concept_with_meta() # All the concepts inside an array according to the BFS
-        new_parsed_json = custom.get_qq_pattern(parsed_json, result)    # Generate QQ Pattern
-        owl_new = OWL(new_parsed_json)
-        return Response.send_response({
+        # result = owl_old.get_taxonomy_concept_with_meta() # All the concepts inside an array according to the BFS
+        # new_parsed_json = custom.get_qq_pattern(parsed_json, result)    # Generate QQ Pattern
+        taxo_json = owl_old.get_taxonomy_json()
+        # owl_new = OWL(parsed_json) # This is for firestores
+        
+        firestore_connect.create_new_owlTaxo_document(session_id=session_id, obj={
+            "sessionID": session_id,
             "concepts": list(all_concepts),
-            "taxonomy": owl_new.get_taxonomy_json()
+            "taxonomy": cmethod.convertToTaxonomyContent(result= taxo_json)
+        })
+        
+        owl_java = OWL(parsed_json)
+
+        # return Response.send_response({
+        #     "sessionID": session_id,
+        #     "concepts": list(all_concepts),
+        #     "taxonomy": owl_java.get_taxonomy_json()
+        # })
+
+        return Response.next({
+            "sessionID": session_id,
+            "concepts": list(all_concepts),
+            "taxonomy": owl_java.get_taxonomy_json()
         })
 
     except Exception as err:
-        return Error.send_something_went_wrong_error(err)
+        # return Error.send_something_went_wrong_error(err)
+        return Error.next(err=err)
 
 
-def get_owl_file(parsed_json):
-    try:
-        return OWL_Generator(json.loads(parsed_json))
-
-    except Exception as err:
-        return Error.send_something_went_wrong_error(err)

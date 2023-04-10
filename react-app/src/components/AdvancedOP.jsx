@@ -4,10 +4,12 @@ import Select from "react-select";
 import { v4 } from "uuid";
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { BiPlus } from 'react-icons/bi'
+import { MdLiveHelp } from 'react-icons/md'
 import { TbAlertTriangle } from 'react-icons/tb'
 
 import { Modal, OPList } from '../components'
 import { saveObjectProperties } from '../features/objectProperties/objectPropertySlice'
+import { takeAOPmainTour, takeAOPusecase01Tour, takeAOPusecase02Tour, takeAOPaddConstraintsTour } from '../tour/advancedOPtour'
 
 const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
 
@@ -179,13 +181,14 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
             setTimeout(() => {
                 setisAlertVisible(false)
             }, 3000);
-        } else if(selectedAdditionalAttributes.some((attr) => attr.name === newOP.ranges[0].name)) {
-            setisAlertVisible(true)
-            setalertMsg('Please note that you cannot add Range as an additional attribute.')
-            setTimeout(() => {
-                setisAlertVisible(false)
-            }, 3000);
-        }
+        } 
+        // else if(selectedAdditionalAttributes.some((attr) => attr.name === newOP.ranges[0].name)) {
+        //     setisAlertVisible(true)
+        //     setalertMsg('Please note that you cannot add Range as an additional attribute.')
+        //     setTimeout(() => {
+        //         setisAlertVisible(false)
+        //     }, 3000);
+        // }
         else {
             let additionalAttributes = []
             if(openTab===1) {
@@ -239,35 +242,44 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
 
     return (
         <div className='w-full h-full'>
-            <div className="flex">
-                <p className="taxonomy-heading mt-1">Add Advanced Object Properties</p>
-                
-                <button className='border-0'
-                    onClick={() => {
-                        setisOpModalVsible(true)
-                        setisAOPsubmitted(false)
-                    }}
-                    disabled={!isSOPsubmitted}
-                >
-                    <BiPlus className={`biplus_modal ${!isSOPsubmitted ? 'cursor-not-allowed' : ''}`} />
-                </button>
+            <div className="flex items-center justify-between mb-2">
+                <div className="flex">
+                    <p className="taxonomy-heading mt-1">Add Advanced Object Properties</p>
+                    
+                    <button className='border-0'
+                        onClick={() => {
+                            setisOpModalVsible(true)
+                            setisAOPsubmitted(false)
+                        }}
+                        disabled={!isSOPsubmitted}
+                    >
+                        <BiPlus className={`biplus_modal ${!isSOPsubmitted ? 'cursor-not-allowed' : ''}`} id='add_advancedOP_icon' />
+                    </button>
+                </div>
+                <MdLiveHelp 
+                    className="text-secondary text-xl cursor-pointer hover:text-primary" 
+                    onClick={takeAOPmainTour} 
+                />
             </div>
 
             {
                 isMainAlertVisible && 
                 <div className="flex w-fit mx-4 py-1 px-2 bg-primary text-white font-semibold rounded-md mt-4">
                     <TbAlertTriangle className='mr-2 mt-1' />
-                    <p className="">{mainAlertMsg}</p>
+                    <p>{mainAlertMsg}</p>
                 </div>
             }
 
-            <OPList objectPropertyList={objectPropertyList} setobjectPropertyList={setobjectPropertyList} />
+            <div id='advancedOP_list' className='w-full h-3/4 overflow-y-scroll'>
+                <OPList objectPropertyList={objectPropertyList} setobjectPropertyList={setobjectPropertyList} />
+            </div>
 
             <div className="flex w-full items-center justify-center">
                 <button 
                     className={`primary_btn_comp w-auto px-5 h-fit mt-4 ${!isSOPsubmitted || isAOPsubmitted ? 'disabled_btn' : ''}`} 
                     disabled={!isSOPsubmitted || isAOPsubmitted}
                     onClick={handleSubmitAllAOP} 
+                    id='submitAll_AOP'
                 >
                     Submit All
                 </button>
@@ -275,6 +287,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                     className={`secondary_btn_comp w-auto px-5 h-fit mt-4 ${!isSOPsubmitted|| isAOPsubmitted ? 'disabled_btn' : ''}`} 
                     disabled={!isSOPsubmitted || isAOPsubmitted}
                     onClick={() => console.log("check consistency")} 
+                    id='check_AOP_consistency'
                 >
                     Check Consistency
                 </button>
@@ -305,40 +318,56 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
                                 <a
                                     className={
-                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded flex justify-between leading-normal " +
                                     (openTab === 1
                                         ? "text-white bg-secondary"
                                         : "text-secondary bg-white")
                                     }
-                                    onClick={e => {
-                                        e.preventDefault();
-                                        setopenTab(1);
-                                    }}
                                     data-toggle="tab"
                                     href="#link1"
                                     role="tablist"
                                 >
-                                    Usecase 01
+                                    <p 
+                                        className='w-fit' 
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            setopenTab(1);
+                                        }}
+                                    >
+                                        Usecase 01
+                                    </p>
+                                    <MdLiveHelp 
+                                        className="text-xl cursor-pointer ml-2 hover:text-primary" 
+                                        onClick={takeAOPusecase01Tour} 
+                                    />
                                 </a>
                             </li>
 
                             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
                                 <a
                                     className={
-                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded flex justify-between leading-normal " +
                                     (openTab === 2
                                         ? "text-white bg-secondary"
                                         : "text-secondary bg-white")
                                     }
-                                    onClick={e => {
-                                        e.preventDefault();
-                                        setopenTab(2);
-                                    }}
                                     data-toggle="tab"
                                     href="#link2"
                                     role="tablist"
                                 >
-                                    Usecase 02
+                                    <p 
+                                        className='w-fit' 
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            setopenTab(2);
+                                        }}
+                                    >
+                                        Usecase 02
+                                    </p>
+                                    <MdLiveHelp 
+                                        className="text-xl cursor-pointer ml-2 hover:text-primary" 
+                                        onClick={takeAOPusecase02Tour} 
+                                    />
                                 </a>
                             </li>
                         </ul>
@@ -349,7 +378,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                     <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                                         <div className="flex flex-col">
                                             <div className="grid grid-cols-3 gap-4">
-                                                <div className="flex flex-col" id='op_label'>
+                                                <div className="flex flex-col" id='aop_label'>
                                                     <p className="mb-1">Label* </p>
                                                     <input 
                                                         type="text" 
@@ -360,7 +389,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                                     />
                                                 </div>
                                             
-                                                <div className="flex flex-col" id='relationship_domain'>
+                                                <div className="flex flex-col" id='aop_domain'>
                                                     <p className="mb-1">Domain* </p>
                                                     <Select
                                                         options={availableTaxonomies}
@@ -370,7 +399,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                                     />
                                                 </div>
 
-                                                <div className="flex flex-col" id='relationship_ranges'>
+                                                <div className="flex flex-col" id='aop_range'>
                                                     <p className="mb-1">Range* </p>
                                                     <Select
                                                         options={availableTaxonomies}
@@ -382,7 +411,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                             </div>
                                             
                                             <div className="flex flex-col gap-4 mt-4">
-                                                <div className="flex flex-col" id='relationship_types'>
+                                                <div className="flex flex-col" id='aop_additionalAttrubutes'>
                                                     <p className="mb-1">Additional attribute(s)* </p>
                                                     <Select
                                                         options={availableTaxonomies}
@@ -400,7 +429,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                     <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                                         <div className="flex flex-col">
                                             <div className="grid grid-cols-3 gap-4">
-                                                <div className="flex flex-col" id='op_label'>
+                                                <div className="flex flex-col" id='aop__domain'>
                                                     <p className="mb-1">Domain* </p>
                                                     <input 
                                                         type="text" 
@@ -411,7 +440,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                                     />
                                                 </div>
 
-                                                <div className="flex flex-col col-span-2" id='relationship_types'>
+                                                <div className="flex flex-col col-span-2" id='aop__additionalAttrubutes'>
                                                     <p className="mb-1">Additional attribute(s)* </p>
                                                     <Select
                                                         options={availableTaxonomies}
@@ -435,7 +464,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                     <button 
                         className={`secondary_btn_comp w-fit h-8 p-0 px-2 ${addConstraints ? 'opacity-50 cursor-not-allowed' : ''}`}
                         onClick={handleAddObjectProperty}
-                        id='save_relationshipdetails'
+                        id='add_aop'
                         disabled={addConstraints}
                     >
                         Add Object Property
@@ -445,6 +474,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                         className={`primary_btn_comp h-8 p-0 ${!addConstraints ? 'opacity-50 cursor-not-allowed' : ''}`}
                         onClick={() => setisConstraintModalVsible(true)}
                         disabled={!addConstraints}
+                        id='aop_addConstraints'
                     >
                         Add Constraints
                     </button>
@@ -458,7 +488,13 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                 fromLeft='left-[18%]'
             >
                 <div className="flex items-center justify-between w-full mb-2">
-                    <p className="modal_title">Add Constraints</p>
+                    <div className="flex">
+                        <p className="modal_title">Add Constraints <span className="text-primary">{newOP.domain} {newOP.relationshipLabel}</span></p>
+                        <MdLiveHelp 
+                            className="text-xl text-secondary mt-1 cursor-pointer ml-2 hover:text-primary" 
+                            onClick={takeAOPaddConstraintsTour} 
+                        />
+                    </div>
                     <AiOutlineCloseCircle 
                         onClick={() => setisConstraintModalVsible(false)} 
                         className='modal_close_icon' 
@@ -469,9 +505,9 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                 {
                     newOP?.ranges?.length>0 && newOP?.ranges?.map((range, index) => (
                         <div className="grid grid-cols-7 my-2 w-full gap-2" key={index}>
-                            <p className="col-span-2 textri">{range?.name}</p>
+                            <p className="col-span-2 textri" id='range_name'>{range?.name}</p>
 
-                            <label className="label_style">
+                            <label className="label_style" id='some_quantifier'>
                                 <input
                                     type="checkbox"
                                     className="sr-only peer"
@@ -502,7 +538,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                 </span>
                             </label>
 
-                            <label className="label_style">
+                            <label className="label_style" id='only_quantifier'>
                                 <input
                                     type="checkbox"
                                     className="sr-only peer"
@@ -533,7 +569,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                 </span>
                             </label>
 
-                            <div className='flex gap-2'>
+                            <div className='flex gap-2' id='min_constraint'>
                                 <p className="text-sm">Min* </p>
                                 <input 
                                     type="text" 
@@ -548,7 +584,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                 />
                             </div>
 
-                            <div className='flex items-center justify-center gap-2'>
+                            <div className='flex items-center justify-center gap-2' id='max_constraint'>
                                 <p className="text-sm">Max* </p>
                                 <input 
                                     type="text" 
@@ -563,7 +599,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                 />
                             </div>
 
-                            <div className='flex items-center justify-center gap-2'>
+                            <div className='flex items-center justify-center gap-2' id='exactly_constraint'>
                                 <p className="text-sm">Exactly </p>
                                 <input 
                                     type="text" 
@@ -585,7 +621,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                     <button 
                         className="secondary_btn_comp w-fit h-8 p-0 px-2"
                         onClick={handleSaveConstraints}
-                        id='save_relationshipdetails'
+                        id='save_constraint'
                     >
                         Save constraints
                     </button>

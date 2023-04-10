@@ -3,12 +3,11 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import fileDownload from "js-file-download";
 import { MdLiveHelp } from "react-icons/md";
-import Driver from "driver.js";
 import "driver.js/dist/driver.min.css";
 
 import { ExcelDownloadUpload, Modal, SaveTaxomony, TaxonomyTree } from "../components";
 import { setSubmittedState } from "../features/taxonomies/taxonomySlice";
-import { tooltipDescriptions } from '../data/tooltipDescriptions'
+import { takeTaxonomyTour } from "../tour/mainTours";
 
 const TaxonomyCage = () => {
 	const taxonomies = useSelector((store) => store.taxonomies);
@@ -19,44 +18,6 @@ const TaxonomyCage = () => {
 	const [alertMsg, setalertMsg] = useState("");
 	const [isModalOpen, setisModalOpen] = useState(false);
 	const [isValidTaxo, setIsValidTaxo] = useState(false);
-
-	const takeAtour = () => {
-		const driver = new Driver({
-			animate: true,
-			opacity: 0.50,
-			allowClose: false,
-			doneBtnText: "Finish",
-		});
-	  
-		driver.defineSteps([
-			{
-				element: "#taxonomy_tree",
-				popover: {
-					title: "Step 1: Create Taxonomy Tree",
-					description: tooltipDescriptions.taxonomy_tree,
-					position: "right",
-				},
-			},
-			{
-				element: "#taxonomy_details",
-				popover: {
-					title: "Step 2: Save Taxonomy Details",
-					description: tooltipDescriptions.taxonomy_details,
-					position: "left",
-				},
-			},
-			{
-				element: "#submit_taxonomies",
-				popover: {
-					title: "Step 3: Submit Taxonomy Tree",
-					description: tooltipDescriptions.submit_taxonomies,
-					position: "top",
-				},
-			},
-		])
-
-		driver.start();
-	}
 
 	const sendTaxonomies = async (data) => {
 		const config = {
@@ -163,7 +124,7 @@ const TaxonomyCage = () => {
 		<div className="w-full h-screen mt-24">
 			<div className="flex w-full items-center justify-center gap-4 text-secondary text-2xl mb-4">
 				<h1 className="tracking-widest">Add Taxonomies</h1>
-				<MdLiveHelp className="cursor-pointer hover:text-primary" onClick={takeAtour} />
+				<MdLiveHelp className="cursor-pointer hover:text-primary" onClick={takeTaxonomyTour} />
 			</div>
 			<div className="h-full">
 				<div className="flex h-3/4">

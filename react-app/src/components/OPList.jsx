@@ -20,7 +20,7 @@ const OPList = ({ objectPropertyList, setobjectPropertyList }) => {
   }, [objectPropertyList])
 
   return (
-    <div className='w-full h-3/4 overflow-y-scroll'>
+    <div className='w-full'>
       <p className="taxonomy-heading text-fontcolor capitalize my-4 text-base">Added Object Properties</p>
 
       {
@@ -31,7 +31,7 @@ const OPList = ({ objectPropertyList, setobjectPropertyList }) => {
         </div>
       }
 
-      <ul className="">
+      <ul>
         {
           opList?.length>0 && opList?.map((op, index) => (
             <div className="flex my-2" key={index}>

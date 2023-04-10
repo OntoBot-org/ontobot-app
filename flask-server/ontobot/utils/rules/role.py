@@ -83,7 +83,7 @@ def get_role_pattern(taxonomy_result, op_structure):
     
     for concept in role_concepts:
         for op in op_structure:
-            if concept == op['op_domain'] or concept == op['op_range']:
+            if concept == op['op_domain'] or concept in op['op_range']:
                 valid_role_concepts.append(concept)
     
     invalid_role_concepts:set = set(role_concepts) - set(valid_role_concepts)
