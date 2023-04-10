@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from 'react'
 import {useDropzone} from 'react-dropzone'
-import { v4 } from 'uuid'
+// import { v4 } from 'uuid'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 import Modal from './Modal'
 
 const ExcelDownloadUpload = ({ excelsheetId }) => {
 
-    const [isExcelDownloaded, setisExcelDownloaded] = useState(false)
+    // const [isExcelDownloaded, setisExcelDownloaded] = useState(false)
     const [isDownloadModalVisible, setisDownloadModalVisible] = useState(false)
     const [fileName, setfileName] = useState('')
 

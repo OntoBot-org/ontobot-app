@@ -28,19 +28,19 @@ const Header = () => {
                         <motion.button 
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className='primary_btn'
+                            className='primary_btn w-fit'
                         >
-                            Try OntoBot
+                            Create Ontology
                         </motion.button>
                     </Link>
                     
-                    <Link to='/vocabulary'>
+                    <Link to='/populate-ontology'>
                         <motion.button 
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className='primary_btn_comp'
+                            className='primary_btn_comp w-fit'
                         >
-                            Learn More
+                            Populate Ontology
                         </motion.button>
                     </Link>
                 </div>

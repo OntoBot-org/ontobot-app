@@ -16,7 +16,10 @@ const Navbar = () => {
                     <div className="" id="navbar-sticky">
                         <ul className="flex space-x-5">
                             <li>
-                                <Link to='/try-ontobot' className="nav_li" aria-current="page">Try OntoBot</Link>
+                                <Link to='/try-ontobot' className="nav_li" aria-current="page">Create Ontology</Link>
+                            </li>
+                            <li>
+                                <Link to='/populate-ontology' className="nav_li" aria-current="page">Populate Ontology</Link>
                             </li>
                             <li>
                                 <Link to='/vocabulary' className="nav_li" aria-current="page">Vocabulary</Link>
