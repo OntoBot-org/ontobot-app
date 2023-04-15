@@ -814,4 +814,74 @@
 ## Architecture Diagram
 ![Architecture drawio](https://user-images.githubusercontent.com/56679833/220068957-c1cba9c5-bf97-48f0-b51c-8056621a8bd0.png)
 
+## Error message
+# OntoUML(Taxonomy) Error
+```json
+{
+    "topic": "topic-> string",
+    "msg": {
+        "concepts" :["mismatched_concepts-> string array"],
+        "content" : ["message-> string array"]
+    },
+    "meta": [{
+            "name":"err_cls.concept_name -> string",
+            "stereotype": "err_cls.stereotype -> string",
+            "suggestion": ["err_cls.suggestion-> string array"]
+        },
+        {
+            "name":"err_cls.concept_name -> string",
+            "stereotype": "err_cls.stereotype -> string",
+            "suggestion": ["err_cls.suggestion-> string array"]
+        }],
+    "type": "error",
+    "code": 500
+}
+```
 
+# OntoUML(OP) Error
+```json
+{
+    "code" : 500,
+    "topic" : "Relational pattern violation",
+    "msg" : "Following concepts should have connected with object property",
+    "meta" : ["concept_list -> string array"],
+    "type" : "error"
+}
+```
+# Public/Server Error
+```json
+{
+    "code": 500,
+    "topic": "Something went wrong",
+    "type": "error",
+    "msg": "str(msg)"
+}
+```
+## Warning message
+```json
+{
+    "topic" : "Some concepts are biased to violate the ontoUML grammar",
+    "msg" : {
+        "concepts" : "Concepts are described in the message",
+        "content" : "Try to solve the warning issues for getting a quality ontology"
+    },
+    "meta" : [{
+                "topic" : "Category Pattern Warning -> string",
+                "msg" : "{invalid_category_set} must be in rigid-sortal and disjoint each other completely -> string"
+            },
+            {
+                "topic" : "Category Pattern Warning -> string",
+                "msg" : "{invalid_category_set} must be in rigid-sortal and disjoint each other completely -> string"
+            }],
+    "type": "warning",
+    "code": 500
+}
+```
+## Success Message
+```json
+{
+    "code": 201,
+    "msg": "could be object or string",
+    "type": "success"
+}
+```
