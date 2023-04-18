@@ -814,8 +814,8 @@
 ## Architecture Diagram
 ![Architecture drawio](https://user-images.githubusercontent.com/56679833/220068957-c1cba9c5-bf97-48f0-b51c-8056621a8bd0.png)
 
-## Error message
-# OntoUML(Taxonomy) Error
+# Error messages
+## OntoUML(Taxonomy) Error
 ```json
 {
     "topic": "topic-> string",
@@ -838,7 +838,7 @@
 }
 ```
 
-# OntoUML(OP) Error
+## OntoUML(OP) Error
 ```json
 {
     "code" : 500,
@@ -848,7 +848,7 @@
     "type" : "error"
 }
 ```
-# Public/Server Error
+## Public/Server Error
 ```json
 {
     "code": 500,
@@ -857,7 +857,7 @@
     "msg": "str(msg)"
 }
 ```
-## Warning message
+# Warning message
 ```json
 {
     "topic" : "Some concepts are biased to violate the ontoUML grammar",
@@ -877,7 +877,7 @@
     "code": 500
 }
 ```
-## Success Message
+# Success Message
 ```json
 {
     "code": 201,
