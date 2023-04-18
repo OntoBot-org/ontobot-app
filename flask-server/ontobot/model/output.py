@@ -25,7 +25,7 @@ class Error:
             },
             "meta": list(umle.get_err_list()),
             "type": 'error',
-            "code": 500
+            "code": 504
         }
 
         return json.dumps(err)
@@ -106,6 +106,17 @@ class Error:
         err = {
             "code" : 400,
             "topic" : "File Error",
+            "msg" : msg,
+            "type": "error"
+        }
+
+        return json.dumps(err)
+    
+    @staticmethod
+    def server_error(msg):
+        err = {
+            "code" : 500,
+            "topic" : "Traceback Error",
             "msg" : msg,
             "type": "error"
         }

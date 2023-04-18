@@ -78,7 +78,7 @@ def generate_has_struct(intermediate_cls, range, type, uid, level = 0):
     return struct
 
 # multiple range structs (nAry) for usecase 01
-def generate_range_struct(intermediate_cls, range, property, uid, level = 0):
+def generate_range_struct(intermediate_cls, range, property, type, uid, level = 0):
     opc = {
         "functional": False,
         "inverseFunctional": False,
@@ -88,6 +88,21 @@ def generate_range_struct(intermediate_cls, range, property, uid, level = 0):
         "reflexive": False,
         "irreflexive": False
     }
+
+    # for op in type[range]:
+       
+    #     if op == "Functional":
+    #         opc['functional'] = True
+    #     elif op == "Inverse Functional":
+    #         opc['inverseFunctional'] = True
+    #     elif op == "Symmetric":
+    #         opc['symmetric'] = True
+    #     elif op == "Reflexive":
+    #         opc['reflexive'] = True
+    #     elif op == "Irreflexive":
+    #         opc['irreflexive'] = True
+    #     else:
+    #         opc['transitive'] = True
     
     struct = {
             "id": uid,
@@ -133,7 +148,7 @@ def get_nary_structure(op_struct, concepts:list, session_id):
                 extend_nary.append(generate_domain_struct(op_domain, intermediate_cls, property_name, len(extend_nary) + 1, level))
                 
                 for r_name in op_range:
-                    extend_nary.append(generate_range_struct(intermediate_cls, r_name, property_name, len(extend_nary) + 1, level))
+                    extend_nary.append(generate_range_struct(intermediate_cls, r_name, property_name, opType, len(extend_nary) + 1, level))
             
             # n-ary usecase 02
             elif property_name == "":

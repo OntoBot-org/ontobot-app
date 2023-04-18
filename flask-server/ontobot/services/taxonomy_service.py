@@ -66,16 +66,22 @@ def validate_taxonomy_service(parsed_json):
             new_parsed_json = custom.get_qq_pattern(parsed_json, result)
 
             if len(warn_list) == 0:
-                return Response.send_response(new_parsed_json)
+                #return Response.send_response(new_parsed_json)
+                return Response.next(msg=new_parsed_json)
             else:
-                return Error.send_taxonomy_warn(warn_list=warn_list)
+                #return Error.send_taxonomy_warn(warn_list=warn_list)
+                return Error.next(err=warn_list, type="warning")
 
         else:
             set_difference = all_concepts - valid_concept
-            return Error.send_taxonomy_error(list(set_difference), owl.get_taxonomy_concept_with_meta())
+            #return Error.send_taxonomy_error(list(set_difference), owl.get_taxonomy_concept_with_meta())
+            return Error.next(err={
+                'list': list(set_difference),
+                'tcwm' : owl.get_taxonomy_concept_with_meta()
+            }, type="error_taxonomy")
 
     except Exception as err:
-        return err.with_traceback()
+        return Error.next(err=err.with_traceback(), type="error")
 
 
 def get_taxonomy_owl(parsed_json):
