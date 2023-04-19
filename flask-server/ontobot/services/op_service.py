@@ -42,11 +42,17 @@ def get_op_structure(parsed_json):
             # get n-ary pattern
             db_owlTaxonomy_result = firestore_connect.get_OwlTaxo_document(session_id=sessionID)
             final_op_result = nary.get_nary_structure(op_struct, db_owlTaxonomy_result['concepts'], sessionID)
+
+            relationships = []
+            for op in final_op_result:
+                relationships.append(op['op_name'])
+
             owl_complete = {
                 "sessionID" : sessionID,
                 "taxonomy" : db_owlTaxonomy_result['taxonomy'],
                 "concepts" : db_owlTaxonomy_result['concepts'],
-                "op" : final_op_result
+                "op" : final_op_result,
+                "relationships" : list(set(relationships))
             }
 
             firestore_connect.create_new_owlComplete_document(session_id=sessionID, obj=owl_complete)

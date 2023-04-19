@@ -1371,3 +1371,631 @@ IndentationError: expected an indented block after 'else' statement on line 92
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 792-081-341
+127.0.0.1 - - [18/Apr/2023 17:48:45] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 46
+    for 
+        ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 46
+    for op 
+           ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 46
+    for op in final_op_result
+                             ^
+SyntaxError: expected ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 49
+    owl_complete = {
+    ^^^^^^^^^^^^
+IndentationError: expected an indented block after 'for' statement on line 46
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 50
+    owl_complete = {
+    ^^^^^^^^^^^^
+IndentationError: expected an indented block after 'for' statement on line 47
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 50
+    owl_complete = {
+    ^^^^^^^^^^^^
+IndentationError: expected an indented block after 'for' statement on line 47
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 50
+    owl_complete = {
+    ^^^^^^^^^^^^
+IndentationError: expected an indented block after 'for' statement on line 47
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 50
+    owl_complete = {
+    ^^^^^^^^^^^^
+IndentationError: expected an indented block after 'for' statement on line 47
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 55
+    "re"
+    ^^^^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 55
+    "relation"
+    ^^^^^^^^^^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 55
+    "relationships"
+    ^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 55
+    "relationships" : 
+    ^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 55
+    "relationships" : set
+    ^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 55
+    "relationships" : set()
+    ^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 55
+    "relationships" : set(relationships)
+    ^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [19/Apr/2023 08:35:00] "POST /op/checkpoint_1/op_generate HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2551, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2531, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 121, in get_nAry_download_local
+    return Response.send_response(result['msg'])
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\model\output.py", line 145, in send_response
+    return json.dumps(response)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type set is not JSON serializable
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\services\\op_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [19/Apr/2023 08:36:41] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 08:41:31] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [19/Apr/2023 08:42:31] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 09:34:15] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001D3738B90F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /completed/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D3738B90F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2551, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2531, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 139, in get_nAry_download_flask
+    response = requests.post(url, data= Response.send_response(result['msg']), headers=headers)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\requests\adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /completed/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D3738B90F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+127.0.0.1 - - [19/Apr/2023 09:35:06] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 09:39:45] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 09:40:26] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 09:41:20] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 09:47:30] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 09:49:13] "POST /op/checkpoint_1/taxowl_generate/consistency HTTP/1.1" 404 -
+127.0.0.1 - - [19/Apr/2023 09:49:58] "POST /flask/checkpoint_1/taxowl_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 09:50:45] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 09:57:05] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 09:59:26] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:04:26] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:05:00] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:09:05] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:11:39] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:12:41] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:14:11] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [19/Apr/2023 10:21:51] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [19/Apr/2023 10:23:17] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:24:02] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:28:45] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:31:03] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:33:33] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:33:59] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:34:42] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:38:55] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+127.0.0.1 - - [19/Apr/2023 10:40:28] "POST /flask/checkpoint_2/op_generate/download HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 2, in <module>
+    from ontobot.utils.rules import nary
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\nary.py", line 149
+    nary_struct = 
+                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 2, in <module>
+    from ontobot.utils.rules import nary
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\nary.py", line 149
+    nary_struct = 
+                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 2, in <module>
+    from ontobot.utils.rules import nary
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\nary.py", line 153
+    nary_struct = 
+                  ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+127.0.0.1 - - [19/Apr/2023 12:23:46] "POST /op/checkpoint_1/op_generate HTTP/1.1" 200 -
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 2, in <module>
+    from ontobot.utils.rules import nary
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\nary.py", line 150
+    nary_struct[]
+                ^
+SyntaxError: invalid syntax
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 2, in <module>
+    from ontobot.utils.rules import nary
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\nary.py", line 150
+    nary_struct["quantifier""]
+                            ^
+SyntaxError: unterminated string literal (detected at line 150)
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 2, in <module>
+    from ontobot.utils.rules import nary
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\nary.py", line 150
+    nary_struct["quantifier]
+                ^
+SyntaxError: unterminated string literal (detected at line 150)
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 897, in run_command
+    app = info.load_app()
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 308, in load_app
+    app = locate_app(import_name, name)
+  File "C:\Users\Asus\.virtualenvs\flask-server-AxbIE3V_\lib\site-packages\flask\cli.py", line 218, in locate_app
+    __import__(module_name)
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\__init__.py", line 3, in <module>
+    from ontobot.services import taxonomy_service, op_service, populate_service
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\services\op_service.py", line 2, in <module>
+    from ontobot.utils.rules import nary
+  File "C:\GitHub\Ontobot\ontobot-app\flask-server\ontobot\utils\rules\nary.py", line 151
+    "some": ,
+          ^
+SyntaxError: expression expected after dictionary key and ':'
+ * Debugger is active!
+ * Debugger PIN: 595-252-581
+ * Detected change in 'C:\\GitHub\\Ontobot\\ontobot-app\\flask-server\\ontobot\\utils\\rules\\nary.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 792-081-341
