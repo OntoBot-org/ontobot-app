@@ -6,6 +6,7 @@ def generate_intermediate_cls_name(domain:str, range):
     names.append(domain)
     names.extend(range)
     names.append(str(random.randint(0,1000)))
+    names.append("Event")
     return "_".join(names)
 
 def _generate_ds_property(property:str):
