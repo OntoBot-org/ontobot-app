@@ -13,7 +13,7 @@ Declaration(Class(:Degree))
 Declaration(Class(:Graduate))
 Declaration(Class(:IS_Degree))
 Declaration(Class(:Innocent_Student))
-Declaration(Class(:Juinor_Lecture))
+Declaration(Class(:Junior_Lecture))
 Declaration(Class(:Lecture))
 Declaration(Class(:Organization))
 Declaration(Class(:Primary_School))
@@ -25,18 +25,20 @@ Declaration(Class(:Toxic_Female_Student))
 Declaration(Class(:Toxic_Male_Student))
 Declaration(Class(:Toxic_Student))
 Declaration(Class(:University))
+Declaration(Class(:University_Degree_Lecture_Student_782_Event))
 Declaration(ObjectProperty(:consistsOf))
 Declaration(ObjectProperty(:goes))
 Declaration(ObjectProperty(:has_Degree))
-Declaration(ObjectProperty(:has_Lecture))
-Declaration(ObjectProperty(:has_Student))
 Declaration(ObjectProperty(:has_University))
+Declaration(ObjectProperty(:has_naryproperty))
 Declaration(ObjectProperty(:hates))
 Declaration(ObjectProperty(:is_Degree_of))
-Declaration(ObjectProperty(:is_Lecture_of))
-Declaration(ObjectProperty(:is_Student_of))
 Declaration(ObjectProperty(:is_University_of))
+Declaration(ObjectProperty(:is_naryproperty_of))
 Declaration(ObjectProperty(:loves))
+Declaration(ObjectProperty(:naryproperty_Degree))
+Declaration(ObjectProperty(:naryproperty_Lecture))
+Declaration(ObjectProperty(:naryproperty_Student))
 Declaration(ObjectProperty(:reads))
 Declaration(ObjectProperty(:studiesIn))
 Declaration(DataProperty(:Degree_Name))
@@ -69,28 +71,20 @@ ObjectPropertyRange(:goes :University)
 # Object Property: :has_Degree (:has_Degree)
 
 InverseObjectProperties(:has_Degree :is_Degree_of)
-TransitiveObjectProperty(:has_Degree)
 ObjectPropertyDomain(:has_Degree :Graduate)
-ObjectPropertyDomain(:has_Degree :University)
 ObjectPropertyRange(:has_Degree :Degree)
-
-# Object Property: :has_Lecture (:has_Lecture)
-
-InverseObjectProperties(:has_Lecture :is_Lecture_of)
-ObjectPropertyDomain(:has_Lecture :University)
-ObjectPropertyRange(:has_Lecture :Lecture)
-
-# Object Property: :has_Student (:has_Student)
-
-InverseObjectProperties(:has_Student :is_Student_of)
-ObjectPropertyDomain(:has_Student :University)
-ObjectPropertyRange(:has_Student :Student)
 
 # Object Property: :has_University (:has_University)
 
 InverseObjectProperties(:has_University :is_University_of)
 ObjectPropertyDomain(:has_University :Graduate)
 ObjectPropertyRange(:has_University :University)
+
+# Object Property: :has_naryproperty (:has_naryproperty)
+
+InverseObjectProperties(:has_naryproperty :is_naryproperty_of)
+ObjectPropertyDomain(:has_naryproperty :University)
+ObjectPropertyRange(:has_naryproperty :University_Degree_Lecture_Student_782_Event)
 
 # Object Property: :hates (:hates)
 
@@ -105,6 +99,27 @@ InverseObjectProperties(:loves ObjectInverseOf(:loves))
 FunctionalObjectProperty(:loves)
 ObjectPropertyDomain(:loves :Toxic_Male_Student)
 ObjectPropertyRange(:loves :Toxic_Female_Student)
+
+# Object Property: :naryproperty_Degree (:naryproperty_Degree)
+
+InverseObjectProperties(:naryproperty_Degree ObjectInverseOf(:naryproperty_Degree))
+FunctionalObjectProperty(:naryproperty_Degree)
+ObjectPropertyDomain(:naryproperty_Degree :University_Degree_Lecture_Student_782_Event)
+ObjectPropertyRange(:naryproperty_Degree :Degree)
+
+# Object Property: :naryproperty_Lecture (:naryproperty_Lecture)
+
+InverseObjectProperties(:naryproperty_Lecture ObjectInverseOf(:naryproperty_Lecture))
+FunctionalObjectProperty(:naryproperty_Lecture)
+ObjectPropertyDomain(:naryproperty_Lecture :University_Degree_Lecture_Student_782_Event)
+ObjectPropertyRange(:naryproperty_Lecture :Lecture)
+
+# Object Property: :naryproperty_Student (:naryproperty_Student)
+
+InverseObjectProperties(:naryproperty_Student ObjectInverseOf(:naryproperty_Student))
+FunctionalObjectProperty(:naryproperty_Student)
+ObjectPropertyDomain(:naryproperty_Student :University_Degree_Lecture_Student_782_Event)
+ObjectPropertyRange(:naryproperty_Student :Student)
 
 # Object Property: :reads (:reads)
 
@@ -196,10 +211,10 @@ SubClassOf(:IS_Degree :Degree)
 AnnotationAssertion(rdfs:comment :Innocent_Student "The Level : 1"^^xsd:string)
 SubClassOf(:Innocent_Student :Student)
 
-# Class: :Juinor_Lecture (:Juinor_Lecture)
+# Class: :Junior_Lecture (:Junior_Lecture)
 
-AnnotationAssertion(rdfs:comment :Juinor_Lecture "The Level : 1"^^xsd:string)
-SubClassOf(:Juinor_Lecture :Lecture)
+AnnotationAssertion(rdfs:comment :Junior_Lecture "The Level : 1"^^xsd:string)
+SubClassOf(:Junior_Lecture :Lecture)
 
 # Class: :Lecture (:Lecture)
 
@@ -233,6 +248,7 @@ SubClassOf(:Senior_Lecture :Lecture)
 # Class: :Student (:Student)
 
 AnnotationAssertion(rdfs:comment :Student "The Level : 0"^^xsd:string)
+SubClassOf(:Student ObjectSomeValuesFrom(:studiesIn :School))
 
 # Class: :Toxic_Female_Student (:Toxic_Female_Student)
 

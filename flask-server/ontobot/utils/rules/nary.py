@@ -7,13 +7,13 @@ def generate_intermediate_cls_name(domain:str, range):
     names.extend(range)
     names.append(str(random.randint(0,1000)))
     names.append("Event")
-    return "_".join(names)
+    return " ".join(names)
 
 def _generate_ds_property(property:str):
     return "has "+ property
 
 def _generate_rs_property(property:str ,range:str):
-    return property+"_"+range
+    return property+" "+range
 
 # one domain struct (nAry)
 def generate_domain_struct(domain, intermediate_cls, property, uid, level = 0):
@@ -146,10 +146,19 @@ def get_nary_structure(op_struct, concepts:list, session_id):
             if property_name.lower() != 'has' and property_name.lower() != 'have' and property_name != "":
                 intermediate_cls = generate_intermediate_cls_name(op_domain, op_range)
                 concepts.append(intermediate_cls); nary_concept.append({"version": 1, "domain": op_domain, "ranges": op_range, "nary": intermediate_cls})
-                extend_nary.append(generate_domain_struct(op_domain, intermediate_cls, property_name, len(extend_nary) + 1, level))
+                nary_struct = generate_domain_struct(op_domain, intermediate_cls, property_name, len(extend_nary) + 1, level)
+                nary_struct["quantifier"] = {
+                    "some": False,
+                    "only": False,
+                    "min": 0,
+                    "max": "inf"
+                }
+                extend_nary.append(nary_struct)
                 
                 for r_name in op_range:
-                    extend_nary.append(generate_range_struct(intermediate_cls, r_name, property_name, opType, len(extend_nary) + 1, level))
+                    nary_struct = generate_range_struct(intermediate_cls, r_name, property_name, opType, len(extend_nary) + 1, level)
+                    nary_struct["quantifier"] = quantifier[r_name]
+                    extend_nary.append(nary_struct)
             
             # n-ary usecase 02
             elif property_name == "":
