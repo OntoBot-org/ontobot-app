@@ -14,12 +14,13 @@ from ontobot.db.taxonomy import Taxonomy
 
 
 def validate_taxonomy_service(parsed_json):
+    # print(parsed_json)
     try:
         valid_concept = []
         all_concepts = []
         warn_list = []; warn_list.clear()
         owl = OWL(parsed_json)
-        sessionID = parsed_json['sessionID']
+        sessionID = parsed_json['sessionId']
 
         # get all concepts into a set
         all_concepts = owl.get_taxonomy_concepts()
