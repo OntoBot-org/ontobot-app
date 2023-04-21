@@ -46,6 +46,8 @@ def get_op_structure(parsed_json):
             relationships = []
             for op in final_op_result:
                 relationships.append(op['op_name'])
+                if len(op["op_equal"]) > 0:
+                    relationships.append(op['op_equal'])
 
             owl_complete = {
                 "sessionID" : sessionID,

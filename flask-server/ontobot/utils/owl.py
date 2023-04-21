@@ -51,15 +51,15 @@ class OWL:
             if (current_item['level'] == 0 and next_item['level'] == 0) or next_item['level'] == 0:
                 if current_item['level'] == 0:
                     if self.__is_already_super_class(current_item):
-                        self.__owl_stack.append({'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes'], 'disjoint': next_item['disjoint'], 'overlap': next_item['overlap']})
+                        self.__owl_stack.append({'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes'], 'disjoint': next_item['disjoint'], 'overlap': next_item['overlap'], 'equal_class_name': next_item['equal_class_name']})
                     else:
                         temp_list = [
-                            {'class_name': current_item['class_name'], 'level': current_item['level'], 'attributes': current_item['attributes'], 'disjoint': current_item['disjoint'], 'overlap': current_item['overlap']},
-                            {'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes'], 'disjoint': next_item['disjoint'], 'overlap': next_item['overlap']}
+                            {'class_name': current_item['class_name'], 'level': current_item['level'], 'attributes': current_item['attributes'], 'disjoint': current_item['disjoint'], 'overlap': current_item['overlap'], 'equal_class_name': current_item['equal_class_name']},
+                            {'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes'], 'disjoint': next_item['disjoint'], 'overlap': next_item['overlap'], 'equal_class_name': next_item['equal_class_name']}
                         ]
                         self.__owl_stack.extend(temp_list)
                 else:
-                    self.__owl_stack.append({'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes'], 'disjoint': next_item['disjoint'], 'overlap': next_item['overlap']})
+                    self.__owl_stack.append({'class_name': next_item['class_name'], 'level': next_item['level'], 'attributes': next_item['attributes'], 'disjoint': next_item['disjoint'], 'overlap': next_item['overlap'], 'equal_class_name': next_item['equal_class_name']})
 
                 continue
 
@@ -77,7 +77,8 @@ class OWL:
                                 'level': sub_class['level'], 
                                 'attributes': sub_class['attributes'],
                                 'disjoint': sub_class['disjoint'],
-                                'overlap': sub_class['overlap']
+                                'overlap': sub_class['overlap'],
+                                'equal_class_name': sub_class['equal_class_name']
                             })
                             self.__owl_stack[idx]['sub_classes'] = current_subclass_list
                             break
@@ -85,7 +86,7 @@ class OWL:
                     for idx, concept in enumerate(self.__owl_stack):
                         if concept['class_name'] == super_class['class_name']:
                             self.__owl_stack[idx]['sub_classes'] = [
-                                {'class_name': sub_class['class_name'], 'level': sub_class['level'], 'attributes': sub_class['attributes'], 'disjoint': sub_class['disjoint'], 'overlap': sub_class['overlap']}
+                                {'class_name': sub_class['class_name'], 'level': sub_class['level'], 'attributes': sub_class['attributes'], 'disjoint': sub_class['disjoint'], 'overlap': sub_class['overlap'], 'equal_class_name': sub_class['equal_class_name']}
                             ]
                             break
 
@@ -96,8 +97,9 @@ class OWL:
                     'attributes': super_class['attributes'],
                     'disjoint': super_class['disjoint'],
                     'overlap': super_class['overlap'],
+                    'equal_class_name': super_class['equal_class_name'],
                     'sub_classes': [
-                        {'class_name': sub_class['class_name'], 'level': sub_class['level'], 'attributes': sub_class['attributes'], 'disjoint': sub_class['disjoint'], 'overlap': sub_class['overlap']}
+                        {'class_name': sub_class['class_name'], 'level': sub_class['level'], 'attributes': sub_class['attributes'], 'disjoint': sub_class['disjoint'], 'overlap': sub_class['overlap'], 'equal_class_name': sub_class['equal_class_name']}
                     ]
                 })
 

@@ -1,5 +1,5 @@
 class Dict:
-    def __init__(self, class_name, stereotype, plist, level, cardinality, disjoint=None, overlap=None):
+    def __init__(self, class_name, stereotype, plist, level, cardinality, equal_class, disjoint=None, overlap=None):
         self.class_name = class_name
         self.stereotype = stereotype
         self.level = level
@@ -7,6 +7,7 @@ class Dict:
         self.disjoint_with = disjoint
         self.overlap_with = overlap
         self.data_property = plist
+        self.equal_class = equal_class
 
 
 class Taxonomy:
@@ -19,7 +20,7 @@ class Taxonomy:
         for i in arr:
             # recursion call : children do same things for children
 
-            mylist = [i['name'], i['stereotype'], i['propertiesList'], level]
+            mylist = [i['name'], i['stereotype'], i['equivalentClass'], i['propertiesList'], level]
             if ('subclasses' in i) and len(i['subclasses']) > 0:
                 mylist.append(len(i['subclasses']))  # cardinality
                 if 'disjoint' in i:
@@ -64,20 +65,22 @@ class Taxonomy:
         internal_stack = self.__rec_traverse_taxonomy(input_stack)
 
         for item in internal_stack:
-            current_level = item[3]
+            current_level = item[4]
             current_class = item[0]
+            current_equal_class = item[2]
             current_stereotype = item[1]
-            current_cardinality = item[4]
-            current_disjointness = item[5]
-            current_overlapness = item[6]
-            current_plist = item[2]
+            current_cardinality = item[5]
+            current_disjointness = item[6]
+            current_overlapness = item[7]
+            current_plist = item[3]
 
-            concept: Dict = Dict(current_class, current_stereotype, current_plist, current_level, current_cardinality,
+            concept: Dict = Dict(current_class, current_stereotype, current_plist, current_level, current_cardinality, current_equal_class,
                                  current_disjointness, current_overlapness)
             if concept.class_name not in temp:
                 final.append(
                     {
                         "class_name": concept.class_name,
+                        "equal_class_name": concept.equal_class,
                         "stereotype": concept.stereotype,
                         "attributes": concept.data_property,
                         "level": concept.level,
