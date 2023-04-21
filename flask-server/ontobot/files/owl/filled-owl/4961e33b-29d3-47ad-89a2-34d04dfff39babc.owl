@@ -51,6 +51,14 @@ Declaration(DataProperty(:Toxic_Level))
 Declaration(DataProperty(:category))
 Declaration(DataProperty(:name))
 Declaration(DataProperty(:year))
+Declaration(NamedIndividual(:AC))
+Declaration(NamedIndividual(:ADL))
+Declaration(NamedIndividual(:IFS))
+Declaration(NamedIndividual(:NC))
+Declaration(NamedIndividual(:RC))
+Declaration(NamedIndividual(:UOC))
+Declaration(NamedIndividual(:UOJ))
+Declaration(NamedIndividual(:WSO2))
 
 ############################
 #   Object Properties
@@ -280,6 +288,62 @@ SubClassOf(:Toxic_Student :Student)
 
 AnnotationAssertion(rdfs:comment :University "The Level : 1"^^xsd:string)
 SubClassOf(:University :Organization)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :AC (:AC)
+
+ClassAssertion(:School :AC)
+DataPropertyAssertion(:category :AC "Grade_01"^^xsd:string)
+DataPropertyAssertion(:name :AC "Ananda_College"^^xsd:string)
+DataPropertyAssertion(:year :AC "1890"^^xsd:int)
+
+# Individual: :ADL (:ADL)
+
+ClassAssertion(:Organization :ADL)
+DataPropertyAssertion(:name :ADL "Axiate_Digital_Labs"^^xsd:string)
+DataPropertyAssertion(:year :ADL "2004"^^xsd:int)
+
+# Individual: :IFS (:IFS)
+
+ClassAssertion(:Organization :IFS)
+DataPropertyAssertion(:name :IFS "International_Financial_System"^^xsd:string)
+DataPropertyAssertion(:year :IFS "1997"^^xsd:int)
+
+# Individual: :NC (:NC)
+
+ClassAssertion(:School :NC)
+DataPropertyAssertion(:category :NC "Grade_01"^^xsd:string)
+DataPropertyAssertion(:name :NC "Nalanda_College"^^xsd:string)
+DataPropertyAssertion(:year :NC "1897"^^xsd:int)
+
+# Individual: :RC (:RC)
+
+ClassAssertion(:School :RC)
+DataPropertyAssertion(:category :RC "Grade_01"^^xsd:string)
+DataPropertyAssertion(:name :RC "Royal_College"^^xsd:string)
+DataPropertyAssertion(:year :RC "1899"^^xsd:int)
+
+# Individual: :UOC (:UOC)
+
+ClassAssertion(:University :UOC)
+DataPropertyAssertion(:name :UOC "Colombo"^^xsd:string)
+DataPropertyAssertion(:year :UOC "1800"^^xsd:int)
+
+# Individual: :UOJ (:UOJ)
+
+ClassAssertion(:University :UOJ)
+DataPropertyAssertion(:name :UOJ "Jpura"^^xsd:string)
+DataPropertyAssertion(:year :UOJ "1900"^^xsd:int)
+
+# Individual: :WSO2 (:WSO2)
+
+ClassAssertion(:Organization :WSO2)
+DataPropertyAssertion(:name :WSO2 "Web_Services_Oxygen"^^xsd:string)
+DataPropertyAssertion(:year :WSO2 "2005"^^xsd:int)
 
 
 DisjointClasses(:CS_Degree :IS_Degree :SE_Degree)
