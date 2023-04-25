@@ -23,6 +23,11 @@ const TaxonomyCage = () => {
 	const [taxonomyStatus, setTaxonomyStatus] = useState("");
 	const [submitted, setSubmitted] = useState(false);
 
+	const [errMeta, setErrMeta] = useState([]);
+	const [errTopic, setErrTopic] = useState("");
+	const [errConcepts, setErrConcepts] = useState([]);
+	const [errContent, setErrContent] = useState([]);
+
 	const sendTaxonomies = async (data) => {
 		const config = {
 			method: "post",
@@ -33,12 +38,19 @@ const TaxonomyCage = () => {
 			data: data,
 		};
 
+		// console.log("taxo", data);
+
 		try {
 			setTaxonomyStatus("LOADING");
 			const response = await axios(config);
 			if (response.data.type === "success") {
 				setTaxonomyStatus("SUCCESS");
 			} else {
+				console.log("Error:", response.data);
+				setErrConcepts(response.data.msg.concepts);
+				setErrContent(response.data.msg.content);
+				setErrTopic(response.data.topic);
+				setErrMeta(response.data.meta);
 				setTaxonomyStatus("ERROR");
 			}
 		} catch (error) {
@@ -63,7 +75,6 @@ const TaxonomyCage = () => {
 		axios
 			.request(config)
 			.then((response) => {
-				// console.log(JSON.stringify(response.data));
 				const contentDispositionHeader =
 					response.headers["content-disposition"];
 				const fileName = contentDispositionHeader
@@ -76,7 +87,7 @@ const TaxonomyCage = () => {
 			});
 	};
 
-	const handleSubmitAllTaxo = () => {
+	const handleCheckTaxo = () => {
 		setisModalOpen(true);
 		if (taxonomies.subclasses?.length > 0) {
 			const noProperties = [];
@@ -127,7 +138,7 @@ const TaxonomyCage = () => {
 					<div className="w-full mt-4 flex justify-center items-center font-bold">
 						<button
 							className="primary_btn w-auto px-5"
-							onClick={handleSubmitAllTaxo}
+							onClick={handleCheckTaxo}
 							id="submit_taxonomies"
 						>
 							{taxonomyStatus === "LOADING" ? "Loading..." : "Check taxonomies"}
@@ -191,6 +202,7 @@ const TaxonomyCage = () => {
 							</div>
 						</>
 					)}
+
 					{taxonomyStatus === "NO_PROPS" && (
 						<>
 							<p className="modal_title text-center">
@@ -214,9 +226,45 @@ const TaxonomyCage = () => {
 
 					{taxonomyStatus === "ERROR" && (
 						<>
-							<p className="modal_title text-center">Some error</p>
+							<p className="modal_title text-center mb-2">{errTopic}</p>
 
-							<p className="text-primary text-center">err</p>
+							<p className="text-primary font-bold">Issues found:</p>
+							<div className="overflow-y-auto h-60">
+								<ul>
+									{errMeta.map((item, index) => (
+										<li className=" mb-2" key={index}>
+											{index + 1}. Concept: {item.name} | Stereotype:{" "}
+											{item.stereotype}
+											<ul className="list-disc	">
+												{errMeta.map((item, index) => (
+													<li className="text-sm ml-5 mb-1" key={index}>
+														{item.suggestion}
+													</li>
+												))}
+											</ul>
+										</li>
+									))}
+								</ul>
+							</div>
+
+							<p className="text-primary font-bold mt-2">
+								These concepts doesn't belong to any pattern:
+							</p>
+							<div className="overflow-y-auto h-30">
+								{errConcepts.map((item, index) => (
+									<p className=" mb-1 text-sm" key={index}>
+										{index + 1}. {item}
+									</p>
+								))}
+							</div>
+							<p className="text-primary font-bold">Ontobot's suggestions:</p>
+
+							{errContent.map((item, index) => (
+								<p className=" mb-1" key={index}>
+									{index + 1}. {item}
+								</p>
+							))}
+
 							<div className="flex w-full items-center justify-center mt-4">
 								<button
 									className="secondary_btn_comp h-10"
