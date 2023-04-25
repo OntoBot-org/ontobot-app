@@ -1,28 +1,38 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import fileDownload from "js-file-download";
 import { MdLiveHelp } from "react-icons/md";
 import "driver.js/dist/driver.min.css";
+import { saveAs } from "file-saver";
 
-import { ExcelDownloadUpload, Modal, SaveTaxomony, TaxonomyTree } from "../components";
+import {
+	ExcelDownloadUpload,
+	Modal,
+	SaveTaxomony,
+	TaxonomyTree,
+} from "../components";
 import { setSubmittedState } from "../features/taxonomies/taxonomySlice";
 import { takeTaxonomyTour } from "../tour/mainTours";
 
 const TaxonomyCage = () => {
 	const taxonomies = useSelector((store) => store.taxonomies);
 	const dispatch = useDispatch();
-	// const element = document.getElementById('relationshipcage');
 
 	const [alertTitle, setalertTitle] = useState("");
 	const [alertMsg, setalertMsg] = useState("");
 	const [isModalOpen, setisModalOpen] = useState(false);
 	const [isValidTaxo, setIsValidTaxo] = useState(false);
 
+	const [taxonomyStatus, setTaxonomyStatus] = useState("");
+	const [cancelBtnOnly, setCancelBtnOnly] = useState(false);
+	const [hotResponse, setHotResponse] = useState("");
+	const [loading, setLoading] = useState(false);
+
 	const sendTaxonomies = async (data) => {
 		const config = {
 			method: "post",
-			url: "/onto/checkpoint_1/validate",
+			url: "http://localhost:5000/flask/checkpoint_1/taxowl_validate",
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -30,39 +40,40 @@ const TaxonomyCage = () => {
 		};
 
 		try {
+			setTaxonomyStatus("LOADING");
 			const response = await axios(config);
 			// console.log(response);
-			if (response.status === 200) {
-				setIsValidTaxo(true);
+			setHotResponse(response.data.type);
+			setLoading(false);
+			if (response.data.type === "success") {
+				setTaxonomyStatus("SUCCESS");
 			} else {
-				setIsValidTaxo(false);
+				setTaxonomyStatus("ERROR");
 			}
 		} catch (error) {
 			console.error(error);
-			setIsValidTaxo(false);
+			setTaxonomyStatus("ERROR");
 		}
 	};
 
-	const downloadOWL = async (data) => {
-		const config = {
-			method: "post",
-			url: "/onto/checkpoint_1/generate",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			data: data,
-		};
-
-		try {
-			const response = await axios(config);
-			console.log(response);
-			if (response.status === "200") {
-			}
-		} catch (error) {
-			console.error(error);
-			setIsValidTaxo(false);
-		}
-		getFile();
+	const handleDownloadOWL = async () => {
+		const data = JSON.stringify(taxonomies);
+		console.log(data);
+		axios
+			.post("http://localhost:5000/flask/checkpoint_1/taxowl_generate", data, {
+				responseType: "blob", // set the response type to blob
+			})
+			.then((response) => {
+				const contentDispositionHeader =
+					response.headers["content-disposition"];
+				const fileName = contentDispositionHeader
+					? contentDispositionHeader.split(";")[1].split("filename=")[1].trim()
+					: "file.owl";
+				saveAs(new Blob([response.data]), fileName);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
 	};
 
 	const getFile = () => {
@@ -75,42 +86,26 @@ const TaxonomyCage = () => {
 			});
 	};
 
-	const handleDownloadBtnClick = () => {
-		console.log("pressed")
-		downloadOWL(JSON.stringify(taxonomies));
-	};
-
-	const handleBtnClick = () => {
+	const handleSubmitAllTaxo = () => {
 		setisModalOpen(true);
 		if (taxonomies.subclasses?.length > 0) {
-			const noProperties = []
+			const noProperties = [];
 			taxonomies.subclasses?.forEach((taxonomy) => {
 				if (taxonomy.propertiesList?.length === 0) {
-					noProperties.push(taxonomy)
+					noProperties.push(taxonomy);
 				}
-			})
-			if (noProperties.length>0) {
-				setalertTitle("There are taxonomies with no properties added.");
-				setalertMsg(
-					"Please make sure all the child taxonomies that extend from root taxonomy has at least one property."
-				);
+			});
+			if (noProperties.length > 0) {
+				setTaxonomyStatus("NO_PROPS");
+			} else {
 				sendTaxonomies(JSON.stringify(taxonomies));
-			}
-			else {
-				setalertTitle("Are you sure you want to submit all the taxonomies?");
-				setalertMsg(
-					"After submitting you will NOT be able to add, update, or remove taxonomies or taxonomy details. Therefore, please make sure that you have added properties, disjoint, and overlapping classes to necessary taxonomies."
-				);
-				sendTaxonomies(JSON.stringify(taxonomies));
-				console.log("taxonomies: ", taxonomies)
 			}
 		} else {
-			setalertTitle("Please add taxonomies before submitting.");
+			setTaxonomyStatus("NO_TAXO");
 		}
 	};
 
 	const handleSubmit = () => {
-		// console.log('taxonomies: ', taxonomies);
 		dispatch(
 			setSubmittedState({
 				submittedState: true,
@@ -124,7 +119,10 @@ const TaxonomyCage = () => {
 		<div className="w-full h-screen mt-24">
 			<div className="flex w-full items-center justify-center gap-4 text-secondary text-2xl mb-4">
 				<h1 className="tracking-widest">Add Taxonomies</h1>
-				<MdLiveHelp className="cursor-pointer hover:text-primary" onClick={takeTaxonomyTour} />
+				<MdLiveHelp
+					className="cursor-pointer hover:text-primary"
+					onClick={takeTaxonomyTour}
+				/>
 			</div>
 			<div className="h-full">
 				<div className="flex h-3/4">
@@ -136,22 +134,16 @@ const TaxonomyCage = () => {
 					</div>
 				</div>
 				<div className="w-full mt-4 flex justify-center items-center font-bold">
-					<button className="primary_btn w-auto px-5" onClick={handleBtnClick} id="submit_taxonomies">
-						Submit all the taxonomies
+					<button
+						className="primary_btn w-auto px-5"
+						onClick={handleSubmitAllTaxo}
+						id="submit_taxonomies"
+					>
+						{loading ? "Loading..." : "Check taxonomies"}
 					</button>
-					{isValidTaxo && (
-						<button
-							className="primary_btn w-auto px-5"
-							onClick={handleDownloadBtnClick}
-						>
-							Download OWL File
-						</button>
-					)}
-
-					{
-						isValidTaxo && 
-						<ExcelDownloadUpload excelsheetId={taxonomies.id} />
-					}
+				</div>
+				<div className="bg-yellow-300">
+					Response: {loading ? "Loading" : hotResponse}
 				</div>
 
 				<Modal
@@ -159,23 +151,92 @@ const TaxonomyCage = () => {
 					onClose={() => setisModalOpen(false)}
 					fromLeft="left-[10%]"
 				>
-					<p className="modal_title text-center">{alertTitle}</p>
+					{taxonomyStatus === "NO_TAXO" && (
+						<p className="modal_title text-center">
+							Please add taxonomies before submitting.
+						</p>
+					)}
 
-					<p className="text-primary text-center">{alertMsg}</p>
+					{taxonomyStatus === "LOADING" && (
+						<p className="modal_title text-center">loading</p>
+					)}
 
-					{alertMsg !== "" && (
-						<div className="flex w-full items-center justify-center mt-4">
-							<button className="primary_btn_comp h-10" onClick={handleSubmit}>
-								Submit
-							</button>
+					{taxonomyStatus === "SUCCESS" && (
+						<>
+							<p className="modal_title text-center">
+								Are you sure you want to submit all the taxonomies?
+							</p>
 
-							<button
-								className="secondary_btn_comp h-10"
-								onClick={() => setisModalOpen(false)}
-							>
-								Cancel
-							</button>
-						</div>
+							<p className="text-primary text-center">
+								After submitting you will NOT be able to add, update, or remove
+								taxonomies or taxonomy details. Therefore, please make sure that
+								you have added properties, disjoint, and overlapping classes to
+								necessary taxonomies.
+							</p>
+
+							<div className="flex w-full items-center justify-center mt-4">
+								<button
+									className="primary_btn_comp h-10"
+									onClick={handleSubmit}
+								>
+									Submit !
+								</button>
+
+								<button
+									className="primary_btn_comp h-10"
+									onClick={handleDownloadOWL}
+								>
+									Download OWL
+								</button>
+
+								{/* <button className="primary_btn_comp h-10" onClick={() => null}>
+									Check Consistency
+								</button> */}
+
+								<button
+									className="secondary_btn_comp h-10"
+									onClick={() => setisModalOpen(false)}
+								>
+									Cancel
+								</button>
+							</div>
+						</>
+					)}
+					{taxonomyStatus === "NO_PROPS" && (
+						<>
+							<p className="modal_title text-center">
+								There are taxonomies with no properties added.
+							</p>
+
+							<p className="text-primary text-center">
+								Please make sure all the child taxonomies that extend from root
+								taxonomy has at least one property.
+							</p>
+							<div className="flex w-full items-center justify-center mt-4">
+								<button
+									className="secondary_btn_comp h-10"
+									onClick={() => setisModalOpen(false)}
+								>
+									Cancel
+								</button>
+							</div>
+						</>
+					)}
+
+					{taxonomyStatus === "ERROR" && (
+						<>
+							<p className="modal_title text-center">Some error</p>
+
+							<p className="text-primary text-center">err</p>
+							<div className="flex w-full items-center justify-center mt-4">
+								<button
+									className="secondary_btn_comp h-10"
+									onClick={() => setisModalOpen(false)}
+								>
+									Cancel
+								</button>
+							</div>
+						</>
 					)}
 				</Modal>
 			</div>

@@ -11,6 +11,7 @@ firebase-admin = "*"
 xlsxwriter = "*"
 pandas = "*"
 openpyxl = "*"
+flask-cors = "*"
 
 [dev-packages]
 

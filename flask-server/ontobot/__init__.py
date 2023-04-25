@@ -3,8 +3,10 @@ from ontobot.model.output import Error, Response
 from ontobot.services import taxonomy_service, op_service, populate_service
 import requests
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Global variables and methods
 data = {}
@@ -100,15 +102,15 @@ def get_taxo_download_flask():
             result['msg']), headers=headers)
         # Store OWL content in a file
         owl_content = response.content
-        file_path = f"ontobot/files/owl/{data['sessionID']}.owl"
+        file_path = f"ontobot/files/owl/{data['sessionId']}.owl"
         with open(file_path, 'wb') as f:
             f.write(owl_content)
 
         return Response.send_response("Ontology has been generated")
 
 
-# local testing
-@app.route('/op/checkpoint_1/op_generate', methods=['POST'])
+# connect FE_4
+@app.route('/flask/checkpoint_2/op_generate', methods=['POST'])
 def get_nAry_download_local():
     data = request.get_json()
     result = op_service.get_op_structure(data)

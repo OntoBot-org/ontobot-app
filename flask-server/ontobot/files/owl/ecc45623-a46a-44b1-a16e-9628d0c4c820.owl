@@ -1,0 +1,46 @@
+Prefix(:=<http://example.com/ontology#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://example.com/ontology>
+
+Declaration(Class(:man))
+Declaration(Class(:xman))
+Declaration(Class(:yman))
+Declaration(DataProperty(:prop))
+
+############################
+#   Data Properties
+############################
+
+# Data Property: <http://example.com/ontology#prop> (<http://example.com/ontology#prop>)
+
+DataPropertyDomain(:prop :man)
+DataPropertyRange(:prop xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://example.com/ontology#man> (<http://example.com/ontology#man>)
+
+AnnotationAssertion(rdfs:comment :man "The Level : 0")
+
+# Class: <http://example.com/ontology#xman> (<http://example.com/ontology#xman>)
+
+AnnotationAssertion(rdfs:comment :xman "The Level : 1")
+SubClassOf(:xman :man)
+
+# Class: <http://example.com/ontology#yman> (<http://example.com/ontology#yman>)
+
+AnnotationAssertion(rdfs:comment :yman "The Level : 1")
+SubClassOf(:yman :man)
+
+
+)
