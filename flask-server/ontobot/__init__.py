@@ -106,8 +106,8 @@ def get_taxo_download_flask():
         headers = {'Content-Type': 'application/xml'}
         response = make_response(owl_content)
         response.headers = headers
-        with open(file_path, 'wb') as f:
-            f.write(owl_content)
+        # with open(file_path, 'wb') as f:
+        #     f.write(owl_content)
         return response
 
         # return Response.send_response("Ontology has been generated")
