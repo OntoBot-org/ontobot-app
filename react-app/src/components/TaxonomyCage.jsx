@@ -19,15 +19,9 @@ const TaxonomyCage = () => {
 	const taxonomies = useSelector((store) => store.taxonomies);
 	const dispatch = useDispatch();
 
-	const [alertTitle, setalertTitle] = useState("");
-	const [alertMsg, setalertMsg] = useState("");
 	const [isModalOpen, setisModalOpen] = useState(false);
-	const [isValidTaxo, setIsValidTaxo] = useState(false);
-
 	const [taxonomyStatus, setTaxonomyStatus] = useState("");
-	const [cancelBtnOnly, setCancelBtnOnly] = useState(false);
-	const [hotResponse, setHotResponse] = useState("");
-	const [loading, setLoading] = useState(false);
+	const [submitted, setSubmitted] = useState(false);
 
 	const sendTaxonomies = async (data) => {
 		const config = {
@@ -42,9 +36,6 @@ const TaxonomyCage = () => {
 		try {
 			setTaxonomyStatus("LOADING");
 			const response = await axios(config);
-			// console.log(response);
-			setHotResponse(response.data.type);
-			setLoading(false);
 			if (response.data.type === "success") {
 				setTaxonomyStatus("SUCCESS");
 			} else {
@@ -111,7 +102,7 @@ const TaxonomyCage = () => {
 			})
 		);
 		setisModalOpen(false);
-		// element.scrollIntoView({ behavior: 'smooth' });
+		setSubmitted(true);
 	};
 
 	return (
@@ -132,18 +123,17 @@ const TaxonomyCage = () => {
 						<SaveTaxomony />
 					</div>
 				</div>
-				<div className="w-full mt-4 flex justify-center items-center font-bold">
-					<button
-						className="primary_btn w-auto px-5"
-						onClick={handleSubmitAllTaxo}
-						id="submit_taxonomies"
-					>
-						{loading ? "Loading..." : "Check taxonomies"}
-					</button>
-				</div>
-				<div className="bg-yellow-300">
-					Response: {loading ? "Loading" : hotResponse}
-				</div>
+				{!submitted && (
+					<div className="w-full mt-4 flex justify-center items-center font-bold">
+						<button
+							className="primary_btn w-auto px-5"
+							onClick={handleSubmitAllTaxo}
+							id="submit_taxonomies"
+						>
+							{taxonomyStatus === "LOADING" ? "Loading..." : "Check taxonomies"}
+						</button>
+					</div>
+				)}
 
 				<Modal
 					open={isModalOpen}
