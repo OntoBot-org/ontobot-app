@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # custom
+/flask-server/output.txt
 /flask-server/OWLfile.owl
 # dependencies
 node_modules
