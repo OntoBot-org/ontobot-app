@@ -42,7 +42,7 @@ const TaxonomyCage = () => {
 		try {
 			setTaxonomyStatus("LOADING");
 			const response = await axios(config);
-			console.log(response);
+			// console.log(response);
 			setHotResponse(response.data.type);
 			setLoading(false);
 			if (response.data.type === "success") {
@@ -56,7 +56,9 @@ const TaxonomyCage = () => {
 		}
 	};
 
-	const handleDownloadOWL = async (data) => {
+	const handleDownloadOWL = async () => {
+		const data = JSON.stringify(taxonomies);
+		console.log(data);
 		axios
 			.post("http://localhost:5000/flask/checkpoint_1/taxowl_generate", data, {
 				responseType: "blob", // set the response type to blob

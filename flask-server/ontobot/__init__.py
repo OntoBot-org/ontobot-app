@@ -100,7 +100,7 @@ def get_taxo_download_flask():
             result['msg']), headers=headers)
         # Store OWL content in a file
         owl_content = response.content
-        file_path = f"ontobot/files/owl/{data['sessionID']}.owl"
+        file_path = f"ontobot/files/owl/{data['sessionId']}.owl"
         with open(file_path, 'wb') as f:
             f.write(owl_content)
 

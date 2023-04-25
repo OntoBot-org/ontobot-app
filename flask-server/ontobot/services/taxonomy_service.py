@@ -90,7 +90,7 @@ def get_taxonomy_owl(parsed_json):
         if len(parsed_json) == 0:
             raise Exception('data array is empty')
 
-        session_id = parsed_json['sessionID']
+        session_id = parsed_json['sessionId']
         owl_old = OWL(parsed_json)
         all_concepts = owl_old.get_taxonomy_concepts()
         # result = owl_old.get_taxonomy_concept_with_meta() # All the concepts inside an array according to the BFS

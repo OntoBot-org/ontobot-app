@@ -13,7 +13,7 @@ from ontobot.utils import cmethod
 def get_op_structure(parsed_json):
     op = OP()
     # taxonomy_obj = Taxonomy() 
-    sessionID = parsed_json['sessionID']
+    sessionID = parsed_json['sessionId']
 
     try:
         relationship_list = parsed_json['subrelationships']
