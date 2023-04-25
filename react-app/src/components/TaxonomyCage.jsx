@@ -58,12 +58,21 @@ const TaxonomyCage = () => {
 
 	const handleDownloadOWL = async () => {
 		const data = JSON.stringify(taxonomies);
-		console.log(data);
+
+		let config = {
+			method: "post",
+			maxBodyLength: Infinity,
+			url: "http://localhost:5000/flask/checkpoint_1/taxowl_generate",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			data: data,
+		};
+
 		axios
-			.post("http://localhost:5000/flask/checkpoint_1/taxowl_generate", data, {
-				responseType: "blob", // set the response type to blob
-			})
+			.request(config)
 			.then((response) => {
+				// console.log(JSON.stringify(response.data));
 				const contentDispositionHeader =
 					response.headers["content-disposition"];
 				const fileName = contentDispositionHeader
@@ -72,17 +81,7 @@ const TaxonomyCage = () => {
 				saveAs(new Blob([response.data]), fileName);
 			})
 			.catch((error) => {
-				console.error(error);
-			});
-	};
-
-	const getFile = () => {
-		axios
-			.get("/onto/checkpoint_1/download", {
-				responseType: "blob",
-			})
-			.then((res) => {
-				fileDownload(res.data, "filename.owl");
+				console.log(error);
 			});
 	};
 

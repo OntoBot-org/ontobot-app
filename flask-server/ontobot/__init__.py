@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, jsonify
+from flask import Flask, make_response, request, send_file, jsonify
 from ontobot.model.output import Error, Response
 from ontobot.services import taxonomy_service, op_service, populate_service
 import requests
@@ -103,10 +103,14 @@ def get_taxo_download_flask():
         # Store OWL content in a file
         owl_content = response.content
         file_path = f"ontobot/files/owl/{data['sessionId']}.owl"
+        headers = {'Content-Type': 'application/xml'}
+        response = make_response(owl_content)
+        response.headers = headers
         with open(file_path, 'wb') as f:
             f.write(owl_content)
+        return response
 
-        return Response.send_response("Ontology has been generated")
+        # return Response.send_response("Ontology has been generated")
 
 
 # connect FE_4
@@ -201,6 +205,8 @@ def get_populate_flask():
     return populate_service.get_excel_file(request.get_json())
 
 # connect FE_7
+
+
 @app.route('/flask/checkpoint_2/taxowl/populate', methods=['POST'])
 def add_populate_flask():
     json_data = request.form['json']
@@ -226,14 +232,14 @@ def add_populate_flask():
     if result['code'] == 500:
         return Error.send_something_went_wrong_error(result['msg'])
     else:
-        response = requests.post(url, data=Response.send_response(result['msg']), headers=headers)
+        response = requests.post(url, data=Response.send_response(
+            result['msg']), headers=headers)
         # Store OWL content in a file
         owl_content = response.content
         file_path = f"ontobot/files/owl/filled-owl/{data['sessionID']}.owl"
         with open(file_path, 'wb') as f:
             f.write(owl_content)
         return Response.send_response("Ontology has been generated")
-        
 
 
 # testing for new data structure
