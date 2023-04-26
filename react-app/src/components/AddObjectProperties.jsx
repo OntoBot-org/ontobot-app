@@ -11,7 +11,7 @@ const AddObjectProperties = () => {
 	const [singleOPobject, setsingleOPobject] = useState({
 		id: v4(),
 		relationshipLabel: "relationships",
-		sessionID: taxonomies.sessionId,
+		sessionId: taxonomies.sessionId,
 		subrelationships: [],
 	});
 
@@ -33,17 +33,17 @@ const AddObjectProperties = () => {
 			}
 		);
 
-		const finalJSON = {
+		const modifiedJson = {
 			...singleOPobject,
 			subrelationships: updatedSubrelationships,
 		};
 
-		const updatedJsonData = { ...finalJSON };
+		// const finalJsonData = { ...modifiedJson };
 
-		updatedJsonData.sessionId = updatedJsonData.sessionID;
-		delete updatedJsonData.sessionID;
+		// finalJsonData.sessionId = finalJsonData.sessionID;
+		// delete finalJsonData.sessionID;
 
-		console.log("objectProperties: ", JSON.stringify(updatedJsonData));
+		console.log("objectProperties: ", JSON.stringify(modifiedJson));
 	};
 
 	return (
