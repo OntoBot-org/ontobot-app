@@ -6,10 +6,12 @@ import { SimpleOP, AdvancedOP } from "../components";
 
 const AddObjectProperties = () => {
 	const objectProperties = useSelector((store) => store.objectProperties);
+	const taxonomies = useSelector((store) => store.taxonomies);
+
 	const [singleOPobject, setsingleOPobject] = useState({
 		id: v4(),
 		relationshipLabel: "relationships",
-		sessionID: v4(),
+		sessionID: taxonomies.sessionId,
 		subrelationships: [],
 	});
 
