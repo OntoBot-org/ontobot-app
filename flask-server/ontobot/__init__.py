@@ -38,8 +38,6 @@ def add_ontos():
             return Error.server_error(msg=result['msg'])
 
 # connect FE_2
-
-
 @app.route('/flask/checkpoint_1/taxowl_generate/consistency', methods=['POST'])
 def get_taxo_consistancy_flask():
     data = request.get_json()
@@ -126,7 +124,25 @@ def get_nAry_download_local():
     else:
         return Response.send_response(result['msg'])
 
-
+# connect FE_8
+@app.route('/flask/checkpoint_1/op_generate', methods=['POST'])
+def get_op_generate_flask():
+    data = request.get_json()
+    result = op_service.get_op_structure(data)
+    if result['code'] == 500:
+        if result['type'] == "op_relational":
+            return Error.send_op_relational_error(result['msg'])
+        elif result['type'] == "role":
+            return Error.send_role_error(result['msg'])
+        elif result['type'] == "collective-01":
+            return Error.send_collective_error(result['msg'], 1)
+        elif result['type'] == "collective-02":
+            return Error.send_collective_error(result['msg'], 2)
+        else:
+            return Error.send_something_went_wrong_error(result['msg'])
+    else:
+        return Response.send_response(result['msg'])
+    
 # connect FE_5
 @app.route('/flask/checkpoint_2/op_generate/download', methods=['POST'])
 def get_nAry_download_flask():
@@ -153,8 +169,6 @@ def get_nAry_download_flask():
         return Response.send_response("Ontology has been generated")
 
 # connect FE_4
-
-
 @app.route('/flask/checkpoint_2/op_generate/consistency', methods=['POST'])
 def get_nAry_consistancy_flask():
     data = request.get_json()

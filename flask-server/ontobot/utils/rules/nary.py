@@ -108,7 +108,7 @@ def generate_range_struct(intermediate_cls, range, property, type, uid, level = 
     struct = {
             "id": uid,
             "op_name": _generate_rs_property(property, range),
-            "op_inverse": "",
+            "op_inverse": "inverse of "+ _generate_rs_property(property, range),
             "op_equal": "",
             "op_domain": intermediate_cls,
             "op_range": range,

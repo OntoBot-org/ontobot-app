@@ -22,7 +22,7 @@ def get_op_structure(parsed_json):
         db_taxonomy_result=firestore_connect.get_document(session_id=sessionID)
 
         if db_taxonomy_result is not None:
-            invalid_custom_concepts = custom.get_relational_pattern(db_taxonomy_result['msg'], relationship_list) # check relational pattern
+            invalid_custom_concepts = custom.get_relational_pattern(db_taxonomy_result['msg'], op_struct) # check relational pattern
             invalid_role_concepts = role.get_role_pattern(db_taxonomy_result['msg'], op_struct) # check role pattern
             invalid_collective_concepts_stage_01 = collective.get_collective_pattern_stage_01(db_taxonomy_result['msg'], op_struct) # check collective pattern
             invalid_collective_concepts_stage_02 = collective.get_collective_pattern_stage_02(op_struct) # check collective pattern
@@ -46,6 +46,7 @@ def get_op_structure(parsed_json):
             relationships = []
             for op in final_op_result:
                 relationships.append(op['op_name'])
+                relationships.append(op['op_inverse'])
                 if len(op["op_equal"]) > 0:
                     relationships.append(op['op_equal'])
 

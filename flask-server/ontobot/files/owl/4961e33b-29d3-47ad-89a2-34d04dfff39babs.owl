@@ -1,0 +1,479 @@
+Prefix(:=<http://example.com/ontology#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://example.com/ontology>
+
+Declaration(Class(:A_Crop))
+Declaration(Class(:Abiotic_Stress))
+Declaration(Class(:B_Crop))
+Declaration(Class(:Bacterial_Disease))
+Declaration(Class(:Bio_IP_Control))
+Declaration(Class(:Biotic_Stress))
+Declaration(Class(:Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_566_Event))
+Declaration(Class(:C_Crop))
+Declaration(Class(:Chem_IP_Control))
+Declaration(Class(:Conservation_Farming))
+Declaration(Class(:Crop))
+Declaration(Class(:Crop_Weed_Competition))
+Declaration(Class(:Disease))
+Declaration(Class(:Disease_Management))
+Declaration(Class(:Fungal_Disease))
+Declaration(Class(:Grassy_Weed))
+Declaration(Class(:Insect_Pest))
+Declaration(Class(:Insect_Pest_Management))
+Declaration(Class(:Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_902_Event))
+Declaration(Class(:Mech_IP_Control))
+Declaration(Class(:Nematode_Disease))
+Declaration(Class(:New_Technology))
+Declaration(Class(:Organic_Farming))
+Declaration(Class(:Other_Pest))
+Declaration(Class(:Production_Technology))
+Declaration(Class(:Protection_Technology))
+Declaration(Class(:Protection_Technology_Abiotic_Stress_Biotic_Stress_897_Event))
+Declaration(Class(:Sega_Weed))
+Declaration(Class(:Viral_Disease))
+Declaration(Class(:Weed))
+Declaration(Class(:Weed_Management))
+Declaration(ObjectProperty(:Inv_causes))
+Declaration(ObjectProperty(:Inv_hasNewTechnology))
+Declaration(ObjectProperty(:Inv_hasProductionPractices))
+Declaration(ObjectProperty(:Inv_isManagedBy))
+Declaration(ObjectProperty(:causes))
+Declaration(ObjectProperty(:dealsWith_Abiotic_Stress))
+Declaration(ObjectProperty(:dealsWith_Biotic_Stress))
+Declaration(ObjectProperty(:hasNewTechnology))
+Declaration(ObjectProperty(:hasProductionPractices))
+Declaration(ObjectProperty(:has_dealsWith))
+Declaration(ObjectProperty(:has_includesPestOf))
+Declaration(ObjectProperty(:has_usesProcess))
+Declaration(ObjectProperty(:includesPestOf_Disease))
+Declaration(ObjectProperty(:includesPestOf_Insect_Pest))
+Declaration(ObjectProperty(:includesPestOf_Other_Pest))
+Declaration(ObjectProperty(:includesPestOf_Weed))
+Declaration(ObjectProperty(:inverse_of_dealsWith_Abiotic_Stress))
+Declaration(ObjectProperty(:inverse_of_dealsWith_Biotic_Stress))
+Declaration(ObjectProperty(:inverse_of_includesPestOf_Disease))
+Declaration(ObjectProperty(:inverse_of_includesPestOf_Insect_Pest))
+Declaration(ObjectProperty(:inverse_of_includesPestOf_Other_Pest))
+Declaration(ObjectProperty(:inverse_of_includesPestOf_Weed))
+Declaration(ObjectProperty(:inverse_of_usesProcess_Bio_IP_Control))
+Declaration(ObjectProperty(:inverse_of_usesProcess_Chem_IP_Control))
+Declaration(ObjectProperty(:inverse_of_usesProcess_Mech_IP_Control))
+Declaration(ObjectProperty(:isManagedBy))
+Declaration(ObjectProperty(:is_dealsWith_of))
+Declaration(ObjectProperty(:is_includesPestOf_of))
+Declaration(ObjectProperty(:is_usesProcess_of))
+Declaration(ObjectProperty(:usesProcess_Bio_IP_Control))
+Declaration(ObjectProperty(:usesProcess_Chem_IP_Control))
+Declaration(ObjectProperty(:usesProcess_Mech_IP_Control))
+Declaration(DataProperty(:AS_Name))
+Declaration(DataProperty(:BIP_Name))
+Declaration(DataProperty(:BS_Name))
+Declaration(DataProperty(:CIP_Name))
+Declaration(DataProperty(:CWC_Name))
+Declaration(DataProperty(:Crop_Name))
+Declaration(DataProperty(:DM_Name))
+Declaration(DataProperty(:D_Level))
+Declaration(DataProperty(:D_Name))
+Declaration(DataProperty(:Grassy_Level))
+Declaration(DataProperty(:ID))
+Declaration(DataProperty(:IP_Name))
+Declaration(DataProperty(:MIP_Name))
+Declaration(DataProperty(:OP_Name))
+Declaration(DataProperty(:PT_Name))
+Declaration(DataProperty(:Sega_Level))
+Declaration(DataProperty(:Tech_Name))
+Declaration(DataProperty(:WM_Name))
+Declaration(DataProperty(:Weed_Name))
+Declaration(DataProperty(:category))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :Inv_causes (:Inv_causes)
+
+InverseObjectProperties(:causes :Inv_causes)
+
+# Object Property: :Inv_hasNewTechnology (:Inv_hasNewTechnology)
+
+InverseObjectProperties(:hasNewTechnology :Inv_hasNewTechnology)
+
+# Object Property: :Inv_hasProductionPractices (:Inv_hasProductionPractices)
+
+InverseObjectProperties(:hasProductionPractices :Inv_hasProductionPractices)
+
+# Object Property: :Inv_isManagedBy (:Inv_isManagedBy)
+
+InverseObjectProperties(:isManagedBy :Inv_isManagedBy)
+
+# Object Property: :causes (:causes)
+
+TransitiveObjectProperty(:causes)
+ObjectPropertyDomain(:causes :Weed)
+ObjectPropertyRange(:causes :Crop_Weed_Competition)
+
+# Object Property: :dealsWith_Abiotic_Stress (:dealsWith_Abiotic_Stress)
+
+InverseObjectProperties(:dealsWith_Abiotic_Stress :inverse_of_dealsWith_Abiotic_Stress)
+FunctionalObjectProperty(:dealsWith_Abiotic_Stress)
+ObjectPropertyDomain(:dealsWith_Abiotic_Stress :Protection_Technology_Abiotic_Stress_Biotic_Stress_897_Event)
+ObjectPropertyRange(:dealsWith_Abiotic_Stress :Abiotic_Stress)
+
+# Object Property: :dealsWith_Biotic_Stress (:dealsWith_Biotic_Stress)
+
+InverseObjectProperties(:dealsWith_Biotic_Stress :inverse_of_dealsWith_Biotic_Stress)
+FunctionalObjectProperty(:dealsWith_Biotic_Stress)
+ObjectPropertyDomain(:dealsWith_Biotic_Stress :Protection_Technology_Abiotic_Stress_Biotic_Stress_897_Event)
+ObjectPropertyRange(:dealsWith_Biotic_Stress :Biotic_Stress)
+
+# Object Property: :hasNewTechnology (:hasNewTechnology)
+
+FunctionalObjectProperty(:hasNewTechnology)
+ObjectPropertyDomain(:hasNewTechnology :Production_Technology)
+ObjectPropertyRange(:hasNewTechnology :New_Technology)
+
+# Object Property: :hasProductionPractices (:hasProductionPractices)
+
+FunctionalObjectProperty(:hasProductionPractices)
+ObjectPropertyDomain(:hasProductionPractices :Crop)
+ObjectPropertyRange(:hasProductionPractices :Production_Technology)
+ObjectPropertyRange(:hasProductionPractices :Protection_Technology)
+
+# Object Property: :has_dealsWith (:has_dealsWith)
+
+InverseObjectProperties(:has_dealsWith :is_dealsWith_of)
+ObjectPropertyDomain(:has_dealsWith :Protection_Technology)
+ObjectPropertyRange(:has_dealsWith :Protection_Technology_Abiotic_Stress_Biotic_Stress_897_Event)
+
+# Object Property: :has_includesPestOf (:has_includesPestOf)
+
+InverseObjectProperties(:has_includesPestOf :is_includesPestOf_of)
+ObjectPropertyDomain(:has_includesPestOf :Biotic_Stress)
+ObjectPropertyRange(:has_includesPestOf :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_566_Event)
+
+# Object Property: :has_usesProcess (:has_usesProcess)
+
+InverseObjectProperties(:has_usesProcess :is_usesProcess_of)
+ObjectPropertyDomain(:has_usesProcess :Insect_Pest_Management)
+ObjectPropertyRange(:has_usesProcess :Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_902_Event)
+
+# Object Property: :includesPestOf_Disease (:includesPestOf_Disease)
+
+InverseObjectProperties(:includesPestOf_Disease :inverse_of_includesPestOf_Disease)
+FunctionalObjectProperty(:includesPestOf_Disease)
+ObjectPropertyDomain(:includesPestOf_Disease :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_566_Event)
+ObjectPropertyRange(:includesPestOf_Disease :Disease)
+
+# Object Property: :includesPestOf_Insect_Pest (:includesPestOf_Insect_Pest)
+
+InverseObjectProperties(:includesPestOf_Insect_Pest :inverse_of_includesPestOf_Insect_Pest)
+FunctionalObjectProperty(:includesPestOf_Insect_Pest)
+ObjectPropertyDomain(:includesPestOf_Insect_Pest :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_566_Event)
+ObjectPropertyRange(:includesPestOf_Insect_Pest :Insect_Pest)
+
+# Object Property: :includesPestOf_Other_Pest (:includesPestOf_Other_Pest)
+
+InverseObjectProperties(:includesPestOf_Other_Pest :inverse_of_includesPestOf_Other_Pest)
+FunctionalObjectProperty(:includesPestOf_Other_Pest)
+ObjectPropertyDomain(:includesPestOf_Other_Pest :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_566_Event)
+ObjectPropertyRange(:includesPestOf_Other_Pest :Other_Pest)
+
+# Object Property: :includesPestOf_Weed (:includesPestOf_Weed)
+
+InverseObjectProperties(:includesPestOf_Weed :inverse_of_includesPestOf_Weed)
+FunctionalObjectProperty(:includesPestOf_Weed)
+ObjectPropertyDomain(:includesPestOf_Weed :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_566_Event)
+ObjectPropertyRange(:includesPestOf_Weed :Weed)
+
+# Object Property: :inverse_of_usesProcess_Bio_IP_Control (:inverse_of_usesProcess_Bio_IP_Control)
+
+InverseObjectProperties(:usesProcess_Bio_IP_Control :inverse_of_usesProcess_Bio_IP_Control)
+
+# Object Property: :inverse_of_usesProcess_Chem_IP_Control (:inverse_of_usesProcess_Chem_IP_Control)
+
+InverseObjectProperties(:usesProcess_Chem_IP_Control :inverse_of_usesProcess_Chem_IP_Control)
+
+# Object Property: :inverse_of_usesProcess_Mech_IP_Control (:inverse_of_usesProcess_Mech_IP_Control)
+
+InverseObjectProperties(:usesProcess_Mech_IP_Control :inverse_of_usesProcess_Mech_IP_Control)
+
+# Object Property: :isManagedBy (:isManagedBy)
+
+FunctionalObjectProperty(:isManagedBy)
+TransitiveObjectProperty(:isManagedBy)
+ObjectPropertyDomain(:isManagedBy :Disease)
+ObjectPropertyDomain(:isManagedBy :Insect_Pest)
+ObjectPropertyDomain(:isManagedBy :Weed)
+ObjectPropertyRange(:isManagedBy :Disease_Management)
+ObjectPropertyRange(:isManagedBy :Insect_Pest_Management)
+ObjectPropertyRange(:isManagedBy :Weed_Management)
+
+# Object Property: :usesProcess_Bio_IP_Control (:usesProcess_Bio_IP_Control)
+
+FunctionalObjectProperty(:usesProcess_Bio_IP_Control)
+ObjectPropertyDomain(:usesProcess_Bio_IP_Control :Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_902_Event)
+ObjectPropertyRange(:usesProcess_Bio_IP_Control :Bio_IP_Control)
+
+# Object Property: :usesProcess_Chem_IP_Control (:usesProcess_Chem_IP_Control)
+
+FunctionalObjectProperty(:usesProcess_Chem_IP_Control)
+ObjectPropertyDomain(:usesProcess_Chem_IP_Control :Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_902_Event)
+ObjectPropertyRange(:usesProcess_Chem_IP_Control :Chem_IP_Control)
+
+# Object Property: :usesProcess_Mech_IP_Control (:usesProcess_Mech_IP_Control)
+
+FunctionalObjectProperty(:usesProcess_Mech_IP_Control)
+ObjectPropertyDomain(:usesProcess_Mech_IP_Control :Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_902_Event)
+ObjectPropertyRange(:usesProcess_Mech_IP_Control :Mech_IP_Control)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :AS_Name (:AS_Name)
+
+DataPropertyDomain(:AS_Name :Abiotic_Stress)
+DataPropertyRange(:AS_Name xsd:string)
+
+# Data Property: :BIP_Name (:BIP_Name)
+
+DataPropertyDomain(:BIP_Name :Bio_IP_Control)
+DataPropertyRange(:BIP_Name xsd:string)
+
+# Data Property: :BS_Name (:BS_Name)
+
+DataPropertyDomain(:BS_Name :Biotic_Stress)
+DataPropertyRange(:BS_Name xsd:string)
+
+# Data Property: :CIP_Name (:CIP_Name)
+
+DataPropertyDomain(:CIP_Name :Chem_IP_Control)
+DataPropertyRange(:CIP_Name xsd:string)
+
+# Data Property: :CWC_Name (:CWC_Name)
+
+DataPropertyDomain(:CWC_Name :Crop_Weed_Competition)
+DataPropertyRange(:CWC_Name xsd:string)
+
+# Data Property: :Crop_Name (:Crop_Name)
+
+DataPropertyDomain(:Crop_Name :Crop)
+DataPropertyRange(:Crop_Name xsd:string)
+
+# Data Property: :DM_Name (:DM_Name)
+
+DataPropertyDomain(:DM_Name :Disease_Management)
+DataPropertyRange(:DM_Name xsd:string)
+
+# Data Property: :D_Level (:D_Level)
+
+DataPropertyDomain(:D_Level :Disease)
+DataPropertyRange(:D_Level xsd:int)
+
+# Data Property: :D_Name (:D_Name)
+
+FunctionalDataProperty(:D_Name)
+DataPropertyDomain(:D_Name :Disease)
+DataPropertyRange(:D_Name xsd:string)
+
+# Data Property: :Grassy_Level (:Grassy_Level)
+
+FunctionalDataProperty(:Grassy_Level)
+DataPropertyDomain(:Grassy_Level :Grassy_Weed)
+DataPropertyRange(:Grassy_Level xsd:int)
+
+# Data Property: :ID (:ID)
+
+DataPropertyDomain(:ID :Insect_Pest_Management)
+DataPropertyRange(:ID xsd:string)
+
+# Data Property: :IP_Name (:IP_Name)
+
+DataPropertyDomain(:IP_Name :Insect_Pest)
+DataPropertyRange(:IP_Name xsd:string)
+
+# Data Property: :MIP_Name (:MIP_Name)
+
+DataPropertyDomain(:MIP_Name :Mech_IP_Control)
+DataPropertyRange(:MIP_Name xsd:string)
+
+# Data Property: :OP_Name (:OP_Name)
+
+DataPropertyDomain(:OP_Name :Other_Pest)
+DataPropertyRange(:OP_Name xsd:string)
+
+# Data Property: :PT_Name (:PT_Name)
+
+DataPropertyDomain(:PT_Name :Production_Technology)
+DataPropertyDomain(:PT_Name :Protection_Technology)
+DataPropertyRange(:PT_Name xsd:string)
+
+# Data Property: :Sega_Level (:Sega_Level)
+
+FunctionalDataProperty(:Sega_Level)
+DataPropertyDomain(:Sega_Level :Sega_Weed)
+DataPropertyRange(:Sega_Level xsd:int)
+
+# Data Property: :Tech_Name (:Tech_Name)
+
+DataPropertyDomain(:Tech_Name :New_Technology)
+DataPropertyRange(:Tech_Name xsd:string)
+
+# Data Property: :WM_Name (:WM_Name)
+
+DataPropertyDomain(:WM_Name :Weed_Management)
+DataPropertyRange(:WM_Name xsd:string)
+
+# Data Property: :Weed_Name (:Weed_Name)
+
+DataPropertyDomain(:Weed_Name :Weed)
+DataPropertyRange(:Weed_Name xsd:string)
+
+# Data Property: :category (:category)
+
+FunctionalDataProperty(:category)
+DataPropertyDomain(:category :Fungal_Disease)
+DataPropertyRange(:category xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :A_Crop (:A_Crop)
+
+AnnotationAssertion(rdfs:comment :A_Crop "The Level : 1"^^xsd:string)
+SubClassOf(:A_Crop :Crop)
+
+# Class: :Abiotic_Stress (:Abiotic_Stress)
+
+AnnotationAssertion(rdfs:comment :Abiotic_Stress "The Level : 0"^^xsd:string)
+
+# Class: :B_Crop (:B_Crop)
+
+AnnotationAssertion(rdfs:comment :B_Crop "The Level : 1"^^xsd:string)
+SubClassOf(:B_Crop :Crop)
+
+# Class: :Bacterial_Disease (:Bacterial_Disease)
+
+AnnotationAssertion(rdfs:comment :Bacterial_Disease "The Level : 1"^^xsd:string)
+SubClassOf(:Bacterial_Disease :Disease)
+
+# Class: :Bio_IP_Control (:Bio_IP_Control)
+
+AnnotationAssertion(rdfs:comment :Bio_IP_Control "The Level : 0"^^xsd:string)
+
+# Class: :Biotic_Stress (:Biotic_Stress)
+
+AnnotationAssertion(rdfs:comment :Biotic_Stress "The Level : 0"^^xsd:string)
+
+# Class: :C_Crop (:C_Crop)
+
+AnnotationAssertion(rdfs:comment :C_Crop "The Level : 1"^^xsd:string)
+SubClassOf(:C_Crop :Crop)
+
+# Class: :Chem_IP_Control (:Chem_IP_Control)
+
+AnnotationAssertion(rdfs:comment :Chem_IP_Control "The Level : 0"^^xsd:string)
+
+# Class: :Conservation_Farming (:Conservation_Farming)
+
+AnnotationAssertion(rdfs:comment :Conservation_Farming "The Level : 1"^^xsd:string)
+SubClassOf(:Conservation_Farming :New_Technology)
+
+# Class: :Crop (:Crop)
+
+AnnotationAssertion(rdfs:comment :Crop "The Level : 0"^^xsd:string)
+SubClassOf(:Crop ObjectSomeValuesFrom(:hasProductionPractices :Protection_Technology))
+
+# Class: :Crop_Weed_Competition (:Crop_Weed_Competition)
+
+AnnotationAssertion(rdfs:comment :Crop_Weed_Competition "The Level : 0"^^xsd:string)
+
+# Class: :Disease (:Disease)
+
+AnnotationAssertion(rdfs:comment :Disease "The Level : 0"^^xsd:string)
+
+# Class: :Disease_Management (:Disease_Management)
+
+AnnotationAssertion(rdfs:comment :Disease_Management "The Level : 0"^^xsd:string)
+
+# Class: :Fungal_Disease (:Fungal_Disease)
+
+AnnotationAssertion(rdfs:comment :Fungal_Disease "The Level : 1"^^xsd:string)
+SubClassOf(:Fungal_Disease :Disease)
+
+# Class: :Grassy_Weed (:Grassy_Weed)
+
+AnnotationAssertion(rdfs:comment :Grassy_Weed "The Level : 1"^^xsd:string)
+SubClassOf(:Grassy_Weed :Weed)
+DisjointClasses(:Grassy_Weed :Sega_Weed)
+
+# Class: :Insect_Pest (:Insect_Pest)
+
+AnnotationAssertion(rdfs:comment :Insect_Pest "The Level : 0"^^xsd:string)
+
+# Class: :Insect_Pest_Management (:Insect_Pest_Management)
+
+AnnotationAssertion(rdfs:comment :Insect_Pest_Management "The Level : 0"^^xsd:string)
+
+# Class: :Mech_IP_Control (:Mech_IP_Control)
+
+AnnotationAssertion(rdfs:comment :Mech_IP_Control "The Level : 0"^^xsd:string)
+
+# Class: :Nematode_Disease (:Nematode_Disease)
+
+AnnotationAssertion(rdfs:comment :Nematode_Disease "The Level : 1"^^xsd:string)
+SubClassOf(:Nematode_Disease :Disease)
+
+# Class: :New_Technology (:New_Technology)
+
+AnnotationAssertion(rdfs:comment :New_Technology "The Level : 0"^^xsd:string)
+
+# Class: :Organic_Farming (:Organic_Farming)
+
+AnnotationAssertion(rdfs:comment :Organic_Farming "The Level : 1"^^xsd:string)
+SubClassOf(:Organic_Farming :New_Technology)
+
+# Class: :Other_Pest (:Other_Pest)
+
+AnnotationAssertion(rdfs:comment :Other_Pest "The Level : 0"^^xsd:string)
+
+# Class: :Production_Technology (:Production_Technology)
+
+AnnotationAssertion(rdfs:comment :Production_Technology "The Level : 0"^^xsd:string)
+
+# Class: :Protection_Technology (:Protection_Technology)
+
+AnnotationAssertion(rdfs:comment :Protection_Technology "The Level : 0"^^xsd:string)
+
+# Class: :Sega_Weed (:Sega_Weed)
+
+AnnotationAssertion(rdfs:comment :Sega_Weed "The Level : 1"^^xsd:string)
+SubClassOf(:Sega_Weed :Weed)
+
+# Class: :Viral_Disease (:Viral_Disease)
+
+AnnotationAssertion(rdfs:comment :Viral_Disease "The Level : 1"^^xsd:string)
+SubClassOf(:Viral_Disease :Disease)
+
+# Class: :Weed (:Weed)
+
+AnnotationAssertion(rdfs:comment :Weed "The Level : 0"^^xsd:string)
+
+# Class: :Weed_Management (:Weed_Management)
+
+AnnotationAssertion(rdfs:comment :Weed_Management "The Level : 0"^^xsd:string)
+
+
+DisjointClasses(:A_Crop :B_Crop :C_Crop)
+DisjointClasses(:Bacterial_Disease :Fungal_Disease :Nematode_Disease :Viral_Disease)
+)
