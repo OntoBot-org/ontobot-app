@@ -342,7 +342,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 				})
 			);
 			setisSOPsubmitted(true);
-			console.log("finalOPlist SOP: ", finalOPlist);
+			console.log("finalOPlist SOP: ", JSON.stringify(finalOPlist));
 			// console.log("savedObjectProperties SOP: ", savedObjectProperties)
 		}
 	};

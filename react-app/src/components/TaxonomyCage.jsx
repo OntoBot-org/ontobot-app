@@ -38,7 +38,7 @@ const TaxonomyCage = () => {
 			data: data,
 		};
 
-		// console.log("taxo", data);
+		console.log("taxo", data);
 
 		try {
 			setTaxonomyStatus("LOADING");
