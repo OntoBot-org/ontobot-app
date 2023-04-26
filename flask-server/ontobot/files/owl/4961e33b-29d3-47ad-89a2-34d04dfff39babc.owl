@@ -27,7 +27,7 @@ Declaration(Class(:Toxic_Female_Student))
 Declaration(Class(:Toxic_Male_Student))
 Declaration(Class(:Toxic_Student))
 Declaration(Class(:University))
-Declaration(Class(:University_Degree_Lecture_Student_309_Event))
+Declaration(Class(:University_Degree_Lecture_Student_71_Event))
 Declaration(ObjectProperty(:consistsOf))
 Declaration(ObjectProperty(:goes))
 Declaration(ObjectProperty(:has_Degree))
@@ -86,7 +86,7 @@ ObjectPropertyRange(:has_University :University)
 
 InverseObjectProperties(:has_naryproperty :is_naryproperty_of)
 ObjectPropertyDomain(:has_naryproperty :University)
-ObjectPropertyRange(:has_naryproperty :University_Degree_Lecture_Student_309_Event)
+ObjectPropertyRange(:has_naryproperty :University_Degree_Lecture_Student_71_Event)
 
 # Object Property: :hates (:hates)
 
@@ -106,21 +106,21 @@ ObjectPropertyRange(:loves :Toxic_Female_Student)
 
 InverseObjectProperties(:naryproperty_Degree ObjectInverseOf(:naryproperty_Degree))
 FunctionalObjectProperty(:naryproperty_Degree)
-ObjectPropertyDomain(:naryproperty_Degree :University_Degree_Lecture_Student_309_Event)
+ObjectPropertyDomain(:naryproperty_Degree :University_Degree_Lecture_Student_71_Event)
 ObjectPropertyRange(:naryproperty_Degree :Degree)
 
 # Object Property: :naryproperty_Lecture (:naryproperty_Lecture)
 
 InverseObjectProperties(:naryproperty_Lecture ObjectInverseOf(:naryproperty_Lecture))
 FunctionalObjectProperty(:naryproperty_Lecture)
-ObjectPropertyDomain(:naryproperty_Lecture :University_Degree_Lecture_Student_309_Event)
+ObjectPropertyDomain(:naryproperty_Lecture :University_Degree_Lecture_Student_71_Event)
 ObjectPropertyRange(:naryproperty_Lecture :Lecture)
 
 # Object Property: :naryproperty_Student (:naryproperty_Student)
 
 InverseObjectProperties(:naryproperty_Student ObjectInverseOf(:naryproperty_Student))
 FunctionalObjectProperty(:naryproperty_Student)
-ObjectPropertyDomain(:naryproperty_Student :University_Degree_Lecture_Student_309_Event)
+ObjectPropertyDomain(:naryproperty_Student :University_Degree_Lecture_Student_71_Event)
 ObjectPropertyRange(:naryproperty_Student :Student)
 
 # Object Property: :reads (:reads)
@@ -128,6 +128,7 @@ ObjectPropertyRange(:naryproperty_Student :Student)
 InverseObjectProperties(:reads ObjectInverseOf(:reads))
 FunctionalObjectProperty(:reads)
 TransitiveObjectProperty(:reads)
+ObjectPropertyDomain(:reads :Lecture)
 ObjectPropertyDomain(:reads :Student)
 ObjectPropertyRange(:reads :Degree)
 ObjectPropertyRange(:reads :SCS_Degree)
@@ -224,6 +225,7 @@ SubClassOf(:Junior_Lecture :Lecture)
 # Class: :Lecture (:Lecture)
 
 AnnotationAssertion(rdfs:comment :Lecture "The Level : 0"^^xsd:string)
+SubClassOf(:Lecture ObjectSomeValuesFrom(:reads :Degree))
 
 # Class: :Organization (:Organization)
 
