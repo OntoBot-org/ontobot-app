@@ -228,7 +228,18 @@ const TaxonomyCage = () => {
 						<>
 							<p className="modal_title text-center mb-2">{errTopic}</p>
 
-							<p className="text-primary font-bold">Issues found:</p>
+							<p className="text-primary font-bold ">
+								These concepts doesn't belong to any pattern:
+							</p>
+							<div className="overflow-y-auto h-30">
+								{errConcepts.map((item, index) => (
+									<p className=" mb-1 text-sm" key={index}>
+										{index + 1}. {item}
+									</p>
+								))}
+							</div>
+
+							<p className="text-primary font-bold mt-2">Issues found:</p>
 							<div className="overflow-y-auto h-60">
 								<ul>
 									{errMeta.map((item, index) => (
@@ -247,30 +258,21 @@ const TaxonomyCage = () => {
 								</ul>
 							</div>
 
-							<p className="text-primary font-bold mt-2">
-								These concepts doesn't belong to any pattern:
-							</p>
+							<p className="text-primary font-bold mt-2">Ontobot's suggestions:</p>
 							<div className="overflow-y-auto h-30">
-								{errConcepts.map((item, index) => (
-									<p className=" mb-1 text-sm" key={index}>
+								{errContent.map((item, index) => (
+									<p className=" mb-1" key={index}>
 										{index + 1}. {item}
 									</p>
 								))}
 							</div>
-							<p className="text-primary font-bold">Ontobot's suggestions:</p>
-
-							{errContent.map((item, index) => (
-								<p className=" mb-1" key={index}>
-									{index + 1}. {item}
-								</p>
-							))}
 
 							<div className="flex w-full items-center justify-center mt-4">
 								<button
 									className="secondary_btn_comp h-10"
 									onClick={() => setisModalOpen(false)}
 								>
-									Cancel
+									Try again
 								</button>
 							</div>
 						</>
