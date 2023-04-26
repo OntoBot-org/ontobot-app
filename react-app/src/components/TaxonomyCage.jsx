@@ -134,7 +134,7 @@ const TaxonomyCage = () => {
 						<SaveTaxomony />
 					</div>
 				</div>
-				{!submitted && (
+				{!submitted ? (
 					<div className="w-full mt-4 flex justify-center items-center font-bold">
 						<button
 							className="primary_btn w-auto px-5"
@@ -144,6 +144,10 @@ const TaxonomyCage = () => {
 							{taxonomyStatus === "LOADING" ? "Loading..." : "Check taxonomies"}
 						</button>
 					</div>
+				) : (
+					<p className="w-full mt-4 flex justify-center items-center font-bold">
+						Already Submitted
+					</p>
 				)}
 
 				<Modal
@@ -258,7 +262,9 @@ const TaxonomyCage = () => {
 								</ul>
 							</div>
 
-							<p className="text-primary font-bold mt-2">Ontobot's suggestions:</p>
+							<p className="text-primary font-bold mt-2">
+								Ontobot's suggestions:
+							</p>
 							<div className="overflow-y-auto h-30">
 								{errContent.map((item, index) => (
 									<p className=" mb-1" key={index}>

@@ -416,7 +416,9 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 			>
 				<div className="flex items-center justify-between w-full mb-2">
 					<div className="flex">
-						<p className="modal_title">Simple Object Property</p>
+						<p className="modal_title">
+							Simple Object Property {openTab === 1 ? "1" : "2"}
+						</p>
 						<MdLiveHelp
 							className="text-secondary text-xl cursor-pointer hover:text-primary mt-1 ml-2"
 							onClick={takeSOPmodalTour}
@@ -458,8 +460,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 								>
 									<p
 										className="w-fit"
-										onClick={(e) => {
-											e.preventDefault();
+										onClick={() => {
 											setopenTab(1);
 										}}
 									>
@@ -487,13 +488,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 									href="#link2"
 									role="tablist"
 								>
-									<p
-										className="w-fit"
-										onClick={(e) => {
-											e.preventDefault();
-											setopenTab(2);
-										}}
-									>
+									<p className="w-fit" onClick={() => setopenTab(2)}>
 										Multi-range Entry
 									</p>
 									<MdLiveHelp
