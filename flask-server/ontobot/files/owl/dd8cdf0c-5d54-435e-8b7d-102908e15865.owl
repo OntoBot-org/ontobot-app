@@ -1,0 +1,68 @@
+Prefix(:=<http://example.com/ontology#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://example.com/ontology>
+
+Declaration(Class(:girl))
+Declaration(Class(:xgirl))
+Declaration(Class(:ygirl))
+Declaration(ObjectProperty(:eee))
+Declaration(ObjectProperty(:rer))
+Declaration(ObjectProperty(:sss))
+Declaration(ObjectProperty(:xx))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://example.com/ontology#eee> (<http://example.com/ontology#eee>)
+
+InverseObjectProperties(:eee :rer)
+FunctionalObjectProperty(:eee)
+ObjectPropertyDomain(:eee :xgirl)
+ObjectPropertyRange(:eee :ygirl)
+
+# Object Property: <http://example.com/ontology#sss> (<http://example.com/ontology#sss>)
+
+InverseObjectProperties(:sss :xx)
+ReflexiveObjectProperty(:sss)
+ObjectPropertyDomain(:sss :ygirl)
+ObjectPropertyRange(:sss :ygirl)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: <http://example.com/ontology#sss> (<http://example.com/ontology#sss>)
+
+DataPropertyDomain(:sss :girl)
+DataPropertyRange(:sss xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://example.com/ontology#girl> (<http://example.com/ontology#girl>)
+
+AnnotationAssertion(rdfs:comment :girl "The Level : 0")
+
+# Class: <http://example.com/ontology#xgirl> (<http://example.com/ontology#xgirl>)
+
+AnnotationAssertion(rdfs:comment :xgirl "The Level : 1")
+SubClassOf(:xgirl :girl)
+
+# Class: <http://example.com/ontology#ygirl> (<http://example.com/ontology#ygirl>)
+
+AnnotationAssertion(rdfs:comment :ygirl "The Level : 1")
+SubClassOf(:ygirl :girl)
+
+
+)

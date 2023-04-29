@@ -394,7 +394,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 					disabled={!taxonomies.submitted || isAOPsubmitted}
 					id="submitAll_SOP"
 				>
-					Submit All
+					Submit
 				</button>
 				<button
 					className={`secondary_btn_comp w-auto px-5 h-fit mt-4 ${

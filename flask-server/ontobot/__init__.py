@@ -152,11 +152,16 @@ def get_nAry_download_flask():
             result['msg']), headers=headers)
         # Store OWL content in a file
         owl_content = response.content
-        file_path = f"ontobot/files/owl/{data['sessionID']}.owl"
-        with open(file_path, 'wb') as f:
-            f.write(owl_content)
+        file_path = f"ontobot/files/owl/{data['sessionId']}.owl"
+        headers = {'Content-Type': 'application/xml'}
+        response = make_response(owl_content)
+        response.headers = headers
+        return response
 
-        return Response.send_response("Ontology has been generated")
+        # with open(file_path, 'wb') as f:
+        #     f.write(owl_content)
+
+        # return Response.send_response("Ontology has been generated")
 
 # connect FE_4
 

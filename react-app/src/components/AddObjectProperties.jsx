@@ -22,7 +22,6 @@ const AddObjectProperties = () => {
 
 	const handleSubmitOPList = () => {
 		setisModalOpen(true);
-
 		setsingleOPobject({
 			...singleOPobject,
 			subrelationships: objectProperties,
@@ -94,11 +93,11 @@ const AddObjectProperties = () => {
 			</div>
 			<div className="w-full h-1/4 flex justify-center items-center">
 				<button
-					className="primary_btn w-auto font-bold"
+					className="primary_btn w-auto font-bold px-5"
 					onClick={handleSubmitOPList}
 					id="submit_all_op"
 				>
-					Submit all the Relationships
+					Download OWL
 				</button>
 			</div>
 
