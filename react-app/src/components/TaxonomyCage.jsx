@@ -1,17 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import fileDownload from "js-file-download";
-import { MdLiveHelp } from "react-icons/md";
 import "driver.js/dist/driver.min.css";
 import { saveAs } from "file-saver";
-
-import {
-	ExcelDownloadUpload,
-	Modal,
-	SaveTaxomony,
-	TaxonomyTree,
-} from "../components";
+import React, { useState } from "react";
+import { MdLiveHelp } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { Modal, SaveTaxomony, TaxonomyTree } from "../components";
 import { setSubmittedState } from "../features/taxonomies/taxonomySlice";
 import { takeTaxonomyTour } from "../tour/mainTours";
 
@@ -22,7 +15,7 @@ const TaxonomyCage = () => {
 	const [isModalOpen, setisModalOpen] = useState(false);
 	const [taxonomyStatus, setTaxonomyStatus] = useState("");
 	const [submitted, setSubmitted] = useState(false);
-
+	const [owlDownloading, setOwlDownloading] = useState(false);
 	const [errMeta, setErrMeta] = useState([]);
 	const [errTopic, setErrTopic] = useState("");
 	const [errConcepts, setErrConcepts] = useState([]);
@@ -60,6 +53,7 @@ const TaxonomyCage = () => {
 	};
 
 	const handleDownloadOWL = async () => {
+		setOwlDownloading(true);
 		const data = JSON.stringify(taxonomies);
 
 		let config = {
@@ -71,7 +65,6 @@ const TaxonomyCage = () => {
 			},
 			data: data,
 		};
-
 		axios
 			.request(config)
 			.then((response) => {
@@ -81,9 +74,11 @@ const TaxonomyCage = () => {
 					? contentDispositionHeader.split(";")[1].split("filename=")[1].trim()
 					: "file.owl";
 				saveAs(new Blob([response.data]), fileName);
+				setOwlDownloading(false);
 			})
 			.catch((error) => {
 				console.log(error);
+				setOwlDownloading(false);
 			});
 	};
 
@@ -162,12 +157,12 @@ const TaxonomyCage = () => {
 					)}
 
 					{taxonomyStatus === "LOADING" && (
-						<p className="modal_title text-center">loading</p>
+						<p className="modal_title text-center">Loading . . . </p>
 					)}
 
 					{taxonomyStatus === "SUCCESS" && (
 						<>
-							<p className="modal_title text-center">
+							<p className="modal_title text-center mb-2">
 								Are you sure you want to submit all the taxonomies?
 							</p>
 
@@ -187,10 +182,13 @@ const TaxonomyCage = () => {
 								</button>
 
 								<button
-									className="primary_btn_comp h-10"
+									className={`primary_btn_comp h-10 ${
+										owlDownloading ? "disabled_btn" : ""
+									}`}
 									onClick={handleDownloadOWL}
+									disabled={owlDownloading}
 								>
-									Download OWL
+									{owlDownloading ? "Downloading..." : "Download OWL"}
 								</button>
 
 								{/* <button className="primary_btn_comp h-10" onClick={() => null}>
