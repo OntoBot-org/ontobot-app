@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { v4 } from "uuid";
 import { AdvancedOP, Modal, SimpleOP } from "../components";
+import { saveAs } from "file-saver";
 
 const AddObjectProperties = () => {
 	const objectProperties = useSelector((store) => store.objectProperties);
@@ -19,9 +20,13 @@ const AddObjectProperties = () => {
 	const [isAOPsubmitted, setisAOPsubmitted] = useState(false);
 	const [opStatus, setOpStatus] = useState("");
 	const [isModalOpen, setisModalOpen] = useState(false);
+	const [owlDownloading, setOwlDownloading] = useState(false);
+	const [modifiedOPObject, setModifiedOPObject] = useState({});
 
-	const handleSubmitOPList = () => {
+	const handleOPCheck = () => {
 		setisModalOpen(true);
+		setOpStatus("LOADING");
+
 		setsingleOPobject({
 			...singleOPobject,
 			subrelationships: objectProperties,
@@ -42,13 +47,11 @@ const AddObjectProperties = () => {
 		};
 
 		console.log("objectProperties: ", JSON.stringify(modifiedJson));
-
-		sendOPs(modifiedJson);
+		setModifiedOPObject(modifiedJson);
+		checkOP();
 	};
 
-	const sendOPs = async (data) => {
-		setOpStatus("LOADING");
-
+	const checkOP = async () => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
@@ -56,20 +59,49 @@ const AddObjectProperties = () => {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			data: data,
+			data: modifiedOPObject,
 		};
 
 		axios
 			.request(config)
 			.then((response) => {
-				console.log(JSON.stringify(response.data));
 				if (response.data.type === "success") {
-					console.log("success");
 					setOpStatus("SUCCESS");
 				}
 			})
 			.catch((error) => {
 				console.log(error);
+				setOpStatus("ERROR");
+			});
+	};
+
+	const handleDownloadOWL = async () => {
+		setOwlDownloading(true);
+
+		let config = {
+			method: "post",
+			maxBodyLength: Infinity,
+			url: "http://127.0.0.1:5000/flask/checkpoint_2/op_generate/download",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			data: modifiedOPObject,
+		};
+
+		axios
+			.request(config)
+			.then((response) => {
+				const contentDispositionHeader =
+					response.headers["content-disposition"];
+				const fileName = contentDispositionHeader
+					? contentDispositionHeader.split(";")[1].split("filename=")[1].trim()
+					: "file.owl";
+				saveAs(new Blob([response.data]), fileName);
+				setOwlDownloading(false);
+			})
+			.catch((error) => {
+				console.log(error);
+				setOwlDownloading(false);
 			});
 	};
 
@@ -93,11 +125,11 @@ const AddObjectProperties = () => {
 			</div>
 			<div className="w-full h-1/4 flex justify-center items-center">
 				<button
-					className="primary_btn w-auto font-bold px-5"
-					onClick={handleSubmitOPList}
+					className={`primary_btn w-auto font-bold px-5`}
+					onClick={handleOPCheck}
 					id="submit_all_op"
 				>
-					Download OWL
+					Check OPs
 				</button>
 			</div>
 
@@ -113,29 +145,33 @@ const AddObjectProperties = () => {
 				)}
 
 				{opStatus === "LOADING" && (
-					<p className="modal_title text-center">loading</p>
+					<p className="modal_title text-center">Loading . . . </p>
 				)}
 
 				{opStatus === "SUCCESS" && (
 					<>
-						<p className="modal_title text-center">
-							Are you sure you want to submit all the taxonomies?
+						<p className="modal_title text-center mb-2">
+							Are you sure you want to submit all the object properties?
 						</p>
 
 						<p className="text-primary text-center">
 							After submitting you will NOT be able to add, update, or remove
-							taxonomies or taxonomy details. Therefore, please make sure that
-							you have added properties, disjoint, and overlapping classes to
-							necessary taxonomies.
+							object properties. Therefore, please make sure that you have added
+							required changes.
 						</p>
 
 						<div className="flex w-full items-center justify-center mt-4">
-							<button className="primary_btn_comp h-10" onClick={() => null}>
+							{/* <button className="primary_btn_comp h-10" onClick={() => null}>
 								Submit !
-							</button>
+							</button> */}
 
-							<button className="primary_btn_comp h-10" onClick={() => null}>
-								Download OWL
+							<button
+								className={`primary_btn_comp h-10 ${
+									owlDownloading ? "disabled_btn" : ""
+								}`}
+								onClick={handleDownloadOWL}
+							>
+								{owlDownloading ? "Downloading..." : "Download OWL"}
 							</button>
 
 							{/* <button className="primary_btn_comp h-10" onClick={() => null}>

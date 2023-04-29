@@ -57,14 +57,14 @@ const TaxonomyCage = () => {
 		const data = JSON.stringify(taxonomies);
 
 		let config = {
-			method: "post",
+			method: 'post',
 			maxBodyLength: Infinity,
-			url: "http://localhost:5000/flask/checkpoint_1/taxowl_generate",
-			headers: {
-				"Content-Type": "application/json",
+			url: 'http://127.0.0.1:5000/flask/checkpoint_1/taxowl_generate',
+			headers: { 
+			  'Content-Type': 'application/json'
 			},
-			data: data,
-		};
+			data : data
+		  };
 		axios
 			.request(config)
 			.then((response) => {
