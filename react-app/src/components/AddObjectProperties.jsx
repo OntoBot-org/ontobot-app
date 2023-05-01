@@ -22,6 +22,9 @@ const AddObjectProperties = () => {
 	const [isModalOpen, setisModalOpen] = useState(false);
 	const [owlDownloading, setOwlDownloading] = useState(false);
 	const [modifiedOPObject, setModifiedOPObject] = useState({});
+	const [errMeta, setErrMeta] = useState([]);
+	const [errTopic, setErrTopic] = useState("");
+	const [errMsg, setErrMsg] = useState("");
 
 	const handleOPCheck = () => {
 		setisModalOpen(true);
@@ -67,6 +70,13 @@ const AddObjectProperties = () => {
 			.then((response) => {
 				if (response.data.type === "success") {
 					setOpStatus("SUCCESS");
+				}
+				if (response.data.type === "error") {
+					console.log("OP err", response.data);
+					setOpStatus("ERROR");
+					setErrMeta(response.data.meta);
+					setErrMsg(response.data.msg);
+					setErrTopic(response.data.topic);
 				}
 			})
 			.catch((error) => {
@@ -211,48 +221,19 @@ const AddObjectProperties = () => {
 
 				{opStatus === "ERROR" && (
 					<>
-						{/* <p className="modal_title text-center mb-2">{errTopic}</p> */}
+						<p className="modal_title text-center mb-2">{errTopic}</p>
 
-						<p className="text-primary font-bold ">
-							These concepts doesn't belong to any pattern:
-						</p>
-						{/* <div className="overflow-y-auto h-30">
-							{errConcepts.map((item, index) => (
-								<p className=" mb-1 text-sm" key={index}>
-									{index + 1}. {item}
-								</p>
-							))}
-						</div> */}
+						<p className="text-primary font-bold ">{errMsg}</p>
 
-						<p className="text-primary font-bold mt-2">Issues found:</p>
-						{/* <div className="overflow-y-auto h-60">
+						<div className="overflow-y-auto h-32">
 							<ul>
 								{errMeta.map((item, index) => (
 									<li className=" mb-2" key={index}>
-										{index + 1}. Concept: {item.name} | Stereotype:{" "}
-										{item.stereotype}
-										<ul className="list-disc	">
-											{errMeta.map((item, index) => (
-												<li className="text-sm ml-5 mb-1" key={index}>
-													{item.suggestion}
-												</li>
-											))}
-										</ul>
+										{index + 1}. Concept: {item}
 									</li>
 								))}
 							</ul>
-						</div> */}
-
-						<p className="text-primary font-bold mt-2">
-							Ontobot's suggestions:
-						</p>
-						{/* <div className="overflow-y-auto h-30">
-							{errContent.map((item, index) => (
-								<p className=" mb-1" key={index}>
-									{index + 1}. {item}
-								</p>
-							))}
-						</div> */}
+						</div>
 
 						<div className="flex w-full items-center justify-center mt-4">
 							<button
