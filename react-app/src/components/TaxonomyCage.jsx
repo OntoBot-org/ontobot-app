@@ -20,6 +20,7 @@ const TaxonomyCage = () => {
 	const [errTopic, setErrTopic] = useState("");
 	const [errConcepts, setErrConcepts] = useState([]);
 	const [errContent, setErrContent] = useState([]);
+	const [consistencyCheck, setConsistencyCheck] = useState("UNDEFINED");
 
 	const sendTaxonomies = async (data) => {
 		const config = {
@@ -57,14 +58,14 @@ const TaxonomyCage = () => {
 		const data = JSON.stringify(taxonomies);
 
 		let config = {
-			method: 'post',
+			method: "post",
 			maxBodyLength: Infinity,
-			url: 'http://127.0.0.1:5000/flask/checkpoint_1/taxowl_generate',
-			headers: { 
-			  'Content-Type': 'application/json'
+			url: "http://127.0.0.1:5000/flask/checkpoint_1/taxowl_generate",
+			headers: {
+				"Content-Type": "application/json",
 			},
-			data : data
-		  };
+			data: data,
+		};
 		axios
 			.request(config)
 			.then((response) => {
@@ -84,6 +85,8 @@ const TaxonomyCage = () => {
 
 	const handleCheckTaxo = () => {
 		setisModalOpen(true);
+		setConsistencyCheck("UNDEFINED");
+
 		if (taxonomies.subclasses?.length > 0) {
 			const noProperties = [];
 			taxonomies.subclasses?.forEach((taxonomy) => {
@@ -109,6 +112,35 @@ const TaxonomyCage = () => {
 		);
 		setisModalOpen(false);
 		setSubmitted(true);
+	};
+
+	const handleCheckConsistency = async () => {
+		setConsistencyCheck("LOADING");
+
+		const data = JSON.stringify(taxonomies);
+		let config = {
+			method: "post",
+			maxBodyLength: Infinity,
+			url: "http://127.0.0.1:5000/flask/checkpoint_1/taxowl_generate/consistency",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			data: data,
+		};
+
+		axios
+			.request(config)
+			.then((response) => {
+				if (response.data.type === "success") {
+					setConsistencyCheck("CONSISTENT");
+				} else {
+					setConsistencyCheck("NOT_CONSISTENT");
+				}
+			})
+			.catch((error) => {
+				setConsistencyCheck("CONSISTENT_ERR");
+				console.log(error);
+			});
 	};
 
 	return (
@@ -165,13 +197,27 @@ const TaxonomyCage = () => {
 							<p className="modal_title text-center mb-2">
 								Are you sure you want to submit all the taxonomies?
 							</p>
-
 							<p className="text-primary text-center">
 								After submitting you will NOT be able to add, update, or remove
 								taxonomies or taxonomy details. Therefore, please make sure that
 								you have added properties, disjoint, and overlapping classes to
 								necessary taxonomies.
 							</p>
+							{consistencyCheck === "CONSISTENT" && (
+								<p>Consistency: OWL is consistent</p>
+							)}
+
+							{consistencyCheck === "NOT_CONSISTENT" && (
+								<p>Consistency: OWL is NOT consistent</p>
+							)}
+
+							{consistencyCheck === "UNDEFINED" && (
+								<p>Consistency: Not checked yet</p>
+							)}
+
+							{consistencyCheck === "LOADING" && (
+								<p>Consistency: Checking...</p>
+							)}
 
 							<div className="flex w-full items-center justify-center mt-4">
 								<button
@@ -191,9 +237,15 @@ const TaxonomyCage = () => {
 									{owlDownloading ? "Downloading..." : "Download OWL"}
 								</button>
 
-								{/* <button className="primary_btn_comp h-10" onClick={() => null}>
-									Check Consistency
-								</button> */}
+								<button
+									className={`primary_btn_comp h-10 ${
+										consistencyCheck === "LOADING" ? "disabled_btn" : ""
+									}`}
+									onClick={handleCheckConsistency}
+									disabled={consistencyCheck === "LOADING"}
+								>
+									Consistency
+								</button>
 
 								<button
 									className="secondary_btn_comp h-10"
