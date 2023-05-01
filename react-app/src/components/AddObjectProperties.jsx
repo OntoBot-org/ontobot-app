@@ -25,6 +25,7 @@ const AddObjectProperties = () => {
 	const [errMeta, setErrMeta] = useState([]);
 	const [errTopic, setErrTopic] = useState("");
 	const [errMsg, setErrMsg] = useState("");
+	const [consistencyCheck, setConsistencyCheck] = useState("UNDEFINED");
 
 	const handleOPCheck = () => {
 		setisModalOpen(true);
@@ -55,6 +56,7 @@ const AddObjectProperties = () => {
 	};
 
 	const checkOP = async () => {
+		setConsistencyCheck("UNDEFINED");
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
@@ -115,6 +117,33 @@ const AddObjectProperties = () => {
 			});
 	};
 
+	const handleCheckConsistency = async () => {
+		setConsistencyCheck("LOADING");
+		let config = {
+			method: "post",
+			maxBodyLength: Infinity,
+			url: "http://127.0.0.1:5000/flask/checkpoint_2/op_generate/consistency",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			data: modifiedOPObject,
+		};
+
+		axios
+			.request(config)
+			.then((response) => {
+				if (response.data.type === "success") {
+					setConsistencyCheck("CONSISTENT");
+				} else {
+					setConsistencyCheck("NOT_CONSISTENT");
+				}
+			})
+			.catch((error) => {
+				setConsistencyCheck("CONSISTENT_ERR");
+				console.log(error);
+			});
+	};
+
 	return (
 		<div className="h-full">
 			<div className="flex h-3/4">
@@ -170,11 +199,21 @@ const AddObjectProperties = () => {
 							required changes.
 						</p>
 
-						<div className="flex w-full items-center justify-center mt-4">
-							{/* <button className="primary_btn_comp h-10" onClick={() => null}>
-								Submit !
-							</button> */}
+						{consistencyCheck === "CONSISTENT" && (
+							<p>Consistency: OWL is consistent</p>
+						)}
 
+						{consistencyCheck === "NOT_CONSISTENT" && (
+							<p>Consistency: OWL is NOT consistent</p>
+						)}
+
+						{consistencyCheck === "UNDEFINED" && (
+							<p>Consistency: Not checked yet</p>
+						)}
+
+						{consistencyCheck === "LOADING" && <p>Consistency: Checking...</p>}
+
+						<div className="flex w-full items-center justify-center mt-4">
 							<button
 								className={`primary_btn_comp h-10 ${
 									owlDownloading ? "disabled_btn" : ""
@@ -184,9 +223,15 @@ const AddObjectProperties = () => {
 								{owlDownloading ? "Downloading..." : "Download OWL"}
 							</button>
 
-							{/* <button className="primary_btn_comp h-10" onClick={() => null}>
-									Check Consistency
-								</button> */}
+							<button
+								className={`primary_btn_comp h-10 ${
+									consistencyCheck === "LOADING" ? "disabled_btn" : ""
+								}`}
+								disabled={consistencyCheck === "LOADING"}
+								onClick={handleCheckConsistency}
+							>
+								Consistency
+							</button>
 
 							<button
 								className="secondary_btn_comp h-10"

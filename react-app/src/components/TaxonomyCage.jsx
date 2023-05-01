@@ -241,8 +241,8 @@ const TaxonomyCage = () => {
 									className={`primary_btn_comp h-10 ${
 										consistencyCheck === "LOADING" ? "disabled_btn" : ""
 									}`}
-									onClick={handleCheckConsistency}
 									disabled={consistencyCheck === "LOADING"}
+									onClick={handleCheckConsistency}
 								>
 									Consistency
 								</button>

@@ -283,14 +283,14 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                 >
                     Submit All
                 </button>
-                <button 
+                {/* <button 
                     className={`secondary_btn_comp w-auto px-5 h-fit mt-4 ${!isSOPsubmitted|| isAOPsubmitted ? 'disabled_btn' : ''}`} 
                     disabled={!isSOPsubmitted || isAOPsubmitted}
                     onClick={() => console.log("check consistency")} 
                     id='check_AOP_consistency'
                 >
                     Check Consistency
-                </button>
+                </button> */}
             </div>
 
             <Modal open={isOpModalVsible} onClose={handleOnClose} fromTop="top-[15%]" fromLeft='left-[15%]'>
