@@ -1,9 +1,10 @@
-from flask import Flask, make_response, request, send_file, jsonify
+from flask import Flask, make_response, request, send_file
 from ontobot.model.output import Error, Response
 from ontobot.services import taxonomy_service, op_service, populate_service
 import requests
 import json
 from flask_cors import CORS
+import asyncio
 
 app = Flask(__name__)
 CORS(app)
@@ -116,9 +117,10 @@ def get_taxo_download_flask():
 
 # connect FE_4
 @app.route('/flask/checkpoint_2/op_generate', methods=['POST'])
-def get_nAry_download_local():
+async def get_nAry_download_local():
     data = request.get_json()
-    result = op_service.get_op_structure(data)
+    print(data)
+    result = await asyncio.to_thread(op_service.get_op_structure, data)
     if result['code'] == 500:
         if result['type'] == "op_relational":
             return Error.send_op_relational_error(result['msg'])
