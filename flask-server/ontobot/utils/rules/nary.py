@@ -4,8 +4,8 @@ import random
 def generate_intermediate_cls_name(domain:str, range):
     names = []; names.clear()
     names.append(domain)
-    names.extend(range)
-    names.append(str(random.randint(0,1000)))
+    # names.extend(range)
+    # names.append(str(random.randint(0,1000)))
     names.append("Event")
     return " ".join(names)
 

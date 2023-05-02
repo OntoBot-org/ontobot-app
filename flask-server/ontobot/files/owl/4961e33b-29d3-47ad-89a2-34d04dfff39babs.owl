@@ -14,7 +14,7 @@ Declaration(Class(:B_Crop))
 Declaration(Class(:Bacterial_Disease))
 Declaration(Class(:Bio_IP_Control))
 Declaration(Class(:Biotic_Stress))
-Declaration(Class(:Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_211_Event))
+Declaration(Class(:Biotic_Stress_Event))
 Declaration(Class(:C_Crop))
 Declaration(Class(:Chem_IP_Control))
 Declaration(Class(:Conservation_Farming))
@@ -26,7 +26,7 @@ Declaration(Class(:Fungal_Disease))
 Declaration(Class(:Grassy_Weed))
 Declaration(Class(:Insect_Pest))
 Declaration(Class(:Insect_Pest_Management))
-Declaration(Class(:Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_530_Event))
+Declaration(Class(:Insect_Pest_Management_Event))
 Declaration(Class(:Mech_IP_Control))
 Declaration(Class(:Nematode_Disease))
 Declaration(Class(:New_Technology))
@@ -34,7 +34,7 @@ Declaration(Class(:Organic_Farming))
 Declaration(Class(:Other_Pest))
 Declaration(Class(:Production_Technology))
 Declaration(Class(:Protection_Technology))
-Declaration(Class(:Protection_Technology_Abiotic_Stress_Biotic_Stress_583_Event))
+Declaration(Class(:Protection_Technology_Event))
 Declaration(Class(:Sega_Weed))
 Declaration(Class(:Viral_Disease))
 Declaration(Class(:Weed))
@@ -122,14 +122,14 @@ ObjectPropertyRange(:causes :Crop_Weed_Competition)
 
 InverseObjectProperties(:dealsWith_Abiotic_Stress :inverse_of_dealsWith_Abiotic_Stress)
 FunctionalObjectProperty(:dealsWith_Abiotic_Stress)
-ObjectPropertyDomain(:dealsWith_Abiotic_Stress :Protection_Technology_Abiotic_Stress_Biotic_Stress_583_Event)
+ObjectPropertyDomain(:dealsWith_Abiotic_Stress :Protection_Technology_Event)
 ObjectPropertyRange(:dealsWith_Abiotic_Stress :Abiotic_Stress)
 
 # Object Property: :dealsWith_Biotic_Stress (:dealsWith_Biotic_Stress)
 
 InverseObjectProperties(:dealsWith_Biotic_Stress :inverse_of_dealsWith_Biotic_Stress)
 FunctionalObjectProperty(:dealsWith_Biotic_Stress)
-ObjectPropertyDomain(:dealsWith_Biotic_Stress :Protection_Technology_Abiotic_Stress_Biotic_Stress_583_Event)
+ObjectPropertyDomain(:dealsWith_Biotic_Stress :Protection_Technology_Event)
 ObjectPropertyRange(:dealsWith_Biotic_Stress :Biotic_Stress)
 
 # Object Property: :hasNewTechnology (:hasNewTechnology)
@@ -149,46 +149,46 @@ ObjectPropertyRange(:hasProductionPractices :Protection_Technology)
 
 InverseObjectProperties(:has_dealsWith :is_dealsWith_of)
 ObjectPropertyDomain(:has_dealsWith :Protection_Technology)
-ObjectPropertyRange(:has_dealsWith :Protection_Technology_Abiotic_Stress_Biotic_Stress_583_Event)
+ObjectPropertyRange(:has_dealsWith :Protection_Technology_Event)
 
 # Object Property: :has_includesPestOf (:has_includesPestOf)
 
 InverseObjectProperties(:has_includesPestOf :is_includesPestOf_of)
 ObjectPropertyDomain(:has_includesPestOf :Biotic_Stress)
-ObjectPropertyRange(:has_includesPestOf :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_211_Event)
+ObjectPropertyRange(:has_includesPestOf :Biotic_Stress_Event)
 
 # Object Property: :has_usesProcess (:has_usesProcess)
 
 InverseObjectProperties(:has_usesProcess :is_usesProcess_of)
 ObjectPropertyDomain(:has_usesProcess :Insect_Pest_Management)
-ObjectPropertyRange(:has_usesProcess :Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_530_Event)
+ObjectPropertyRange(:has_usesProcess :Insect_Pest_Management_Event)
 
 # Object Property: :includesPestOf_Disease (:includesPestOf_Disease)
 
 InverseObjectProperties(:includesPestOf_Disease :inverse_of_includesPestOf_Disease)
 FunctionalObjectProperty(:includesPestOf_Disease)
-ObjectPropertyDomain(:includesPestOf_Disease :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_211_Event)
+ObjectPropertyDomain(:includesPestOf_Disease :Biotic_Stress_Event)
 ObjectPropertyRange(:includesPestOf_Disease :Disease)
 
 # Object Property: :includesPestOf_Insect_Pest (:includesPestOf_Insect_Pest)
 
 InverseObjectProperties(:includesPestOf_Insect_Pest :inverse_of_includesPestOf_Insect_Pest)
 FunctionalObjectProperty(:includesPestOf_Insect_Pest)
-ObjectPropertyDomain(:includesPestOf_Insect_Pest :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_211_Event)
+ObjectPropertyDomain(:includesPestOf_Insect_Pest :Biotic_Stress_Event)
 ObjectPropertyRange(:includesPestOf_Insect_Pest :Insect_Pest)
 
 # Object Property: :includesPestOf_Other_Pest (:includesPestOf_Other_Pest)
 
 InverseObjectProperties(:includesPestOf_Other_Pest :inverse_of_includesPestOf_Other_Pest)
 FunctionalObjectProperty(:includesPestOf_Other_Pest)
-ObjectPropertyDomain(:includesPestOf_Other_Pest :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_211_Event)
+ObjectPropertyDomain(:includesPestOf_Other_Pest :Biotic_Stress_Event)
 ObjectPropertyRange(:includesPestOf_Other_Pest :Other_Pest)
 
 # Object Property: :includesPestOf_Weed (:includesPestOf_Weed)
 
 InverseObjectProperties(:includesPestOf_Weed :inverse_of_includesPestOf_Weed)
 FunctionalObjectProperty(:includesPestOf_Weed)
-ObjectPropertyDomain(:includesPestOf_Weed :Biotic_Stress_Insect_Pest_Other_Pest_Disease_Weed_211_Event)
+ObjectPropertyDomain(:includesPestOf_Weed :Biotic_Stress_Event)
 ObjectPropertyRange(:includesPestOf_Weed :Weed)
 
 # Object Property: :inverse_of_usesProcess_Bio_IP_Control (:inverse_of_usesProcess_Bio_IP_Control)
@@ -217,19 +217,19 @@ ObjectPropertyRange(:isManagedBy :Weed_Management)
 # Object Property: :usesProcess_Bio_IP_Control (:usesProcess_Bio_IP_Control)
 
 FunctionalObjectProperty(:usesProcess_Bio_IP_Control)
-ObjectPropertyDomain(:usesProcess_Bio_IP_Control :Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_530_Event)
+ObjectPropertyDomain(:usesProcess_Bio_IP_Control :Insect_Pest_Management_Event)
 ObjectPropertyRange(:usesProcess_Bio_IP_Control :Bio_IP_Control)
 
 # Object Property: :usesProcess_Chem_IP_Control (:usesProcess_Chem_IP_Control)
 
 FunctionalObjectProperty(:usesProcess_Chem_IP_Control)
-ObjectPropertyDomain(:usesProcess_Chem_IP_Control :Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_530_Event)
+ObjectPropertyDomain(:usesProcess_Chem_IP_Control :Insect_Pest_Management_Event)
 ObjectPropertyRange(:usesProcess_Chem_IP_Control :Chem_IP_Control)
 
 # Object Property: :usesProcess_Mech_IP_Control (:usesProcess_Mech_IP_Control)
 
 FunctionalObjectProperty(:usesProcess_Mech_IP_Control)
-ObjectPropertyDomain(:usesProcess_Mech_IP_Control :Insect_Pest_Management_Bio_IP_Control_Chem_IP_Control_Mech_IP_Control_530_Event)
+ObjectPropertyDomain(:usesProcess_Mech_IP_Control :Insect_Pest_Management_Event)
 ObjectPropertyRange(:usesProcess_Mech_IP_Control :Mech_IP_Control)
 
 
