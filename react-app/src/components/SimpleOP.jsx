@@ -17,6 +17,7 @@ import {
 	takeSOPmultiRangeTour,
 	takeSOPmultiRangeModalTour,
 } from "../tour/simpleOPtour";
+import axios from "axios";
 
 const shortcutLabels = [
 	{
@@ -76,6 +77,14 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 	const [availableTaxonomies, setavailableTaxonomies] = useState([]);
 	const [objectPropertyList, setobjectPropertyList] = useState([]);
 	const [advancedOPList, setadvancedOPList] = useState([]);
+	const [consistencyCheck, setConsistencyCheck] = useState("UNDEFINED");
+
+	const [singleOPobject, setsingleOPobject] = useState({
+		id: v4(),
+		relationshipLabel: "relationships",
+		sessionId: taxonomies.sessionId,
+		subrelationships: [],
+	});
 
 	useEffect(() => {
 		// console.log("taxonomies simpleOP: ", taxonomies)
@@ -347,6 +356,54 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 		}
 	};
 
+	const handleCheckConsistency = async () => {
+		setConsistencyCheck("LOADING");
+		setsingleOPobject({
+			...singleOPobject,
+			subrelationships: objectPropertyList,
+		});
+
+		const updatedSubrelationships = singleOPobject.subrelationships.map(
+			(subrel) => {
+				return {
+					...subrel,
+					ranges: [subrel.ranges],
+				};
+			}
+		);
+
+		const modifiedJson = {
+			...singleOPobject,
+			subrelationships: updatedSubrelationships,
+		};
+
+		console.log("singleobject", JSON.stringify(modifiedJson));
+		let config = {
+			method: "post",
+			maxBodyLength: Infinity,
+			url: "http://127.0.0.1:5000/flask/checkpoint_2/op_generate/consistency",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			data: modifiedJson,
+		};
+
+		axios
+			.request(config)
+			.then((response) => {
+				console.log(response);
+				if (response.data.type === "success") {
+					setConsistencyCheck("CONSISTENT");
+				} else {
+					setConsistencyCheck("NOT_CONSISTENT");
+				}
+			})
+			.catch((error) => {
+				setConsistencyCheck("CONSISTENT_ERR");
+				console.log(error);
+			});
+	};
+
 	return (
 		<div className="w-full h-full">
 			<div className="flex items-center justify-between mb-2">
@@ -378,6 +435,13 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 				</div>
 			)}
 
+			<div className="flex w-fit mx-4 py-1 px-2 bg-secondary text-white font-semibold rounded-md mt-4">
+				{consistencyCheck === "UNDEFINED" && <p>Consistency: Not checked</p>}
+				{consistencyCheck === "LOADING" && <p>Consistency: Checking...</p>}
+				{consistencyCheck === "CONSISTENT" && <p>OWL is consistent</p>}
+				{consistencyCheck === "NOT_CONSISTENT" && <p>OWL is not consistent</p>}
+			</div>
+
 			<div id="simpleOP_list" className="w-full h-3/4 overflow-y-scroll">
 				<OPList
 					objectPropertyList={objectPropertyList}
@@ -396,16 +460,20 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 				>
 					Submit
 				</button>
-				{/* <button
-					className={`secondary_btn_comp w-auto px-5 h-fit mt-4 ${
-						!taxonomies.submitted || isAOPsubmitted ? "disabled_btn" : ""
-					}`}
-					disabled={!taxonomies.submitted || isAOPsubmitted}
-					onClick={() => console.log("check consistency")}
-					id="check_SOP_consistency"
-				>
-					Check Consistency
-				</button> */}
+				{consistencyCheck === "LOADING" ? (
+					<p className="w-auto px-5 h-fit mt-4">Checking...</p>
+				) : (
+					<button
+						className={`secondary_btn_comp w-auto px-5 h-fit mt-4 ${
+							!taxonomies.submitted || isAOPsubmitted ? "disabled_btn" : ""
+						}`}
+						disabled={!taxonomies.submitted || isAOPsubmitted}
+						onClick={handleCheckConsistency}
+						id="check_SOP_consistency"
+					>
+						Check Consistency
+					</button>
+				)}
 			</div>
 
 			<Modal
