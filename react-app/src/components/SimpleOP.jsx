@@ -381,7 +381,7 @@ const SimpleOP = ({ setisSOPsubmitted, isAOPsubmitted }) => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "http://127.0.0.1:5000/flask/checkpoint_2/op_generate/consistency",
+			url: `${process.env.REACT_APP_BACKEND_URL}/flask/checkpoint_2/op_generate/consistency`,
 			headers: {
 				"Content-Type": "application/json",
 			},

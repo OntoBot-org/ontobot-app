@@ -25,7 +25,7 @@ const TaxonomyCage = () => {
 	const sendTaxonomies = async (data) => {
 		const config = {
 			method: "post",
-			url: "http://localhost:5000/flask/checkpoint_1/taxowl_validate",
+			url: `${process.env.REACT_APP_BACKEND_URL}/flask/checkpoint_1/taxowl_validate`,
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -60,7 +60,7 @@ const TaxonomyCage = () => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "http://127.0.0.1:5000/flask/checkpoint_1/taxowl_generate",
+			url: `${process.env.REACT_APP_BACKEND_URL}/flask/checkpoint_1/taxowl_generate`,
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -121,7 +121,7 @@ const TaxonomyCage = () => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "http://127.0.0.1:5000/flask/checkpoint_1/taxowl_generate/consistency",
+			url: `${process.env.REACT_APP_BACKEND_URL}/flask/checkpoint_1/taxowl_generate/consistency`,
 			headers: {
 				"Content-Type": "application/json",
 			},
