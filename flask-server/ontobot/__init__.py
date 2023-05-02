@@ -1,6 +1,6 @@
 from flask import Flask, request, send_file, jsonify
 from ontobot.model.output import Error, Response
-from ontobot.services import taxonomy_service, op_service, populate_service
+from ontobot.services import taxonomy_service, op_service, populate_service, nary_connect_service
 import requests
 import json
 
@@ -234,7 +234,11 @@ def add_populate_flask():
 def update_nAry_flask():
     data = request.get_json()
     sessionID = data['sessionID']
-    
+    result = nary_connect_service.collect_concepts(sessionID=sessionID)
+    if result['code'] == 201:
+        return Response.send_response(result['msg'])
+    else:
+       return Error.send_something_went_wrong_error(result['msg']) 
 
 
 
