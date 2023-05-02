@@ -229,6 +229,15 @@ def add_populate_flask():
         return Response.send_response("Ontology has been generated")
         
 
+# connect FE 7
+@app.route('/flask/checkpoint_2/n-ary/update', methods=['POST'])
+def update_nAry_flask():
+    data = request.get_json()
+    sessionID = data['sessionID']
+    
+
+
+
 
 # testing for new data structure
 @app.route('/op/checkpoint/op_generate/populate/test', methods=['POST'])

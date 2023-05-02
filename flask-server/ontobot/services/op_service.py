@@ -53,7 +53,7 @@ def get_op_structure(parsed_json):
             owl_complete = {
                 "sessionID" : sessionID,
                 "taxonomy" : db_owlTaxonomy_result['taxonomy'],
-                "concepts" : db_owlTaxonomy_result['concepts'],
+                "concepts" : list(set(db_owlTaxonomy_result['concepts'])),
                 "op" : final_op_result,
                 "relationships" : list(set(relationships))
             }
