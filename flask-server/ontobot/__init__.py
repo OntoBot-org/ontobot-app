@@ -1,10 +1,14 @@
-from flask import Flask, request, send_file, jsonify
+from flask import Flask, make_response, request, send_file
 from ontobot.model.output import Error, Response
 from ontobot.services import taxonomy_service, op_service, populate_service, nary_connect_service
 import requests
 import json
+from flask_cors import CORS
+import asyncio
 
 app = Flask(__name__)
+CORS(app)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Global variables and methods
 data = {}
@@ -98,18 +102,23 @@ def get_taxo_download_flask():
             result['msg']), headers=headers)
         # Store OWL content in a file
         owl_content = response.content
-        file_path = f"ontobot/files/owl/{data['sessionID']}.owl"
-        with open(file_path, 'wb') as f:
-            f.write(owl_content)
+        file_path = f"ontobot/files/owl/{data['sessionId']}.owl"
+        headers = {'Content-Type': 'application/xml'}
+        response = make_response(owl_content)
+        response.headers = headers
+        # with open(file_path, 'wb') as f:
+        #     f.write(owl_content)
+        return response
 
-        return Response.send_response("Ontology has been generated")
+        # return Response.send_response("Ontology has been generated")
 
 
-# local testing
-@app.route('/op/checkpoint_1/op_generate', methods=['POST'])
-def get_nAry_download_local():
+# connect FE_4
+@app.route('/flask/checkpoint_2/op_generate', methods=['POST'])
+async def get_nAry_download_local():
     data = request.get_json()
-    result = op_service.get_op_structure(data)
+    print(data)
+    result = await asyncio.to_thread(op_service.get_op_structure, data)
     if result['code'] == 500:
         if result['type'] == "op_relational":
             return Error.send_op_relational_error(result['msg'])
@@ -144,11 +153,16 @@ def get_nAry_download_flask():
             result['msg']), headers=headers)
         # Store OWL content in a file
         owl_content = response.content
-        file_path = f"ontobot/files/owl/{data['sessionID']}.owl"
-        with open(file_path, 'wb') as f:
-            f.write(owl_content)
+        file_path = f"ontobot/files/owl/{data['sessionId']}.owl"
+        headers = {'Content-Type': 'application/xml'}
+        response = make_response(owl_content)
+        response.headers = headers
+        return response
 
-        return Response.send_response("Ontology has been generated")
+        # with open(file_path, 'wb') as f:
+        #     f.write(owl_content)
+
+        # return Response.send_response("Ontology has been generated")
 
 # connect FE_4
 @app.route('/flask/checkpoint_2/op_generate/consistency', methods=['POST'])
@@ -195,6 +209,8 @@ def get_populate_flask():
     return populate_service.get_excel_file(request.get_json())
 
 # connect FE_7
+
+
 @app.route('/flask/checkpoint_2/taxowl/populate', methods=['POST'])
 def add_populate_flask():
     json_data = request.form['json']
@@ -220,14 +236,14 @@ def add_populate_flask():
     if result['code'] == 500:
         return Error.send_something_went_wrong_error(result['msg'])
     else:
-        response = requests.post(url, data=Response.send_response(result['msg']), headers=headers)
+        response = requests.post(url, data=Response.send_response(
+            result['msg']), headers=headers)
         # Store OWL content in a file
         owl_content = response.content
         file_path = f"ontobot/files/owl/filled-owl/{data['sessionID']}.owl"
         with open(file_path, 'wb') as f:
             f.write(owl_content)
         return Response.send_response("Ontology has been generated")
-        
 
 # connect FE 7
 @app.route('/flask/checkpoint_2/n-ary/update', methods=['POST'])

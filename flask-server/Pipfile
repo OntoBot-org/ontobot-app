@@ -4,13 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "*"
 marshmallow = "*"
 owlready2 = "*"
 firebase-admin = "*"
 xlsxwriter = "*"
 pandas = "*"
 openpyxl = "*"
+flask-cors = "*"
+async = "*"
+asyncio = "*"
+flask = {extras = ["async"], version = "*"}
 
 [dev-packages]
 

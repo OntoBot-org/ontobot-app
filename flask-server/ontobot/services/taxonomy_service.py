@@ -14,12 +14,13 @@ from ontobot.db.taxonomy import Taxonomy
 
 
 def validate_taxonomy_service(parsed_json):
+    # print(parsed_json)
     try:
         valid_concept = []
         all_concepts = []
         warn_list = []; warn_list.clear()
         owl = OWL(parsed_json)
-        sessionID = parsed_json['sessionID']
+        sessionID = parsed_json['sessionId']
 
         # get all concepts into a set
         all_concepts = owl.get_taxonomy_concepts()
@@ -89,7 +90,7 @@ def get_taxonomy_owl(parsed_json):
         if len(parsed_json) == 0:
             raise Exception('data array is empty')
 
-        session_id = parsed_json['sessionID']
+        session_id = parsed_json['sessionId']
         owl_old = OWL(parsed_json)
         all_concepts = owl_old.get_taxonomy_concepts()
         # result = owl_old.get_taxonomy_concept_with_meta() # All the concepts inside an array according to the BFS
