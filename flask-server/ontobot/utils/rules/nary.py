@@ -4,8 +4,8 @@ import random
 def generate_intermediate_cls_name(domain:str, range):
     names = []; names.clear()
     names.append(domain)
-    names.extend(range)
-    names.append(str(random.randint(0,1000)))
+    # names.extend(range)
+    # names.append(str(random.randint(0,1000)))
     names.append("Event")
     return " ".join(names)
 
@@ -108,7 +108,7 @@ def generate_range_struct(intermediate_cls, range, property, type, uid, level = 
     struct = {
             "id": uid,
             "op_name": _generate_rs_property(property, range),
-            "op_inverse": "",
+            "op_inverse": "inverse of "+ _generate_rs_property(property, range),
             "op_equal": "",
             "op_domain": intermediate_cls,
             "op_range": range,

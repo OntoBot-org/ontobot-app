@@ -1,6 +1,6 @@
 from flask import Flask, make_response, request, send_file
 from ontobot.model.output import Error, Response
-from ontobot.services import taxonomy_service, op_service, populate_service
+from ontobot.services import taxonomy_service, op_service, populate_service, nary_connect_service
 import requests
 import json
 from flask_cors import CORS
@@ -42,8 +42,6 @@ def add_ontos():
             return Error.server_error(msg=result['msg'])
 
 # connect FE_2
-
-
 @app.route('/flask/checkpoint_1/taxowl_generate/consistency', methods=['POST'])
 def get_taxo_consistancy_flask():
     data = request.get_json()
@@ -135,7 +133,7 @@ async def get_nAry_download_local():
     else:
         return Response.send_response(result['msg'])
 
-
+    
 # connect FE_5
 @app.route('/flask/checkpoint_2/op_generate/download', methods=['POST'])
 def get_nAry_download_flask():
@@ -167,8 +165,6 @@ def get_nAry_download_flask():
         # return Response.send_response("Ontology has been generated")
 
 # connect FE_4
-
-
 @app.route('/flask/checkpoint_2/op_generate/consistency', methods=['POST'])
 def get_nAry_consistancy_flask():
     data = request.get_json()
@@ -248,6 +244,19 @@ def add_populate_flask():
         with open(file_path, 'wb') as f:
             f.write(owl_content)
         return Response.send_response("Ontology has been generated")
+
+# connect FE 7
+@app.route('/flask/checkpoint_2/n-ary/update', methods=['POST'])
+def update_nAry_flask():
+    data = request.get_json()
+    sessionID = data['sessionID']
+    result = nary_connect_service.collect_concepts(sessionID=sessionID)
+    if result['code'] == 201:
+        return Response.send_response(result['msg'])
+    else:
+       return Error.send_something_went_wrong_error(result['msg']) 
+
+
 
 
 # testing for new data structure

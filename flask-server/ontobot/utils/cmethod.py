@@ -15,7 +15,7 @@ def get_relational_diverse_concept_list(taxonomy_result, relationship_list):
 
     for op in relationship_list:
         for iconcept in isolated_concepts:
-            if op['domain'] == iconcept or iconcept in op['ranges']:
+            if op['op_domain'] == iconcept or iconcept in op['op_range']:
                 relational_converge_concept_list.append(iconcept)
     
     relational_diverse_list = set(isolated_concepts) - set(relational_converge_concept_list)
