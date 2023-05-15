@@ -169,6 +169,36 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                 setisAlertVisible(false)
             }, 3000);
         }
+        else if (openTab === 1 && selectedAdditionalAttributes.length >= 1 && newOP.ranges.length >= 1) {
+            let hasCommonRanges = selectedAdditionalAttributes.some(obj1 => newOP.ranges.some(obj2 => obj2.name === obj1.name));
+            if (hasCommonRanges) {
+                setisAlertVisible(true)
+                setalertMsg('Please note that ranges and additional attributes cannot have common elements.')
+                setTimeout(() => {
+                    setisAlertVisible(false)
+                }, 3000);
+            } else {
+                let additionalAttributes = []
+                if(openTab===1) {
+                    additionalAttributes.push(newOP.ranges[0])
+                }
+                selectedAdditionalAttributes.forEach((attribute) => {
+                    // console.log("attribute.label: ", attribute.label)
+                    additionalAttributes.push({
+                        name: attribute.label,
+                        some: false,
+                        only: false,
+                        min: 0,
+                        max: 'inf',
+                        exactly: -1,
+                        relationshipTypes: [],
+                    })
+                })
+                setnewOP({ ...newOP, ranges: additionalAttributes })
+                setaddConstraints(true)
+                // console.log("newOP: ", newOP)
+            }
+        }
         else if (openTab === 2 && selectedAdditionalAttributes.length < 2) {
             setisAlertVisible(true)
             setalertMsg('Please select at least two additional attributes.')
@@ -332,6 +362,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                         onClick={e => {
                                             e.preventDefault();
                                             setopenTab(1);
+                                            handleCancel()
                                         }}
                                     >
                                         Usecase 01
@@ -360,6 +391,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                                         onClick={e => {
                                             e.preventDefault();
                                             setopenTab(2);
+                                            handleCancel()
                                         }}
                                     >
                                         Usecase 02
@@ -462,7 +494,7 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                 </div>
                 <div className="flex justify-center items-center w-full mt-6">
                     <button 
-                        className={`secondary_btn_comp w-fit h-8 p-0 px-2 ${addConstraints ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`w-fit h-8 p-0 px-2 ${addConstraints ? 'secondary_btn_comp opacity-50 cursor-not-allowed' : 'secondary_btn'}`}
                         onClick={handleAddObjectProperty}
                         id='add_aop'
                         disabled={addConstraints}
@@ -471,12 +503,20 @@ const AdvancedOP = ({ isSOPsubmitted, isAOPsubmitted, setisAOPsubmitted }) => {
                     </button>
 
                     <button 
-                        className={`primary_btn_comp h-8 p-0 ${!addConstraints ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`h-8 p-0 ${!addConstraints ? 'secondary_btn_comp opacity-50 cursor-not-allowed' : 'secondary_btn'}`}
                         onClick={() => setisConstraintModalVsible(true)}
                         disabled={!addConstraints}
                         id='aop_addConstraints'
                     >
                         Add Constraints
+                    </button>
+
+                    <button 
+                        className="primary_btn_comp h-8 p-0"
+                        onClick={handleCancel}
+                        id='aop_cancelAddAOP'
+                    >
+                        Cancel
                     </button>
                 </div>
             </Modal>
