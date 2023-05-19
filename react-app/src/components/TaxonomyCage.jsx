@@ -203,6 +203,7 @@ const TaxonomyCage = () => {
 								you have added properties, disjoint, and overlapping classes to
 								necessary taxonomies.
 							</p>
+							<p>Your session id: {taxonomies.sessionId}</p>
 							{consistencyCheck === "CONSISTENT" && (
 								<p>Consistency: OWL is consistent</p>
 							)}
