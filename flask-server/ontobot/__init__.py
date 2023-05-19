@@ -131,41 +131,15 @@ def get_nAry_consistancy():
 @app.route('/op/checkpoint_1/populate', methods=['POST'])
 def get_populate_local():
     try:
+        populate_service.get_excel_file(request.get_json())
         file_id = request.json.get('sessionID')
         file_path = '/home/ddhash/Documents/ontobot-app/flask-server/ontobot/files/excel/' + file_id + '.xlsx'
         return send_file(file_path)
     except Exception as e:
         return str(e)
 
-    # file_id = request.json.get('sessionID')
-    # # Validate the session ID and retrieve the file path based on the ID
-    # file_path = get_file_path(file_id)
-
-    # if not os.path.isfile(file_path):
-    #     return 'File not found', 404
-    # return send_from_directory(path=file_path, as_attachment=True)
-
-    # Send the file to the user
-    # return send_file(file_path, as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-    # headers = {'Content-Type': 'application/xslx'}
-    # content = populate_service.get_excel_file(request.get_json())
-    # response = make_response(content)
-    # response.headers = headers
-    # return response
-
-
-def get_file_path(session_id):
-    # This function should retrieve the file path based on the session ID
-    # Implement your logic to map the session ID to the file path here
-    # Return the file path if found, or None if not found
-    # Example:
-    file_directory = '/home/ddhash/Documents/ontobot-app/flask-server/ontobot/files/excel/'
-    file_name = session_id + '.xlsx'
-    file_path = os.path.join(file_directory, file_name)
-    return file_path if os.path.isfile(file_path) else None
 
 # local testing
-
 
 @app.route('/op/checkpoint_2/populate', methods=['POST'])
 def add_populate_local():
