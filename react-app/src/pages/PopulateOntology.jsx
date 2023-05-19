@@ -19,10 +19,12 @@ const PopulateOntology = () => {
 
 		let config = {
 			method: "post",
+			responseType: "blob",
 			maxBodyLength: Infinity,
 			url: `${process.env.REACT_APP_BACKEND_URL}/op/checkpoint_1/populate`,
 			headers: {
-				"Content-Type": "application/json",
+				"Content-Type":
+					"application/json",
 			},
 			data: data,
 		};
