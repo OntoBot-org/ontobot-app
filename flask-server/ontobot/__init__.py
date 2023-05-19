@@ -2,9 +2,11 @@ from flask import Flask, request, send_file, jsonify
 from ontobot.model.output import Error, Response
 from ontobot.services import taxonomy_service, op_service, populate_service
 import requests, json
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 # Global variables and methods
 data = {}
 ALLOWED_EXTENSIONS = {'xlsx', 'xls'}
