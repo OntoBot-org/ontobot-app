@@ -210,7 +210,7 @@ const AddObjectProperties = () => {
 						{consistencyCheck === "UNDEFINED" && (
 							<p>Consistency: Not checked yet</p>
 						)}
-
+						<p>Your session id: {modifiedOPObject.sessionId}</p>
 						{consistencyCheck === "LOADING" && <p>Consistency: Checking...</p>}
 
 						<div className="flex w-full items-center justify-center mt-4">
