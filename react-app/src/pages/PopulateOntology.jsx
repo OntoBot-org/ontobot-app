@@ -99,12 +99,14 @@ const PopulateOntology = () => {
 		axios
 			.request(config)
 			.then((response) => {
-				console.log(JSON.stringify(response.data));
-				if (response.data.type === "success") {
-					setUploadingStatus("SUCCESS");
-				} else {
-					setUploadingStatus("ERROR");
-				}
+				console.log("sus");
+				setUploadingStatus("SUCCESS");
+				const contentDispositionHeader =
+					response.headers["content-disposition"];
+				const fileName = contentDispositionHeader
+					? contentDispositionHeader.split(";")[1].split("filename=")[1].trim()
+					: `${excelsheetId}.owl`;
+				saveAs(new Blob([response.data]), fileName);
 			})
 			.catch((error) => {
 				console.log(error);

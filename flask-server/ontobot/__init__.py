@@ -161,11 +161,6 @@ def get_nAry_download_flask():
         response.headers = headers
         return response
 
-        # with open(file_path, 'wb') as f:
-        #     f.write(owl_content)
-
-        # return Response.send_response("Ontology has been generated")
-
 # connect FE_4
 
 
@@ -219,6 +214,7 @@ def add_populate_local():
 def get_populate_flask():
     return populate_service.get_excel_file(request.get_json())
 
+
 # connect FE_7
 
 
@@ -254,7 +250,13 @@ def add_populate_flask():
         file_path = f"ontobot/files/owl/filled-owl/{data['sessionID']}.owl"
         with open(file_path, 'wb') as f:
             f.write(owl_content)
-        return Response.send_response("Ontology has been generated")
+        headers = {'Content-Type': 'application/xml'}
+        response = make_response(owl_content)
+        response.headers = headers
+        return response
+        # return Response.send_response("Ontology has been generated")
+
+
 
 # connect FE 7
 
