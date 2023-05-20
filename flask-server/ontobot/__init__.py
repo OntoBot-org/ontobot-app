@@ -42,6 +42,8 @@ def add_ontos():
             return Error.server_error(msg=result['msg'])
 
 # connect FE_2
+
+
 @app.route('/flask/checkpoint_1/taxowl_generate/consistency', methods=['POST'])
 def get_taxo_consistancy_flask():
     data = request.get_json()
@@ -133,7 +135,7 @@ async def get_nAry_download_local():
     else:
         return Response.send_response(result['msg'])
 
-    
+
 # connect FE_5
 @app.route('/flask/checkpoint_2/op_generate/download', methods=['POST'])
 def get_nAry_download_flask():
@@ -165,6 +167,8 @@ def get_nAry_download_flask():
         # return Response.send_response("Ontology has been generated")
 
 # connect FE_4
+
+
 @app.route('/flask/checkpoint_2/op_generate/consistency', methods=['POST'])
 def get_nAry_consistancy_flask():
     data = request.get_json()
@@ -187,7 +191,13 @@ def get_nAry_consistancy_flask():
 # local testing
 @app.route('/op/checkpoint_1/populate', methods=['POST'])
 def get_populate_local():
-    return populate_service.get_excel_file(request.get_json())
+    try:
+        populate_service.get_excel_file(request.get_json())
+        file_id = request.json.get('sessionID')
+        file_path = '/home/ddhash/Documents/ontobot-app/flask-server/ontobot/files/excel/' + file_id + '.xlsx'
+        return send_file(file_path)
+    except Exception as e:
+        return str(e)
 
 
 # local testing
@@ -246,6 +256,8 @@ def add_populate_flask():
         return Response.send_response("Ontology has been generated")
 
 # connect FE 7
+
+
 @app.route('/flask/checkpoint_2/n-ary/update', methods=['POST'])
 def update_nAry_flask():
     data = request.get_json()
@@ -254,9 +266,7 @@ def update_nAry_flask():
     if result['code'] == 201:
         return Response.send_response(result['msg'])
     else:
-       return Error.send_something_went_wrong_error(result['msg']) 
-
-
+        return Error.send_something_went_wrong_error(result['msg'])
 
 
 # testing for new data structure
