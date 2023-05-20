@@ -12,43 +12,55 @@ const PopulateOntology = () => {
 	const [fileName, setfileName] = useState("");
 	const [excelsheetId, setexcelsheetId] = useState("");
 	const [xlDownloading, setXLDownloading] = useState(false);
+	const [file, setFile] = useState();
+	const [uploadingStatus, setUploadingStatus] = useState("UNDEFINED");
 
 	const handleDownloadXL = async () => {
-		setXLDownloading(true);
-		const data = JSON.stringify({ sessionID: excelsheetId });
+		const idValid = checkOntologyIdValidity();
+		if (idValid) {
+			// check whether the id is matching to available ontologies in the DB
+			setisGenerate(true);
+			setisUpload(false);
 
-		let config = {
-			method: "post",
-			responseType: "blob",
-			maxBodyLength: Infinity,
-			url: `${process.env.REACT_APP_BACKEND_URL}/op/checkpoint_1/populate`,
-			headers: {
-				"Content-Type":
-					"application/json",
-			},
-			data: data,
-		};
-		axios
-			.request(config)
-			.then((response) => {
-				const contentDispositionHeader =
-					response.headers["content-disposition"];
-				const fileName = contentDispositionHeader
-					? contentDispositionHeader.split(";")[1].split("filename=")[1].trim()
-					: `${excelsheetId}.xlsx`;
-				saveAs(new Blob([response.data]), fileName);
-				setXLDownloading(false);
-			})
-			.catch((error) => {
-				console.log(error);
-				setXLDownloading(false);
-			});
+			setXLDownloading(true);
+
+			const data = JSON.stringify({ sessionID: excelsheetId });
+
+			let config = {
+				method: "post",
+				responseType: "blob",
+				maxBodyLength: Infinity,
+				url: `${process.env.REACT_APP_BACKEND_URL}/op/checkpoint_1/populate`,
+				headers: {
+					"Content-Type": "application/json",
+				},
+				data: data,
+			};
+			axios
+				.request(config)
+				.then((response) => {
+					const contentDispositionHeader =
+						response.headers["content-disposition"];
+					const fileName = contentDispositionHeader
+						? contentDispositionHeader
+								.split(";")[1]
+								.split("filename=")[1]
+								.trim()
+						: `${excelsheetId}.xlsx`;
+					saveAs(new Blob([response.data]), fileName);
+					setXLDownloading(false);
+				})
+				.catch((error) => {
+					console.log(error);
+					setXLDownloading(false);
+				});
+		}
 	};
 
 	const onDrop = useCallback((acceptedFiles) => {
-		acceptedFiles.forEach((file) => {
-			setfileName(file.name);
-			console.log(`Uploaded file: ${file.name}`);
+		acceptedFiles.forEach((fl) => {
+			setfileName(fl.name);
+			setFile(fl);
 		}, []);
 	});
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
@@ -65,11 +77,45 @@ const PopulateOntology = () => {
 	};
 
 	const handleExcelsheetUpload = () => {
-		console.log("Uploaded the file: ", fileName);
+		if (!file) {
+			alert("empty file");
+			return;
+		}
+		setUploadingStatus("UPLOADING");
+		const data = new FormData();
+		data.append("file", file);
+		data.append("json", JSON.stringify({ sessionID: excelsheetId }));
+
+		let config = {
+			method: "post",
+			maxBodyLength: Infinity,
+			url: `${process.env.REACT_APP_BACKEND_URL}/flask/checkpoint_2/taxowl/populate`,
+			headers: {
+				headers: { "Content-Type": "multipart/form-data" },
+			},
+			data: data,
+		};
+
+		axios
+			.request(config)
+			.then((response) => {
+				console.log(JSON.stringify(response.data));
+				if (response.data.type === "success") {
+					setUploadingStatus("SUCCESS");
+				} else {
+					setUploadingStatus("ERROR");
+				}
+			})
+			.catch((error) => {
+				console.log(error);
+				setUploadingStatus("ERROR");
+			});
 	};
 
 	const handleExcelsheetClear = () => {
 		setfileName("");
+		setFile(null);
+		setUploadingStatus("UNDEFINED");
 	};
 
 	const checkOntologyIdValidity = () => {
@@ -219,6 +265,9 @@ const PopulateOntology = () => {
 						>
 							Clear
 						</button>
+						{uploadingStatus === "SUCCESS" && <p>Upload success</p>}
+						{uploadingStatus === "ERROR" && <p>Upload failed</p>}
+						{uploadingStatus === "UPLOADING" && <p>Uploading..</p>}
 					</div>
 				</div>
 			)}

@@ -1,0 +1,176 @@
+Prefix(:=<http://example.com/ontology#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://example.com/ontology>
+
+Declaration(Class(:kgirl))
+Declaration(Class(:man))
+Declaration(Class(:woman))
+Declaration(Class(:xgirl))
+Declaration(Class(:xman))
+Declaration(Class(:yman))
+Declaration(DataProperty(:mn_b))
+Declaration(DataProperty(:wom_a))
+Declaration(NamedIndividual(:b1))
+Declaration(NamedIndividual(:b2))
+Declaration(NamedIndividual(:b3))
+Declaration(NamedIndividual(:kg))
+Declaration(NamedIndividual(:m1))
+Declaration(NamedIndividual(:m2))
+Declaration(NamedIndividual(:m3))
+Declaration(NamedIndividual(:wom1))
+Declaration(NamedIndividual(:wom2))
+Declaration(NamedIndividual(:wom3))
+Declaration(NamedIndividual(:wom4))
+Declaration(NamedIndividual(:x1))
+Declaration(NamedIndividual(:x2))
+Declaration(NamedIndividual(:x3))
+Declaration(NamedIndividual(:x4))
+Declaration(NamedIndividual(:x5))
+Declaration(NamedIndividual(:xgirl))
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :mn_b (:mn_b)
+
+DataPropertyDomain(:mn_b :man)
+DataPropertyRange(:mn_b xsd:string)
+
+# Data Property: :wom_a (:wom_a)
+
+DataPropertyDomain(:wom_a :woman)
+DataPropertyRange(:wom_a xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :kgirl (:kgirl)
+
+AnnotationAssertion(rdfs:comment :kgirl "The Level : 1"^^xsd:string)
+SubClassOf(:kgirl :woman)
+
+# Class: :man (:man)
+
+AnnotationAssertion(rdfs:comment :man "The Level : 0"^^xsd:string)
+
+# Class: :woman (:woman)
+
+AnnotationAssertion(rdfs:comment :woman "The Level : 0"^^xsd:string)
+
+# Class: :xgirl (:xgirl)
+
+AnnotationAssertion(rdfs:comment :xgirl "The Level : 1"^^xsd:string)
+SubClassOf(:xgirl :woman)
+
+# Class: :xman (:xman)
+
+AnnotationAssertion(rdfs:comment :xman "The Level : 1"^^xsd:string)
+SubClassOf(:xman :man)
+
+# Class: :yman (:yman)
+
+AnnotationAssertion(rdfs:comment :yman "The Level : 1"^^xsd:string)
+SubClassOf(:yman :man)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :b1 (:b1)
+
+ClassAssertion(:yman :b1)
+DataPropertyAssertion(:mn_b :b1 "ymanb1"^^xsd:string)
+
+# Individual: :b2 (:b2)
+
+ClassAssertion(:yman :b2)
+DataPropertyAssertion(:mn_b :b2 "ymanb2"^^xsd:string)
+
+# Individual: :b3 (:b3)
+
+ClassAssertion(:yman :b3)
+DataPropertyAssertion(:mn_b :b3 "ymanb3"^^xsd:string)
+
+# Individual: :kg (:kg)
+
+ClassAssertion(:kgirl :kg)
+DataPropertyAssertion(:wom_a :kg "kgi"^^xsd:string)
+
+# Individual: :m1 (:m1)
+
+ClassAssertion(:man :m1)
+DataPropertyAssertion(:mn_b :m1 "nimal"^^xsd:string)
+
+# Individual: :m2 (:m2)
+
+ClassAssertion(:man :m2)
+DataPropertyAssertion(:mn_b :m2 "kusalc"^^xsd:string)
+
+# Individual: :m3 (:m3)
+
+ClassAssertion(:man :m3)
+DataPropertyAssertion(:mn_b :m3 "kusals"^^xsd:string)
+
+# Individual: :wom1 (:wom1)
+
+ClassAssertion(:woman :wom1)
+DataPropertyAssertion(:wom_a :wom1 "woman1"^^xsd:string)
+
+# Individual: :wom2 (:wom2)
+
+ClassAssertion(:woman :wom2)
+DataPropertyAssertion(:wom_a :wom2 "woman2"^^xsd:string)
+
+# Individual: :wom3 (:wom3)
+
+ClassAssertion(:woman :wom3)
+DataPropertyAssertion(:wom_a :wom3 "woman3"^^xsd:string)
+
+# Individual: :wom4 (:wom4)
+
+ClassAssertion(:woman :wom4)
+DataPropertyAssertion(:wom_a :wom4 "woman4"^^xsd:string)
+
+# Individual: :x1 (:x1)
+
+ClassAssertion(:xman :x1)
+DataPropertyAssertion(:mn_b :x1 "xmn1"^^xsd:string)
+
+# Individual: :x2 (:x2)
+
+ClassAssertion(:xman :x2)
+DataPropertyAssertion(:mn_b :x2 "xmn2"^^xsd:string)
+
+# Individual: :x3 (:x3)
+
+ClassAssertion(:xman :x3)
+DataPropertyAssertion(:mn_b :x3 "xmn3"^^xsd:string)
+
+# Individual: :x4 (:x4)
+
+ClassAssertion(:xman :x4)
+DataPropertyAssertion(:mn_b :x4 "xmn4"^^xsd:string)
+
+# Individual: :x5 (:x5)
+
+ClassAssertion(:xman :x5)
+DataPropertyAssertion(:mn_b :x5 "xmn5"^^xsd:string)
+
+# Individual: :xgirl (:xgirl)
+
+ClassAssertion(:xgirl :xgirl)
+DataPropertyAssertion(:wom_a :xgirl "xgirl1"^^xsd:string)
+
+
+)

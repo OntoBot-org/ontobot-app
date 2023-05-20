@@ -205,6 +205,7 @@ def get_populate_local():
 def add_populate_local():
     data = request.get_json()
     sessionID = data['sessionID']
+    print(sessionID)
     result = populate_service.convert_excel_file(sessionID)
 
     if result['code'] == 500:
