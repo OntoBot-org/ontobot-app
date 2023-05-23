@@ -1,18 +1,18 @@
 export const tooltipDescriptions = {
-    taxonomy_tree: "taxonomy_tree description",
-    taxonomy_details: "taxonomy_details description",
+    taxonomy_tree: "A taxonomy tree is a hierarchical structure used in ontology creation to organize and classify concepts or entities. It helps define class names, stereotypes, and equivalent classes, facilitating the systematic organization of knowledge",
+    taxonomy_details: "Taxonomy details offer a comprehensive examination of class properties, highlighting the unique attributes and characteristics associated with each category. We meticulously define these properties to provide a clear understanding of the roles and functionalities of each class within the system. Furthermore, we ensure accurate identification of disjoint classes, maintaining a clear separation between categories without any common instances. Additionally, we recognize overlapping classes, where multiple categories may share common instances or characteristics, facilitating a nuanced understanding of relationships and connections. Through our taxonomy details, we provide an in-depth view of class properties, disjoint classes, and overlapping classes, unraveling the intricacies of our knowledge organization and classification within the system.",
     submit_taxonomies: "submit_taxonomies description",
 
-    taxonomy_classname: "taxonomy_classname",
-    taxonomy_stereotype: "taxonomy_stereotype",
-    taxonomy_equivalentclass: "taxonomy_equivalentclass",
+    taxonomy_classname: "Add the classname",
+    taxonomy_stereotype: "A stereotype refers to a predefined or predefined characteristic or behavior associated with a class.",
+    taxonomy_equivalentclass: "An equivalent class refers to a class that has the same meaning or definition as another class within the ontology",
     save_taxonomybranch: "save_taxonomybranch",
     stereotypes_list: "stereotypes_list",
 
-    selected_class: "selected_class",
+    selected_class: "The class you have selected to enter details",
     taxonomy_properties: "taxonomy_properties",
-    disjoint_classes: "disjoint_classes",
-    overlapping_classes: "overlapping_classes",
+    disjoint_classes: "Disjoint classes in an ontology refer to categories that have no common instances or overlap. It means that entities cannot simultaneously belong to multiple disjoint classes. Each entity in the ontology is assigned to one and only one disjoint class.",
+    overlapping_classes: "Overlapping classes refer to categories within an ontology that share some common instances or characteristics. While each class in the ontology represents a distinct category, overlapping classes indicate that certain entities can belong to multiple classes simultaneously.",
 
     property_name: "property_name",
     property_datatype: "property_datatype",
@@ -22,7 +22,7 @@ export const tooltipDescriptions = {
     view_property: "view_property",
     submit_properties: "submit_properties",
     
-    simpleOP_cage: "simpleOP_cage",
+    simpleOP_cage: "Adding object properties to a class structure or taxonomy in an ontology involves defining relationships or connections between classes. Object properties represent the associations or links between entities of different classes. By adding object properties, we can express how instances of one class are related to instances of other classes within the ontology.",
     advancedOP_cage: "advancedOP_cage",
     submit_all_op: "submit_all_op",
 
